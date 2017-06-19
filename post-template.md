@@ -10,4 +10,4 @@ Summary: Short version for index and feeds
 Content goes here.
 
 An image looks like this: 
-[![Alt-text]({photo}imagename.jpg)]({filename}images/imagename.jpg)
+[![Alt-text]({photo}imagename.jpg)]({filename}images/imagename.jpg "Mouseover text here")
