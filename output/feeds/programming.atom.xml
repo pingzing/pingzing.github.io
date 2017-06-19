@@ -6,7 +6,7 @@ determined stab at it with MonoGame. So far, I've made it further than I ever ha
 &lt;p&gt;For this little experiment, I decided to give &lt;a href="http://www.monogame.net/"&gt;MonoGame&lt;/a&gt; another try because I'm a big ol' C# fanboy, and Lua made me angry. One thing that bit me
 pretty quickly (aside from the truly frustrating lack of architectural advice) was that there weren't any guides on how to structure a multiplatform MonoGame project. &lt;/p&gt;
 &lt;p&gt;One of MonoGame's promises is that it supports just about everything under the sun (even including the Nintendo Switch!), but figuring out
-how to actually structure your code in a way that makes this easy seemed to be entirely absent from the internet. This post is an attempt to rememdy that!&lt;/p&gt;
+how to actually structure your code in a way that makes this easy seemed to be entirely absent from the internet. This post is an attempt to remedy that!&lt;/p&gt;
 &lt;h1&gt;tl;dr&lt;/h1&gt;
 &lt;p&gt;For those short of time:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://pingzing.github.io/images/monogame-tldr-1.png" title="Make thing."&gt;&lt;img alt="Create Monogame project" src="http://pingzing.github.io\photos\monogame-tldr-1a.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -14,7 +14,7 @@ how to actually structure your code in a way that makes this easy seemed to be e
 &lt;p&gt;&lt;a href="http://pingzing.github.io/images/monogame-tldr-2.png" title="Prepare to thing to thing"&gt;&lt;img alt="Add PCL" src="http://pingzing.github.io\photos\monogame-tldr-2a.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2.) Add a new project to the solution. This will be your PCL.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://pingzing.github.io/images/monogame-tldr-3.png" title="Add thing to thing"&gt;&lt;img alt="Continue adding PCL" src="http://pingzing.github.io\photos\monogame-tldr-3a.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;3.) You'll want to make sure you choose PORTABLE Class Library, and not use "Class Library" of some flavor.&lt;/p&gt;
+&lt;p&gt;3.) You'll want to make sure you choose "PORTABLE Class Library", and not use "Class Library" of some flavor.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://pingzing.github.io/images/monogame-tldr-4.png" title="Finish adding thing to thing"&gt;&lt;img alt="Finish adding PCL" src="http://pingzing.github.io\photos\monogame-tldr-4a.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;4.) Choose all the targets you plan on hitting. Fewer is likely to offer you more APIs, but if you have to support one you don't select later, you may be in for pain.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://pingzing.github.io/images/monogame-tldr-5.png" title="Move thing to new thing"&gt;&lt;img alt="Move Game1.cs" src="http://pingzing.github.io\photos\monogame-tldr-5a.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -28,17 +28,18 @@ how to actually structure your code in a way that makes this easy seemed to be e
 &lt;p&gt;8.) Note that you could also just add a &lt;code&gt;using ClassLibrary&lt;/code&gt; statement to the top of &lt;code&gt;Program.cs&lt;/code&gt; in most cases, but because in this little example, &lt;code&gt;Game1&lt;/code&gt; is both a class name and a namespace name, it would cause problems, so I just give it the fully-qualified namespace.&lt;/p&gt;
 &lt;p&gt;9.) Done!&lt;/p&gt;
 &lt;h1&gt;ts;wm (Too Short; Wanted More)&lt;/h1&gt;
-&lt;p&gt;You want the long version, eh? Well, okay. Keep on going, and hopefully you won't be disappointed.&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+You want the long version, eh? Well, okay. Keep on going, and hopefully you won't be disappointed.&lt;/p&gt;
 &lt;h2&gt;Options&lt;/h2&gt;
 &lt;p&gt;MonoGame's projects are pretty vanilla C# projects--there's not a lot of exotic build-time magic happening here. As such, you've got a quite a few options for code-sharing:&lt;/p&gt;
 &lt;h3&gt;Just Use the Same Files&lt;/h3&gt;
 &lt;p&gt;One approach I've seen before is to throw all your shared files into a single folder (usually named "Common") and then, in all your projects, you use Visual Studio's "Add As Link" function to add the files to your project. &lt;/p&gt;
 &lt;p&gt;&lt;a href="http://pingzing.github.io/images/addaslink.png" title="It's weirdly hard to find."&gt;&lt;img alt="Add as Link example" src="http://pingzing.github.io\photos\addaslinka.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This leaves the files where they are, and multiple projects can have references to the same file this way.&lt;/p&gt;
-&lt;p&gt;I don't like this solution very much. I find that it's easier to reason about a project if it mirrors the underlying folder structure as closely as possible. Using file links this way completely breaks this assumption--from Visual Studio's Solution Explorer, it looks like you have a bunch of different copies of the file in the project folders, but they're all just links to the same set of files. It also involves manual work every time you want to add a new project into the solution, and that's no fun.&lt;/p&gt;
+&lt;p&gt;...I don't like this solution very much. I find that it's easier to reason about a project if it mirrors the underlying folder structure as closely as possible. Using file links this way completely breaks this assumption--from Visual Studio's Solution Explorer, it looks like you have a bunch of different copies of the file in the project folders, but they're all just links to the same set of files. It also involves manual work every time you want to add a new project into the solution, and that's no fun.&lt;/p&gt;
 &lt;h3&gt;A Shared Project&lt;/h3&gt;
 &lt;p&gt;Another approach is to use a Shared Project. Visual Studio has better support for this, and you can just add all your cross-platform code to Shared Project. The only things you'll need to add to your platform-specific projects are initialization and bootstrapping of that platform's basic window/frame/host.&lt;/p&gt;
-&lt;p&gt;I don't like this solution either. The primary reasons are that I feel like it encourages using &lt;code&gt;#IFDEF&lt;/code&gt;s to handle platform-specific code (which is almost always bad practice), and the fact that it  doesn't generate its own assembly can make debugging and adding NuGet packages a real pain.&lt;/p&gt;
+&lt;p&gt;...I don't like this solution either. The primary reasons are that I feel like it encourages using &lt;code&gt;#IFDEF&lt;/code&gt;s to handle platform-specific code (which is almost always bad practice), and the fact that it  doesn't generate its own assembly can make debugging and adding NuGet packages a real pain.&lt;/p&gt;
 &lt;p&gt;It does have its merits though--the fact that it &lt;em&gt;does&lt;/em&gt; allow you to use &lt;code&gt;#IFDEF&lt;/code&gt;s to get at platform-specific APIs gives you an easy escape hatch if you just need to do something fast. In practice though, I've found that it's too alluring a prospect to ever use just once. Invariably, the codebase becomes riddled with &lt;code&gt;#if __IOS__&lt;/code&gt; and &lt;code&gt;#elif __ANDROID__&lt;/code&gt;, etc.&lt;/p&gt;
 &lt;h3&gt;A Portable Class Library&lt;/h3&gt;
 &lt;p&gt;The workhorse of cross-platform code sharing in .NET land, the PCL is similar to a Shared Project in that you'll keep all your shared code in this project. &lt;/p&gt;
@@ -46,7 +47,7 @@ how to actually structure your code in a way that makes this easy seemed to be e
 &lt;p&gt;One extra advantage is that if MonoGame ever gets .NET Standard support, migration from a PCL to a .NET Standard library will be fairly simple.&lt;/p&gt;
 &lt;p&gt;This is my preferred solution, and what the rest of this blog post will assume.&lt;/p&gt;
 &lt;h2&gt;The Solution Structure&lt;/h2&gt;
-&lt;p&gt;Let me get this out of the way right up front. Here's a screenshot (or or less) of what your solution is going to look like when you're done:&lt;/p&gt;
+&lt;p&gt;Let me get this out of the way right up front. Here's a screenshot (more or less) of what your solution is going to look like when you're done:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://pingzing.github.io/images/monogame-solution-explorer.png" title="I mean, if you're making a real game, you'll probably be supporting more than just DesktopGL."&gt;&lt;img alt="Solution Explorer screenshot" src="http://pingzing.github.io\photos\monogame-solution-explorera.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Up in that screenshot there, the &lt;code&gt;monogame-test.Core&lt;/code&gt; is my PCL. It happens to target Profile 44 (Windows 8.1, .NET 4.5.1, Xamarin.iOS, Xamarin.Android, Xamarin.Mac), which happens to correspond with .NET Standard 1.2. Most of my game code will end up living in there. You can even move your &lt;code&gt;Game1.cs&lt;/code&gt; (or whatever you've renamed it) into the PCL.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;monogame-test.DesktopGL&lt;/code&gt; is a platform-specific project. Its job is mainly to set up the game's platform-specific environment. This platform is MonoGame's "DesktopGL", which by some SDL and OpenGL magic, uses a single codebase to support Windows, Mac and Linux desktop platforms. &lt;/p&gt;
@@ -101,4 +102,4 @@ how to actually structure your code in a way that makes this easy seemed to be e
 
 &lt;p&gt;...and then your platform-specific projects register all their implementations before calling &lt;code&gt;Game.Run()&lt;/code&gt;. Then, when your PCL needs a service, it can just do &lt;code&gt;ServiceLocator.Get&amp;lt;YourService&amp;gt;().ServiceThings()&lt;/code&gt;. Of course, even with that solution, you'd want to do things like null-checking, existence-checking, etc.&lt;/p&gt;
 &lt;h1&gt;That's All, Folks&lt;/h1&gt;
-&lt;p&gt;Hope this helped someone! If you'd like to contact me, I'm &lt;a href="https://twitter.com/pingzingy"&gt;@pingzingy&lt;/a&gt; on Twitter, and &lt;a href="https://github.com/pingzing/"&gt;pingzing&lt;/a&gt; on GitHub!&lt;/p&gt;</content><category term="programming"></category><category term="games"></category><category term="monogame"></category><category term="xna"></category><category term="c#"></category><category term="csharp"></category></entry></feed>
+&lt;p&gt;Hope this helped! If you'd like to contact me, I'm &lt;a href="https://twitter.com/pingzingy"&gt;@pingzingy&lt;/a&gt; on Twitter, and &lt;a href="https://github.com/pingzing/"&gt;pingzing&lt;/a&gt; on GitHub!&lt;/p&gt;</content><category term="programming"></category><category term="games"></category><category term="monogame"></category><category term="xna"></category><category term="c#"></category><category term="csharp"></category></entry></feed>

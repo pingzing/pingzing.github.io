@@ -17,7 +17,7 @@ For this little experiment, I decided to give [MonoGame](http://www.monogame.net
 pretty quickly (aside from the truly frustrating lack of architectural advice) was that there weren't any guides on how to structure a multiplatform MonoGame project. 
 
 One of MonoGame's promises is that it supports just about everything under the sun (even including the Nintendo Switch!), but figuring out
-how to actually structure your code in a way that makes this easy seemed to be entirely absent from the internet. This post is an attempt to rememdy that!
+how to actually structure your code in a way that makes this easy seemed to be entirely absent from the internet. This post is an attempt to remedy that!
 
 # tl;dr
 For those short of time:
@@ -32,7 +32,7 @@ For those short of time:
 
  [![Continue adding PCL]({photo}monogame-tldr-3.png)]({filename}images/monogame-tldr-3.png "Add thing to thing")
 
-3.) You'll want to make sure you choose PORTABLE Class Library, and not use "Class Library" of some flavor.
+3.) You'll want to make sure you choose "PORTABLE Class Library", and not use "Class Library" of some flavor.
 
  [![Finish adding PCL]({photo}monogame-tldr-4.png)]({filename}images/monogame-tldr-4.png "Finish adding thing to thing")
 
@@ -59,6 +59,7 @@ For those short of time:
 9.) Done!
 
 # ts;wm (Too Short; Wanted More)
+<br>
 You want the long version, eh? Well, okay. Keep on going, and hopefully you won't be disappointed.
 
 ## Options
@@ -71,12 +72,12 @@ One approach I've seen before is to throw all your shared files into a single fo
 
 This leaves the files where they are, and multiple projects can have references to the same file this way.
 
-I don't like this solution very much. I find that it's easier to reason about a project if it mirrors the underlying folder structure as closely as possible. Using file links this way completely breaks this assumption--from Visual Studio's Solution Explorer, it looks like you have a bunch of different copies of the file in the project folders, but they're all just links to the same set of files. It also involves manual work every time you want to add a new project into the solution, and that's no fun.
+...I don't like this solution very much. I find that it's easier to reason about a project if it mirrors the underlying folder structure as closely as possible. Using file links this way completely breaks this assumption--from Visual Studio's Solution Explorer, it looks like you have a bunch of different copies of the file in the project folders, but they're all just links to the same set of files. It also involves manual work every time you want to add a new project into the solution, and that's no fun.
 
 ### A Shared Project
 Another approach is to use a Shared Project. Visual Studio has better support for this, and you can just add all your cross-platform code to Shared Project. The only things you'll need to add to your platform-specific projects are initialization and bootstrapping of that platform's basic window/frame/host.
 
-I don't like this solution either. The primary reasons are that I feel like it encourages using `#IFDEF`s to handle platform-specific code (which is almost always bad practice), and the fact that it  doesn't generate its own assembly can make debugging and adding NuGet packages a real pain.
+...I don't like this solution either. The primary reasons are that I feel like it encourages using `#IFDEF`s to handle platform-specific code (which is almost always bad practice), and the fact that it  doesn't generate its own assembly can make debugging and adding NuGet packages a real pain.
 
 It does have its merits though--the fact that it _does_ allow you to use `#IFDEF`s to get at platform-specific APIs gives you an easy escape hatch if you just need to do something fast. In practice though, I've found that it's too alluring a prospect to ever use just once. Invariably, the codebase becomes riddled with `#if __IOS__` and `#elif __ANDROID__`, etc.
 
@@ -90,7 +91,7 @@ One extra advantage is that if MonoGame ever gets .NET Standard support, migrati
 This is my preferred solution, and what the rest of this blog post will assume.
 
 ## The Solution Structure
-Let me get this out of the way right up front. Here's a screenshot (or or less) of what your solution is going to look like when you're done:
+Let me get this out of the way right up front. Here's a screenshot (more or less) of what your solution is going to look like when you're done:
 
 [![Solution Explorer screenshot]({photo}monogame-solution-explorer.png)]({filename}images/monogame-solution-explorer.png "I mean, if you're making a real game, you'll probably be supporting more than just DesktopGL.")
 
@@ -156,4 +157,4 @@ Some of the squirrely bits of getting this up and running include:
 ...and then your platform-specific projects register all their implementations before calling `Game.Run()`. Then, when your PCL needs a service, it can just do `ServiceLocator.Get<YourService>().ServiceThings()`. Of course, even with that solution, you'd want to do things like null-checking, existence-checking, etc.
 
 # That's All, Folks
-Hope this helped someone! If you'd like to contact me, I'm [@pingzingy](https://twitter.com/pingzingy) on Twitter, and [pingzing](https://github.com/pingzing/) on GitHub!
+Hope this helped! If you'd like to contact me, I'm [@pingzingy](https://twitter.com/pingzingy) on Twitter, and [pingzing](https://github.com/pingzing/) on GitHub!
