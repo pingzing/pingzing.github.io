@@ -14,6 +14,8 @@
         {% block meta_tags_in_head %}
         {% endblock meta_tags_in_head %}
         <meta name="robots" content="{% block robots %}index,follow{% endblock %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
         {% if FEED_ATOM %}

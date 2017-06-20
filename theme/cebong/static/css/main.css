@@ -19,14 +19,18 @@
 body {
     background: #FDF6E3;
     color: #8A887B;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Crimson Text', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     /*line-height: 1.429;*/
     margin: 0;
     padding: 0;
-    text-align: left;
-    text-shadow:0px 0px 1px #BFBFBF;
+    text-align: left;    
     padding-top:120px;
+}
+
+body img {
+	margin: auto;
+	display: block
 }
 
 code{
@@ -71,7 +75,7 @@ hr { border: 1px dotted #8A887B; }
 
 /* Anchors */
 a {outline: 0;}
-a img {border: 0px; text-decoration: none;}
+a img {border: 0px; text-decoration: none; margin: auto; display: block}
 a:link, a:visited {
 	color: inherit;
 	padding: 0 1px;
@@ -166,7 +170,7 @@ aside, nav, article, figure {
 }
 
 /***** Layout *****/
-.body {clear: both; margin: 0 auto; width: 800px;}
+.body {clear: both; margin: 0 auto; max-width: 800px;}
 img.right, figure.right {float: right; margin: 0 0 2em 2em;}
 img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 
@@ -205,7 +209,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 		/*margin: 0 auto 2em auto;*/
 		padding: 0;
 		text-align: center;
-		width: 800px;
+		max-width: 800px;
         font-style:italic;
 		
 		border-radius: 5px;
@@ -213,7 +217,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 		-webkit-border-radius: 5px;
 	}
 	
-	#banner nav ul {list-style: none; margin: 0 auto; width: 800px;}
+	#banner nav ul {list-style: none; margin: 0 auto; max-width: 800px;}
 	#banner nav li {float: left; display: inline; margin: 0;}
 	
 	#banner nav a:link, #banner nav a:visited {
@@ -249,7 +253,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px;
-	width: 760px;
+	max-width: 760px;
 	
 	border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -278,7 +282,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px 20px;
-	width: 760px;
+	max-width: 760px;
 	
 	border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -350,7 +354,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	overflow: hidden;
 	padding: 20px;
 	text-align: right;
-	width: 760px;
+	max-width: 760px;
 	
 	border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -363,7 +367,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 
 #about .url:link, #about .url:visited {text-decoration: none;}
 
-#about .bio {float: right; width: 500px;}
+#about .bio {float: right; max-width: 500px;}
 
 /*
 	Footer
