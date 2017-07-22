@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Travel Neil - Programming</title>
+        <title>Talking to Win32 in Rust</title>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <meta name="author" content="Neil" />
-        <meta name="copyright" content="Neil" />
-        <meta name="robots" content="noindex,follow">
+        <meta name="keywords" content="Programming, Rust, Win32, Windows, VLC, programming" />
+        <meta name="category" content="programming" />
+        <meta name="description" content="How to make Rust do your bidding" />
+        <meta name="author" content="Neil McAlister" />
+        <meta name="copyright" content="Neil McAlister" />
+        <meta name="date" content="2017-07-23 00:12:00+03:00">
+        <meta name="robots" content="index,follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -36,17 +40,20 @@
                     <a href="http://pingzing.github.io/category/programming.html">programming</a>&nbsp;
                 </nav>
         </header><!-- /#banner -->
-        
-        
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="talking-to-the-winapi-in-rust.html" rel="bookmark"
+           title="Permalink to Talking to Win32 in Rust">Talking to Win32 in Rust</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://pingzing.github.io/talking-to-the-winapi-in-rust.html">Talking to Win32 in Rust</a></h1> 
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2017-07-23T00:12:00+03:00">
                 Sun 23 July 2017
         </abbr>
-<p>tags: <a href="http://pingzing.github.io/tag/programming.html">Programming</a><a href="http://pingzing.github.io/tag/rust.html">Rust</a><a href="http://pingzing.github.io/tag/win32.html">Win32</a><a href="http://pingzing.github.io/tag/windows.html">Windows</a><a href="http://pingzing.github.io/tag/vlc.html">VLC</a></p></footer><!-- /.post-info --><br><p>I've <a href="https://github.com/pingzing/articulator">done</a> <a href="https://github.com/pingzing/voicepipe">some</a> <a href="https://github.com/pingzing/oxide-skies/tree/master/src">dabbling</a> in <a href="https://www.rust-lang.org/en-US/">the Rust programming language</a> in the past, so when a friend asked me if knew a way to force a VLC to the foreground in Windows with Rust, my answer was "yeah, probably".</p>
+<p>tags: <a href="http://pingzing.github.io/tag/programming.html">Programming</a><a href="http://pingzing.github.io/tag/rust.html">Rust</a><a href="http://pingzing.github.io/tag/win32.html">Win32</a><a href="http://pingzing.github.io/tag/windows.html">Windows</a><a href="http://pingzing.github.io/tag/vlc.html">VLC</a></p></footer><!-- /.post-info -->      <p>I've <a href="https://github.com/pingzing/articulator">done</a> <a href="https://github.com/pingzing/voicepipe">some</a> <a href="https://github.com/pingzing/oxide-skies/tree/master/src">dabbling</a> in <a href="https://www.rust-lang.org/en-US/">the Rust programming language</a> in the past, so when a friend asked me if knew a way to force a VLC to the foreground in Windows with Rust, my answer was "yeah, probably".</p>
 <p>Of course, I got curious, so I wasn't willing to just let it lie--I started digging into it, and tried to figure it out for myself.</p>
 <h2>Planning</h2>
 <p>Doing anything involving windows in Windows inevtiably involves talking to the Win32 API, which means either programmming in C/C++, or using a bindings library to translate those C-based types into types that Rust can work with.</p>
@@ -127,33 +134,11 @@
 <p>This was a fun exercise, but it's a toy. It won't work if VLC is actually playing anything, because it changes its window name when it does. It becomes "&lt;media file name> - VLC Media Player". So we'd have to enumerate through our open windows, and look for one whose name <em>contains</em> the phrase "VLC Media Player". Can't be that hard, right?</p>
 <p><a href="https://github.com/pingzing/rust-vlc-finder/blob/80446376676e96c792100b98fb958aad558decd1/src/main.rs">Well...</a></p>
 <p>We'll leave that blog post for another day.</p>
-<p>Anyway, hope this helped! If you'd like to contact me, I'm <a href="https://twitter.com/pingzingy">@pingzingy</a> on Twitter, and <a href="https://github.com/pingzing/">pingzing</a> on GitHub!</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-        
+<p>Anyway, hope this helped! If you'd like to contact me, I'm <a href="https://twitter.com/pingzingy">@pingzingy</a> on Twitter, and <a href="https://github.com/pingzing/">pingzing</a> on GitHub!</p>
+    </div><!-- /.entry-content -->
 
- 
-            <li><article class="hentry">    
-                <header>
-                    <h3 class="inline-header"><a href="http://pingzing.github.io/sharing-code-with-a-pcl-in-monogame.html" rel="bookmark"
-                           title="Permalink to Sharing Code with a PCL in MonoGame">Sharing Code with a PCL in MonoGame</a></h3>                                               
-                </header>                            
-                
-                <div class=readmore><footer class="post-info">
-        <abbr class="published" title="2017-06-19T00:00:00+03:00">
-                Mon 19 June 2017
-        </abbr>
-<p>tags: <a href="http://pingzing.github.io/tag/programming.html">programming</a><a href="http://pingzing.github.io/tag/games.html">games</a><a href="http://pingzing.github.io/tag/monogame.html">monogame</a><a href="http://pingzing.github.io/tag/xna.html">xna</a><a href="http://pingzing.github.io/tag/c.html">c#</a><a href="http://pingzing.github.io/tag/csharp.html">csharp</a></p></footer><!-- /.post-info --></div>     
-
-                <div class="entry-content">
-                <p>How to structure a MonoGame project for crossplat code-sharing</p>
-                <a class="readmore" href="http://pingzing.github.io/sharing-code-with-a-pcl-in-monogame.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-            </ol><!-- /#posts-list -->
-            </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
         </section><!-- /#extras -->
 

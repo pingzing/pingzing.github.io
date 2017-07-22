@@ -7,6 +7,8 @@
         <meta name="author" content="Neil" />
         <meta name="copyright" content="Neil" />
         <meta name="robots" content="noindex,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
         <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
 
@@ -30,6 +32,7 @@
                     <a href="../category/christmas-trip.html">Christmas Trip</a>&nbsp;
                     <a href="../category/life-in-finland.html">Life In Finland</a>&nbsp;
                     <a href="../category/misc.html">misc</a>&nbsp;
+                    <a href="../category/programming.html">Programming</a>&nbsp;
                 </nav>
         </header><!-- /#banner -->
         
@@ -37,117 +40,98 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../sharing-code-with-a-pcl-in-monogame.html">Sharing Code with a PCL in MonoGame</a></h1> 
+                    <h1 class="entry-title"><a href="../talking-to-win32-in-rust.html">Talking to Win32 in Rust</a></h1> 
 <footer class="post-info">
-        <abbr class="published" title="2017-06-19T00:00:00+03:00">
-                Mon 19 June 2017
+        <abbr class="published" title="2017-07-23T00:12:00+03:00">
+                Sun 23 July 2017
         </abbr>
-</footer><!-- /.post-info --><p>Category: Programming
-Tags: programming, games, monogame, xna, c#, csharp
-Slug: sharing-code-with-a-pcl-in-monogame
+</footer><!-- /.post-info --><br><p>Category: programming
+Tags: Programming, Rust, Win32, Windows, VLC
+Slug: talking-to-the-winapi-in-rust
 Authors: Neil McAlister
-Summary: How to structure a MonoGame project for crossplat code-sharing</p>
-<p>I've dabbled briefly with making games in the past. I've tried Unity, LÖVE, XNA and it's more modern successor MonoGame.
-I rarely get very far, but it's always a fun little exercise. This time around, I'm trying to make a more 
-determined stab at it with MonoGame. So far, I've made it further than I ever have before--I actually have working collision!</p>
-<p><img alt="Animated game collision example" src="../images/early-collision-test-02.gif"></p>
-<p>For this little experiment, I decided to give <a href="http://www.monogame.net/">MonoGame</a> another try because I'm a big ol' C# fanboy, and Lua made me angry. One thing that bit me
-pretty quickly (aside from the truly frustrating lack of architectural advice) was that there weren't any guides on how to structure a multiplatform MonoGame project. </p>
-<p>One of MonoGame's promises is that it supports just about everything under the sun (even including the Nintendo Switch!), but figuring out
-how to actually structure your code in a way that makes this easy seemed to be entirely absent from the internet. This post is an attempt to rememdy that!</p>
-<h1>tl;dr</h1>
-<p>For those short of time:</p>
-<p><a href="../images/monogame-tldr-1.png" title="Make thing."><img alt="Create Monogame project" src="photos\monogame-tldr-1a.jpg"></a></p>
-<p>1.) Make your first platform project. It can target whatever it is that you want to target.</p>
-<p><a href="../images/monogame-tldr-2.png" title="Prepare to thing to thing"><img alt="Add PCL" src="photos\monogame-tldr-2a.jpg"></a></p>
-<p>2.) Add a new project to the solution. This will be your PCL.</p>
-<p><a href="../images/monogame-tldr-3.png" title="Add thing to thing"><img alt="Continue adding PCL" src="photos\monogame-tldr-3a.jpg"></a></p>
-<p>3.) You'll want to make sure you choose PORTABLE Class Library, and not use "Class Library" of some flavor.</p>
-<p><a href="../images/monogame-tldr-4.png" title="Finish adding thing to thing"><img alt="Finish adding PCL" src="photos\monogame-tldr-4a.jpg"></a></p>
-<p>4.) Choose all the targets you plan on hitting. Fewer is likely to offer you more APIs, but if you have to support one you don't select later, you may be in for pain.</p>
-<p><a href="../images/monogame-tldr-5.png" title="Move thing to new thing"><img alt="Move Game1.cs" src="photos\monogame-tldr-5a.jpg"></a></p>
-<p>5.) Move your Game.cs to the PCL. We'll clean up references and namespaces in a moment. Delete the copy left in the platform project.</p>
-<p><a href="../images/monogame-tldr-7.png" title="Add library to thing"><img alt="Add MonoGame to PCL" src="photos\monogame-tldr-7a.jpg"></a></p>
-<p>6.) Add the MonoGame.Portable NuGet package to the PCL.</p>
-<p><a href="../images/monogame-tldr-6.png" title="Add reference to thing"><img alt="Add reference to PCL" src="photos\monogame-tldr-6a.jpg"></a></p>
-<p>7.) Add a reference to the PCL to the platform project.</p>
-<p>(If you get grief about the .NET version, just go to Game1's Properties, and bump the .NET Framework version to 4.5.1.)</p>
-<p><a href="../images/monogame-tldr-8.png" title="Make thing look for right thing"><img alt="Clean up namespaces" src="photos\monogame-tldr-8a.jpg"></a> </p>
-<p>8.) Note that you could also just add a <code>using ClassLibrary</code> statement to the top of <code>Program.cs</code> in most cases, but because in this little example, <code>Game1</code> is both a class name and a namespace name, it would cause problems, so I just give it the fully-qualified namespace.</p>
-<p>9.) Done!</p>
-<h1>ts;wm (Too Short; Wanted More)</h1>
-<p>You want the long version, eh? Well, okay. Keep on going, and hopefully you won't be disappointed.</p>
-<h2>Options</h2>
-<p>MonoGame's projects are pretty vanilla C# projects--there's not a lot of exotic build-time magic happening here. As such, you've got a quite a few options for code-sharing:</p>
-<h3>Just Use the Same Files</h3>
-<p>One approach I've seen before is to throw all your shared files into a single folder (usually named "Common") and then, in all your projects, you use Visual Studio's "Add As Link" function to add the files to your project. </p>
-<p><a href="../images/addaslink.png" title="It's weirdly hard to find."><img alt="Add as Link example" src="photos\addaslinka.jpg"></a></p>
-<p>This leaves the files where they are, and multiple projects can have references to the same file this way.</p>
-<p>I don't like this solution very much. I find that it's easier to reason about a project if it mirrors the underlying folder structure as closely as possible. Using file links this way completely breaks this assumption--from Visual Studio's Solution Explorer, it looks like you have a bunch of different copies of the file in the project folders, but they're all just links to the same set of files. It also involves manual work every time you want to add a new project into the solution, and that's no fun.</p>
-<h3>A Shared Project</h3>
-<p>Another approach is to use a Shared Project. Visual Studio has better support for this, and you can just add all your cross-platform code to Shared Project. The only things you'll need to add to your platform-specific projects are initialization and bootstrapping of that platform's basic window/frame/host.</p>
-<p>I don't like this solution either. The primary reasons are that I feel like it encourages using <code>#IFDEF</code>s to handle platform-specific code (which is almost always bad practice), and the fact that it  doesn't generate its own assembly can make debugging and adding NuGet packages a real pain.</p>
-<p>It does have its merits though--the fact that it <em>does</em> allow you to use <code>#IFDEF</code>s to get at platform-specific APIs gives you an easy escape hatch if you just need to do something fast. In practice though, I've found that it's too alluring a prospect to ever use just once. Invariably, the codebase becomes riddled with <code>#if __IOS__</code> and <code>#elif __ANDROID__</code>, etc.</p>
-<h3>A Portable Class Library</h3>
-<p>The workhorse of cross-platform code sharing in .NET land, the PCL is similar to a Shared Project in that you'll keep all your shared code in this project. </p>
-<p>It differs from a Shared Project in that it actually produces an assembly in the form of a .DLL file, which tends to make debugging simpler. There's also no danger of having the wrong platform selected in Visual Studio, and <em>thinking</em> you're writing cross-platform code, when you're actually only writing code that will run on one platform. In addition, adding NuGet packages tends to be much simpler: if they support PCLs, they work in the project with the shared code.</p>
-<p>One extra advantage is that if MonoGame ever gets .NET Standard support, migration from a PCL to a .NET Standard library will be fairly simple.</p>
-<p>This is my preferred solution, and what the rest of this blog post will assume.</p>
-<h2>The Solution Structure</h2>
-<p>Let me get this out of the way right up front. Here's a screenshot (or or less) of what your solution is going to look like when you're done:</p>
-<p><a href="../images/monogame-solution-explorer.png" title="I mean, if you're making a real game, you'll probably be supporting more than just DesktopGL."><img alt="Solution Explorer screenshot" src="photos\monogame-solution-explorera.jpg"></a></p>
-<p>Up in that screenshot there, the <code>monogame-test.Core</code> is my PCL. It happens to target Profile 44 (Windows 8.1, .NET 4.5.1, Xamarin.iOS, Xamarin.Android, Xamarin.Mac), which happens to correspond with .NET Standard 1.2. Most of my game code will end up living in there. You can even move your <code>Game1.cs</code> (or whatever you've renamed it) into the PCL.</p>
-<p>The <code>monogame-test.DesktopGL</code> is a platform-specific project. Its job is mainly to set up the game's platform-specific environment. This platform is MonoGame's "DesktopGL", which by some SDL and OpenGL magic, uses a single codebase to support Windows, Mac and Linux desktop platforms. </p>
-<p>The only code in the DesktopGL project is in <code>Program.cs</code>. It looks like this:</p>
-<div class="highlight"><pre><span></span><span class="k">using</span> <span class="nn">monogame_test.Core</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+Summary: How to make Rust do your bidding</p>
+<p>I've <a href="https://github.com/pingzing/articulator">done</a> <a href="https://github.com/pingzing/voicepipe">some</a> <a href="https://github.com/pingzing/oxide-skies/tree/master/src">dabbling</a> in <a href="https://www.rust-lang.org/en-US/">the Rust programming language</a> in the past, so when a friend asked me if knew a way to force a window to the foreground in Windows with Rust, my answer was "yeah, probably".</p>
+<p>Of course, I got curious, so I wasn't willing to just let it lie--I started digging into it, and tried to figure it out for myself.</p>
+<h2>Planning</h2>
+<p>Doing anything involving windows in Windows inevtiably involves talking to the Win32 API, which means either programmming in C/C++, or using a bindings library to translate those C-based types into types that Rust can work with.</p>
+<p>For this, there is the excellent <a href="https://crates.io/crates/winapi">winapi</a> crate. It provides most of the types used in the Win32 library.</p>
+<p>Next up, we need to figure out which functions we'll actually be calling to bring our window to the front. Some quick Googling turned up <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms633539(v=vs.85).aspx"><code>SetForegroundWindow</code></a> and <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms633548(v=vs.85).aspx"><code>ShowWindow</code></a> which at first glance appear to do very similar things. It turns out that for this particular task, we would need both! <code>SetForegroundWindow</code> sets the focus to the given window, but doesn't force it into the foreground--that's what <code>ShowWindow</code> is for.</p>
+<p>According to the docs on MSDN, both of those functions live in user32.dll. The winapi crate mirrors this structure--one crate per DLL. So, we also need the <a href="https://crates.io/crates/user32-sys">user32-sys</a> crate to get access to bindings for those two functions.</p>
+<p>Our Rust program can finally begin to take shape. In our <code>Cargo.toml</code>, we'll need:</p>
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">package</span><span class="p">]</span><span class="w"></span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;rust-vlc-finder&quot;</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.1.0&quot;</span><span class="w"></span>
 
-<span class="k">namespace</span> <span class="nn">monogame_test.DesktopGL</span>
-<span class="p">{</span>    
-    <span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">Program</span>
-    <span class="p">{</span>        
-<span class="na">        [STAThread]</span>
-        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">game</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Game</span><span class="p">())</span>
-                <span class="n">game</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">[</span><span class="n">dependencies</span><span class="p">]</span><span class="w"></span>
+<span class="n">winapi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.2&quot;</span><span class="w"></span>
+<span class="n">user32</span><span class="o">-</span><span class="n">sys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.2.0&quot;</span><span class="w"></span>
 </pre></div>
 
 
-<p>Your platform-specific projects will also host content, including your <code>.mgcb</code> file. There might be way to move this into your PCL as well, but I haven't figured it out yet.</p>
-<h2>The Deets</h2>
-<p>Some of the squirrely bits of getting this up and running include:</p>
-<ul>
-<li>Actually Getting MonoGame Working</li>
-<li>Dealing with things you need to talk to the Platform for</li>
-</ul>
-<p>The first is pretty simple. As of March 1 2017, MonoGame has a <a href="https://www.nuget.org/packages/MonoGame.Framework.Portable/">PCL-compatible NuGet package</a>. You simply add this package to your PCL, and bam. You should be up and running. If your platform-specific projects complain that MonoGame is missing, make sure you've either added it to your references manually, or you've added the appropriate NuGet package to that particular platform project.</p>
-<p>Note that apparently the PCL library is <a href="https://github.com/MonoGame/MonoGame/issues/5724">not without issues</a>, and it apparently has issues supporting NuGet 3.5+ (and thus UWP) at the moment, but it looks like the MonoGame guys are working on it.</p>
-<p>The second is a little more complicated, and also going to be something of an exercise left to the reader (sorry!).</p>
-<p>Part of the issue is that PCLs don't have access to certain APIs because there's no good cross-platform way to abstract them away. One example of those is file IO APIs--a PCL has no way to talk to the filesystem out of the box. In this particular case, there's an excellent library called PCLStorage that presents a cross-platform file API that PCLs can consume. But what if you need access to something that no kind soul has written a library for?</p>
-<p>One possible solution is to mimic <a href="https://developer.xamarin.com/guides/xamarin-forms/application-fundamentals/dependency-service/introduction/">Xamarin's Dependency Service</a>. That is, you define an interface for the thing you'd like to be able to do in your PCL, and then each of your platform-specific projects will implement that interface. How you actually go about retriving the appropiate concrete implementation of that interface at runtime is an open question. </p>
-<p>One of the simplest, dumbest solutions would be to just have a class in the PCL that looks something like this:</p>
-<div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">ServiceLocator</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="k">static</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">Type</span><span class="p">,</span> <span class="n">IService</span><span class="p">&gt;</span> <span class="n">_serviceRegistry</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="n">Type</span><span class="p">,</span> <span class="n">IService</span><span class="p">&gt;();</span>
+<p>And at the top of <code>main.rs</code>, we'll declare our crates:</p>
+<div class="highlight"><pre><span></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">winapi</span><span class="p">;</span><span class="w"></span>
+<span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">user32</span><span class="p">;</span><span class="w"></span>
 
-    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">Register</span><span class="p">&lt;</span><span class="n">TService</span><span class="p">&gt;(</span><span class="n">IService</span> <span class="n">implementation</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">_serviceRegistry</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">TService</span><span class="p">),</span> <span class="n">implementation</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="k">public</span> <span class="k">static</span> <span class="n">IService</span> <span class="n">Get</span><span class="p">&lt;</span><span class="n">TService</span><span class="p">&gt;()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">_serviceRegistry</span><span class="p">[</span><span class="k">typeof</span><span class="p">(</span><span class="n">TService</span><span class="p">)];</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// tbd...</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 
 
-<p>...and then your platform-specific projects register all their implementations before calling <code>Game.Run()</code>. Then, when your PCL needs a service, it can just do <code>ServiceLocator.Get&lt;YourService&gt;().ServiceThings()</code>. Of course, even with that solution, you'd want to do things like null-checking, existence-checking, etc.</p>                </article>
+<p>Now, we know ahead of time that we need both <code>ShowWindow</code> and <code>SetForegroundWindow</code>, because I'm just going to give you that one for free. If we look at their function signatures, we can see that both of them take an <code>HWND</code>--that is to say, a handle to a window (HWND, Handle Window, get it?).</p>
+<p>There are a lot of ways to get one of those, but the quick-and-dirty way is to just ask for it by name. The Win32 function for that is <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms633499(v=vs.85).aspx"><code>FindWindow</code></a>, which takes an optional class name, and an (also optional) window name. Also of note, there are actually two functions here: <code>FindWindowA</code>, the ANSI variant and <code>FindWindowW</code>, the Unicode variant. Let's use <code>FindWindowA</code>, because 255 characters is enough for anyone, and also, getting a UTF-16 string in Rust that's compatible with the Win32 API is a <em>pain</em>.</p>
+<p>So, we know how to get our window handle (we use <code>FindWindowA</code>), and we know how to make it show up afterward (we use <code>SetForegroundWindow</code> followed by <code>ShowWindow</code>). Now...how do we actually do that?</p>
+<h2>Getting to it</h2>
+<p>Well, can't we just do something like this?</p>
+<div class="highlight"><pre><span></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">winapi</span><span class="p">;</span><span class="w"></span>
+<span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">user32</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">        </span>
+<span class="w">    </span><span class="c1">// Get a handle to the window based on its name.</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">window_handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">user32</span>::<span class="n">FindWindowA</span><span class="p">(</span><span class="n">null</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;VLC Media Player&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// Set it as the foreground window.</span>
+<span class="w">    </span><span class="n">user32</span>::<span class="n">SetForegroundWindow</span><span class="p">(</span><span class="n">window_handle</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// And show it with the SW_RESTORE flag, which, according to the docs, maps to &#39;9&#39;.</span>
+<span class="w">    </span><span class="n">user32</span>::<span class="n">ShowWindow</span><span class="p">(</span><span class="n">window_handle</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">);</span><span class="w">       </span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>A big fat <strong>nope</strong>. The compiler fails out with an <code>expected i8, found str</code> on our "VLC Media Player" string. Also, <code>null</code> isn't a keyword in Rust.</p>
+<p>In Rust, literal strings are of type <code>&amp;str</code>--that is, a reference to some memory that contains a string. <code>FindWindowA</code> expects a <code>LPCSTR</code>--a long (16-bit) pointer to a constant string.</p>
+<p>Lucky for us, the Rust standard library has a <code>CString</code> type inside the <code>std::ffi</code> module! Even luckier, it as an <code>as_ptr()</code> method!</p>
+<p>Also-also, if we want to pass a null pointer, <code>std::ptr</code> has us covered with <code>null_mut()</code>. (It needs to be mutable, because the function might mutate it).</p>
+<p>So <code>main</code> looks like this now:</p>
+<div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">   </span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">window_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CString</span>::<span class="n">new</span><span class="p">(</span><span class="s">&quot;VLC Media Player&quot;</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w">     </span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">window_handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">user32</span>::<span class="n">FindWindowA</span><span class="p">(</span><span class="n">std</span>::<span class="n">ptr</span>::<span class="n">null_mut</span><span class="p">(),</span><span class="w"> </span><span class="n">window_name</span><span class="p">.</span><span class="n">as_ptr</span><span class="p">());</span><span class="w">        </span>
+<span class="w">    </span><span class="n">user32</span>::<span class="n">SetForegroundWindow</span><span class="p">(</span><span class="n">window_handle</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">user32</span>::<span class="n">ShowWindow</span><span class="p">(</span><span class="n">window_handle</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">);</span><span class="w">       </span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>How about now? <strong>Still nope!</strong> The compiler complains, becasue <code>FindWindowA</code>, <code>SetForegroundWindow</code>and <code>ShowWindow</code> are all "unsafe" functions in Rust parlance--they don't obey the normal borrowing rules of Rust land. That unsafe marker is big red declaration that HERE BE DRAGONS.</p>
+<p>So, you need to explicitly mark any code that touches unsafe code as <code>unsafe</code>:</p>
+<div class="highlight"><pre><span></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">   </span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">window_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CString</span>::<span class="n">new</span><span class="p">(</span><span class="s">&quot;VLC Media Player&quot;</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w">  </span>
+<span class="w">    </span><span class="k">unsafe</span><span class="p">{</span><span class="w">   </span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">window_handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">user32</span>::<span class="n">FindWindowA</span><span class="p">(</span><span class="n">std</span>::<span class="n">ptr</span>::<span class="n">null_mut</span><span class="p">(),</span><span class="w"> </span><span class="n">window_name</span><span class="p">.</span><span class="n">as_ptr</span><span class="p">());</span><span class="w">        </span>
+<span class="w">        </span><span class="n">user32</span>::<span class="n">SetForegroundWindow</span><span class="p">(</span><span class="n">window_handle</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">user32</span>::<span class="n">ShowWindow</span><span class="p">(</span><span class="n">window_handle</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">);</span><span class="w">       </span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+
+<p>Ta-da! It compiles, it builds, it shows VLC (if it's open)!</p>
+<h2>Extending it</h2>
+<p>This was a fun exercise, but it's a toy. It won't work if VLC is actually playing anything, because it changes its window name when it does. It becomes "\&lt;media file name> - VLC Media Player". So we'd have to enumerate through our open windows, and look for one whose name <em>contains</em> the phrase "VLC Media Player". Can't be that hard, right?</p>
+<p><a href="https://github.com/pingzing/rust-vlc-finder/blob/80446376676e96c792100b98fb958aad558decd1/src/main.rs">Well...</a></p>
+<p>We'll leave that blog post for another day.</p>
+<p>Anyway, hope this helped! If you'd like to contact me, I'm <a href="https://twitter.com/pingzingy">@pingzingy</a> on Twitter, and <a href="https://github.com/pingzing/">pingzing</a> on GitHub!</p>                </article>
             </aside><!-- /#featured -->
             </ol><!-- /#posts-list -->
             </section><!-- /#content -->
