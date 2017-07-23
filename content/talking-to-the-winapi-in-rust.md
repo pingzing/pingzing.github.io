@@ -12,7 +12,7 @@ Of course, I got curious, so I wasn't willing to just let it lie--I started digg
 
 
 ## Planning
-Doing anything involving windows in Windows inevtiably involves talking to the Win32 API, which means either programmming in C/C++, or using a bindings library to translate those C-based types into types that Rust can work with.
+Doing anything involving windows in Windows inevitably requires talking to the Win32 API, which means either programming in C/C++, or using a bindings library to translate those C-based types into types that Rust can work with.
 
 For this, there is the excellent [winapi](https://crates.io/crates/winapi) crate. It provides most of the types used in the Win32 library.
 
@@ -84,7 +84,7 @@ So `main` looks like this now:
         user32::ShowWindow(window_handle, 9);       
     }
 
-How about now? **Still nope!** The compiler complains, becasue `FindWindowA`, `SetForegroundWindow`and `ShowWindow` are all "unsafe" functions in Rust parlance--they don't obey the normal borrowing rules of Rust land. That unsafe marker is big red declaration that HERE BE DRAGONS.
+How about now? **Still nope!** The compiler complains, becasue `FindWindowA`, `SetForegroundWindow` and `ShowWindow` are all "unsafe" functions in Rust parlance--they don't obey the normal borrowing rules of Rust land. That unsafe marker is big red declaration that HERE BE DRAGONS.
 
 So, you need to explicitly mark any code that touches unsafe code as `unsafe`:
 
