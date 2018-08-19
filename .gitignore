@@ -1,4 +1,3 @@
-# The actual site folder. It's already its own repo.
 /output
 /__pycache__
 /env
