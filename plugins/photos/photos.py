@@ -297,7 +297,7 @@ def resize_photos(generator, writer):
     logger.debug('Debug Status: {}'.format(debug))
     for resized, what in DEFAULT_CONFIG['queue_resize'].items():		
         resized = os.path.join(generator.output_path, resized)		
-        logger.warning(f'Copying to {resized}')
+        #logger.warning(f'Copying to {resized}') # Uncomment this to get logging about photos being copied
         orig, spec = what
         if (not os.path.isfile(resized) or os.path.getmtime(orig) > os.path.getmtime(resized)):
             # The async implementation seems broken. Not going to debug it, I don't have a billion images.
