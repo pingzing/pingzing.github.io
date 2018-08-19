@@ -29,17 +29,17 @@ We'll come back to her in a moment.
 
 Now, Vappu happens to coincide with high school graduation for much of the country. As is the tradition in much of the world, graduation is signified by silly hats. High school grads here have some of the better silly hats, in my opinion.
 
-[![Vappu cappu]({photo}highschoolhat.jpg)]({filename}image/highschoolhat.jpg "It seriously looks like a navy sailor's hat. Is it just me?")
+[![Vappu cappu]({photo}highschoolhat.jpg)]({filename}images/highschoolhat.jpg "It seriously looks like a navy sailor's hat. Is it just me?")
 
 Back to Lady Amanda. Every year on Vappu day, she condescends to join the unwashed masses and, in a show of breathtaking solidarity, dons the graduation cap. It is a moment of great solemnity and reverence. Tears are shed, and parents, in hushed voice, beseech their children to remember this moment.
 
 ...naw, I'm messing with you. It started as a student prank, and everybody just decided to roll with it.
 
-[![Bunch of people on top of a bus stop]({photo}/2015/busstop.jpg)]({filename}images/2015/busstop.jpg.jpg "Such reverence") 
+[![Bunch of people on top of a bus stop]({photo}2015/busstop.jpg)]({filename}images/2015/busstop.jpg "Such reverence") 
 
 Apparently, each year, one of the local technical universities gets the honor of actually putting the hat on Miss Amanda. These pictures are from 2015, and that year,they decided to fly it in...in _style_.
 
-[![Dude piloting the hat]({photo}/2015/WP_20150430_17_55_52_Pro.jpg)]({filename}/images/2015/WP_20150430_17_55_52_Pro.jpg "'don't drop it don't drop it don't drop it'") [![Hat on a string]({photo}/2015/WP_20150430_17_55_36_Pro.jpg)]({filename}/2015/images/WP_20150430_17_55_36_Pro.jpg "I wonder where they kept it beforehand?")
+[![Dude piloting the hat]({photo}2015/WP_20150430_17_55_52_Pro.jpg)]({filename}/images/2015/WP_20150430_17_55_52_Pro.jpg "'don't drop it don't drop it don't drop it'") [![Hat on a string]({photo}2015/WP_20150430_17_55_36_Pro.jpg)]({filename}/2015/images/WP_20150430_17_55_36_Pro.jpg "I wonder where they kept it beforehand?")
 
 The statue itself was surrounded by a ring of students suspended in midair, who carefully shepherded the hat into its proper place. Suspended, so that they didn't damage the statue, and so that the crowd may be entertained.
 
