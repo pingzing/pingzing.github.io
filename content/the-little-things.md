@@ -5,7 +5,7 @@ Category: Christmas Trip
 Tags: Finland, Foreign, Images, International, Photos, Snow, Travel
 Slug: the-little-things
 
-[![]({filename}images/100_0508_804x1072_thumbnail.jpg)]({filename}images/100_0508_804x1072.jpg)
+[![]({photo}100_0508_804x1072.jpg)]({filename}images/100_0508_804x1072.jpg)
 
 ######"Fully-decorated Christmas  tree!"
 
@@ -26,7 +26,7 @@ just a little different on this side of this ol' globe of ours.
 
 *Christmas*
 
-[![]({filename}images/100_0506_1072x804_thumbnail.jpg)]({filename}images/100_0506_1072x804.jpg)
+[![]({photo}100_0506_1072x804.jpg)]({filename}images/100_0506_1072x804.jpg)
 
 ######"Nearby the tree  store"
 
@@ -50,7 +50,7 @@ and we sawed it down, tied it to the tractor and drove it home. Rauno
 and I dragged it into the sauna to dry for a while, and a few hours
 later, it was decorated in the living room, as you can see above.
 
-[![]({filename}images/100_0498_1072x804_thumbnail.jpg)]({filename}images/100_0498_1072x804.jpg)
+[![]({photo}100_0498_1072x804.jpg)]({filename}images/100_0498_1072x804.jpg)
 
 ######"Christmas dinner in  progress"
 
@@ -59,7 +59,7 @@ guest, I was given the task of handing out presents to people. I think I
 did an admirable job of successfully pronouncing the battery of Finnish
 names--Kaisa, Rauno, Tiina, Reima, Airi, Marjatta--with all their funny
 double letters and rolled
-r's.[![](http://travelneil.files.wordpress.com/2011/12/100_0512.jpg?w=300 "100_0512")](http://travelneil.files.wordpress.com/2011/12/100_0512.jpg)
+r's.
 
 Then, we all ate far, far too much food. The ham was good, the moose was
 better. Finally, most families will hold onto the tree for the next
@@ -133,6 +133,6 @@ something to write with on me...
 Finally, an image, very, very few of you will understand. If you don't
 get the joke, that's okay. You weren't meant to.
 
-[![]({filename}images/100_0497_1072x804_thumbnail.jpg)]({filename}images/100_0497_1072x804.jpg)
+[![]({photo}100_0497_1072x804.jpg)]({filename}images/100_0497_1072x804.jpg)
 
 ######"You know who you  are."

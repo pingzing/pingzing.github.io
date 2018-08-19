@@ -9,7 +9,7 @@ There exists a stereotype about Finns--one that they are quiet,
 antisocial and dislike people. If you search for "Finland waiting at bus
 stop", one of the first results is this:
 
-[![Image]({filename}images/uaouv_thumbnail.jpg)]({filename}images/uaouv.jpg)
+[![Image]({photo}uaouv.jpg)]({filename}images/uaouv.jpg)
 
 ######  Personal space is a very big deal over here.
 

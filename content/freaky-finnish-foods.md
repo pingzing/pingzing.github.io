@@ -31,7 +31,7 @@ pork or chicken works well to balance it out.
 
 *Rice Porridge*
 
-[![]({filename}images/riceporr_thumbnail.jpg)]({filename}images/riceporr.jpg)
+[![]({photo}riceporr.jpg)]({filename}images/riceporr.jpg)
 
 ######"Pure, expansive  deliciousness."
 
@@ -43,7 +43,7 @@ top button of my jeans! *Me!* Hearty, filling and a little ridiculous.
 Just the thing after a long morning of moose-hunting in minus two
 degrees.
 
-[![]({filename}images/carellian_thumbnail.jpg)]({filename}images/carellian.jpg)
+[![]({photo}carellian.jpg)]({filename}images/carellian.jpg)
 
 ######"Kinda funny shaped,  huh?"
 
@@ -66,7 +66,7 @@ some sort of lunch meat and/or sausage. This sort of meal appears to
 stand in for breakfast, a quick lunch, a snack, and sometimes even
 dinner in a pinch, if you throw in some fruit or vegetables.
 
-[![]({filename}images/glogi_thumbnail.jpg)]({filename}images/glogi.jpg)
+[![]({photo}glogi.jpg)]({filename}images/glogi.jpg)
 
 ######"A  glass of this will put you right to  sleep."
 

@@ -30,10 +30,10 @@
             <li><article class="hentry">    
                 <header>
                     <h3 class="inline-header"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>                                               
-                </header>                            
-                
-                <div class=readmore>{% include 'article_infos.html' %}</div>     
+                           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>                           
+                </header>                        
+
+                {% include 'article_infos.html' %}                           
 
                 <div class="entry-content">
                 {{ article.summary }}

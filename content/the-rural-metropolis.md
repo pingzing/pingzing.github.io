@@ -23,7 +23,7 @@ biking) from the apartment to the city center was a lesson in cultural
 
 [![Parking:
 a valuable
-commodity.]({filename}images/100_0712_thumbnail.jpg)]({filename}images/100_0712.jpg)
+commodity.]({photo}100_0712.jpg)]({filename}images/100_0712.jpg)
 
 ######  Parking: a valuable commodity.
 
@@ -58,7 +58,7 @@ at night.
 
 [![Pictured:
 dense
-metropolis.]({filename}images/100_0722_thumbnail.jpg)]({filename}images/100_0722.jpg)
+metropolis.]({photo}100_0722.jpg)]({filename}images/100_0722.jpg)
 
 ######  Pictured: dense metropolis.
 

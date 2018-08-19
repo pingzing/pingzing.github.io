@@ -18,29 +18,32 @@
 /* Body */
 body {
     background: #FDF6E3;
-    color: #8A887B;
+    color: #444;
     font-size: 18px;
-    font-family: 'Crimson Text', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /*line-height: 1.429;*/
+    font-family: 'Crimson Text', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
     margin: 0;
     padding: 0;
-    text-align: left;    
-    padding-top:120px;
+	text-align: left;    
+	/* I _think_ this was here for a header image. I don't have one, so it just looks stupid. Removing! */
+    /* padding-top:120px; */
 }
 
 body img {
 	margin: auto;
-	display: block
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
 
 code{
     border:1px solid #eaeaea;
     background-color:#f8f8f8;
-    font-size:11px;
+    font-size:14px;
     font-style:normal;
-    color:#777;
+    color:#444;
     -moz-border-radius:7px;
-    -webkit-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius: 7px;
     padding-left:3px;
     padding-right:3px;
     padding-bottom:0px;
@@ -127,7 +130,15 @@ dl {margin: 0 0 1.5em 0;}
 dt {font-weight: bold;}
 dd {margin-left: 1.5em;}
 
-pre{background-color: #333; padding: 10px; color: #fff; margin: 10px; overflow: auto;}
+/* Used for code blocks */
+pre {
+	background-color: #333; 
+	color: #fff;	
+	font-family:Consolas, "Liberation Mono", Courier, monospace;
+	font-size: 85%;
+	overflow: auto;
+	padding: 10px; 
+}
 
 /* Quotes */
 blockquote {
@@ -389,10 +400,13 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 .entry-title a:link, .entry-title a:visited {text-decoration: none; color: #8A887B;}
 .entry-title a:visited {background-color: #fff;}
 
-.hentry .post-info * {font-style: normal;}
+.hentry .post-info * {
+	font-style: normal; 
+	word-wrap: break-word
+}
 
 	/* Content */
-	.hentry footer {margin-bottom: 2em;}
+	.hentry footer {margin-bottom: 1em;}
 	.hentry footer address {display: inline;}
 	#posts-list footer address {display: block;}
 
@@ -401,11 +415,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	#posts-list .hentry {padding-left: 10px; position: relative;}
 	
 	#posts-list footer {
-		left: 10px;
-		position: relative;
-        float: left;
-		top: 0.5em;
-		width: 190px;
+		left: 10px;				
 	}
 	
 	/* About the Author */

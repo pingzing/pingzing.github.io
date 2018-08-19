@@ -5,7 +5,7 @@ Category: Christmas Trip
 Tags: Finland, Foreign, Images, International, Photos, Snow, Travel
 Slug: snowy-shots
 
-[![marttiini\_819017\_deluxe\_spike\_more]({filename}images/marttiini_819017_deluxe_spike_more_thumbnail.jpg)]({filename}images/marttiini_819017_deluxe_spike_more.jpg)
+[![marttiini\_819017\_deluxe\_spike\_more]({photo}marttiini_819017_deluxe_spike_more.jpg)]({filename}images/marttiini_819017_deluxe_spike_more.jpg)
 
 ######  The piikki
 
@@ -24,22 +24,22 @@ Anyway, with that little interlude out of the way, feel free to enjoy
 some pretty pictures I took this morning, a little after 11AM. Pictures
 are behind the "Continue reading..." link.
 
-[![100\_0640]({filename}images/100_0640_thumbnail.jpg)]({filename}images/)
+[![100\_0640]({photo}100_0640.jpg)]({filename}images/)
 
 ######  Kaisa's parents' front yard.
 
-[![100\_0644]({filename}images/100_0644_thumbnail.jpg)]({filename}images/)
+[![100\_0644]({photo}100_0644.jpg)]({filename}images/)
 
 ######  To the side of the house, this is what the master bedroom  overlooks.
 
-[![100\_0648]({filename}images/100_0648_thumbnail.jpg)]({filename}images/)
+[![100\_0648]({photo}100_0648.jpg)]({filename}images/)
 
 ######  The same as above, but from the road and at a different angle.
 
-[![100\_0649]({filename}images/100_0649_thumbnail.jpg)]({filename}images/)
+[![100\_0649]({photo}100_0649.jpg)]({filename}images/)
 
 ######  A small panorama of the road and the little field.
 
-[![100\_0652]({filename}images/100_0652_thumbnail.jpg)]({filename}images/)
+[![100\_0652]({photo}100_0652.jpg)]({filename}images/)
 
 ######  In the opposite direction down the road.

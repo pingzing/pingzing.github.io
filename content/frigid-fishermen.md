@@ -21,7 +21,7 @@ an image of a cold-looking person perched in a camp chair staring
 sleepily at a hole in the ice with those gloves on their hands. They
 looked a little like this:
 
-[![Brr.]({filename}images/123492_1_3_452_thumbnail.jpg)]({filename}images/123492_1_3_452.jpg)
+[![Brr.]({photo}123492_1_3_452.jpg)]({filename}images/123492_1_3_452.jpg)
 
 ######  Brr.
 
@@ -51,7 +51,7 @@ lake.
 
 [![I'm
 trying to keep every part of my body as close to me as
-possible.]({filename}images/100_06561_thumbnail.jpg)]({filename}images/100_06561.jpg)
+possible.]({photo}100_06561.jpg)]({filename}images/100_06561.jpg)
 
 ######  If you look closely, you can see a van parked on the ice in the  background. Some people take their ice fishing seriously. That or they  wanted easy access to a heater.
 
@@ -89,7 +89,7 @@ reel in the net, inch by cold, wet inch. If there are any fish, rejoice,
 spoils are yours. Check for frostbite.
 
 [![Pictured:
-rejoicing.]({filename}images/100_0659_thumbnail.jpg)]({filename}images/100_0659.jpg)
+rejoicing.]({photo}100_0659.jpg)]({filename}images/100_0659.jpg)
 
 ######  Pictured: rejoicing.
 
@@ -107,7 +107,7 @@ cooking. Check again for frostbite, just to be sure.
 
 [![The
 blind lead the blind as I teach Itta the finer points of
-fishing.]({filename}images/100_0661_thumbnail.jpg)]({filename}images/100_0661.jpg)
+fishing.]({photo}100_0661.jpg)]({filename}images/100_0661.jpg)
 
 ######  The blind lead the blind as I teach Itta the finer points of  fishing.
 
@@ -116,7 +116,7 @@ and successfully avoided frostbite. We returned home and were rewarded
 for braving the freezing wilds\* by having fresh fish for lunch.
 
 [![Pictured: serious
-frostbite.]({filename}images/100_0665_thumbnail.jpg)]({filename}images/100_0665.jpg)
+frostbite.]({photo}100_0665.jpg)]({filename}images/100_0665.jpg)
 
 ######  Pictured: serious frostbite.
 
