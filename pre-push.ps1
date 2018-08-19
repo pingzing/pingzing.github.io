@@ -1,4 +1,4 @@
-pelican content -o output -s publishconf.py
+pelican content -o output -s publishconf.py 
 
 Write-Host "Publish-ready version of site created. Copying to Azure Storage...`n"
 
