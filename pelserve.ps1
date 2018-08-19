@@ -1,3 +1,4 @@
-cd output/
+Push-Location
+Set-Location output/
 python -m pelican.server
-cd ..
+Pop-Location

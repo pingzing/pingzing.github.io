@@ -14,30 +14,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-        <link rel="stylesheet" href="http://pingzing.github.io/theme/css/main.css" type="text/css" />
-        <link href="http://pingzing.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Travel Neil Atom Feed" />
-        <link href="http://pingzing.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Travel Neil RSS Feed" />
+        <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
 
         <!--[if IE]>
                 <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
         <!--[if lte IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="http://pingzing.github.io/css/ie.css"/>
-                <script src="http://pingzing.github.io/js/IE8.js" type="text/javascript"></script><![endif]-->
+                <link rel="stylesheet" type="text/css" media="all" href="./css/ie.css"/>
+                <script src="./js/IE8.js" type="text/javascript"></script><![endif]-->
 
         <!--[if lt IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="http://pingzing.github.io/css/ie6.css"/><![endif]-->
+                <link rel="stylesheet" type="text/css" media="all" href="./css/ie6.css"/><![endif]-->
 
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="http://pingzing.github.io">Travel Neil </a></h1>
+                <h1><a href=".">Travel Neil </a></h1>
                 <nav>
-                    <a href="http://pingzing.github.io/pages/about.html">About</a>&nbsp;
-                    <a href="http://pingzing.github.io/category/christmas-trip.html">Christmas Trip</a>&nbsp;
-                    <a href="http://pingzing.github.io/category/life-in-finland.html">Life In Finland</a>&nbsp;
-                    <a href="http://pingzing.github.io/category/programming.html">programming</a>&nbsp;
+                    <a href="./pages/about.html">About</a>&nbsp;
+                    <a href="./category/christmas-trip.html">Christmas Trip</a>&nbsp;
+                    <a href="./category/life-in-finland.html">Life In Finland</a>&nbsp;
+                    <a href="./category/programming.html">programming</a>&nbsp;
                 </nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
@@ -53,32 +51,32 @@
         <abbr class="published" title="2017-06-19T00:00:00+03:00">
                 Mon 19 June 2017
         </abbr>
-<p>tags: <a href="http://pingzing.github.io/tag/programming.html">programming</a><a href="http://pingzing.github.io/tag/games.html">games</a><a href="http://pingzing.github.io/tag/monogame.html">monogame</a><a href="http://pingzing.github.io/tag/xna.html">xna</a><a href="http://pingzing.github.io/tag/c.html">c#</a><a href="http://pingzing.github.io/tag/csharp.html">csharp</a></p></footer><!-- /.post-info -->      <p>I've dabbled briefly with making games in the past. I've tried <a href="https://unity3d.com/">Unity</a>, <a href="https://love2d.org/">LÖVE</a>, XNA and it's more modern successor <a href="http://www.monogame.net/">MonoGame</a>.
+<p>tags: <a href="./tag/programming.html">programming</a><a href="./tag/games.html">games</a><a href="./tag/monogame.html">monogame</a><a href="./tag/xna.html">xna</a><a href="./tag/c.html">c#</a><a href="./tag/csharp.html">csharp</a></p></footer><!-- /.post-info -->      <p>I've dabbled briefly with making games in the past. I've tried <a href="https://unity3d.com/">Unity</a>, <a href="https://love2d.org/">LÖVE</a>, XNA and it's more modern successor <a href="http://www.monogame.net/">MonoGame</a>.
 I rarely get very far, but it's always a fun little exercise. This time around, I'm trying to make a more 
 determined stab at it with MonoGame. So far, I've made it further than I ever have before--I actually have working collision!</p>
-<p><img alt="Animated game collision example" src="http://pingzing.github.io/images/early-collision-test-02.gif"></p>
+<p><img alt="Animated game collision example" src="./images/early-collision-test-02.gif"></p>
 <p>For this little experiment, I decided to give <a href="http://www.monogame.net/">MonoGame</a> another try because I'm a big ol' C# fanboy, and Lua made me angry. One thing that bit me
 pretty quickly (aside from the truly frustrating lack of architectural advice) was that there weren't any guides on how to structure a multiplatform MonoGame project. </p>
 <p>One of MonoGame's promises is that it supports just about everything under the sun (even including the Nintendo Switch!), but figuring out
 how to actually structure your code in a way that makes this easy seemed to be entirely absent from the internet. This post is an attempt to remedy that!</p>
 <h1>tl;dr</h1>
 <p>For those short of time:</p>
-<p><a href="http://pingzing.github.io/images/monogame-tldr-1.png" title="Make thing."><img alt="Create Monogame project" src="http://pingzing.github.io\photos\monogame-tldr-1a.jpg"></a></p>
+<p><a href="./images/monogame-tldr-1.png" title="Make thing."><img alt="Create Monogame project" src="photos\monogame-tldr-1a.jpg"></a></p>
 <p>1.) Make your first platform project. It can target whatever it is that you want to target.</p>
-<p><a href="http://pingzing.github.io/images/monogame-tldr-2.png" title="Prepare to thing to thing"><img alt="Add PCL" src="http://pingzing.github.io\photos\monogame-tldr-2a.jpg"></a></p>
+<p><a href="./images/monogame-tldr-2.png" title="Prepare to thing to thing"><img alt="Add PCL" src="photos\monogame-tldr-2a.jpg"></a></p>
 <p>2.) Add a new project to the solution. This will be your PCL.</p>
-<p><a href="http://pingzing.github.io/images/monogame-tldr-3.png" title="Add thing to thing"><img alt="Continue adding PCL" src="http://pingzing.github.io\photos\monogame-tldr-3a.jpg"></a></p>
+<p><a href="./images/monogame-tldr-3.png" title="Add thing to thing"><img alt="Continue adding PCL" src="photos\monogame-tldr-3a.jpg"></a></p>
 <p>3.) You'll want to make sure you choose "PORTABLE Class Library", and not use "Class Library" of some flavor.</p>
-<p><a href="http://pingzing.github.io/images/monogame-tldr-4.png" title="Finish adding thing to thing"><img alt="Finish adding PCL" src="http://pingzing.github.io\photos\monogame-tldr-4a.jpg"></a></p>
+<p><a href="./images/monogame-tldr-4.png" title="Finish adding thing to thing"><img alt="Finish adding PCL" src="photos\monogame-tldr-4a.jpg"></a></p>
 <p>4.) Choose all the targets you plan on hitting. Fewer is likely to offer you more APIs, but if you have to support one you don't select later, you may be in for pain.</p>
-<p><a href="http://pingzing.github.io/images/monogame-tldr-5.png" title="Move thing to new thing"><img alt="Move Game1.cs" src="http://pingzing.github.io\photos\monogame-tldr-5a.jpg"></a></p>
+<p><a href="./images/monogame-tldr-5.png" title="Move thing to new thing"><img alt="Move Game1.cs" src="photos\monogame-tldr-5a.jpg"></a></p>
 <p>5.) Move your Game.cs to the PCL. We'll clean up references and namespaces in a moment. Delete the copy left in the platform project.</p>
-<p><a href="http://pingzing.github.io/images/monogame-tldr-7.png" title="Add library to thing"><img alt="Add MonoGame to PCL" src="http://pingzing.github.io\photos\monogame-tldr-7a.jpg"></a></p>
+<p><a href="./images/monogame-tldr-7.png" title="Add library to thing"><img alt="Add MonoGame to PCL" src="photos\monogame-tldr-7a.jpg"></a></p>
 <p>6.) Add the MonoGame.Portable NuGet package to the PCL.</p>
-<p><a href="http://pingzing.github.io/images/monogame-tldr-6.png" title="Add reference to thing"><img alt="Add reference to PCL" src="http://pingzing.github.io\photos\monogame-tldr-6a.jpg"></a></p>
+<p><a href="./images/monogame-tldr-6.png" title="Add reference to thing"><img alt="Add reference to PCL" src="photos\monogame-tldr-6a.jpg"></a></p>
 <p>7.) Add a reference to the PCL to the platform project.</p>
 <p>(If you get grief about the .NET version, just go to Game1's Properties, and bump the .NET Framework version to 4.5.1.)</p>
-<p><a href="http://pingzing.github.io/images/monogame-tldr-8.png" title="Make thing look for right thing"><img alt="Clean up namespaces" src="http://pingzing.github.io\photos\monogame-tldr-8a.jpg"></a> </p>
+<p><a href="./images/monogame-tldr-8.png" title="Make thing look for right thing"><img alt="Clean up namespaces" src="photos\monogame-tldr-8a.jpg"></a> </p>
 <p>8.) Note that you could also just add a <code>using ClassLibrary</code> statement to the top of <code>Program.cs</code> in most cases, but because in this little example, <code>Game1</code> is both a class name and a namespace name, it would cause problems, so I just give it the fully-qualified namespace.</p>
 <p>9.) Done!</p>
 <h1>ts;wm (Too Short; Wanted More)</h1>
@@ -88,7 +86,7 @@ You want the long version, eh? Well, okay. Keep on going, and hopefully you won'
 <p>MonoGame's projects are pretty vanilla C# projects--there's not a lot of exotic build-time magic happening here. As such, you've got a quite a few options for code-sharing:</p>
 <h3>Just Use the Same Files</h3>
 <p>One approach I've seen before is to throw all your shared files into a single folder (usually named "Common") and then, in all your projects, you use Visual Studio's "Add As Link" function to add the files to your project. </p>
-<p><a href="http://pingzing.github.io/images/addaslink.png" title="It's weirdly hard to find."><img alt="Add as Link example" src="http://pingzing.github.io\photos\addaslinka.jpg"></a></p>
+<p><a href="./images/addaslink.png" title="It's weirdly hard to find."><img alt="Add as Link example" src="photos\addaslinka.jpg"></a></p>
 <p>This leaves the files where they are, and multiple projects can have references to the same file this way.</p>
 <p>...I don't like this solution very much. I find that it's easier to reason about a project if it mirrors the underlying folder structure as closely as possible. Using file links this way completely breaks this assumption--from Visual Studio's Solution Explorer, it looks like you have a bunch of different copies of the file in the project folders, but they're all just links to the same set of files. It also involves manual work every time you want to add a new project into the solution, and that's no fun.</p>
 <h3>A Shared Project</h3>
@@ -102,7 +100,7 @@ You want the long version, eh? Well, okay. Keep on going, and hopefully you won'
 <p>This is my preferred solution, and what the rest of this blog post will assume.</p>
 <h2>The Solution Structure</h2>
 <p>Let me get this out of the way right up front. Here's a screenshot (more or less) of what your solution is going to look like when you're done:</p>
-<p><a href="http://pingzing.github.io/images/monogame-solution-explorer.png" title="I mean, if you're making a real game, you'll probably be supporting more than just DesktopGL."><img alt="Solution Explorer screenshot" src="http://pingzing.github.io\photos\monogame-solution-explorera.jpg"></a></p>
+<p><a href="./images/monogame-solution-explorer.png" title="I mean, if you're making a real game, you'll probably be supporting more than just DesktopGL."><img alt="Solution Explorer screenshot" src="photos\monogame-solution-explorera.jpg"></a></p>
 <p>Up in that screenshot there, the <code>monogame-test.Core</code> is my PCL. It happens to target Profile 44 (Windows 8.1, .NET 4.5.1, Xamarin.iOS, Xamarin.Android, Xamarin.Mac), which happens to correspond with .NET Standard 1.2. Most of my game code will end up living in there. You can even move your <code>Game1.cs</code> (or whatever you've renamed it) into the PCL.</p>
 <p>The <code>monogame-test.DesktopGL</code> is a platform-specific project. Its job is mainly to set up the game's platform-specific environment. This platform is MonoGame's "DesktopGL", which by some SDL and OpenGL magic, uses a single codebase to support Windows, Mac and Linux desktop platforms. </p>
 <p>The only code in the DesktopGL project is in <code>Program.cs</code>. It looks like this:</p>
