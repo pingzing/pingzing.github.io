@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'http://travelneil.z16.web.core.windows.net/'
+SITEURL = 'https://www.travelneil.com'
 RELATIVE_URLS = False
 
 FEED_DOMAIN = SITEURL
