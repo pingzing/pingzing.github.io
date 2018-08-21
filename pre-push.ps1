@@ -12,4 +12,4 @@ $blob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "index.ht
 $blob.ICloudBlob.Properties.CacheControl = "max-age=300"
 $dummy = $blob.ICloudBlob.SetPropertiesAsync().GetAwaiter().GetResult()
 
-Write-Host "`n Finished setting index.html's max age. Pushing to git...`n"
+Write-Host "Finished setting index.html's max age. Pushing to git...`n"
