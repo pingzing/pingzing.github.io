@@ -10,6 +10,6 @@ Write-Host "`n Copied to Azure storage. Setting cache-control of index.html...`n
 $context = New-AzureStorageContext -StorageAccountName "travelneil" -StorageAccountKey $env:TravelNeilAzureKey
 $blob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "index.html"
 $blob.ICloudBlob.Properties.CacheControl = "max-age=300"
-$blob.ICloudBlob.SetPropertiesAsync()
+$result = $blob.ICloudBlob.SetPropertiesAsync().GetAwaiter().GetResult()
 
-Write-Host "`n Index.html's max-age set, pushing to git...`n"
+Write-Host "`n Finished setting index.html's max age. Result: $($result). Pushing to git...`n"
