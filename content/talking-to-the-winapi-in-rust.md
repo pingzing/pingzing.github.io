@@ -1,6 +1,6 @@
 Title: Talking to Win32 in Rust
 Date: 2017-07-23 00:12
-Category: programming
+Category: Programming
 Tags: Programming, Rust, Win32, Windows, VLC
 Slug: talking-to-the-winapi-in-rust
 Authors: Neil McAlister
