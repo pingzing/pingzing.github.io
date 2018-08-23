@@ -1,8 +1,7 @@
 Title: A Saner Windows Command Line - Part 1
 Date: 2018-08-23 9:08
-
 Category: Programming
-Tags: Windows, command line, programming, console, chocolatey, conemu, git
+Tags: Windows, command-line, programming, console, chocolatey, conemu, git
 Slug: saner-command-line-1
 Authors: Neil McAlister
 Summary: Turbocharging the Windows Command Line, Pt. 1
@@ -24,7 +23,7 @@ Let's be honest. What many people think of as "the default Windows command line"
 Banish `cmd.exe` from your shortcuts, and upgrade to its successor, PowerShell. It includes a _vast_ array of built in commands (known as [Cmdlets](https://msdn.microsoft.com/en-us/library/ms714395%28v=vs.85%29.aspx)) and scripts that support piping between each other, allowing you to compose actions from simple building blocks. If there's ever anything you're missing from the old cmd, you can always invoke `cmd.exe` from PowerShell. There's also tons of community support, so if there's something missing out of the box, odds are that somebody has filled that gap already. 
 And, purely subjectively, I think the .ps1 syntax is a _lot_ more readable than the old .bat syntax.
 
-[![Syntax comparison of .bat vs .ps1]({photo}bat-vs.ps1.png)]({filename}images/imagename.jpg "And better syntax highlighting, too!")
+[![Syntax comparison of .bat vs .ps1]({photo}bat-vs-ps1.png)]({filename}images/bat-vs-ps1.png "And better syntax highlighting, too!")
  Verbose, but at least you don't need a decoder ring.
 
 
@@ -144,7 +143,7 @@ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
 
 In Paint.NET's case, chocolatey just fires up the .exe installer in silent mode, which then takes over.
 
-[![Chocolatey installing Paint.NET]({photo}install-pdn.jpg)]({filename}images/install-pdn.jpg "Sort of like magic-ish.")
+[![Chocolatey installing Paint.NET]({photo}install-pdn.png)]({filename}images/install-pdn.png "Sort of like magic-ish.")
 
 Look Ma, no Googling!
 

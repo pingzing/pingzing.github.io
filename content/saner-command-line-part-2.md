@@ -1,4 +1,10 @@
-# A Saner Windows Command Line - Part 1
+Title: A Saner Windows Command Line - Part 2
+Date: 2018-08-23 10:43
+Category: Programming
+Tags: Windows, command-line, programming, console, chocolatey, conemu, git
+Slug: saner-command-line-2
+Authors: Neil McAlister
+Summary: Turbocharging the Windows Command Line, Pt. 2
 
 (header image here)
 
