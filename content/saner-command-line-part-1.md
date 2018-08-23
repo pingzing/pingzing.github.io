@@ -5,11 +5,17 @@ Tags: Windows, command-line, programming, console, chocolatey, conemu, git
 Slug: saner-command-line-1
 Authors: Neil McAlister
 Summary: Turbocharging the Windows Command Line, Pt. 1
+cover_image: header-image.png
 
-[![Zoom-blurred console, for extra headery coolness]({photo}header-image.png)]({filename}images/header-image.png "Whoosh! Zoom blur makes everything cooler")
+---
+
+* Part 1 - You are here
+* [Part 2]({filename}/saner-command-line-part-2.md) - In which we supercharge Git, fix console selection and copy/paste, and introduce ConEmu and friends.
+* [Part 3]({filename}/saner-command-line-part-3.md) - In which we move to native SSH, update to `pwsh` and learn about the magic that is WSL.
+
+---
 
 I know what you're probably thinking. One of the reasons you use Windows is so you don't have to use the command line. But sometimes it's unavoidable—maybe you need to do some advanced git-wrangling, or you're developing in an environment with CLI-based tools that are far more mature than their GUI counterparts. But it doesn't have to be painful. With a little bit of tweaking, it can even be—dare I say?—more pleasant than a GUI-based experience.
-
 
 A word of warning: most of the advice that follows only applies to Windows 7 SP1 and up. Proceed at your own risk if you're running anything earlier.
 
@@ -180,4 +186,10 @@ That's all for now! At the very least, now you've got some better syntax highlig
 Next time, we'll be talking about better Git integration, and improvements to the actual console experience. Look forward to tabs, splitting your console, and better resize support for non-Windows 10 machines!
 
 
-Part 2 is now available [here]({filename}saner-command-line-part-2.md)!
+Part 2 is now available [here]({filename}/saner-command-line-part-2.md)!
+
+[![Creative Commons BY badge]({filename}images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
+
+_This work is licensed under a Creative Commons Attribution 4.0 International License._
+_Originally posted on the Futurice blog at https://www.futurice.com/blog/a-saner-windows-command-line-part-1/
+_

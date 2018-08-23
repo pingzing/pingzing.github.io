@@ -5,14 +5,14 @@ Tags: Windows, command-line, programming, console, chocolatey, conemu, git
 Slug: saner-command-line-3
 Authors: Neil McAlister
 Summary: Turbocharging the Windows Command Line, Pt. 3
-
-(header image goes here)
+cover_image: header-image.png
 
 ## Recap
 It's been a while, hasn't it? The last post in this series was back in March of 2016. Let's start off with a little refresher, shall we?
 
- * Part 1: [A Saner Windows Command Line, Part 1](), in which we introduce PowerShell, encourage Windows 10 upgrades, and adopt Chocolatey.
- * Part 2: [A Saner Windows Command Line, Part 2](), in which we supercharge Git, fix console selection and copy/paste, and introduce ConEmu and friends.
+ * [Part 1]({filename}/saner-command-line-part-1.md) - In which we introduce PowerShell, encourage Windows 10 upgrades, and adopt Chocolatey.
+ * [Part 2]({filename}/saner-command-line-part-2.md) - In which we supercharge Git, fix console selection and copy/paste, and introduce ConEmu and friends.
+ * Part 3 - You are here
 
 ## Part Three: Native SSH, `pwsh` and WSL
 On today's agenda, we have ~~alphabet soup~~, a lot of interesting acronyms. By the end of it, we'll have explored migrating to the new native SSH included in Windows 10's April 2018 release, migrating to PowerShell Core 6.0 (aka `pwsh`), and the shiny Windows Subsystem for Linux (aka Bash-on-Windows).
@@ -22,7 +22,13 @@ Let's get started!
 ## Native SSH
 As of the April 2018, Windows 10 (Build 17134) includes native OpenSSH executables. By default, only the client is installed, but the server is available as well. In order to install the client, you can just go to Settings -> Apps -> Manage optional features -> Add a feature -> OpenSSH Server.
 
-(ssh guide 01 - 04)
+[![Click 'apps']({photo}sshguide01.png)]({filename}images/sshguide01.png} "Step 1")
+
+[![Then 'manage optional features']({photo}sshguide02.png)]({filename}images/sshguide02.png} "Step 2")
+
+[![Then click 'add a feature']({photo}sshguide03.png)]({filename}images/sshguide03.png} "Step 3")
+
+[![Then finally, 'OpenSSH Server']({photo}sshguide04.png)]({filename}images/sshguide04.png} "Step 4!")
 
 Note that these are also available in the [October 2017 update (Build 16299) in Beta form](https://blogs.msdn.microsoft.com/powershell/2017/12/15/using-the-openssh-beta-in-windows-10-fall-creators-update-and-windows-server-1709/).
 
@@ -113,7 +119,7 @@ In that case, you'll want to find your private key, right-click it, go to Proper
 
 Then, click on "Disable Inheritance". In the dialog that pops up, you want to _Remove all inherited permissions_.
 
-{insert sshguide06.png here}
+[![Lots of complicated UI-step-diagrams]({photo}sshguide05.png)]({filename}images/sshguide05.png} "Are they really MSPaint skills if you used Paint.NET?")
 
 Next, click "Add", and in the window that appears, click "Select a principal". Enter your username in the text box at the bottom of the window, then click "Check Names" to validate your entry. It should autofill any missing details (usually the computer domain name). Click OK. Click the "Full Control" checkbox. Click OK. Continue clicking OK until you've escaped from nested dialog hell.
 
@@ -169,19 +175,19 @@ The _Windows Subsystem for Linux_, or WSL, or sometimes just Bash on Windows, is
 
 Note that this only works on Windows 10, version 1607 (aka the Anniversary Update) or later.
 
-(wsl01.png)
+[![Proof of Linux-in-windows]({photo}wsl01.png)]({filename}images/wsl01.png} "Top's behavior is a little...odd, though.")
 
 ### Enabling WSL
 
 Microsoft has a [good guide for getting up and running](https://docs.microsoft.com/en-us/windows/wsl/install-win10), but the short version is:
 
-1. From an Administrative PowerShell, run `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
-2. Reboot.
-3. If on the Fall Update or later, download the Linux distribution of your choice from the Windows Store. The default, and best-supported distro is Ubuntu.
+1) From an Administrative PowerShell, run `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`  
+2) Reboot.  
+3) If on the Fall Update or later, download the Linux distribution of your choice from the Windows Store. The default, and best-supported distro is Ubuntu. 
 
-- or -
+or
 
-3. [Install it manually.](https://docs.microsoft.com/en-us/windows/wsl/install-manual).
+4) [Install it manually.](https://docs.microsoft.com/en-us/windows/wsl/install-manual).
 
 Once that's done, all you have to do is either a) Find the intsalled distro in your list of all apps in the Start menu, or b) From any command line shell, just type `bash`!
 
@@ -196,3 +202,7 @@ Now we're cooking. We've got native `ssh` (and friends!), a shiny new open-sourc
 Between all of the improvements listed in this, and the previous parts of the series, I can confidently say that we now genuinely have a saner Windows command line. Hope it's been a useful journey to any readers as well!
 
 As always, feel free to leave comments or feedback on Twitter ([@pingzingy](https://twitter.com/pingzingy)) and Github ([pingzing](https://github.com/pingzing/))!
+
+[![Creative Commons BY badge]({filename}images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
+
+_This work is licensed under a Creative Commons Attribution 4.0 International License._

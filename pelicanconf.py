@@ -21,7 +21,7 @@ DEFAULT_DATE = 'fs'
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = True
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = [photos,]
+PLUGINS = [photos, "pelican-cover-image",]
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -45,8 +45,12 @@ DEFAULT_PAGINATION = False
 RELATIVE_URLS = True
 
 #Plugin Configuration
+# Photo Resizer
 PHOTO_LIBRARY = ".\\content\\images"
 PHOTO_RESIZE_JOBS = 1
 PHOTO_WATERMARK = False
 PHOTO_EXIF_KEEP = False
 PHOTO_EXIF_REMOVE_GPS = True
+
+# Cover Image
+COVER_IMAGES_PATH = "images"
