@@ -4,6 +4,7 @@ Author: travelneil
 Category: Christmas Trip
 Tags: accordion, christmas, Finland, Travel
 Slug: merry-christmas-from-finland
+Summary: Here's a Christmas present for you all, from slightly in the future. After the break...
 
 Here's a Christmas present for you all, from slightly in the future.
 Sorry for the verticality, but the sound is really what's important.
