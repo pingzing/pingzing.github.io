@@ -9,6 +9,10 @@
         {% if loop.first and not articles_page.has_previous() %}
             <aside id="featured" class="body">
                 <article>
+                    {% if article.cover_image_url %}
+                    <img src="{{ article.cover_image_url }}" alt="Cover image">
+                    <br>
+                    {% endif %}
                     <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1> 
                     {% include 'article_infos.html' %}<br>{{ article.content }}{% include 'comments.html' %}
                 </article>
