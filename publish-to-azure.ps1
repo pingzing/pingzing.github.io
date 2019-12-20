@@ -1,11 +1,11 @@
 pelican content -o output -s publishconf.py 
 
-Write-Host "Publish-ready version of site created. Copying to Azure Storage...`n"
+Write-Host "Publish-ready version of site created. Copying to Azure Storage..."
 
-# Env var is user-specific 
-& 'C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\AzCopy.exe' /Source:./output '/Dest:https://travelneil.blob.core.windows.net/$web/' /DestKey:$env:TravelNeilAzureKey /S /Y /SetContentType /XO
+# Env var is an SAS-token that has full access to the $web resource in my azure account. It expires Dec 20, 2020. 
+& "C:\Users\mcali\azcopy\azcopy.exe" sync ./output "https://travelneil.blob.core.windows.net/`$web?$env:TravelNeil2020SasKey" --recursive --delete-destination true
 
-Write-Host "`n Copied to Azure storage. Setting cache-control of index.html and main.css...`n"
+Write-Host "`nCopied to Azure storage. Setting cache-control of index.html and main.css...`n"
 
 $context = New-AzureStorageContext -StorageAccountName "travelneil" -StorageAccountKey $env:TravelNeilAzureKey
 $indexBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "index.html"
@@ -18,4 +18,4 @@ $mainCssBlobUpdateTask = $mainCssBlob.ICloudBlob.SetPropertiesAsync()
 
 [System.Threading.Tasks.Task]::WaitAll($updateIndexMaxAgeTask, $mainCssBlobUpdateTask)
 
-Write-Host "Finished setting index.html's max age. Pushing to git...`n"
+Write-Host "Finished setting index.html's max age."
