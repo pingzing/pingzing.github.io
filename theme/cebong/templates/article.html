@@ -16,9 +16,11 @@
         <meta name="category" content="{{ article.category|striptags }}" />
 {% endif %}
 {% if article.description %}
-        <meta name="description" content="{{ article.description|striptags  }}" />
+        <meta name="description" content="{{ article.description|striptags }}" />
+        <meta property="og:description" content="{{ article.description|striptags }}"/>
 {% elif article.summary %}
         <meta name="description" content="{{ article.summary|striptags  }}" />
+        <meta property="og:description" content="{{ article.summary|striptags }}"/>
 {% endif %}
 {% if article.author %}
         <meta name="author" content="{{ article.author }}" />
@@ -27,6 +29,15 @@
 {% if article.date %}
         <meta name="date" content="{{ article.date }}">
 {% endif %}
+
+        <!-- Opengraph info -->
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+        <meta property="og:title" content="{{ article.title }}"/>  
+{% if article.cover_image_url %}
+        <meta property="og:image" content="{{ article.cover_image_url }}"/>
+{% endif %}
+
 {% endblock meta_tags_in_head %}
 {% block content %}
 <section id="content" class="body">

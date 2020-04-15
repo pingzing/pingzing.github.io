@@ -16,6 +16,12 @@
         <meta name="robots" content="{% block robots %}index,follow{% endblock %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!-- Opengraph info -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{{ SITENAME }}"/>
+        <meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
+        <meta property="og:site_name" content="{{ SITENAME }}"/>
+        <meta property="og:image" content=""/>
 
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
         {% if FEED_ATOM %}

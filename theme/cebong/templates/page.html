@@ -19,6 +19,11 @@
         <meta name="author" content="{{ page.author }}" />
         <meta name="copyright" content="{{ page.author }}" />
 {% endif %}
+
+<!-- Opengraph info -->
+        <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+        <meta property="og:title" content="{{ SITENAME }} - {{ page.title }}" />
+
 {% endblock meta_tags_in_head %}
 
 {% block content %}

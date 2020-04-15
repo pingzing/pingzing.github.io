@@ -56,15 +56,19 @@ posh-git is telling me that I'm currently on the master branch and the triple-eq
 
 The exact formatting and coloring of the prompt are user-customizable, but the defaults have always worked just fine for me.
 
-Let's go grab it from the Chocolatey gallery!
+Let's go grab it from the <s>Chocolatey gallery</s> EDIT (April 15, 2020): the Powershell Gallery, as the version in Chocolatey is woefully out of date!
 
 ```cmd
-choco install poshgit
+PowerShellGet\Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force
 ```
 
-You might need to restart PowerShell after installation, but other than that it should Just Work™ . Entering a directory with a git repository should change your prompt. If you have an SSH key, posh-git will attempt to find it on PowerShell startup, and ask you for your passkey. This will allow you to do git push and git pull using SSH, which is nicer than doing so via HTTPS, because you don't need to authenticate with a username and password every time.
+(If asked to trust packages from the PowerShell Gallery, answer yes to continue installation of posh-git.
+If the AllowPrerelease parameter is not recognized, update your version of PowerShellGet to >= 1.6, 
+by running `Install-Module PowerShellGet -Scope CurrentUser -Force -AllowClobber`, for example.)
 
-If you find that it's not working, you may need to modify your PowerShell profile. You can find its location by typing $profile in a PowerShell prompt. If you try to navigate to that location and find that it doesn't exist, you can just create it yourself. By default, posh-git adds a module import to your profile. If posh-git's not working, and the import isn't there, you can just add it yourself:
+You might need to restart PowerShell after installation, but other than that it should Just Work™ . Entering a directory with a git repository should change your prompt. If you have an SSH key, posh-git will attempt to find it on PowerShell startup, and ask you for your passkey. This will allow you to do `git push` and `git pull` using SSH, which is nicer than doing so via HTTPS, because you don't need to authenticate with a username and password every time.
+
+If you find that it's not working, you may need to modify your PowerShell profile. You can find its location by typing `$profile` in a PowerShell prompt. If you try to navigate to that location and find that it doesn't exist, you can just create it yourself. By default, posh-git adds a module import to your profile. If posh-git's not working, and the import isn't there, you can just add it yourself:
 
 ```PowerShell
 # Load posh-git example profile
@@ -83,6 +87,7 @@ In the previous post, I mentioned that we'd be extending some goodness of the Wi
 
 There are several options, all with their own pros, cons and idiosyncrasies. Among the most popular are:
 
+* [Windows Terminal](https://github.com/microsoft/Terminal#installing-and-running-windows-terminal) ADDED APRIL 15, 2020: The official(!) Windows Terminal with tabs, VT-100 and UTF-8 support. Still in prerelease at time of writing, but very usable, and my current daily driver.
 * [ConEmu](https://conemu.github.io/)
 * [Cmder](http://cmder.net/), a fork of ConEmu with a different color scheme and a focus on portability.
 * [Console2](https://sourceforge.net/projects/console/)
@@ -91,7 +96,7 @@ There are several options, all with their own pros, cons and idiosyncrasies. Amo
 
 All of them give you tabs, the ability to host multiple different shells in a single window and better editing and selection at the _very_ least.
 
-ConEmu, Cmder, ConsoleZ and Hyper are all active projects with frequent updates. In the interest of keeping this post focused, I'm only going to be talking about the one I have the most experience with: ConEmu. There are [plenty of](http://devtidbits.com/2014/05/21/create-a-better-windows-command-line-prompt/) [other](https://aarontgrogg.com/blog/2015/07/31/a-better-windows-command-line-experience-comparing-powercmd-vs-console2-vs-consolez-vs-conemu-vs-cmder/#tldr) [posts](http://www.wintellect.com/devcenter/tsneed/cmder-making-the-command-line-your-best-friend) on the internet that discuss the alternatives, and you should feel free to make your own choice.
+ConEmu, Cmder, ConsoleZ, Hyper, and the Windows Terminal are all active projects with frequent updates. In the interest of keeping this post focused, I'm only going to be talking about the one I have the most experience with: ConEmu. There are [plenty of](http://devtidbits.com/2014/05/21/create-a-better-windows-command-line-prompt/) [other](https://aarontgrogg.com/blog/2015/07/31/a-better-windows-command-line-experience-comparing-powercmd-vs-console2-vs-consolez-vs-conemu-vs-cmder/#tldr) [posts](http://www.wintellect.com/devcenter/tsneed/cmder-making-the-command-line-your-best-friend) on the internet that discuss the alternatives, and you should feel free to make your own choice.
 
 ## ConEmu
 
@@ -134,7 +139,7 @@ You should also skim through the other hotkeys while you're in here. A lot of sh
 
 ### Selection
 
-This one is only for the Windows 10 folks. I actually like Windows 10's keyboard-selection better than ConEmu's, because it only allows selection of the current command buffer. ConEmu's keyboard-based selection allows selection of the current command buffer, the prompt, and everything above it.
+This one is only for the Windows 10 folks. I actually like PSReadLine's keyboard-selection better than ConEmu's, because it only allows selection of the current command buffer. ConEmu's keyboard-based selection allows selection of the current command buffer, the prompt, and everything above it.
 
 To disable ConEmu's keyboard-selection, make your way to: _Settings -> Keys & Macro -> Mark/Copy_. Once there, look to the bottom of the panel, and disable the Start selection with **Shift+Arrow (Text = Left/Right/Home/End, Block = Up/Down)** option.
 
@@ -154,7 +159,7 @@ To something like this:
 
 Yaaaay!
 
-And even if your own console's transformation wasn't quite as dramatic, I hope I was able to introduce you to some new tools, like Chocolatey and PackageManagement!
+And even if your own console's transformation wasn't quite as dramatic, I hope I was able to introduce you to some new tools, like Chocolatey <s>and PackageManagement</s>!
 
 If you've got any feedback, feel free to get in touch on Twitter ([@pingzingy](https://twitter.com/pingzingy)) or GitHub ([pingzing](https://github.com/pingzing))!
 
@@ -167,3 +172,5 @@ _This work is licensed under a Creative Commons Attribution 4.0 International Li
 _Originally posted on the Futurice blog at https://www.futurice.com/blog/a-saner-windows-command-line-part-2/_
 
 _Modified slightly upon reposting to this blog to add a mention for Hyper, and remove out-of-date posh-git info_
+
+_Updated April 15, 2020 to add information about Windows Terminal_

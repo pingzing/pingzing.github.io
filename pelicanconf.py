@@ -9,6 +9,7 @@ from photos import *
 AUTHOR = 'Neil'
 SITENAME = 'Travel Neil'
 SITEURL = ''
+SITE_DESCRIPTION = 'A blog chronicling my (mis)adventures in travel and programming.'
 
 PATH = 'content'
 PAGE_PATHS = ['pages']

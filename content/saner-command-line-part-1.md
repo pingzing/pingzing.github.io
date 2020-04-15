@@ -35,6 +35,7 @@ And, purely subjectively, I think the .ps1 syntax is a _lot_ more readable than 
 
 ## Upgrade to Windows 10
 I know that this one will be a harder pill to swallow (and is likely impossible in some enterprise scenarios) but the benefits really can't be overstated. `conhost.exe`, Windows' basic console window host that underlies both cmd and PowerShell has seen some pretty substantial improvements. [This MSDN article](https://technet.microsoft.com/en-us/library/mt427362.aspx) lays out the details, but the high points are as follows:
+
 * Drag-to-resize
 * Automatic text reflowing on resize
 * Ctrl + X/C/V support for cut/copy/paste
@@ -43,6 +44,7 @@ I know that this one will be a harder pill to swallow (and is likely impossible 
 * A full-screen mode
 
 Already on Windows 10? You can enable these features by just right-clicking the console's title bar and going to Properties. Once there, you'll want to enable the following in the **Options** tab:
+
 * Enable Ctrl key shortcuts
 * Filter clipboard contents on paste
 * Enable line wrapping selection
@@ -83,7 +85,7 @@ Install-Module PSReadline
 Voila!
 
 
-### Package Management
+### <s>Package Management
 This is where it starts getting good. If you've ever used Debian or any of its derivatives, you've probably been a little jealous of apt-get. Well, Windows (finally!) has an answer to that in the form of the PackageManagement module. The project itself is open source, and goes by the name of [OneGet](https://github.com/OneGet/oneget). 
 
 Why don't we try it out? Let's go get the Powershell Community Extensions from the PowerShell Gallery. I happen to know that the name of the package I'm after is "PSCX", so:
@@ -97,7 +99,10 @@ Easy.
 PackageManagement is actually more of a "Package Manager Manager"—it doesn't provide packages itself, but provides a common interface to other package providers. By default, PackageManagement only has one provider: PowerShellGet, which uses the [PowerShell Gallery](https://www.powershellgallery.com/) as its source. In fact, if you installed PsReadLine earlier, you were using PowerShellGet directly with that 'Install-Module' call!  
 That's pretty neat, but fairly limited in scope. We want a provider that points toward a more general software repository. Fortunately, just such a thing exists, in the form of [Chocolatey](https://chocolatey.org/)! 
 
-At this point, we have two options—we can install Chocolatey manually, or we can do it through PackageManagement. Unfortunately, the Chocolatey provider for PackageManagement isn't ready for prime time just yet. It works, but it's out of date compared to the standalone Chocolatey client, and isn't recommended. The Chocolatey team hopes to have the PackageManagement provider ready some time this year, but for now, head over to [chocolatey.org](https://chocolatey.org/) and follow their instructions to get the standalone client installed.
+At this point, we have two options—we can install Chocolatey manually, or we can do it through PackageManagement. Unfortunately, the Chocolatey provider for PackageManagement isn't ready for prime time just yet. It works, but it's out of date compared to the standalone Chocolatey client, and isn't recommended. The Chocolatey team hopes to have the PackageManagement provider ready some time this year, but for now,</s> head over to [chocolatey.org](https://chocolatey.org/) and follow their instructions to get the standalone client installed.
+
+### EDIT - April 15, 2020:
+The promise of PackageManagement never quite panned out. I'd recommend skipping to the part where we head over to [chocolatey.org](https://chocolatey.org/) and follow their instructions to get the standalone client installed.
 
 ### Chocolatey
 
@@ -192,4 +197,5 @@ Part 2 is now available [here]({filename}/saner-command-line-part-2.md)!
 
 _This work is licensed under a Creative Commons Attribution 4.0 International License._
 _Originally posted on the Futurice blog at https://www.futurice.com/blog/a-saner-windows-command-line-part-1/
-_
+
+_Updated April 15, 2020 to update information about PackageManagement_

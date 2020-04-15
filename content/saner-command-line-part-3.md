@@ -16,20 +16,23 @@ It's been a while, hasn't it? The last post in this series was back in March of 
  * Part 3 - You are here
 
 ## Part Three: Native SSH, `pwsh` and WSL
-On today's agenda, we have ~~alphabet soup~~, a lot of interesting acronyms. By the end of it, we'll have explored migrating to the new native SSH included in Windows 10's April 2018 release, migrating to PowerShell Core 6.0 (aka `pwsh`), and the shiny Windows Subsystem for Linux (aka Bash-on-Windows).
+On today's agenda, we have <s>alphabet soup</s>, a lot of interesting acronyms. By the end of it, we'll have explored migrating to the new native SSH included in Windows 10's April 2018 release, migrating to PowerShell Core 6.0 (aka `pwsh`), and the shiny Windows Subsystem for Linux (aka Bash-on-Windows).
 
 Let's get started!
 
 ## Native SSH
-As of the April 2018, Windows 10 (Build 17134) includes native OpenSSH executables. By default, only the client is installed, but the server is available as well. In order to install the client, you can just go to Settings -> Apps -> Manage optional features -> Add a feature -> OpenSSH Server.
+As of the April 2018, Windows 10 (Build 17134) includes native OpenSSH executables. By default, only the client is installed, but the server is available as well. This is sufficient for Git! Read on if you'd like to install the server, which will allow to remotely access your computer via another computer's command line.
+
+In order to install the server, you can just go to Settings -> Apps -> Manage optional features -> Add a feature -> OpenSSH Server.
 
 [![Click 'apps']({photo}sshguide01.png)]({filename}images/sshguide01.png "Step 1")
 
 [![Then 'manage optional features']({photo}sshguide02.png)]({filename}images/sshguide02.png "Step 2")
 
 [![Then click 'add a feature']({photo}sshguide03.png)]({filename}images/sshguide03.png "Step 3")
+(if you'd like to make sure your OpenSSH Client is installed, scroll down on this page. It should be listed!)
 
-[![Then finally, 'OpenSSH Server']({photo}sshguide04.png)]({filename}images/sshguide04.png "Step 4!")
+[![Then finally, 'OpenSSH Slient']({photo}sshguide04.png)]({filename}images/sshguide04.png "Step 4!")
 
 Note that these are also available in the [October 2017 update (Build 16299) in Beta form](https://blogs.msdn.microsoft.com/powershell/2017/12/15/using-the-openssh-beta-in-windows-10-fall-creators-update-and-windows-server-1709/).
 
@@ -68,7 +71,7 @@ If you're using posh-git or Git for Windows, you're almost certainly using the `
 We don't want this! We want to use our shiny new native `ssh-agent`! There are a few things we need to do to make sure this happens.
 
 #### Fixing its Startup Type
-For some reason, after performing the Windows update, the `ssh-agent` isn't always configured to start automatically. Let's make sure that it is!
+For some reason, after performing a Windows Update, the `ssh-agent` isn't always configured to start automatically. Let's make sure that it is!
 
 First, let's make sure to kill any other running instances of `ssh-agent`:
 
@@ -97,7 +100,7 @@ Running     ssh-agent   OpenSSH Authentication Agent    Automatic
 # Success!
 ```
 
-Now the native `ssh-agent` should automatically start up on system start!
+Now the native `ssh-agent` should automatically start up on system start! Note that you may have to do this after future Windows Updates.
 
 One final thing you might have to do: older versions of posh-git automatically run `Start-SshAgent` on PowerShell startup. You'll want to check your PowerShell profile (check the `$Profile` variable in a PowerShell console). If the only reference to posh-git is `Import-Module posh-git`, you're fine. If your profile imports an example profile with a line something like `. C:\tools\poshgit\dahlbyk-posh-git-464601f\profile.example.ps1`, you'll want to go track down that example profile, and make sure it doesn't call `Start-SshAgent`.
 
@@ -140,7 +143,7 @@ choco install powershell-core
 
 ...and done. There are a few arguments that can be passed to the installer, [as documented on the package's gallery page](https://chocolatey.org/packages/powershell-core/6.0.4).
 
-If you're not into package managers, you can just [download the official installers](https://aka.ms/getps6-windows).
+If you're not into package managers, you can just [download the official installers](https://github.com/PowerShell/PowerShell#get-powershell).
 
 ### Migrating your $PSProfile and modules
 
@@ -207,3 +210,5 @@ As always, feel free to leave comments or feedback on Twitter ([@pingzingy](http
 [![Creative Commons BY badge]({filename}images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
 
 _This work is licensed under a Creative Commons Attribution 4.0 International License._
+
+_Edited April 15, 2020 to fix a minor error in the SSH section_

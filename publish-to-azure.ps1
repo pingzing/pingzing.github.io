@@ -18,4 +18,4 @@ $mainCssBlobUpdateTask = $mainCssBlob.ICloudBlob.SetPropertiesAsync()
 
 [System.Threading.Tasks.Task]::WaitAll($updateIndexMaxAgeTask, $mainCssBlobUpdateTask)
 
-Write-Host "Finished setting index.html's max age."
+Write-Host "Finished setting index.html's and main.css's max age."
