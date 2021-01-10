@@ -98,7 +98,10 @@ h1 a:hover {
 }
 	
 /* Paragraphs */
-p {margin-bottom: 1.143em;}
+p { margin-top: 1.143em }
+article p:first-of-type {
+	margin-top: 0;
+}
 
 strong, b {font-weight: bold;}
 em, i {font-style: italic;}
@@ -120,8 +123,8 @@ ol {
     /*padding:5px;*/
 }
 
-.post-info p{
-    margin-bottom: 1px;
+.post-info p {
+    margin-top: 1px;
 }
 
 .readmore { float: right }
@@ -266,8 +269,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	Featured
 *****************/
 #featured {
-	background: transparent;
-	margin-bottom: 2em;
+	background: transparent;	
 	overflow: hidden;
 	padding: 20px;
 	max-width: 45em;
