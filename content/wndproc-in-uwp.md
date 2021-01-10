@@ -4,7 +4,7 @@ Category: programming
 Tags: programming, uwp, windows, win32, c#, horror
 Slug: wndproc-in-uwp
 Authors: Neil McAlister
-Summary: Using WndProc in UWP apps
+Summary: How to get access to a UWP app's WndProc via mad science.
 cover_image: wndproc-in-uwp-cover.png
 
 I was putting together a [Raspberry Pi-powered bus schedule board](https://github.com/pingzing/TrippitKiosk) running Windows 10 IoT the other day, when I realized that if I didn't want the thing blinding me while I tried to sleep, I needed some way to control the screen's brightness. Eventually, I found the required Windows registry keys to configure the display timeout. Unfortunately, turning the display off just made it go black–it didn't actually turn off the backlight. Some more investigation eventually yielded a method to control this particular display's backlight brightness over SPI, but now I had a new problem--I needed a way to dim the backlight when the display turned off, and to restore it when it came back on.
