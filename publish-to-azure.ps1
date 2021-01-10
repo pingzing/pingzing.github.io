@@ -2,10 +2,10 @@ pelican content -o output -s publishconf.py;
 
 Write-Host "Publish-ready version of site created. Copying to Azure Storage...";
 
-# Env var is an SAS-token that has full access to the $web resource in my azure account. It expires Dec 20, 2020. 
+# Use 'azcopy login' to get access.
 & "C:\Users\mcali\azcopy\azcopy.exe" sync ./output "https://travelneil.blob.core.windows.net/`$web" --recursive --delete-destination true;
 
-Write-Host "`nCopied to Azure storage. Setting cache-control of index.html and main.css...`n";
+Write-Host "`nCopied to Azure storage. Setting cache-control of index.html, main.css and pygment.css...`n";
 
 $context = New-AzureStorageContext -StorageAccountName "travelneil" -StorageAccountKey $env:TravelNeilAzureKey;
 $indexBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "index.html";
