@@ -39,7 +39,7 @@ Back to Lady Amanda. Every year on Vappu day, she condescends to join the unwash
 
 Apparently, each year, one of the local technical universities gets the honor of actually putting the hat on Miss Amanda. These pictures are from 2015, and that year,they decided to fly it in...in _style_.
 
-[![Dude piloting the hat]({photo}2015/WP_20150430_17_55_52_Pro.jpg)]({filename}/images/2015/WP_20150430_17_55_52_Pro.jpg "'don't drop it don't drop it don't drop it'") [![Hat on a string]({photo}2015/WP_20150430_17_55_36_Pro.jpg)]({filename}/2015/images/WP_20150430_17_55_36_Pro.jpg "I wonder where they kept it beforehand?")
+[![Dude piloting the hat]({photo}2015/WP_20150430_17_55_52_Pro.jpg)]({filename}/images/2015/WP_20150430_17_55_52_Pro.jpg "'don't drop it don't drop it don't drop it'")
 
 The statue itself was surrounded by a ring of students suspended in midair, who carefully shepherded the hat into its proper place. Suspended, so that they didn't damage the statue, and so that the crowd may be entertained.
 

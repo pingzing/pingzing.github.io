@@ -24,22 +24,4 @@ Anyway, with that little interlude out of the way, feel free to enjoy
 some pretty pictures I took this morning, a little after 11AM. Pictures
 are behind the "Continue reading..." link.
 
-[![100\_0640]({photo}100_0640.jpg)]({filename}images/)
-
-######  Kaisa's parents' front yard.
-
-[![100\_0644]({photo}100_0644.jpg)]({filename}images/)
-
-######  To the side of the house, this is what the master bedroom  overlooks.
-
-[![100\_0648]({photo}100_0648.jpg)]({filename}images/)
-
-######  The same as above, but from the road and at a different angle.
-
-[![100\_0649]({photo}100_0649.jpg)]({filename}images/)
-
-######  A small panorama of the road and the little field.
-
-[![100\_0652]({photo}100_0652.jpg)]({filename}images/)
-
-######  In the opposite direction down the road.
+~2021 EDIT~: Looks like these images didn't survive the migration from WordPress. Sorry =/

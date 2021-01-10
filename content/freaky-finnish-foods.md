@@ -8,8 +8,6 @@ Slug: freaky-finnish-foods
 ...or not, as it turns out. Finnish fare is actually fairly simple,
 possibly even plain, depending on your point of view.
 
-[![]({filename}images/moose-stew_thumbnail.jpg)]({filename}images/moose-stew.jpg)
-
 ######"Even  more delicious than it  looks."
 
 *Moose*

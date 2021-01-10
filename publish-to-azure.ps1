@@ -3,7 +3,7 @@ pelican content -o output -s publishconf.py
 Write-Host "Publish-ready version of site created. Copying to Azure Storage..."
 
 # Env var is an SAS-token that has full access to the $web resource in my azure account. It expires Dec 20, 2020. 
-& "C:\Users\mcali\azcopy\azcopy.exe" sync ./output "https://travelneil.blob.core.windows.net/`$web?$env:TravelNeil2020SasKey" --recursive --delete-destination true
+& "C:\Users\mcali\azcopy\azcopy.exe" sync ./output "https://travelneil.blob.core.windows.net/`$web" --recursive --delete-destination true
 
 Write-Host "`nCopied to Azure storage. Setting cache-control of index.html and main.css...`n"
 
