@@ -6,6 +6,5 @@
         "**/CVS": true,
         "**/.DS_Store": true
     },
-    "python.pythonPath": "${workspaceFolder}\\env\\Scripts\\python.exe",
     "html.format.enable": false,
 }

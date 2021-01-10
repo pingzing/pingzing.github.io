@@ -16,3 +16,19 @@ An internal link looks like this:
 [Text to show]({filename}/absolute/path/relative/to-root.md)
 or, a relative path:
 [Text to show]({filename}../relative/to-current-file.md)
+
+Code looks like this:
+
+    :::shortlangname
+    using Code;    
+    
+    namespace code
+    {    
+        public static class Program
+        {                    
+            static void Main()
+            {
+                code code code
+            }
+        }
+    }
