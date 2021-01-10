@@ -30,14 +30,6 @@
         <meta name="date" content="{{ article.date }}">
 {% endif %}
 
-        <!-- Opengraph info -->
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
-        <meta property="og:title" content="{{ article.title }}"/>  
-{% if article.cover_image_url %}
-        <meta property="og:image" content="{{ article.cover_image_url }}"/>
-{% endif %}
-
 {% endblock meta_tags_in_head %}
 {% block content %}
 <section id="content" class="body">
