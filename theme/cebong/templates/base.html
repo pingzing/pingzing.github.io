@@ -39,7 +39,9 @@
         {% endif %}
         {% if FEED_RSS %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
-        {% endif %}
+        {% endif %}        
+        {% block scripts %}
+        {% endblock scripts %}
 
         <!--[if IE]>
                 <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -111,6 +113,5 @@
 
         </footer><!-- /#contentinfo -->
 
-{% include 'disqus_script.html' %}
 </body>
 </html>

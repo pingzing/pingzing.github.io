@@ -35,6 +35,23 @@ body img {
 	height: auto;
 }
 
+button {
+	border: 2px solid;
+	background: #FDF6E3;
+	font-size: 18px;
+	padding: 0.33em .9em;
+	text-transform: capitalize;
+}
+
+button:hover {
+	background: #e4ddcc;
+}
+
+button:active {
+	background: #c4bdaf;
+	transform: translate(1px, 1px);
+}
+
 code {
     border:1px solid #eaeaea;
     background-color:#f8f8f8;
@@ -449,34 +466,55 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	#about-author .photo {border: 1px solid #ddd; float: left; margin: 5px 1em 0 0;}
 	
 	/* Comments */
-	#comments-list {list-style: none; margin: 0 1em;}
-	#comments-list blockquote {
-		background: #f8f8f8;
-		clear: both;
-		font-style: normal;
-		margin: 0;
-		padding: 15px 20px;
-		
-		border-radius: 5px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
+	#comments {
+		background-attachment: transparent;	
+		margin-bottom: 2em;
+		overflow: hidden;
+		padding: 20px 20px;
+		max-width: 45em;		
 	}
-	#comments-list footer {color: #888; padding: .5em 1em 0 0; text-align: right;}
+
+	.comments-header {
+		text-align:center;		
+		font-style:italic;
+		margin-bottom: 10px;
+		margin-top: 0;
+	}
 	
-	#comments-list li:nth-child(2n) blockquote {background: #F5f5f5;}
-	
-	/* Add a Comment */
-	#add-comment label {clear: left; float: left; text-align: left; width: 150px;}
-	#add-comment input[type='text'],
-	#add-comment input[type='email'],
-	#add-comment input[type='url'] {float: left; width: 200px;}
-	
-	#add-comment textarea {float: left; height: 150px; width: 495px;}
-	
-	#add-comment p.req {clear: both; margin: 0 .5em 1em 0; text-align: right;}
-	
-	#add-comment input[type='submit'] {float: right; margin: 0 .5em;}
-	#add-comment * {margin-bottom: .5em;}
+	.add-comment-container {		
+		border: 1px solid;		
+		border-radius: 5px;
+		width: 100%;		
+	}
+
+	.add-comment-container label {
+		display: block;
+	}
+
+	.add-comment-container input {
+		box-sizing: border-box;
+		border: none;
+		font-size: 20px;
+    	font-family: 'Crimson Text', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;	
+		width: 100%;
+	}
+
+	.comments-entry {
+		box-sizing: border-box;
+		border: none;
+		border-radius: 5px;
+		background:  #fffefb;	
+		font-size: 20px;
+    	font-family: 'Crimson Text', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;	
+		resize:vertical;
+		padding: 0.5em;
+		width: 100%;		
+	}
+
+	.comment-submit {
+		display:block;
+		margin: 0.5em auto;
+	}
 
     #tagline{
         text-align:center;

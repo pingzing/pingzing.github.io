@@ -10,27 +10,30 @@
 {% block title %}{{ article.title|striptags }}{% endblock %}
 {% block meta_tags_in_head %}
 {% if article.tags and article.category %}
-        <meta name="keywords" content="{{ [article.tags|join(', '), article.category]|join(', ') }}" />
+  <meta name="keywords" content="{{ [article.tags|join(', '), article.category]|join(', ') }}" />
 {% endif %}
 {% if article.category %}
-        <meta name="category" content="{{ article.category|striptags }}" />
+  <meta name="category" content="{{ article.category|striptags }}" />
 {% endif %}
 {% if article.description %}
-        <meta name="description" content="{{ article.description|striptags }}" />
-        <meta property="og:description" content="{{ article.description|striptags }}"/>
+  <meta name="description" content="{{ article.description|striptags }}" />
+  <meta property="og:description" content="{{ article.description|striptags }}"/>
 {% elif article.summary %}
-        <meta name="description" content="{{ article.summary|striptags  }}" />
-        <meta property="og:description" content="{{ article.summary|striptags }}"/>
+  <meta name="description" content="{{ article.summary|striptags  }}" />
+  <meta property="og:description" content="{{ article.summary|striptags }}"/>
 {% endif %}
 {% if article.author %}
-        <meta name="author" content="{{ article.author }}" />
-        <meta name="copyright" content="{{ article.author }}" />
+  <meta name="author" content="{{ article.author }}" />
+  <meta name="copyright" content="{{ article.author }}" />
 {% endif %}
 {% if article.date %}
-        <meta name="date" content="{{ article.date }}">
+  <meta name="date" content="{{ article.date }}">
 {% endif %}
 
-{% endblock meta_tags_in_head %}
+{% endblock meta_tags_in_head %}  
+{% block scripts %}
+  <script type="text/javascript" src="./scripts/comments.js"></script>
+{% endblock scripts %}
 {% block content %}
 <section id="content" class="body">
   <article>
@@ -51,22 +54,22 @@
       {% include 'article_infos.html' %}
       <br>
       {{ article.content }}
-    </div><!-- /.entry-content -->
-    {% if DISQUS_SITENAME %}
-    <div class="comments">
-      <h2>Comments !</h2>
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-        var disqus_identifier = "{{ article.url }}";
-        (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'https://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-    </div>
-    {% endif %}
+    </div> 
 
   </article>
 </section>
+
+<form id="comments" class="body">  
+  <h2 class="comments-header">Comments</h2>
+  <label for="add-comment-container">Add a comment</label>
+  <div class="add-comment-container">
+    <label for="comment-name">Name (*)</label>
+    <input type="text" id="comment-name" required>
+
+    <label for="add-comment">Comment (*)</label>
+    <textarea id="add-comment" class="comments-entry" required></textarea>
+
+    <button class="comment-submit">Submit</button>
+  </div>
+</form>
 {% endblock %}
