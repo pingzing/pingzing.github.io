@@ -109,11 +109,11 @@ Now we've got most of the foundation laid. Let's pull the camera back a little, 
 
         if (IntPtr.Size == 8)
         {
-            return Interop.SetWindowLongPtr(hwnd, GWLP_WNDPROC, newWndProcPtr);
+            return Interop.SetWindowLongPtr(hwnd, GWLP_WNDPROC, functionPointer);
         } 
         else
         {
-            return Interop.SetWindowLong(hwnd, GWLP_WNDPROC, newWndProcPtr);
+            return Interop.SetWindowLong(hwnd, GWLP_WNDPROC, functionPointer);
         }
     }
 
