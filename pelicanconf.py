@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 import os, sys
+import subprocess
 plugins_path = os.path.abspath(os.path.join('plugins'))
 sys.path.append(plugins_path)
 
@@ -22,7 +23,7 @@ DEFAULT_DATE = 'fs'
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = True
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = [photos, "pelican-cover-image",]
+PLUGINS = [photos, "pelican-cover-image", "static_comments"]
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -56,3 +57,6 @@ PHOTO_THUMB = (192, 144, 60)
 
 # Cover Image
 COVER_IMAGES_PATH = "images"
+
+# Static Comments
+COMMENTS_BASE_URL = "http://localhost:7071/api"

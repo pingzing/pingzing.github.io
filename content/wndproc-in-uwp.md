@@ -73,7 +73,7 @@ Fortunately for us, there just so happens to be a static `GetFunctionPointerForD
 
 A C++ WndProc signature is defined as so:
 
-    ::cplusplus
+    ::c
     LRESULT CALLBACK WindowProc(
         _In_ HWND   hwnd,
         _In_ UINT   uMsg,

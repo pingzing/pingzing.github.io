@@ -1,6 +1,6 @@
 <footer class="post-info">
-        <abbr class="published" title="{{ article.date.isoformat() }}">
-                {{ article.locale_date }}
+        <abbr class="published" title="{{ article.date.strftime('%Y-%m-%d %H:%M:%S') }}">
+                {{ article.date.strftime('%a %d %b %Y, %H:%M:%S') }}
         </abbr>
 {% include 'taglist.html' %}
 {% include 'translations.html' %}

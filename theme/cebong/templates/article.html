@@ -59,17 +59,38 @@
   </article>
 </section>
 
-<form id="comments" class="body">  
-  <h2 class="comments-header">Comments</h2>
-  <label for="add-comment-container">Add a comment</label>
-  <div class="add-comment-container">
-    <label for="comment-name">Name (*)</label>
-    <input type="text" id="comment-name" required>
+<div id="comments" class="body">
+  <!-- Add comment form -->
+  <form id="comments-form">  
+    <h2 class="comments-header">Comments</h2>
+    <label for="add-comment-container">Add a comment</label>
+    <div class="add-comment-container">
+      <label for="comment-name" class="add-comment-top-label">Name (*)</label>
+      <input type="text" id="comment-name" required>
 
-    <label for="add-comment">Comment (*)</label>
-    <textarea id="add-comment" class="comments-entry" required></textarea>
+      <label for="add-comment">Comment (*)</label>
+      <textarea id="add-comment" class="comments-entry" required></textarea>
 
-    <button class="comment-submit">Submit</button>
-  </div>
-</form>
+      <button class="comment-submit">Submit</button>
+    </div>
+  </form>
+
+
+  {% if article.comments %}
+  <!-- Comments list -->
+  <ol class="comments-list">
+    {% for comment in article.comments %}
+    <li class="comment">
+      <h5>{{ comment.poster }}</h5>
+      <abbr class="published" title="{{ comment.date.strftime('%Y-%m-%d %H:%M:%S') }}">
+        {{ comment.date.strftime('%a %d %b %Y, %H:%M:%S') }}
+      </abbr>
+      <div>{{ comment.body }}</div>
+    </li>
+    {% endfor %}    
+  </ol>
+  {% endif %}
+  
+
+</div>
 {% endblock %}

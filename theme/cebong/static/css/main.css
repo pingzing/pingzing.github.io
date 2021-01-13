@@ -467,28 +467,33 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	
 	/* Comments */
 	#comments {
-		background-attachment: transparent;	
-		margin-bottom: 2em;
+		background-attachment: transparent;			
 		overflow: hidden;
 		padding: 20px 20px;
 		max-width: 45em;		
 	}
 
 	.comments-header {
-		text-align:center;		
-		font-style:italic;
-		margin-bottom: 10px;
+		text-align: center;		
+		font-style: italic;
+		line-height: normal;
+		margin-bottom: 0;
 		margin-top: 0;
 	}
 	
-	.add-comment-container {		
+	.add-comment-container {					
 		border: 1px solid;		
-		border-radius: 5px;
+		border-radius: 5px;				
 		width: 100%;		
+	}	
+
+	.add-comment-top-label {
+		margin-top: 0.5em;
 	}
 
 	.add-comment-container label {
-		display: block;
+		display: block;		
+		padding: 0 0.5em;
 	}
 
 	.add-comment-container input {
@@ -514,6 +519,28 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	.comment-submit {
 		display:block;
 		margin: 0.5em auto;
+	}
+
+	.comments-list {
+		margin: 0;
+	}
+
+	.comment {
+		list-style: none;
+	}
+
+	.comment h5 {
+		font-weight: bold;
+		line-height: normal;
+	}	
+
+	.comment h6 {
+		line-height: normal;
+		margin: 0;
+	}
+
+	.comment p:first-of-type {
+		margin-top: 0;
 	}
 
     #tagline{
