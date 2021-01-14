@@ -10,5 +10,6 @@ namespace TravelNeil.Backend
         public string ArticleSlug { get; set; } = null!;
         public Guid? ParentComment { get; set; } = null;
         public string Body { get; set; } = null!;
+        public bool IsOwnerComment { get; set; } = false;
     }
 }

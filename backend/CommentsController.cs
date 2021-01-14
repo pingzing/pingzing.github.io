@@ -59,6 +59,41 @@ namespace TravelNeil.Backend
             {
                 return new BadRequestObjectResult("Comments must include a poster name.");
             }
+            if (comment.ParentComment != null)
+            {
+                return new BadRequestObjectResult("Only the blog owner may post comment replies.");
+            }
+            comment.IsOwnerComment = false; // none of that shenanigannery here
+
+            var tableApi = new Table(logger);
+            Guid? addedCommentId = await tableApi.AddComment(comment);
+            if (addedCommentId == null)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
+
+            return new CreatedResult(addedCommentId.Value.ToString(), null);
+        }
+
+        [FunctionName("PostOwnerComment")]
+        public static async Task<IActionResult> PostOwnerComment(
+            [HttpTrigger(AuthorizationLevel.Admin, "post", Route = "admin/{articleSlug}")] HttpRequest request,
+            string articleSlug,
+            ILogger logger)
+        {
+            string requestBody = await new StreamReader(request.Body).ReadToEndAsync();
+            var comment = JsonSerializer.Deserialize<Comment>(requestBody, _camelCaseOptions);
+            if (String.IsNullOrWhiteSpace(comment.Body)) 
+            {
+                return new BadRequestObjectResult("Comments must not have a null or whitespace-only body.");
+            }
+            if (String.IsNullOrWhiteSpace(comment.ArticleSlug))
+            {
+                return new BadRequestObjectResult("Comments must include an article slug.");
+            }
+
+            comment.Poster = "Neil"; // Because, you know.
+            comment.IsOwnerComment = true;
 
             var tableApi = new Table(logger);
             Guid? addedCommentId = await tableApi.AddComment(comment);

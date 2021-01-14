@@ -134,12 +134,6 @@ ol {
 	margin: 1em 0 1.5em 1.5em;
 }
 
-.post-info {
-    /*float:right;*/
-    /*margin:10px;*/
-    /*padding:5px;*/
-}
-
 .post-info p {
     margin-top: 1px;
 }
@@ -430,122 +424,141 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	word-wrap: break-word
 }
 
-	/* Content */
-	.hentry footer {margin-bottom: 1em;}
-	.hentry footer address {display: inline;}
-	#posts-list footer address {display: block;}
+/* Content */
+.hentry footer {margin-bottom: 1em;}
+.hentry footer address {display: inline;}
+#posts-list footer address {display: block;}
 
-	/* Blog Index */
-	#posts-list {list-style: none; margin: 0;}
-	#posts-list .hentry {padding-left: 10px; position: relative;}
+/* Blog Index */
+#posts-list {list-style: none; margin: 0;}
+#posts-list .hentry {padding-left: 10px; position: relative;}
+
+#posts-list footer {
+	left: 10px;				
+}
+
+/* About the Author */
+#about-author {
+	background: #f9f9f9;
+	clear: both;
+	font-style: normal;
+	margin: 2em 0;
+	padding: 10px 20px 15px 20px;
 	
-	#posts-list footer {
-		left: 10px;				
-	}
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+#about-author strong {
+	color: #C64350;
+	clear: both;
+	display: block;
+	font-size: 1.429em;
+}
+
+#about-author .photo {border: 1px solid #ddd; float: left; margin: 5px 1em 0 0;}
+
+/* Comments */
+#comments {
+	background-attachment: transparent;			
+	overflow: hidden;
+	padding: 20px 20px;
+	max-width: 45em;		
+}
+
+.comments-header {
+	text-align: center;		
+	font-style: italic;
+	line-height: normal;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.comments-subheader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0.2em;
+}
+
+.flex-right {
+	justify-self: flex-end;
+}
+
+.add-comment-container {					
+	border: 1px solid;		
+	border-radius: 5px;				
+	width: 100%;		
+}	
+
+.add-comment-top-label {
+	margin-top: 0.5em;
+}
+
+.add-comment-container label {	
+	padding: 0 0.5em;
+}
+
+.add-comment-container input {
+	box-sizing: border-box;
+	border: none;
+	font-size: 20px;
+	font-family: 'Crimson Text', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;	
+	padding-left: 0.5em;
+	width: 100%;
+}
+
+.comments-entry {
+	box-sizing: border-box;
+	border: none;
+	border-radius: 5px;
+	background:  #fffefb;	
+	font-size: 20px;
+	font-family: 'Crimson Text', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;	
+	resize:vertical;
+	padding: 0.5em;
+	width: 100%;		
+}
+
+.comment-submit {
+	display:block;
+	margin: 0.5em auto;
+}
+
+.comments-list {
+	margin: 0;
+}
+
+.comment {
+	list-style: none;
+}
+
+.comment h5 {
+	font-weight: bold;
+	line-height: normal;
+}	
+
+.comment h6 {
+	line-height: normal;
+	margin: 0;
+}
+
+.comment p:first-of-type {
+	margin-top: 0;
+}
+
+#tagline{
+	text-align:center;
+	font-style:italic;
+	padding:0px;
+	margin:0px;
+}	
 	
-	/* About the Author */
-	#about-author {
-		background: #f9f9f9;
-		clear: both;
-		font-style: normal;
-		margin: 2em 0;
-		padding: 10px 20px 15px 20px;
-		
-		border-radius: 5px;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-	}
-	
-	#about-author strong {
-		color: #C64350;
-		clear: both;
-		display: block;
-		font-size: 1.429em;
-	}
-	
-	#about-author .photo {border: 1px solid #ddd; float: left; margin: 5px 1em 0 0;}
-	
-	/* Comments */
-	#comments {
-		background-attachment: transparent;			
-		overflow: hidden;
-		padding: 20px 20px;
-		max-width: 45em;		
-	}
+/* Useful fragments */
 
-	.comments-header {
-		text-align: center;		
-		font-style: italic;
-		line-height: normal;
-		margin-bottom: 0;
-		margin-top: 0;
-	}
-	
-	.add-comment-container {					
-		border: 1px solid;		
-		border-radius: 5px;				
-		width: 100%;		
-	}	
+.hidden {
+	display: none;
+}
 
-	.add-comment-top-label {
-		margin-top: 0.5em;
-	}
-
-	.add-comment-container label {
-		display: block;		
-		padding: 0 0.5em;
-	}
-
-	.add-comment-container input {
-		box-sizing: border-box;
-		border: none;
-		font-size: 20px;
-    	font-family: 'Crimson Text', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;	
-		width: 100%;
-	}
-
-	.comments-entry {
-		box-sizing: border-box;
-		border: none;
-		border-radius: 5px;
-		background:  #fffefb;	
-		font-size: 20px;
-    	font-family: 'Crimson Text', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;	
-		resize:vertical;
-		padding: 0.5em;
-		width: 100%;		
-	}
-
-	.comment-submit {
-		display:block;
-		margin: 0.5em auto;
-	}
-
-	.comments-list {
-		margin: 0;
-	}
-
-	.comment {
-		list-style: none;
-	}
-
-	.comment h5 {
-		font-weight: bold;
-		line-height: normal;
-	}	
-
-	.comment h6 {
-		line-height: normal;
-		margin: 0;
-	}
-
-	.comment p:first-of-type {
-		margin-top: 0;
-	}
-
-    #tagline{
-        text-align:center;
-        font-style:italic;
-        padding:0px;
-        margin:0px;
-    }	
+/**/

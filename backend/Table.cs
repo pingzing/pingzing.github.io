@@ -44,6 +44,7 @@ namespace TravelNeil.Backend
                     Date = comment.Date,
                     Poster = comment.Poster,
                     ParentComment = comment.ParentComment,
+                    IsOwnerComment = comment.IsOwnerComment,
                     PartitionKey = ToTableName(comment.ArticleSlug),
                     RowKey = commentId.ToString("N"),
                 };
@@ -86,7 +87,8 @@ namespace TravelNeil.Backend
                         CommentId = Guid.Parse(entity.RowKey),
                         Date = entity.Date,
                         ParentComment = entity.ParentComment,
-                        Poster = entity.Poster
+                        Poster = entity.Poster,
+                        IsOwnerComment = entity.IsOwnerComment,
                     });
                 }
 
@@ -119,7 +121,8 @@ namespace TravelNeil.Backend
                             CommentId = Guid.Parse(entity.RowKey),
                             Date = entity.Date,
                             ParentComment = entity.ParentComment,
-                            Poster = entity.Poster
+                            Poster = entity.Poster,
+                            IsOwnerComment = entity.IsOwnerComment,
                         });
                     }
 

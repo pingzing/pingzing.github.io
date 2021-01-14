@@ -122,11 +122,29 @@ function tryScrollFragmentIntoView(): void {
     }
 }
 
-async function registerSubmitListener(): Promise<void> {
-    const form = document.getElementById("comments-form");
-    form?.addEventListener("submit", submitComment);
-    await updateComments();
+function onOwnerCheckboxChanged(e: Event): void {
+    const ownerCheckbox = document.getElementById("owner-checkbox") as HTMLInputElement;
+    const label = document.getElementById("comment-owner-password-label");
+    const input = document.getElementById("comment-owner-password-input") as HTMLInputElement;
+    if (ownerCheckbox.checked) {
+        label?.classList.remove("hidden");
+        input?.classList.remove("hidden");
+        input.disabled = false;
+    } else {
+        label?.classList.add("hidden");
+        input?.classList.add("hidden");
+        input.disabled = true;
+    }
+
 }
 
-window.onload = registerSubmitListener;
+async function onLoaded(): Promise<void> {
+    const form = document.getElementById("comments-form");
+    form?.addEventListener("submit", submitComment);
+    const ownerCheckbox = document.getElementById("owner-checkbox");
+    ownerCheckbox?.addEventListener("change", onOwnerCheckboxChanged);
+    await updateComments();    
+}
+
+window.addEventListener("DOMContentLoaded", onLoaded);
 tryScrollFragmentIntoView();

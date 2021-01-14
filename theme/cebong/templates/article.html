@@ -63,10 +63,20 @@
   <!-- Add comment form -->
   <form id="comments-form">  
     <h2 class="comments-header">Comments</h2>
-    <label for="add-comment-container">Add a comment</label>
+    <div class="comments-subheader">
+      <label for="add-comment-container">Add a comment</label>
+      <div class="flex-right">
+        <input id="owner-checkbox" type="checkbox">
+        <label for="owner-checkbox">Post as owner</label>
+      </div>
+    </div>
+
     <div class="add-comment-container">
       <label for="comment-name" class="add-comment-top-label">Name (*)</label>
       <input type="text" id="comment-name" required>
+
+      <label id="comment-owner-password-label" for="owner-comment-password" class="hidden add-comment-top-label">Password (*)</label>
+      <input id="comment-owner-password-input" type="text" class="hidden" required disabled>
 
       <label for="add-comment">Comment (*)</label>
       <textarea id="add-comment" class="comments-entry" required></textarea>
@@ -82,7 +92,7 @@
     {% if article.comments %}
     {% for comment in article.comments %}
     <li class="comment {{ 'parented' if comment.parentComment }}" id="{{ comment.commentId }}" data-date="{{ comment.date }}">
-      <h5>{{ comment.poster }}</h5>
+      <h5 {% if comment.isOwnerComment %}class="owner-comment"{% endif %}>{{ comment.poster }}</h5>
       <abbr class="published" title="{{ comment.date.strftime('%Y-%m-%d %H:%M:%S%z') }}">
         {{ comment.date.strftime('%a, %b %d, %Y, %H:%M:%S') }}
       </abbr>
