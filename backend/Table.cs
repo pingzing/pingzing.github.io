@@ -149,10 +149,10 @@ namespace TravelNeil.Backend
                 }
 
                 var tableClient = _client.GetTableClient(ToTableName(articleSlug));
-                Response deleteResponse = await tableClient.DeleteEntityAsync(articleSlug, commentId.ToString("N"));
+                Response deleteResponse = await tableClient.DeleteEntityAsync(ToTableName(articleSlug), commentId.ToString("N"));
                 if (deleteResponse.Status != StatusCodes.Status204NoContent)
                 {
-                    _logger.LogWarning($"Failed to delete comment {commentId} on article with ID {articleSlug}");
+                    _logger.LogWarning($"Failed to delete comment {commentId.ToString("N")} on article with ID {articleSlug}. Status: {deleteResponse.Status}");
                     return false;
                 }
 

@@ -78,7 +78,7 @@
 
   
   <!-- Comments list -->
-  <ol id="comments-list" class="comments-list" {% if not article.comments %}style="display:none;"{% endif %} >
+  <ol id="comments-list" class="comments-list">
     {% if article.comments %}
     {% for comment in article.comments %}
     <li class="comment {{ 'parented' if comment.parentComment }}" id="{{ comment.commentId }}" data-date="{{ comment.date }}">
