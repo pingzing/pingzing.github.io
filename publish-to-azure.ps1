@@ -1,11 +1,26 @@
+function Rewrite-Url([string] $url) {
+    # Find JS file
+    [string] $jsContent = Get-Content -Path "$PSScriptRoot/output/scripts/comments.js" -Raw;
+
+    #Rewrite 'var BASE_URL = "http://localhost:7071";`
+    $jsContent = $jsContent.Replace('var BASE_URL = "http://localhost:7071/api";', 'var BASE_URL = "https://travelneil-backend.azurewebsites.net/api";');
+    Write-Host $jsContent;
+    Set-Content -Path "$PSScriptRoot/output/scripts/comments.js" $jsContent;
+}
+
+Write-Host "Compiling TypeScript scripts...";
+tsc -p './scripts';
+Write-Host "...done. Rewriting BASE_URL to production URL...";
+Rewrite-Url "https://travelneil-backend.azurewebsites.net";
+Write-Host "...done. Engaging pelican.";
 pelican content -o output -s publishconf.py;
 
 Write-Host "Publish-ready version of site created. Copying to Azure Storage...";
 
-# Use 'azcopy login' to get access.
+# Use 'azcopy login' to get access if this fails.
 & "C:\Users\mcali\azcopy\azcopy.exe" sync ./output "https://travelneil.blob.core.windows.net/`$web" --recursive --delete-destination true;
 
-Write-Host "`nCopied to Azure storage. Setting cache-control of index.html, main.css and pygment.css...`n";
+Write-Host "`nCopied to Azure storage. Setting cache-control of various files...`n";
 
 $context = New-AzureStorageContext -StorageAccountName "travelneil" -StorageAccountKey $env:TravelNeilAzureKey;
 $indexBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "index.html";
@@ -18,8 +33,12 @@ $mainCssBlobUpdateTask = $mainCssBlob.ICloudBlob.SetPropertiesAsync();
 
 $pygmentCssBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "theme/css/pygment.css";
 $pygmentCssBlob.ICloudBlob.Properties.CacheControl = "max-age=300";
-$pygmentCssBlob = $pygmentCssBlob.ICloudBlob.SetPropertiesAsync();
+$pygmentCssBlobUpdateTask = $pygmentCssBlob.ICloudBlob.SetPropertiesAsync();
 
-[System.Threading.Tasks.Task]::WaitAll($updateIndexMaxAgeTask, $mainCssBlobUpdateTask, $pygmentCssBlob);
+$commentsJsBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob = "scripts/comments.js";
+$commentsJsBlob.Properties.CacheControl = "max-age=300";
+$commentsJsBlobUpdateTask = $commentsJsBlob.ICloudBlob.SetPropertiesAsync();
 
-Write-Host "Finished setting index.html's, main.css's and pygment.css's max age.";
+[System.Threading.Tasks.Task]::WaitAll($updateIndexMaxAgeTask, $mainCssBlobUpdateTask, $pygmentCssBlobUpdateTask, $commentsJsBlobUpdateTask);
+
+Write-Host "Finished setting max ages.`n All done!";

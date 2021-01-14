@@ -4,6 +4,7 @@ static_comments.py
 
 import logging
 import requests
+import dateutil.parser
 from pelican import signals
 from datetime import datetime
 from requests.models import Response
@@ -32,10 +33,16 @@ def get_comments(generator, content):
     global comments_dict
     if article_slug in comments_dict:
         comments = comments_dict[article_slug]
+
+        # Sort by date, as they come back in arbitrary order
+        comments.sort(key=lambda x: x['date'])
+        # TODO: Handle comments with a parent. they'll be sorted differently
+
+        # Turn stringy dates into pythony dates TODO: Move this up into prepare_comments
         for c in comments:
             if not '_date_fixed' in c:
                 c['_date_fixed'] = True
-                c['date'] = datetime.strptime(c['date'], "%Y-%m-%dT%H:%M:%S.%f%z")
+                c['date'] = dateutil.parser.isoparse(c['date'])
         content.comments = comments_dict[article_slug]
 
 def register():

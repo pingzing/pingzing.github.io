@@ -7,5 +7,12 @@
                 "isEnabled": true
             }
         }
+    },
+    "extensions": {
+        "http": {            
+            "customHeaders": {
+                "Access-Control-Expose-Headers": "Location"
+            }
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace TravelNeil.Backend
                 var commentEntity = new CommentEntity
                 {
                     ArticleSlug = comment.ArticleSlug,
-                    Body = _sanitizer.Sanitize(comment.Body),
+                    Body = _sanitizer.Sanitize(comment.Body).Replace("\n", "<br>"),
                     Date = comment.Date,
                     Poster = comment.Poster,
                     ParentComment = comment.ParentComment,

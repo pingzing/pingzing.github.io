@@ -41,7 +41,8 @@ namespace TravelNeil.Backend
 
         [FunctionName("PostComment")]
         public static async Task<IActionResult> PostComment(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "{articleSlug}")] HttpRequest req,
+            string articleSlug,
             ILogger logger)
         {            
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
@@ -66,7 +67,7 @@ namespace TravelNeil.Backend
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
             }
 
-            return new CreatedResult(addedCommentId.Value.ToString("N"), null);
+            return new CreatedResult(addedCommentId.Value.ToString(), null);
         }
 
         [FunctionName("DeleteComment")]
