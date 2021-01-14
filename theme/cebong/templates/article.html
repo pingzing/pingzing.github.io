@@ -76,9 +76,10 @@
   </form>
 
 
-  {% if article.comments %}
+  
   <!-- Comments list -->
-  <ol id="comments-list" class="comments-list">
+  <ol id="comments-list" class="comments-list" {% if not article.comments %}style="display:none;"{% endif %} >
+    {% if article.comments %}
     {% for comment in article.comments %}
     <li class="comment {{ 'parented' if comment.parentComment }}" id="{{ comment.commentId }}" data-date="{{ comment.date }}">
       <h5>{{ comment.poster }}</h5>
@@ -88,8 +89,8 @@
       <div>{{ comment.body }}</div>
     </li>
     {% endfor %}    
-  </ol>
-  {% endif %}
+    {% endif %}
+  </ol>  
   
 
 </div>

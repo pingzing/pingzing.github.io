@@ -3,8 +3,7 @@ function Rewrite-Url([string] $url) {
     [string] $jsContent = Get-Content -Path "$PSScriptRoot/output/scripts/comments.js" -Raw;
 
     #Rewrite 'var BASE_URL = "http://localhost:7071";`
-    $jsContent = $jsContent.Replace('var BASE_URL = "http://localhost:7071/api";', 'var BASE_URL = "https://travelneil-backend.azurewebsites.net/api";');
-    Write-Host $jsContent;
+    $jsContent = $jsContent.Replace('var BASE_URL = "http://localhost:7071/api";', 'var BASE_URL = "https://travelneil-backend.azurewebsites.net/api";');    
     Set-Content -Path "$PSScriptRoot/output/scripts/comments.js" $jsContent;
 }
 
@@ -35,8 +34,8 @@ $pygmentCssBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob
 $pygmentCssBlob.ICloudBlob.Properties.CacheControl = "max-age=300";
 $pygmentCssBlobUpdateTask = $pygmentCssBlob.ICloudBlob.SetPropertiesAsync();
 
-$commentsJsBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob = "scripts/comments.js";
-$commentsJsBlob.Properties.CacheControl = "max-age=300";
+$commentsJsBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "scripts/comments.js";
+$commentsJsBlob.ICloudblob.Properties.CacheControl = "max-age=300";
 $commentsJsBlobUpdateTask = $commentsJsBlob.ICloudBlob.SetPropertiesAsync();
 
 [System.Threading.Tasks.Task]::WaitAll($updateIndexMaxAgeTask, $mainCssBlobUpdateTask, $pygmentCssBlobUpdateTask, $commentsJsBlobUpdateTask);
