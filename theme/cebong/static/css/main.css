@@ -293,7 +293,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 
 .featured-grid {
 	display: grid;
-	gap: 0.5em;
+	gap: 0.5em;	
 	grid-template-columns: 20% 80%;
 	grid-template-areas: 
 		'cover content';
@@ -318,8 +318,14 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	object-fit: cover;
 }
 
+/* Content should span 2 columsn with no image present */
 .featured-grid .featured-content {
-	grid-area: content;
+	grid-area: cover / cover / content / content;
+}
+
+/* With image present, only span the single "content" cell */
+.featured-grid img + .featured-content {
+	grid-area: content
 }
 
 /*
@@ -469,6 +475,10 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 }
 
 .hentry-content {
+	grid-area: cover / cover / content / content;
+}
+
+img + .hentry-content {
 	grid-area: content
 }
 
