@@ -23,7 +23,7 @@ DEFAULT_DATE = 'fs'
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = True
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = [photos, "pelican-cover-image", "static_comments"]
+PLUGINS = [photos, "pelican-cover-image", "static_comments", "article_teaser"]
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

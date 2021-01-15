@@ -38,7 +38,7 @@
 <section id="content" class="body">
   <article>
 
-    {% if article.cover_image_url %}
+    {% if article.cover_image_url and article.cover_image_url|length %}
     <img src="{{ article.cover_image_url }}" alt="Cover image">
     <br>
     {% endif %}

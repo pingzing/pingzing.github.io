@@ -31,9 +31,9 @@ def cover_image(generator):
             elif "COVER_IMAGES_PATH" in generator.settings:
                 cover_image_url = generator.settings["SITEURL"] + "/" + generator.settings["COVER_IMAGES_PATH"] + "/" + cover_image
             else:
-                cover_image_url = "1"
+                cover_image_url = ""
         else:
-            cover_image_url = "2"
+            cover_image_url = ""
 
 
         # Set cover_image_caption using COVER_IMAGE_CAPTION format and article/page metadata

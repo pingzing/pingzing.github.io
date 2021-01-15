@@ -28,7 +28,7 @@ def prepare_comments(pelican):
         logger.error(f"Failed to get comments.", exc_info=v)
 
 
-def get_comments(generator, content):
+def add_comments(generator, content):
     article_slug: str = content.metadata.get('slug')
     global comments_dict
     if article_slug in comments_dict:
@@ -47,4 +47,4 @@ def get_comments(generator, content):
 
 def register():
     signals.initialized.connect(prepare_comments)
-    signals.article_generator_write_article.connect(get_comments)
+    signals.article_generator_write_article.connect(add_comments)

@@ -1,117 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
         <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
+        <meta charset="utf-8">
+        <meta name="generator" content="Pelican">
         {% if not page and not article %}
-        <meta name="author" content="{{ AUTHOR }}" />
-        <meta name="copyright" content="{{ AUTHOR }}" />
+        <meta name="author" content="{{ AUTHOR }}">
+        <meta name="copyright" content="{{ AUTHOR }}">
         {% if SITE_DESCRIPTION %}
-        <meta name="description" content="{% block head_description %}{{ SITE_DESCRIPTION }}{% endblock head_description %}" />
+        <meta name="description" content="{% block head_description %}{{ SITE_DESCRIPTION }}{% endblock head_description %}">
         {% endif %}
         {% endif %}
         {% block meta_tags_in_head %}
         {% endblock meta_tags_in_head %}
         <meta name="robots" content="{% block robots %}index,follow{% endblock %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
         <!-- Opengraph info -->
         {% if article %}
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
-        <meta property="og:title" content="{{ article.title }}"/>  
-        <meta property="og:description" content="{{ article.summary|striptags }}"/>       
-                {% if article.cover_image_url %}
-                        <meta property="og:image" content="{{ article.cover_image_url }}"/>
-                {% endif %}
-        {% else %}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="{{ SITENAME }}"/>
-        <meta property="og:description" content="{{ SITE_DESCRIPTION }}"/>
-        <meta property="og:site_name" content="{{ SITENAME }}"/>
-        <meta property="og:image" content=""/>
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}">
+        <meta property="og:title" content="{{ article.title }}">
+        <meta property="og:description" content="{{ article.summary|striptags }}">
+        {% if article.cover_image_url %}
+        <meta property="og:image" content="{{ article.cover_image_url }}">
         {% endif %}
-
-        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
+        {% else %}
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ SITENAME }}">
+        <meta property="og:description" content="{{ SITE_DESCRIPTION }}">
+        <meta property="og:site_name" content="{{ SITENAME }}">
+        <meta property="og:image" content="">
+        {% endif %}
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css">
         {% if FEED_ATOM %}
-        <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+        <link
+            href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}"
+            type="application/atom+xml"
+            rel="alternate"
+            title="{{ SITENAME }} Atom Feed"
+        >
         {% endif %}
         {% if FEED_RSS %}
-        <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        <link
+            href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}"
+            type="application/rss+xml"
+            rel="alternate"
+            title="{{ SITENAME }} RSS Feed"
+        >
         {% endif %}        
         {% block scripts %}
         {% endblock scripts %}
-
         <!--[if IE]>
                 <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
         <!--[if lte IE 7]>
                 <link rel="stylesheet" type="text/css" media="all" href="{{ SITEURL }}/css/ie.css"/>
                 <script src="{{ SITEURL }}/js/IE8.js" type="text/javascript"></script><![endif]-->
-
         <!--[if lt IE 7]>
                 <link rel="stylesheet" type="text/css" media="all" href="{{ SITEURL }}/css/ie6.css"/><![endif]-->
-
-</head>
-
-<body id="index" class="home">
-{% include 'github.html' %}
+    </head>
+    <body id="index" class="home">
+        {% include 'github.html' %}
         <header id="banner" class="body">
-                <h1><a href="{{ SITEURL }}">{{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h1>
-                {% if SITETAGLINE %}
-                <div id="tagline">{{SITETAGLINE}}</div>
-                {% endif %}
-                <nav>
+            <h1>
+                <a href="{{ SITEURL }}">{{ SITENAME }} {% if SITESUBTITLE %}
+                    <strong>{{ SITESUBTITLE }}</strong>{% endif %}
+                </a>
+            </h1>
+            {% if SITETAGLINE %}
+            <div id="tagline">{{SITETAGLINE}}</div>
+            {% endif %}
+            <nav>
                 {% for title, link in MENUITEMS %}
-                    <a href="{{ link }}">{{ title }}</a>&nbsp;
-                {% endfor %}
-                {% if DISPLAY_PAGES_ON_MENU %}
-                {% for page in pages %}
-                    <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>&nbsp;
-                {% endfor %}
-                {% endif %}
-                {% for cat, null in categories %}
-                    <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>&nbsp;
-                {% endfor %}
-                </nav>
-        </header>        
+                <a href="{{ link }}">{{ title }}</a>
+                &nbsp;
+            {% endfor %}
+            {% if DISPLAY_PAGES_ON_MENU %}
+            {% for page in pages %}
+                <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+                &nbsp;
+            {% endfor %}
+            {% endif %}
+            {% for cat, null in categories %}
+                <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+                &nbsp;
+            {% endfor %}
+            </nav>
+        </header>
+        <hr style="max-width:45em;padding: 0 20px;">
         {% block content %}
         {% endblock %}
         <section id="extras" class="body">
-        {% if LINKS %}
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                        {% for name, link in LINKS %}
-                            <li><a href="{{ link }}">{{ name }}</a></li>
-                        {% endfor %}
-                        </ul>
-                </div><!-- /.blogroll -->
-        {% endif %}
+            {% if LINKS %}
+            <div class="blogroll">
+                <h2>blogroll</h2>
+                <ul>
+                    {% for name, link in LINKS %}
+                    <li>
+                        <a href="{{ link }}">{{ name }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- /.blogroll -->
+            {% endif %}
         {% if SOCIAL %}
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate">atom feed</a></li>
-                            {% if FEED_RSS %}
-                            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate">rss feed</a></li>
-                            {% endif %}
+            <div class="social">
+                <h2>social</h2>
+                <ul>
+                    <li>
+                        <a href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate">atom feed</a>
+                    </li>
+                    {% if FEED_RSS %}
+                    <li>
+                        <a href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate">rss feed</a>
+                    </li>
+                    {% endif %}
 
                         {% for name, link in SOCIAL %}
-                            <li><a href="{{ link }}">{{ name }}</a></li>
-                        {% endfor %}
-                        </ul>
-                </div><!-- /.social -->
-        {% endif %}
-        </section><!-- /#extras -->
-
+                    <li>
+                        <a href="{{ link }}">{{ name }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- /.social -->
+            {% endif %}
+        </section>
+        <!-- /#extras -->
         <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                    {{FOOTERTEXT}} Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>. Theme is using <a href="https://github.com/getpelican/pelican-themes" target="_blank">cebong</a>.
-                </address><!-- /#about -->
-
-        </footer><!-- /#contentinfo -->
-
-</body>
+            <address id="about" class="vcard body">
+                {{FOOTERTEXT}} Proudly powered by
+                <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of
+                <a href="https://www.python.org/">Python</a>. Theme is using
+                <a href="https://github.com/getpelican/pelican-themes" target="_blank">cebong</a>
+                .
+            </address>
+            <!-- /#about -->
+        </footer>
+        <!-- /#contentinfo -->
+    </body>
 </html>
