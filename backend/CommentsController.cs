@@ -77,7 +77,7 @@ namespace TravelNeil.Backend
 
         [FunctionName("PostOwnerComment")]
         public static async Task<IActionResult> PostOwnerComment(
-            [HttpTrigger(AuthorizationLevel.Admin, "post", Route = "admin/{articleSlug}")] HttpRequest request,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "owner/{articleSlug}")] HttpRequest request,
             string articleSlug,
             ILogger logger)
         {

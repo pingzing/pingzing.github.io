@@ -52,6 +52,11 @@ button:active {
 	transform: translate(1px, 1px);
 }
 
+/* Remove the focus outline if the user is actively pressing the button */
+button:active:focus {
+	outline: none;
+}
+
 code {
     border:1px solid #eaeaea;
     background-color:#f8f8f8;
@@ -537,7 +542,14 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 .comment h5 {
 	font-weight: bold;
 	line-height: normal;
-}	
+}
+
+.comment h5.owner-comment {
+	font-weight: bold;
+	line-height: normal;
+	color: #03cebd;
+	text-shadow: 0 0 2px currentColor;
+}
 
 .comment h6 {
 	line-height: normal;

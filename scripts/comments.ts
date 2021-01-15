@@ -7,7 +7,16 @@ interface BlogComment {
     articleSlug: string;
     parentComment?: string;
     body: string;
+    isOwnerComment: boolean;
 }
+
+let _commentsForm: HTMLFormElement | null = null;
+let _ownerCheckbox: HTMLInputElement | null = null;
+let _posterNameInput: HTMLInputElement | null = null;
+let _bodyTextarea: HTMLTextAreaElement | null = null;
+let _ownerCheckboxLabel: HTMLElement | null = null;
+let _ownerPasswordInput: HTMLInputElement | null = null;
+let _commentsList: HTMLOListElement | null = null;
 
 async function updateComments(): Promise<void> {
 
@@ -28,9 +37,8 @@ async function updateComments(): Promise<void> {
 
     const commentsArray: BlogComment[] = (await commentsResponse.json()).comments;
 
-    // Add comments that are missing
-    const existingComments = document.getElementById("comments-list") as HTMLOListElement;
-    const olChildren: Element[] = Array.from(existingComments.children);
+    // Add comments that are missing    
+    const olChildren: Element[] = Array.from(_commentsList!.children);
     const postedIds = olChildren.map(e => { return e.id; });
     const commentsToAdd = commentsArray.filter((c) => {
         return !postedIds.includes(c.commentId ?? "");
@@ -54,6 +62,9 @@ async function updateComments(): Promise<void> {
 
         const h5 = document.createElement("h5");
         h5.textContent = c.poster;
+        if (c.isOwnerComment) {
+            h5.classList.add("owner-comment");
+        }
 
         const abbr = document.createElement("abbr");
         abbr.classList.add("published");
@@ -67,28 +78,33 @@ async function updateComments(): Promise<void> {
         return li;
     });
 
-    existingComments.append(...newLiItems);
+    _commentsList?.append(...newLiItems);
     tryScrollFragmentIntoView();
 }
 
 async function submitComment(event: Event): Promise<void> {
     event.preventDefault();
 
-    const articleSlug = window.location.pathname.replace('/', "").split('.')[0] ?? "invalid";
-
-    console.log("articleSlug is: " + articleSlug);
-    const posterInput = document.getElementById("comment-name") as HTMLInputElement;
-    const bodyTextarea = document.getElementById("add-comment") as HTMLTextAreaElement;
+    const articleSlug = window.location.pathname.replace('/', "").split('.')[0] ?? "invalid";    
+        
     const comment: BlogComment = {
         commentId: undefined,
-        poster: posterInput.value,
+        poster: _posterNameInput?.value ?? "",
         date: new Date(Date.now()),
         articleSlug: articleSlug,
         parentComment: undefined,
-        body: bodyTextarea.value
+        body: _bodyTextarea?.value ?? "",
+        isOwnerComment: _ownerCheckbox?.checked ?? false
     };
 
-    const response = await fetch(`${BASE_URL}/${articleSlug}`, {
+    let url: string;
+    if (_ownerCheckbox?.checked) {
+        url = `${BASE_URL}/owner/${articleSlug}?code=${_ownerPasswordInput?.value}`;
+    } else {
+        url = `${BASE_URL}/${articleSlug}`;
+    }
+
+    const response = await fetch(url, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -122,27 +138,35 @@ function tryScrollFragmentIntoView(): void {
     }
 }
 
-function onOwnerCheckboxChanged(e: Event): void {
-    const ownerCheckbox = document.getElementById("owner-checkbox") as HTMLInputElement;
-    const label = document.getElementById("comment-owner-password-label");
-    const input = document.getElementById("comment-owner-password-input") as HTMLInputElement;
-    if (ownerCheckbox.checked) {
-        label?.classList.remove("hidden");
-        input?.classList.remove("hidden");
-        input.disabled = false;
+function onOwnerCheckboxChanged(_: Event): void {            
+    if (_ownerCheckbox?.checked) {
+        _ownerCheckboxLabel?.classList.remove("hidden");
+        _ownerPasswordInput?.classList.remove("hidden");        
+        _ownerPasswordInput!.disabled = false;
+        _posterNameInput!.disabled = true;
     } else {
-        label?.classList.add("hidden");
-        input?.classList.add("hidden");
-        input.disabled = true;
+        _ownerCheckboxLabel?.classList.add("hidden");
+        _ownerPasswordInput?.classList.add("hidden"); 
+        _ownerPasswordInput!.value = "";
+        _ownerPasswordInput!.disabled = true;   
+        _posterNameInput!.disabled = false;     
     }
 
 }
 
 async function onLoaded(): Promise<void> {
-    const form = document.getElementById("comments-form");
-    form?.addEventListener("submit", submitComment);
-    const ownerCheckbox = document.getElementById("owner-checkbox");
-    ownerCheckbox?.addEventListener("change", onOwnerCheckboxChanged);
+    _commentsForm = document.getElementById("comments-form") as HTMLFormElement;
+    _commentsForm?.addEventListener("submit", submitComment);
+
+    _ownerCheckbox = document.getElementById("owner-checkbox") as HTMLInputElement;
+    _ownerCheckbox?.addEventListener("change", onOwnerCheckboxChanged);
+
+    _posterNameInput = document.getElementById("comment-name") as HTMLInputElement;
+    _bodyTextarea = document.getElementById("add-comment") as HTMLTextAreaElement;
+    _ownerCheckboxLabel = document.getElementById("comment-owner-password-label");
+    _ownerPasswordInput = document.getElementById("comment-owner-password-input") as HTMLInputElement;
+    _commentsList = document.getElementById("comments-list") as HTMLOListElement;
+
     await updateComments();    
 }
 
