@@ -1,6 +1,6 @@
 Title: Accessing the WndProc in a UWP Application
 Date: 2021-01-10 8:00
-Category: programming
+Category: Programming
 Tags: programming, uwp, windows, win32, c#, horror
 Slug: wndproc-in-uwp
 Authors: Neil McAlister

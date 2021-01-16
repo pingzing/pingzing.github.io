@@ -1,10 +1,6 @@
 /*
-	Name: Smashing HTML5
-	Date: July 2009
-	Description: Sample layout for HTML5 and CSS3 goodness.
-	Version: 1.0
-	Author: Enrique Ramírez
-	Autor URI: http://enrique-ramirez.com
+ Based on Smashing HTML by Enrique Ramírez (http://enrique-ramirez.com).
+ Heavily modified by Neil McAlister.
 */
 
 /* Imports */
@@ -12,10 +8,18 @@
 @import url("pygment.css");
 @import url("typogrify.css");
 @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
-@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
 /***** Global *****/
 /* Body */
+
+@font-face {
+	font-family: "Crimson Text";	
+	src: local('Crimson Text');
+	font-display: swap;
+}
+
 body {
     background: #FDF6E3;
     color: #444;
@@ -23,9 +27,8 @@ body {
     font-family: 'Crimson Text', 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
     margin: 0;
     padding: 0;
-	text-align: left;    
-	/* I _think_ this was here for a header image. I don't have one, so it just looks stupid. Removing! */
-    /* padding-top:120px; */
+	text-align: left;
+	overflow-y: scroll;
 }
 
 body img {
@@ -62,9 +65,7 @@ code {
     background-color:#f8f8f8;
     font-size:14px;
     font-style:normal;
-    color:#444;
-    -moz-border-radius:7px;
-	-webkit-border-radius:7px;
+    color:#444;    
 	border-radius: 7px;
     padding-left:3px;
     padding-right:3px;
@@ -85,16 +86,22 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow:0px 0px 1px #BFBFBF;
 	font-weight: normal;
     font-style: normal;
-	line-height: 50px;
-	/*margin-bottom: .8em;*/
+	line-height: 50px;	
     font-family: 'Crimson Text', 'Yanone Kaffeesatz', arial, serif;
 }
-h1 {
-    font-size: 50px;
 
+h2, h3, h4, h5, h6 { margin-top: .8em; }
+
+/* No top-margin on the first paragraph after a new heading. */
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+	margin-top: 0;
 }
 
-h3, h4, h5, h6 { margin-top: .8em; }
+/* No extra top margin for the first header of a page */
+.entry-title + h1, .entry-title + h2, .entry-title + h3,
+.entry-title + h4, .entry-title + h5, .entry-title + h6 {
+	margin-top: 0;
+}
 	
 hr { border: 1px dotted #8A887B; }
 
@@ -407,7 +414,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px;
-	text-align: right;
+	text-align: center;
 	max-width: 45em;
 	
 	border-radius: 10px;
@@ -426,7 +433,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 /*
 	Footer
 *****************/
-#contentinfo {padding-bottom: 2em; text-align: right;}
+#contentinfo {padding-bottom: 2em; text-align: center;}
 
 /***** Sections *****/
 /* Blog */

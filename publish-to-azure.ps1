@@ -1,14 +1,14 @@
 function Rewrite-Url([string] $url) {
     # Find JS file
-    [string] $jsContent = Get-Content -Path "$PSScriptRoot/output/scripts/comments.js" -Raw;
+    [string] $jsContent = Get-Content -Path "$PSScriptRoot/output/site-scripts/comments.js" -Raw;
 
     #Rewrite 'var BASE_URL = "http://localhost:7071";`
     $jsContent = $jsContent.Replace('var BASE_URL = "http://localhost:7071/api";', 'var BASE_URL = "https://travelneil-backend.azurewebsites.net/api";');    
-    Set-Content -Path "$PSScriptRoot/output/scripts/comments.js" $jsContent;
+    Set-Content -Path "$PSScriptRoot/output/site-scripts/comments.js" $jsContent;
 }
 
 Write-Host "Compiling TypeScript scripts...";
-tsc -p './scripts';
+tsc -p './site-scripts';
 Write-Host "...done. Rewriting BASE_URL to production URL...";
 Rewrite-Url "https://travelneil-backend.azurewebsites.net";
 Write-Host "...done. Engaging pelican.";
@@ -34,7 +34,7 @@ $pygmentCssBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob
 $pygmentCssBlob.ICloudBlob.Properties.CacheControl = "max-age=300";
 $pygmentCssBlobUpdateTask = $pygmentCssBlob.ICloudBlob.SetPropertiesAsync();
 
-$commentsJsBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "scripts/comments.js";
+$commentsJsBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "site-scripts/comments.js";
 $commentsJsBlob.ICloudblob.Properties.CacheControl = "max-age=300";
 $commentsJsBlobUpdateTask = $commentsJsBlob.ICloudBlob.SetPropertiesAsync();
 
