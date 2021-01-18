@@ -7,18 +7,9 @@
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
-@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
-@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic&display=swap);
 
 /***** Global *****/
-/* Body */
-
-@font-face {
-	font-family: "Crimson Text";	
-	src: local('Crimson Text');
-	font-display: swap;
-}
 
 body {
     background: #FDF6E3;
@@ -87,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
     font-style: normal;
 	line-height: 50px;	
-    font-family: 'Crimson Text', 'Yanone Kaffeesatz', arial, serif;
+    font-family: 'Crimson Text', arial, serif;
 }
 
 h2, h3, h4, h5, h6 { margin-top: .8em; }

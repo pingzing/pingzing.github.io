@@ -10,12 +10,12 @@ cover_image: image_folder_relative_path.png
 Content goes here.
 
 An image looks like this: 
-[![Alt-text]({photo}imagename.jpg)]({filename}images/imagename.jpg "Mouseover text here")
+[![Alt-text]({photo}imagename.jpg){loading='lazy'}]({static}images/imagename.jpg "Mouseover text here")
 
 An internal link looks like this:
-[Text to show]({filename}/absolute/path/relative/to-root.md)
+[Text to show]({static}/absolute/path/relative/to-root.md)
 or, a relative path:
-[Text to show]({filename}../relative/to-current-file.md)
+[Text to show]({static}../relative/to-current-file.md)
 
 Code looks like this:
 

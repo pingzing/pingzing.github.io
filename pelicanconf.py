@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 import os, sys
-import subprocess
 plugins_path = os.path.abspath(os.path.join('plugins'))
 sys.path.append(plugins_path)
 
 from photos import *
+from markdown import *
 
 AUTHOR = 'Neil'
 SITENAME = 'Travel Neil'
@@ -41,6 +41,18 @@ SOCIAL = ()
 #Specify theme
 THEME = "theme/cebong"
 
+# Customize the Python-Markdown module
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        'markdown.extensions.attr_list': {} # Add the attr_list extension which allows adding arbitrary attributes inline in Markdown docs (like {laoding='lazy'} for example)
+    },
+    'output_format': 'html5',
+}
+
+# Pagination
 DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing

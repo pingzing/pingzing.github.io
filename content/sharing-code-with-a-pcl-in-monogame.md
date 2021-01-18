@@ -22,7 +22,7 @@ how to actually structure your code in a way that makes this easy seemed to be e
 # tl;dr
 For those short of time:
 
- [![Create Monogame project]({photo}monogame-tldr-1.png)]({filename}images/monogame-tldr-1.png "Make thing.")
+ [![Create Monogame project]({photo}monogame-tldr-1.png){loading='lazy'}]({filename}images/monogame-tldr-1.png "Make thing.")
 
 1.) Make your first platform project. It can target whatever it is that you want to target.
 
