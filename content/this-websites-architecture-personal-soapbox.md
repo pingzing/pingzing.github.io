@@ -5,6 +5,7 @@ Tags: programming, slim-website, soapboxing, personal-philosophy
 Slug: this-websites-architecture-personal-soapbox
 Authors: Neil McAlister
 Summary: The philosophy behind my little page in this corner of the web.
+cover_image: soapbox-cover.webp
 
 ## What am I on about?
 
