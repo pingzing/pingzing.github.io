@@ -15,13 +15,12 @@
                         <img src="{{ article.cover_image_url }}" alt="Cover image for {{ article.title }}">                                        
                         {% endif %}
                         <div class="featured-content">                        
-                            {% include 'article_infos.html' %}
-                            <br>
+                            {% include 'article_infos.html' %}                            
                             {{ article.teaser }}
                         </div>
                     </div>
                 </article>
-                <br>
+                
                 <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">continue reading...</a>
                 {% if loop.length == 1 %}
                     {% include 'pagination.html' %}

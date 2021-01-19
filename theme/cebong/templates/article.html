@@ -32,15 +32,14 @@
 
 {% endblock meta_tags_in_head %}  
 {% block scripts %}
-  <script type="text/javascript" src="./site-scripts/comments.js"></script>
+  <script type="module" src="./site-scripts/comments.js" defer></script>
 {% endblock scripts %}
 {% block content %}
 <section id="content" class="body">
   <article>
 
     {% if article.cover_image_url and article.cover_image_url|length %}
-    <img src="{{ article.cover_image_url }}" alt="Cover image">
-    <br>
+    <img class="cover" src="{{ article.cover_image_url }}" alt="Cover image">    
     {% endif %}
 
     <header>
@@ -51,8 +50,7 @@
     </header>    
 
     <div class="entry-content">
-      {% include 'article_infos.html' %}
-      <br>
+      {% include 'article_infos.html' %}      
       {{ article.content }}
     </div> 
 

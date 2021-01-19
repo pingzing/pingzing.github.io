@@ -17,12 +17,19 @@ namespace TravelNeil.Backend
         private readonly TableServiceClient _client;
         private readonly ILogger _logger;
         private readonly HtmlSanitizer _sanitizer;
+        private readonly string TablePrefix = "";
 
         public Table(ILogger logger)
         {
             string? connectionString = Environment.GetEnvironmentVariable("TABLE_CONNECTION_STRING", EnvironmentVariableTarget.Process);
             _client = new TableServiceClient(connectionString);
             _logger = logger;
+
+            string? tablePrefix = Environment.GetEnvironmentVariable("TABLE_PREFIX", EnvironmentVariableTarget.Process);
+            if (tablePrefix != null)
+            {
+                TablePrefix = tablePrefix;
+            }
 
             // Strip EVERYTHING.
             _sanitizer = new HtmlSanitizer(Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
@@ -109,6 +116,10 @@ namespace TravelNeil.Backend
 
                 await foreach (var table in _client.GetTablesAsync())
                 {
+                    if (!table.TableName.StartsWith(TablePrefix)) 
+                    {
+                        continue;
+                    }
                     var tableClient = _client.GetTableClient(table.TableName);
                     List<Comment> comments = new List<Comment>();
 
@@ -221,6 +232,7 @@ namespace TravelNeil.Backend
         private string ToTableName(string articleSlug)
         {
             string sanitizedTableName = _validTableName.Replace(articleSlug, "");
+            sanitizedTableName = $"{TablePrefix}{sanitizedTableName}";
             if(char.IsDigit(sanitizedTableName.First())) 
             {
                 // prefix the slug with "t" so that the table name begins with a non-numeric

@@ -1,1 +1,1 @@
-& pelican --listen
+dotnet-serve --port 8000 --directory ./output

@@ -195,17 +195,17 @@ def rotate_image(img, exif_dict):
         if orientation == 2:
             img = img.transpose(Image.FLIP_LEFT_RIGHT)
         elif orientation == 3:
-            img = img.rotate(180)
+            img = img.rotate(180, expand=True)
         elif orientation == 4:
-            img = img.rotate(180).transpose(Image.FLIP_LEFT_RIGHT)
+            img = img.rotate(180, expand=True).transpose(Image.FLIP_LEFT_RIGHT)
         elif orientation == 5:
-            img = img.rotate(-90).transpose(Image.FLIP_LEFT_RIGHT)
+            img = img.rotate(-90, expand=True).transpose(Image.FLIP_LEFT_RIGHT)
         elif orientation == 6:
-            img = img.rotate(-90)
+            img = img.rotate(-90, expand=True)
         elif orientation == 7:
-            img = img.rotate(90).transpose(Image.FLIP_LEFT_RIGHT)
+            img = img.rotate(90, expand=True).transpose(Image.FLIP_LEFT_RIGHT)
         elif orientation == 8:
-            img = img.rotate(90)
+            img = img.rotate(90, expand=True)
 
     return (img, exif_dict)
 
@@ -236,7 +236,8 @@ def manipulate_exif(img, settings):
         img, exif = rotate_image(img, exif)
 
     if settings['PHOTO_EXIF_REMOVE_GPS']:
-        exif.pop('GPS')
+        exif.pop('GPS', None)
+
 
     if settings['PHOTO_EXIF_COPYRIGHT']:
 

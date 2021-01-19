@@ -119,9 +119,6 @@ h1 a:hover {
 	
 /* Paragraphs */
 p { margin-top: 1.143em; }
-article p:first-of-type {
-	margin-top: 0;
-}
 
 strong, b {font-weight: bold;}
 em, i {font-style: italic;}
@@ -208,6 +205,7 @@ aside, nav, article, figure {
 .body {clear: both; margin: 0 auto; }
 img.right, figure.right {float: right; margin: 0 0 2em 2em;}
 img.left, figure.left {float: left; margin: 0 2em 2em 0;}
+.img-caption { font-size: 0.8em; text-align: center; }
 
 /*
 	Header
@@ -329,6 +327,12 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 /*
 	Body
 *****************/
+
+/* Header images */
+img.cover {
+	max-height: 500px;
+}
+
 #content {
 	background: transparent;
 	margin-bottom: 2em;
@@ -623,5 +627,4 @@ img + .hentry-content {
 .hidden {
 	display: none;
 }
-
 /**/
