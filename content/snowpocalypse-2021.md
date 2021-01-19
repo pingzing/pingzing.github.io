@@ -5,7 +5,7 @@ Tags: finland, snow, helsinki
 Slug: snowpocalypse-2021
 Authors: Neil McAlister
 Summary: Pictures of snow in Helsinki. In 2021.
-cover_image: snow_2.JPG
+cover_image: snow_2.jpg
 
 So it's been a little snowy in Helsinki lately. A few days ago, a huge winter storm dropped about 1ft/30cm of snow on us over the course of about two days. Now, today, it dumped another 2in/5cm on us. Here are some pictures.
 
