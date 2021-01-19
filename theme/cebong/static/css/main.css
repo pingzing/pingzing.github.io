@@ -309,7 +309,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 .featured-grid img {
 	grid-area: cover;
 	border: 2px solid #eee;		
-	height: 200px;
+	max-height: 300px;
 	max-width: 100%;
 	object-fit: cover;
 }
@@ -458,7 +458,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 .hentry-grid img {
 	grid-area: cover;
 	border: 2px solid #eee;		
-	height: 150px;
+	max-height: 150px;
 	max-width: 100%;
 	object-fit: cover;
 }

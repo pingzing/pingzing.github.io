@@ -11,8 +11,8 @@
                 <article>
                     <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1> 
                     <div class="featured-grid">
-                        {% if article.cover_image_url %}                    
-                        <img src="{{ article.cover_image_url }}" alt="Cover image for {{ article.title }}">                                        
+                        {% if article.photo_image and article.photo_image |length %}        
+                        <img src="{{ SITEURL }}/{{ article.photo_image[1] }}" alt="Cover image for {{ article.title }}">                                        
                         {% endif %}
                         <div class="featured-content">                        
                             {% include 'article_infos.html' %}                            
@@ -45,14 +45,14 @@
                     </h3>                           
                 </header>                        
                 <div class="hentry-grid">
-                    {% if article.cover_image_url %}                    
-                        <img src="{{ article.cover_image_url }}" alt="Cover image for {{ article.title }}" loading="lazy">                                        
+                    {% if article.photo_image and article.photo_image |length %}                    
+                        <img src="{{ SITEURL }}/{{ article.photo_image[2] }}" alt="Cover image for {{ article.title }}" loading="lazy">                                        
                         {% endif %}
                         <div class="hentry-content">
                             {% include 'article_infos.html' %}                           
 
                             <div class="entry-content">
-                            {{ article.summary }}          
+                            {{ article.summary }}
                         </div>      
                     </div><!-- /.entry-content -->
                 </div>

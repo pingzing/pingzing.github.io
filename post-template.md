@@ -5,7 +5,7 @@ Tags: travel
 Slug: title-goes-here
 Authors: Neil McAlister
 Summary: Short version for index and feeds
-cover_image: image_folder_relative_path.png
+image: {photo}image_folder_relative_path.png
 
 Content goes here.
 

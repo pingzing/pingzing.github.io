@@ -5,7 +5,7 @@ Tags: Windows, command-line, programming, console, chocolatey, conemu, git
 Slug: saner-command-line-2
 Authors: Neil McAlister
 Summary: Turbocharging the Windows Command Line, Pt. 2
-cover_image: header-image.png
+image: {photo}header-image.png
 
 ---
 

@@ -258,6 +258,7 @@ def resize_worker(orig, resized, spec, settings):
 
     logger.warning('photos: make photo {} -> {}'.format(orig, resized))
     im = Image.open(orig)
+    logger.warning(f"photo opened: {orig}")
 
     if ispiexif and settings['PHOTO_EXIF_KEEP'] and im.format == 'JPEG':  # Only works with JPEG exif for sure.
         im, exif_copy = manipulate_exif(im, settings)
@@ -265,6 +266,7 @@ def resize_worker(orig, resized, spec, settings):
         exif_copy = b''
 
     icc_profile = im.info.get("icc_profile", None)
+    logger.warning("Thumbnailing...")
     im.thumbnail((spec[0], spec[1]), Image.ANTIALIAS)
     directory = os.path.split(resized)[0]
 
@@ -284,7 +286,10 @@ def resize_worker(orig, resized, spec, settings):
         if not isthumb or (isthumb and settings['PHOTO_WATERMARK_THUMB']):
             im = watermark_photo(im, settings)
 
-    im.save(resized, 'JPEG', quality=spec[2], icc_profile=icc_profile, exif=exif_copy)
+    if icc_profile:
+        im.save(resized, quality=spec[2], icc_profile=icc_profile, exif=exif_copy)
+    else:
+        im.save(resized, quality=spec[2], exif=exif_copy)
 
 
 def resize_photos(generator, writer):
@@ -542,8 +547,9 @@ def process_image(generator, content, image):
         image = file_clipper(image)
 
     if os.path.isfile(path):
-        photo = os.path.splitext(image)[0].lower() + 'a.jpg'
-        thumb = os.path.splitext(image)[0].lower() + 't.jpg'
+        image_text = os.path.splitext(image)
+        photo = image_text[0].lower() + 'a' + image_text[1].lower()
+        thumb = image_text[0].lower() + 't' + image_text[1].lower()
         content.photo_image = (
             os.path.basename(image).lower(),
             os.path.join('photos', photo),
