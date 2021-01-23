@@ -16,11 +16,9 @@
   <meta name="category" content="{{ article.category|striptags }}" />
 {% endif %}
 {% if article.description %}
-  <meta name="description" content="{{ article.description|striptags }}" />
-  <meta property="og:description" content="{{ article.description|striptags }}"/>
+  <meta name="description" content="{{ article.description|striptags }}" />  
 {% elif article.summary %}
-  <meta name="description" content="{{ article.summary|striptags  }}" />
-  <meta property="og:description" content="{{ article.summary|striptags }}"/>
+  <meta name="description" content="{{ article.summary|striptags  }}" />  
 {% endif %}
 {% if article.author %}
   <meta name="author" content="{{ article.author }}" />

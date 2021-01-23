@@ -254,19 +254,15 @@ def manipulate_exif(img, settings):
     return (img, piexif.dump(exif))
 
 
-def resize_worker(orig, resized, spec, settings):
-
-    logger.warning('photos: make photo {} -> {}'.format(orig, resized))
-    im = Image.open(orig)
-    logger.warning(f"photo opened: {orig}")
+def resize_worker(orig, resized, spec, settings):    
+    im = Image.open(orig)    
 
     if ispiexif and settings['PHOTO_EXIF_KEEP'] and im.format == 'JPEG':  # Only works with JPEG exif for sure.
         im, exif_copy = manipulate_exif(im, settings)
     else:
         exif_copy = b''
 
-    icc_profile = im.info.get("icc_profile", None)
-    logger.warning("Thumbnailing...")
+    icc_profile = im.info.get("icc_profile", None)    
     im.thumbnail((spec[0], spec[1]), Image.ANTIALIAS)
     directory = os.path.split(resized)[0]
 
@@ -358,6 +354,9 @@ def detect_content(content):
                         m.group('quote'),
                         m.group('attrs_after'),
                     ))
+                    # Possible todo if I want explicit height/width: save each rewritten img tag into a dict
+                    # then go find them when we resize them and add it in                
+                    #logger.warn(f"Output is: {output}")
 
                 elif what == 'lightbox' and tag == 'img':
                     photo_gallery = photo_prefix + '.jpg'
