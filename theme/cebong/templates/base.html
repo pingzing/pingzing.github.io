@@ -22,7 +22,7 @@
         <meta property="og:title" content="{{ article.title }}">
         <meta property="og:description" content="{{ article.summary|striptags }}">
         {% if article.photo_image %}
-        <meta property="og:image" content="{{ article.photo_image[1] }}">
+        <meta property="og:image" content="{{SITEURL}}/{{ article.photo_image[1] }}">
         {% endif %}
         {% else %}
         <meta property="og:type" content="website">
