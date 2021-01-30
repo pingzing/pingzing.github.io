@@ -13,9 +13,7 @@ An image looks like this:
 [![Alt-text]({photo}imagename.jpg){loading='lazy'}]({static}images/imagename.jpg "Mouseover text here")
 
 An internal link looks like this:
-[Text to show]({static}/absolute/path/relative/to-root.md)
-or, a relative path:
-[Text to show]({static}../relative/to-current-file.md)
+[other post]({filename}this-websites-architecture-personal-soapbox.md)
 
 Code looks like this:
 

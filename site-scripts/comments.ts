@@ -118,8 +118,7 @@ async function submitComment(event: Event): Promise<void> {
         return;
     }
 
-    const addedCommentId = response.headers.get('Location');
-    console.log(`${response.headers}`);
+    const addedCommentId = response.headers.get('Location');    
 
     window.location.hash = `#${addedCommentId}`;
     window.location.reload();
