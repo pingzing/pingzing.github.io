@@ -63,6 +63,10 @@ namespace TravelNeil.Backend
             {
                 return new BadRequestObjectResult("Only the blog owner may post comment replies.");
             }
+            if (comment.Body.Length > 10000) 
+            {
+                return new BadRequestObjectResult("Comments must be no longer than 10,000 characters long.");
+            }
             comment.IsOwnerComment = false; // none of that shenanigannery here
 
             var tableApi = new Table(logger);
