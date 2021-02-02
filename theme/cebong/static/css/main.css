@@ -6,7 +6,6 @@
 /* Imports */
 @import url("reset.css");
 @import url("pygment.css");
-@import url("typogrify.css");
 @import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic&display=swap);
 
 /***** Global *****/
@@ -244,8 +243,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 		text-align: center;		
         font-style:italic;
 		
-		border-radius: 5px;
-		-moz-border-radius: 5px;
+		border-radius: 5px;		
 		-webkit-border-radius: 5px;
 	}
 	
@@ -268,13 +266,9 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	}
 	
 	#banner nav li:first-child a {
-		border-top-left-radius: 5px;
-		-moz-border-radius-topleft: 5px;
-		-webkit-border-top-left-radius: 5px;
+		border-top-left-radius: 5px;		
 		
-		border-bottom-left-radius: 5px;
-		-moz-border-radius-bottomleft: 5px;
-		-webkit-border-bottom-left-radius: 5px;
+		border-bottom-left-radius: 5px;		
 	}
 
 /*
@@ -321,7 +315,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 
 /* With image present, only span the single "content" cell */
 .featured-grid img + .featured-content {
-	grid-area: content
+	grid-area: content;
 }
 
 /*
@@ -340,9 +334,7 @@ img.cover {
 	padding: 20px 20px;
 	max-width: 45em;
 	
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+	border-radius: 10px;	
 }
 
 /*
@@ -412,9 +404,7 @@ img.cover {
 	text-align: center;
 	max-width: 45em;
 	
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+	border-radius: 10px;	
 }
 
 #about .primary {float: left; width: 165px;}
@@ -505,9 +495,7 @@ img + .hentry-content {
 	margin: 2em 0;
 	padding: 10px 20px 15px 20px;
 	
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	border-radius: 5px;	
 }
 
 #about-author strong {
@@ -520,8 +508,7 @@ img + .hentry-content {
 #about-author .photo {border: 1px solid #ddd; float: left; margin: 5px 1em 0 0;}
 
 /* Comments */
-#comments {
-	background-attachment: transparent;			
+#comments {			
 	overflow: hidden;
 	padding: 20px 20px;
 	max-width: 45em;		

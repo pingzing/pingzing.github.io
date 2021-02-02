@@ -81,7 +81,7 @@ Bit of an explanation for the Regex: that `^` means _negation_. That Regex will 
 
 A little rough-and-ready, but it'll get the job done. 
 
-Azure Table Storage also only gives you two keys (which are automatically indexed) per entity: a Partition Key, and a Row Key. A Patition Key is meant to be unique across some arbitrary collection of elements, which is useful if you want to query against some user-defined subset of elements in a given table. Then there's the Row Key, which should be unique per entity.
+Azure Table Storage also only gives you two keys (which are automatically indexed) per entity: a Partition Key, and a Row Key. A Partition Key is meant to be unique across some arbitrary collection of elements, which is useful if you want to query against some user-defined subset of elements in a given table. Then there's the Row Key, which should be unique per entity.
 
 In my case, I don't really need partitioning–my one-table-per-article design already takes care of that. So my Partition Key and Row Key will be the same: a GUID that gets generated when a new comment is added to the database.
 

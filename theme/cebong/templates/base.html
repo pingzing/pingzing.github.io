@@ -57,6 +57,8 @@
         <!--[if lt IE 7]>
                 <link rel="stylesheet" type="text/css" media="all" href="{{ SITEURL }}/css/ie6.css"/><![endif]-->        
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css">    
+        {% block extra_styles %}
+        {% endblock extra_styles %}
     </head>
     <body id="index" class="home">
         {% include 'github.html' %}

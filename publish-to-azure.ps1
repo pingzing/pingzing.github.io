@@ -35,7 +35,8 @@ $pygmentCssBlob.ICloudBlob.Properties.CacheControl = "max-age=300";
 $pygmentCssBlobUpdateTask = $pygmentCssBlob.ICloudBlob.SetPropertiesAsync();
 
 $commentsJsBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "site-scripts/comments.js";
-$commentsJsBlob.ICloudblob.Properties.CacheControl = "max-age=300";
+$commentsJsBlob.ICloudBlob.Properties.CacheControl = "max-age=300";
+$commentsJsBlob.ICloudBlob.Properties.ContentType = "text/javascript; charset=utf-8"
 $commentsJsBlobUpdateTask = $commentsJsBlob.ICloudBlob.SetPropertiesAsync();
 
 [System.Threading.Tasks.Task]::WaitAll($updateIndexMaxAgeTask, $mainCssBlobUpdateTask, $pygmentCssBlobUpdateTask, $commentsJsBlobUpdateTask);
