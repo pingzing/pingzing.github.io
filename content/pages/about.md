@@ -39,10 +39,12 @@ You can also find me on GitHub as [PingZing](https://github.com/pingzing) or Twi
   <div markdown="1" style="text-align:justify;">
 I'm a skilled software developer with over 7 years of experience in both consulting and product development contexts. I strive to deliver quality work, and care about the craft of software development. I excel at Microsoft technologies and Windows development, and thrive in both the full stack and the cloud. I'm experienced with agile methodologies, and DevOps workflows.
 
-I'm proficient in a number of programming languages, and am most comfortable in **C#**, **Rust**, and **TypeScript**. I have a great deal of experience with Microsoft's modern XAML-based UI frameworks, including **WPF**, **UWP** and **Xamarin Forms**.    
+I'm proficient in a number of programming languages. I'm most comfortable in **C#**, **Rust**, and **TypeScript**. I have a great deal of experience with Microsoft's modern XAML-based UI frameworks, including **WPF**, **UWP** and **Xamarin Forms**.    
+
+Outside work, I enjoy hacking on personal projects, reading, weird indie video games, and writing fiction. I'm comfortable with public speaking, and love travelling (at least when there's not a pandemic about).
   </div>
   <div class="resume-header">
-    <h3> Work Experience</h3>
+    <h3>Work Experience</h3>
     <hr>
   </div>
   <div class="exp-grid" markdown="1">
