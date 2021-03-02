@@ -7,17 +7,6 @@ function Rewrite-Url([string] $url) {
     Set-Content -Path "$PSScriptRoot/output/site-scripts/comments.js" $jsContent;
 }
 
-function HandleCompression([string] $folder) {
-    $threadSafeBag = [System.Collections.Concurrent.ConcurrentBag[string]]::new();
-    Get-ChildItem $folder -Recurse -File -Filter  "*.gz" | ForEach-Object -Parallel {        
-        $bag = $using:threadSafeBag;
-        $pathWithoutGz = $_.FullName.Replace(".gz", "");
-        $bag.Add($pathWithoutGz);
-        Move-Item -Path $_.FullName -Destination $pathWithoutGz -Force
-    };
-    return $threadSafeBag;
-}
-
 Write-Host "PSScriptRoot is: $PSScriptRoot";
 
 Write-Host "Compiling TypeScript scripts...";
@@ -27,29 +16,14 @@ Rewrite-Url "https://travelneil-backend.azurewebsites.net";
 Write-Host "...done. Engaging pelican.";
 pelican content -o output -s publishconf.py;
 
-Write-Host "Compressed version of site created. Removing extra files...";
-$markedFiles = HandleCompression "$PSScriptRoot/output"
-Write-Host "Compression complete. Publishing to Azure..."
+Write-Host "Content generation complete. Publishing to Azure..."
 
 # Use 'azcopy login' to get access if this fails.
 & "C:\Users\mcali\azcopy\azcopy.exe" sync ./output "https://travelneil.blob.core.windows.net/`$web" --recursive --delete-destination true;
 
-Write-Host "`nCopied to Azure storage. Setting Content-Encoding of files...`n";
-
 $context = New-AzureStorageContext -StorageAccountName "travelneil" -StorageAccountKey $env:TravelNeilAzureKey;
 
-$updateTasks = [System.Collections.ArrayList]@();
-foreach ($compressed in $markedFiles) {
-    $relativePath = $compressed.Replace("$PSScriptRoot\output\", "");
-    $blob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob $relativePath;
-    $blob.ICloudBlob.Properties.ContentEncoding = "gzip";
-    $updateBlobTask = $blob.ICloudBlob.SetPropertiesAsync();
-    $updateTasks.Add($updateBlobTask);
-}
-
-[System.Threading.Tasks.Task]::WaitAll($updateTasks);
-
-Write-Host "Updated Content-Encoding of all files, updating CacheControl of the important ones...`n";
+Write-Host "Copied to Azure storage. Updating CacheControl of the important files...`n";
 
 $indexBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "index.html";
 $indexBlob.ICloudBlob.Properties.CacheControl = "max-age=300";
