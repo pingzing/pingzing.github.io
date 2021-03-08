@@ -7,8 +7,6 @@ function Rewrite-Url([string] $url) {
     Set-Content -Path "$PSScriptRoot/output/site-scripts/comments.js" $jsContent;
 }
 
-Write-Host "PSScriptRoot is: $PSScriptRoot";
-
 Write-Host "Compiling TypeScript scripts...";
 tsc -p './site-scripts';
 Write-Host "...done. Rewriting BASE_URL to production URL...";

@@ -1,4 +1,4 @@
-Title: The Frankentstein Comment System
+Title: The Frankenstein Comment System
 Date: 2021-01-30 14:41
 Category: Programming
 Tags: programming, slim-website, soapboxing, comments, azure, serverless

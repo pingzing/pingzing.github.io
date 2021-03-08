@@ -39,7 +39,7 @@ You can also find me on GitHub as [PingZing](https://github.com/pingzing) or Twi
   <div markdown="1" style="text-align:justify;">
 I'm a skilled software developer with over 7 years of experience in both consulting and product development contexts. I strive to deliver quality work, and care about the craft of software development. I excel at Microsoft technologies and Windows development, and thrive in both the full stack and the cloud. I'm experienced with agile methodologies, and DevOps workflows.
 
-I'm proficient in a number of programming languages. I'm most comfortable in **C#**, **Rust**, and **TypeScript**. I have a great deal of experience with Microsoft's modern XAML-based UI frameworks, including **WPF**, **UWP** and **Xamarin Forms**.    
+I'm proficient in a number of programming languages. I'm most comfortable in **C#**, **Rust**, and **TypeScript**. I have a great deal of experience with Microsoft's modern XAML-based UI frameworks, including **WPF**, **UWP** and **Xamarin**. Other notable technologies I have experience with include **Entity Framework Core**, **MongoDB**, **ASP.NET Core**, **NestJS**, **NodeJS**, and **Angular** (with the usual smattering of **HTML** and **CSS**).
 
 Outside work, I enjoy hacking on personal projects, reading, weird indie video games, and writing fiction. I'm comfortable with public speaking, and love travelling (at least when there's not a pandemic about).
   </div>
@@ -145,6 +145,7 @@ _Valid through June 30, 2022_
   </div>
   <div markdown="1">
   <a class="project-header" href="https://github.com/pingzing/trippit/"><h5>Trippit</h5></a>
+  <h6 class="project-subheader">Creator</h6>
   <h6 class="project-subheader">https://github.com/pingzing/trippit/</h6>
 <p></p>
 
@@ -153,8 +154,19 @@ Trippit is a journey planner for the greater Helsinki metro area. It hooks into 
 It was originally meant to be a phone-first app with desktop capabilities, but then Windows 10 Mobile went the way of the dodo. It's probably my most complete application, though it never found much success due to the abrupt death of its target platform.
   </div>
   <div markdown="1">
-  <a class="project-header" href="https://github.com/pingzing/SoleneCYOA"><h5>Solene</h5></a>
-  <h6 class="project-subheader">https://github.com/pingzing/SoleneCYOA</h6>
+  <a class="project-header" href="https://github.com/OffprintStudios/dragonfish"><h5>Offprint</h5></a>
+  <h6 class="project-subheader">Core contributor</h6>
+  <h6 class="project-subheader">https://github.com/OffprintStudios/dragonfish</h6>
+<p></p>
+
+Offprint is a community-driven, open source website for writing fan fiction, original stories and blog posts. It strives to foster an inclusive, welcoming environment, and actively polices content counter to its policies.
+
+Offprint's backend is written in TypeScript on top of NestJS, and its frontend is written TypeScript on top of Angular 2. I've been contributing to Offprint since mid-2020, and contributed across the stack, and have written significant parts of the infrastructure as well.
+  </div>
+  <div markdown="1">
+  <a class="project-header" href="https://github.com/pingzing/solenecyoa"><h5>Solene</h5></a>
+  <h6 class="project-subheader">Creator</h6>
+  <h6 class="project-subheader">https://github.com/pingzing/solenecyoa</h6>
 
 Solene is a text-based choose-your-own-adventure game. This was a more recent project undertaken as a creative exercise, and an attempt to see if I could make a monorepo project using .NET from top to bottom. I'm happy to say that I was!
 
@@ -162,6 +174,7 @@ It's a full-stack .NET application. It uses Xamarin.Forms for the Android and UW
   </div>
   <div markdown="1">
   <a class="project-header" href="https://github.com/pingzing/scannit-core"><h5>Scannit</h5></a>
+  <h6 class="project-subheader">Creator</h6>
   <h6 class="project-subheader">https://github.com/pingzing/scannit-core</h6>
 
 Scannit is a Rust-based library for reading NFC-based travel cards used by Helsinki Regional Transport in the greater Helsinki area. 
