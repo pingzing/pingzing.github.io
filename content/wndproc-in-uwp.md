@@ -34,7 +34,7 @@ So, the first thing that we need to do is crowbar an HWND out of our UWP applica
         bool MessageHandled { get; }
     }
 
-The only secret sauce here is the magic GUID. That's _not_ guaranteed to remain the same between Windows verions (though it has, thus far). You can find the interface definition in `C:\Program Files (x86)\Windows Kits\10\Include\<version>\winrt\CoreWindow.idl`, which will have the GUID you need for whichever version of Windows your application targets.
+The only secret sauce here is the magic GUID. That's _not_ guaranteed to remain the same between Windows versions (though it has, thus far). You can find the interface definition in `C:\Program Files (x86)\Windows Kits\10\Include\<version>\winrt\CoreWindow.idl`, which will have the GUID you need for whichever version of Windows your application targets.
 
 Now we just have to get our hands on our application's `CoreWindow`, and cast it to an `ICoreWindowInterop`, and voila–access to the HWND awaits. This, too, requires some trickery, however; the compiler rightly claims that a `CoreWindow` cannot be cast to an `ICoreWindowInterop` because as far as the C# compiler can tell, they share no common ancestor. We know better however, so we can just tell the compiler where to shove it by getting a `dynamic` reference to the CoreWindow, and casting it anyway:
 

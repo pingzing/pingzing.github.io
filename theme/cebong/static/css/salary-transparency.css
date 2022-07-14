@@ -1,0 +1,15 @@
+.salary-table table {
+    margin: 0;
+    width: 100%;
+}
+
+.salary-table th {
+    text-align: center;
+    font-size: 18px;
+    border: 1px dotted #8A887B;
+}
+
+.salary-table td {
+    font-size: 18px;
+    border: 1px dotted #8A887B;
+}

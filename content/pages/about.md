@@ -154,16 +154,6 @@ Trippit is a journey planner for the greater Helsinki metro area. It hooks into 
 It was originally meant to be a phone-first app with desktop capabilities, but then Windows 10 Mobile went the way of the dodo. It's probably my most complete application, though it never found much success due to the abrupt death of its target platform.
   </div>
   <div markdown="1">
-  <a class="project-header" href="https://github.com/OffprintStudios/dragonfish"><h5>Offprint</h5></a>
-  <h6 class="project-subheader">Core contributor</h6>
-  <h6 class="project-subheader">https://github.com/OffprintStudios/dragonfish</h6>
-<p></p>
-
-Offprint is a community-driven, open source website for writing fan fiction, original stories and blog posts. It strives to foster an inclusive, welcoming environment, and actively polices content counter to its policies.
-
-Offprint's backend is written in TypeScript on top of NestJS, and its frontend is written TypeScript on top of Angular 2. I've been contributing to Offprint since mid-2020, and contributed across the stack, and have written significant parts of the infrastructure as well.
-  </div>
-  <div markdown="1">
   <a class="project-header" href="https://github.com/pingzing/solenecyoa"><h5>Solene</h5></a>
   <h6 class="project-subheader">Creator</h6>
   <h6 class="project-subheader">https://github.com/pingzing/solenecyoa</h6>

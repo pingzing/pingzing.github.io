@@ -3,6 +3,10 @@
 {% block content_title %}{% endblock %}
 {% block content %}        
 {% if articles %}
+    <!-- Top-level header callout. For short stuff! -->
+    <div id="mainpage-callout" class="body">
+        <p>Interested in tech salaries? Take a loot at my historical salaries on my <a href="{{ SITEURL }}/pages/salary-transparency.html">salary transparency page.</a></p>
+    </div>
     {% for article in articles_page.object_list %}        
 
         {# First item #}

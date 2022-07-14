@@ -18,7 +18,8 @@ def prepare_comments(pelican):
     if base_url == "":
         logger.error("No COMMENTS_BASE_URL defined. Will be unable to retrieve comment info.")
         return
-        
+    
+    logger.info("Getting all comments from " + base_url)
     response: Response = requests.get(f"{base_url}/all")
 
     try:

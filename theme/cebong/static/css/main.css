@@ -211,11 +211,11 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 *****************/
 #banner {
 	margin: 0 auto;
-	padding: 2.5em 0 0 0;
+	padding: 1.5em 0 0 0;
 }
 
 	/* Banner */
-	#banner h1 {font-size: 51px; line-height: 0;}
+	#banner h1 {font-size: 51px; }
 	#banner h1 a:link, #banner h1 a:visited {
         text-align:center;
 		color: #383732;
@@ -272,11 +272,20 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	}
 
 /*
+	Mainpage Callout
+****************/
+#mainpage-callout {
+	max-width: 70rem;
+	text-align: center;
+}
+
+
+/*
 	Featured
 *****************/
 #featured {	
 	padding: 20px;
-	max-width: 45em;
+	max-width: 70rem;
 	
 	border-radius: 10px;
 }
@@ -332,7 +341,7 @@ img.cover {
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px 20px;
-	max-width: 45em;
+	max-width: 70rem;
 	
 	border-radius: 10px;	
 }
@@ -402,7 +411,7 @@ img.cover {
 	overflow: hidden;
 	padding: 20px;
 	text-align: center;
-	max-width: 45em;
+	max-width: 70rem;
 	
 	border-radius: 10px;	
 }
@@ -511,7 +520,7 @@ img + .hentry-content {
 #comments {			
 	overflow: hidden;
 	padding: 20px 20px;
-	max-width: 45em;		
+	max-width: 70rem;		
 }
 
 .comments-header {
