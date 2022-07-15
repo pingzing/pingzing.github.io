@@ -10,8 +10,8 @@ image: {photo}header-image.png
 ---
 
 * Part 1 - You are here
-* [Part 2]({static}//saner-command-line-part-2.md) - In which we supercharge Git, fix console selection and copy/paste, and introduce ConEmu and friends.
-* [Part 3]({static}//saner-command-line-part-3.md) - In which we move to native SSH, update to `pwsh` and learn about the magic that is WSL.
+* [Part 2]({filename}saner-command-line-part-2.md) - In which we supercharge Git, fix console selection and copy/paste, and introduce ConEmu and friends.
+* [Part 3]({filename}saner-command-line-part-3.md) - In which we move to native SSH, update to `pwsh` and learn about the magic that is WSL.
 
 ---
 
@@ -191,7 +191,7 @@ That's all for now! At the very least, now you've got some better syntax highlig
 Next time, we'll be talking about better Git integration, and improvements to the actual console experience. Look forward to tabs, splitting your console, and better resize support for non-Windows 10 machines!
 
 
-Part 2 is now available [here]({static}//saner-command-line-part-2.md)!
+Part 2 is now available [here]({filename}saner-command-line-part-2.md)!
 
 [![Creative Commons BY badge]({static}/images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
 

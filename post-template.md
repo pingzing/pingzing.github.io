@@ -14,7 +14,7 @@ An image looks like this:
 [![Alt-text]({photo}imagename.jpg){loading='lazy'}]({static}/images/imagename.jpg "Mouseover text here")
 
 An internal link looks like this:
-[other post]({static}/this-websites-architecture-personal-soapbox.md)
+[other post]({filename}/this-websites-architecture-personal-soapbox.md)
 
 Code looks like this:
 

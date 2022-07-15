@@ -54,7 +54,8 @@ MARKDOWN = {
         'markdown.extensions.codehilite': {'css_class': 'highlight'},
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
-        'markdown.extensions.attr_list': {} # Add the attr_list extension which allows adding arbitrary attributes inline in Markdown docs (like {laoding='lazy'} for example)
+        'markdown.extensions.toc': {'permalink': '🔗'},
+        'markdown.extensions.attr_list': {},
     },
     'output_format': 'html5',
 }

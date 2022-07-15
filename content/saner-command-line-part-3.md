@@ -10,9 +10,9 @@ image: {photo}header-image.png
 ## Recap
 It's been a while, hasn't it? The last post in this series was back in March of 2016. Let's start off with a little refresher, shall we?
 
- * [Part 1]({static}//saner-command-line-part-1.md) - In which we introduce PowerShell
+ * [Part 1]({filename}saner-command-line-part-1.md) - In which we introduce PowerShell
 , encourage Windows 10 upgrades, and adopt Chocolatey.
- * [Part 2]({static}//saner-command-line-part-2.md) - In which we supercharge Git, fix console selection and copy/paste, and introduce ConEmu and friends.
+ * [Part 2]({filename}saner-command-line-part-2.md) - In which we supercharge Git, fix console selection and copy/paste, and introduce ConEmu and friends.
  * Part 3 - You are here
 
 ## Part Three: Native SSH, `pwsh` and WSL

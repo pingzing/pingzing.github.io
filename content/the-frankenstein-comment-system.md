@@ -7,7 +7,7 @@ Authors: Neil McAlister
 Summary: Stitching together a comment system for a static website.
 image: {photo}franken_cover.png
 
-So I promised in my [other post]({static}/this-websites-architecture-personal-soapbox.md) to explain how this site's comment system works. Fair warning, this is not a detailed how-to guide, or a tutorial. It's a more conceptual accounting of my goals and process as I put it together. That said, if you've got a little bit of experience and know-how, you can probably lift the ideas from here to do something similar.
+So I promised in my [other post]({filename}this-websites-architecture-personal-soapbox.md) to explain how this site's comment system works. Fair warning, this is not a detailed how-to guide, or a tutorial. It's a more conceptual accounting of my goals and process as I put it together. That said, if you've got a little bit of experience and know-how, you can probably lift the ideas from here to do something similar.
 
 I also drew inspiration from Tania Rascia's excellent [Roll Your Own Comment System for a Static Site](https://www.taniarascia.com/add-comments-to-static-site/), and Khalil Stemmler's spiritual successor, [How to Prerender Comments](https://khalilstemmler.com/articles/gatsbyjs/prerender-comments-for-seo/). If you're loooking for more inspiration, you should definitely check those out.
 

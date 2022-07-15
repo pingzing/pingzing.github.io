@@ -8,7 +8,7 @@ extra_style: about-me.css
 ## This site
 Begun as a thrown-together free WordPress blog in 2011 to have somewhere to post my experiences in travelling to Finland. It's now a catch-all personal site for me.
 
-More generally speaking, the site is also my own reaction to the growing trend of [massive, bloated websites](https://idlewords.com/talks/website_obesity.htm), which is something [I am not alone](http://bettermotherfuckingwebsite.com/) in being annoyed by. Architecturally, this website would be right at home in the 90s–it is little more than a collection of static HTML pages. You'll find no NPM packages, Webpack shenanigans, or user tracking silliness here. The only exception to that is the comment system, which is a [stitched-together abomination]({static}/../the-frankenstein-comment-system.md) of a single JavaScript file, a handful of serverless functions, and a cloud-hosted NoSQL database.  
+More generally speaking, the site is also my own reaction to the growing trend of [massive, bloated websites](https://idlewords.com/talks/website_obesity.htm), which is something [I am not alone](http://bettermotherfuckingwebsite.com/) in being annoyed by. Architecturally, this website would be right at home in the 90s–it is little more than a collection of static HTML pages. You'll find no NPM packages, Webpack shenanigans, or user tracking silliness here. The only exception to that is the comment system, which is a [stitched-together abomination]({filename}../the-frankenstein-comment-system.md) of a single JavaScript file, a handful of serverless functions, and a cloud-hosted NoSQL database.  
 
 
 ## Me

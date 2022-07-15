@@ -39,15 +39,15 @@ Back to Lady Amanda. Every year on Vappu day, she condescends to join the unwash
 
 Apparently, each year, one of the local technical universities gets the honor of actually putting the hat on Miss Amanda. These pictures are from 2015, and that year,they decided to fly it in...in _style_.
 
-[![Dude piloting the hat]({photo}2015/WP_20150430_17_55_52_Pro.jpg)]({static}//images/2015/WP_20150430_17_55_52_Pro.jpg "'don't drop it don't drop it don't drop it'")
+[![Dude piloting the hat]({photo}2015/WP_20150430_17_55_52_Pro.jpg)]({static}/images/2015/WP_20150430_17_55_52_Pro.jpg "'don't drop it don't drop it don't drop it'")
 
 The statue itself was surrounded by a ring of students suspended in midair, who carefully shepherded the hat into its proper place. Suspended, so that they didn't damage the statue, and so that the crowd may be entertained.
 
-[![Suspended hat people]({photo}/2015/airretreat.jpg)]({static}//images/2015/airretreat.jpg "The Hatenndants")
+[![Suspended hat people]({photo}/2015/airretreat.jpg)]({static}/images/2015/airretreat.jpg "The Hatenndants")
 
 Would you look at that! The hat has been successfully placed, and now we rest easy, knowing that Havis Amanda has once again been behattened!
 
-[![Havis goes gangsta]({photo}/2015/beanietime.jpg)]({static}//images/2015/beanietime.jpg "She's trying to appeal to Kids These Days")
+[![Havis goes gangsta]({photo}/2015/beanietime.jpg)]({static}/images/2015/beanietime.jpg "She's trying to appeal to Kids These Days")
 
 Nope. Their work is almost immediately undone, and in the true spirit of the tradition, a student pranks the world by putting an even sillier hat onto a statue--a _beanie_.
 

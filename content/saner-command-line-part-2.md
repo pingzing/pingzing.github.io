@@ -9,13 +9,13 @@ image: {photo}header-image.png
 
 ---
 
-* [Part 1]({static}//saner-command-line-part-1.md) - In which we introduce PowerShell, encourage Windows 10 upgrades, and adopt Chocolatey.
+* [Part 1]({filename}saner-command-line-part-1.md) - In which we introduce PowerShell, encourage Windows 10 upgrades, and adopt Chocolatey.
 * Part 2 - You are here
-* [Part 3]({static}//saner-command-line-part-3.md) - In which we move to native SSH, update to `pwsh` and learn about the magic that is WSL.
+* [Part 3]({filename}saner-command-line-part-3.md) - In which we move to native SSH, update to `pwsh` and learn about the magic that is WSL.
 
 ---
 
-In case you missed it, make sure to check out [Part 1]({static}//saner-command-line-part-1.md) of this series first--it'll introduce you to some improvements to the basic Windows command line experience that we'll be building on in this post.
+In case you missed it, make sure to check out [Part 1]({filename}saner-command-line-part-1.md) of this series first--it'll introduce you to some improvements to the basic Windows command line experience that we'll be building on in this post.
 
 Today, I'm going to be introducing some resources that'll allow us to improve our Git experience, and some utilities that'll allow us to completely overhaul the console experience altogether.
 
@@ -163,7 +163,7 @@ And even if your own console's transformation wasn't quite as dramatic, I hope I
 
 If you've got any feedback, feel free to get in touch on Twitter ([@pingzingy](https://twitter.com/pingzingy)) or GitHub ([pingzing](https://github.com/pingzing))!
 
-Part 3 is now available [here]({static}//saner-command-line-part-3.md)!
+Part 3 is now available [here]({filename}saner-command-line-part-3.md)!
 
 [![Creative Commons BY badge]({static}/images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
 
