@@ -22,3 +22,10 @@ The source files behind my Travel Neil blog.
 Requirements for Azure upload: 
  * AzCopy: https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy
  * An environment variable named `TravelNeilAzureKey` that contains one of the Azure access keys for the storage account that hosts the website.
+
+ ### Writing posts
+ `{static}` must have a leading slash, i.e. `{sttaic}/path-relative-to-content`.
+ `{photo}` results in a thumbnail, and is relative to the `{images}` folder
+ The Python Markdown Attribute List Plugin (https://python-markdown.github.io/extensions/attr_list/) allows certain HTML attributes to be appended with syntax like this:
+ `{: .someCssClass #someId somkey='some value'}`.
+ Adding `markdown="1"` to a raw HTML element allows the text in its DIRECT child to be parsed as Markdown.

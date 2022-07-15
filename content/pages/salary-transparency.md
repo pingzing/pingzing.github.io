@@ -2,7 +2,7 @@ Title: Salary Transparency
 Date: 2021-07-15 00:51
 Author: Neil McAlister
 Slug: salary-transparency
-Summary: A history of my salaries in tech
+Summary: A history of my salaries in tech.
 extra_style: salary-transparency.css
 
 

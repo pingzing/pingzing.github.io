@@ -6,14 +6,15 @@ Slug: title-goes-here
 Authors: Neil McAlister
 Summary: Short version for index and feeds
 image: {photo}image_folder_relative_path.png
+extra_style: filename_relative_to_static_themes.css
 
 Content goes here.
 
 An image looks like this: 
-[![Alt-text]({photo}imagename.jpg){loading='lazy'}]({static}images/imagename.jpg "Mouseover text here")
+[![Alt-text]({photo}imagename.jpg){loading='lazy'}]({static}/images/imagename.jpg "Mouseover text here")
 
 An internal link looks like this:
-[other post]({filename}this-websites-architecture-personal-soapbox.md)
+[other post]({static}/this-websites-architecture-personal-soapbox.md)
 
 Code looks like this:
 
