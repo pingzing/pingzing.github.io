@@ -9,13 +9,13 @@ image: {photo}header-image.png
 
 ---
 
-* [Part 1]({filename}/saner-command-line-part-1.md) - In which we introduce PowerShell, encourage Windows 10 upgrades, and adopt Chocolatey.
+* [Part 1]({static}//saner-command-line-part-1.md) - In which we introduce PowerShell, encourage Windows 10 upgrades, and adopt Chocolatey.
 * Part 2 - You are here
-* [Part 3]({filename}/saner-command-line-part-3.md) - In which we move to native SSH, update to `pwsh` and learn about the magic that is WSL.
+* [Part 3]({static}//saner-command-line-part-3.md) - In which we move to native SSH, update to `pwsh` and learn about the magic that is WSL.
 
 ---
 
-In case you missed it, make sure to check out [Part 1]({filename}/saner-command-line-part-1.md) of this series first--it'll introduce you to some improvements to the basic Windows command line experience that we'll be building on in this post.
+In case you missed it, make sure to check out [Part 1]({static}//saner-command-line-part-1.md) of this series first--it'll introduce you to some improvements to the basic Windows command line experience that we'll be building on in this post.
 
 Today, I'm going to be introducing some resources that'll allow us to improve our Git experience, and some utilities that'll allow us to completely overhaul the console experience altogether.
 
@@ -50,7 +50,7 @@ Anyway, after Chocolatey finishes installing Git, it'll tell you that it added G
 
 Note that that's not posh as in "fancy and upper-class", but rather short for **Po**wer**Sh**ell...though given the improvements it makes, I guess you could call it posh. posh-git adds tab completion for git commands, and modifies your prompt when you're in a folder that contains a git repository, like so:
 
-[![Posh-git prompt example]({photo}posh-git.png)]({filename}images/posh-git.png "Totally posh.")
+[![Posh-git prompt example]({photo}posh-git.png)]({static}/images/posh-git.png "Totally posh.")
 
 posh-git is telling me that I'm currently on the master branch and the triple-equals indicates that I'm up to date with that branch. The green text indicates files that are staged for commit, and that I've added 0 new files, changed 1 file, and deleted zero files. The red text indicates files that are _not_ staged for commit, and that, of those files, I've added 0 new files, changed 1 file, and deleted zero files.
 
@@ -77,7 +77,7 @@ Import-Module posh-git
 
 My favorite feature of posh-git is probably the way its tab-completion interacts with PSReadLine's Ctrl + Space autocompletion. If you type git, and then press Ctrl + Space, you get a list of possible git commands.
 
-[![PSReadLine autocomplete example]({photo}autocomplete.png)]({filename}images/autocomplete.png "It'll even show you documentation for the thing you have selected, if there is any.")
+[![PSReadLine autocomplete example]({photo}autocomplete.png)]({static}/images/autocomplete.png "It'll even show you documentation for the thing you have selected, if there is any.")
 
 Which is just nifty.
 
@@ -102,13 +102,13 @@ ConEmu, Cmder, ConsoleZ, Hyper, and the Windows Terminal are all active projects
 
 Here's what my ConEmu looks like on startup.
 
-[![Image of default ConEmu setup]({photo}default_conemu.png)]({filename}images/default_conemu.png "Ooh. Tabby.")
+[![Image of default ConEmu setup]({photo}default_conemu.png)]({static}/images/default_conemu.png "Ooh. Tabby.")
 
 Hello, world!
 
 And here's what it looks like when I'm in the middle of doing some git-wrangling for a little experimental project.
 
-[![ConEmu split between PowerShell and Notepad++]({photo}conemu_wranglin.png)]({filename}images/conemu_wranglin.png "Really handy to use as a scratch pad, actually.")
+[![ConEmu split between PowerShell and Notepad++]({photo}conemu_wranglin.png)]({static}/images/conemu_wranglin.png "Really handy to use as a scratch pad, actually.")
 
 Okay, so it's not exactly rocket-science-git.
 
@@ -149,13 +149,13 @@ Once you've got everything set up the way you like it, take it for a test run. C
 
 If you've followed this series from start to finish, you may have gone from something like this:
 
-[![Starting appearance of cmd.exe]({photo}awwwwisawiddlecmd.png)]({filename}images/awwwwisawiddlecmd.png "snore")
+[![Starting appearance of cmd.exe]({photo}awwwwisawiddlecmd.png)]({static}/images/awwwwisawiddlecmd.png "snore")
 
 Boooo!
 
 To something like this:
 
-[![Ending appearance, including ConEmu]({photo}conemuohyeah.png)]({filename}images/conemuohyeah.png "WOOOO")
+[![Ending appearance, including ConEmu]({photo}conemuohyeah.png)]({static}/images/conemuohyeah.png "WOOOO")
 
 Yaaaay!
 
@@ -163,9 +163,9 @@ And even if your own console's transformation wasn't quite as dramatic, I hope I
 
 If you've got any feedback, feel free to get in touch on Twitter ([@pingzingy](https://twitter.com/pingzingy)) or GitHub ([pingzing](https://github.com/pingzing))!
 
-Part 3 is now available [here]({filename}/saner-command-line-part-3.md)!
+Part 3 is now available [here]({static}//saner-command-line-part-3.md)!
 
-[![Creative Commons BY badge]({filename}images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
+[![Creative Commons BY badge]({static}/images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
 
 _This work is licensed under a Creative Commons Attribution 4.0 International License._
 

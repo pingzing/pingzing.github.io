@@ -5,7 +5,7 @@ Category: Christmas Trip
 Tags: Finland, Foreign, Images, International, Photos, Snow, Travel
 Slug: snowy-shots
 
-[![marttiini\_819017\_deluxe\_spike\_more]({photo}marttiini_819017_deluxe_spike_more.jpg)]({filename}images/marttiini_819017_deluxe_spike_more.jpg)
+[![marttiini\_819017\_deluxe\_spike\_more]({photo}marttiini_819017_deluxe_spike_more.jpg)]({static}/images/marttiini_819017_deluxe_spike_more.jpg)
 
 ######  The piikki
 

@@ -5,7 +5,7 @@ Category: Christmas Trip
 Tags: Finland, Foreign, Images, International, Photos, Snow, Travel
 Slug: the-little-things
 
-[![]({photo}100_0508_804x1072.jpg)]({filename}images/100_0508_804x1072.jpg)
+[![]({photo}100_0508_804x1072.jpg)]({static}/images/100_0508_804x1072.jpg)
 
 ######"Fully-decorated Christmas  tree!"
 
@@ -26,7 +26,7 @@ just a little different on this side of this ol' globe of ours.
 
 *Christmas*
 
-[![]({photo}100_0506_1072x804.jpg)]({filename}images/100_0506_1072x804.jpg)
+[![]({photo}100_0506_1072x804.jpg)]({static}/images/100_0506_1072x804.jpg)
 
 ######"Nearby the tree  store"
 
@@ -50,7 +50,7 @@ and we sawed it down, tied it to the tractor and drove it home. Rauno
 and I dragged it into the sauna to dry for a while, and a few hours
 later, it was decorated in the living room, as you can see above.
 
-[![]({photo}100_0498_1072x804.jpg)]({filename}images/100_0498_1072x804.jpg)
+[![]({photo}100_0498_1072x804.jpg)]({static}/images/100_0498_1072x804.jpg)
 
 ######"Christmas dinner in  progress"
 
@@ -133,6 +133,6 @@ something to write with on me...
 Finally, an image, very, very few of you will understand. If you don't
 get the joke, that's okay. You weren't meant to.
 
-[![]({photo}100_0497_1072x804.jpg)]({filename}images/100_0497_1072x804.jpg)
+[![]({photo}100_0497_1072x804.jpg)]({static}/images/100_0497_1072x804.jpg)
 
 ######"You know who you  are."

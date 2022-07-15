@@ -11,7 +11,7 @@ I've dabbled briefly with making games in the past. I've tried [Unity](https://u
 I rarely get very far, but it's always a fun little exercise. This time around, I'm trying to make a more 
 determined stab at it with MonoGame. So far, I've made it further than I ever have before--I actually have working collision!
 
-![Animated game collision example]({filename}images/early-collision-test-02.gif)
+![Animated game collision example]({static}/images/early-collision-test-02.gif)
 
 For this little experiment, I decided to give [MonoGame](http://www.monogame.net/) another try because I'm a big ol' C# fanboy, and Lua made me angry. One thing that bit me
 pretty quickly (aside from the truly frustrating lack of architectural advice) was that there weren't any guides on how to structure a multiplatform MonoGame project. 
@@ -22,37 +22,37 @@ how to actually structure your code in a way that makes this easy seemed to be e
 # tl;dr
 For those short of time:
 
- [![Create Monogame project]({photo}monogame-tldr-1.png){loading='lazy'}]({filename}images/monogame-tldr-1.png "Make thing.")
+ [![Create Monogame project]({photo}monogame-tldr-1.png){loading='lazy'}]({static}/images/monogame-tldr-1.png "Make thing.")
 
 1.) Make your first platform project. It can target whatever it is that you want to target.
 
- [![Add PCL]({photo}monogame-tldr-2.png)]({filename}images/monogame-tldr-2.png "Prepare to thing to thing")
+ [![Add PCL]({photo}monogame-tldr-2.png)]({static}/images/monogame-tldr-2.png "Prepare to thing to thing")
 
 2.) Add a new project to the solution. This will be your PCL.
 
- [![Continue adding PCL]({photo}monogame-tldr-3.png)]({filename}images/monogame-tldr-3.png "Add thing to thing")
+ [![Continue adding PCL]({photo}monogame-tldr-3.png)]({static}/images/monogame-tldr-3.png "Add thing to thing")
 
 3.) You'll want to make sure you choose "PORTABLE Class Library", and not use "Class Library" of some flavor.
 
- [![Finish adding PCL]({photo}monogame-tldr-4.png)]({filename}images/monogame-tldr-4.png "Finish adding thing to thing")
+ [![Finish adding PCL]({photo}monogame-tldr-4.png)]({static}/images/monogame-tldr-4.png "Finish adding thing to thing")
 
 4.) Choose all the targets you plan on hitting. Fewer is likely to offer you more APIs, but if you have to support one you don't select later, you may be in for pain.
 
- [![Move Game1.cs]({photo}monogame-tldr-5.png)]({filename}images/monogame-tldr-5.png "Move thing to new thing")
+ [![Move Game1.cs]({photo}monogame-tldr-5.png)]({static}/images/monogame-tldr-5.png "Move thing to new thing")
 
 5.) Move your Game.cs to the PCL. We'll clean up references and namespaces in a moment. Delete the copy left in the platform project.
 
- [![Add MonoGame to PCL]({photo}monogame-tldr-7.png)]({filename}images/monogame-tldr-7.png "Add library to thing")
+ [![Add MonoGame to PCL]({photo}monogame-tldr-7.png)]({static}/images/monogame-tldr-7.png "Add library to thing")
 
 6.) Add the MonoGame.Portable NuGet package to the PCL.
 
- [![Add reference to PCL]({photo}monogame-tldr-6.png)]({filename}images/monogame-tldr-6.png "Add reference to thing")
+ [![Add reference to PCL]({photo}monogame-tldr-6.png)]({static}/images/monogame-tldr-6.png "Add reference to thing")
 
 7.) Add a reference to the PCL to the platform project.
 
 (If you get grief about the .NET version, just go to Game1's Properties, and bump the .NET Framework version to 4.5.1.)
 
- [![Clean up namespaces]({photo}monogame-tldr-8.png)]({filename}images/monogame-tldr-8.png "Make thing look for right thing") 
+ [![Clean up namespaces]({photo}monogame-tldr-8.png)]({static}/images/monogame-tldr-8.png "Make thing look for right thing") 
 
 8.) Note that you could also just add a `using ClassLibrary` statement to the top of `Program.cs` in most cases, but because in this little example, `Game1` is both a class name and a namespace name, it would cause problems, so I just give it the fully-qualified namespace.
 
@@ -68,7 +68,7 @@ MonoGame's projects are pretty vanilla C# projects--there's not a lot of exotic 
 ### Just Use the Same Files
 One approach I've seen before is to throw all your shared files into a single folder (usually named "Common") and then, in all your projects, you use Visual Studio's "Add As Link" function to add the files to your project. 
 
-[![Add as Link example]({photo}addaslink.png)]({filename}images/addaslink.png "It's weirdly hard to find.")
+[![Add as Link example]({photo}addaslink.png)]({static}/images/addaslink.png "It's weirdly hard to find.")
 
 This leaves the files where they are, and multiple projects can have references to the same file this way.
 
@@ -93,7 +93,7 @@ This is my preferred solution, and what the rest of this blog post will assume.
 ## The Solution Structure
 Let me get this out of the way right up front. Here's a screenshot (more or less) of what your solution is going to look like when you're done:
 
-[![Solution Explorer screenshot]({photo}monogame-solution-explorer.png)]({filename}images/monogame-solution-explorer.png "I mean, if you're making a real game, you'll probably be supporting more than just DesktopGL.")
+[![Solution Explorer screenshot]({photo}monogame-solution-explorer.png)]({static}/images/monogame-solution-explorer.png "I mean, if you're making a real game, you'll probably be supporting more than just DesktopGL.")
 
 Up in that screenshot there, the `monogame-test.Core` is my PCL. It happens to target Profile 44 (Windows 8.1, .NET 4.5.1, Xamarin.iOS, Xamarin.Android, Xamarin.Mac), which happens to correspond with .NET Standard 1.2. Most of my game code will end up living in there. You can even move your `Game1.cs` (or whatever you've renamed it) into the PCL.
 

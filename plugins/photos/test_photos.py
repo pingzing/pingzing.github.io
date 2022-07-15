@@ -101,7 +101,7 @@ class TestPhotos(unittest.TestCase):
 
     def test_filename_article_body(self):
         expected = ('<p>Here is my best photo, again.</p>\n'
-                    '<p><img alt="" src="{filename}agallery/best.jpg" />.</p>')
+                    '<p><img alt="" src="{static}/agallery/best.jpg" />.</p>')
         self.assertEqual(expected, self.get_article('filename').content)
 
     def test_queue_resize(self):

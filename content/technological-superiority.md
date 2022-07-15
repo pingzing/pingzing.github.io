@@ -55,18 +55,18 @@ impressively-designed bit of machinery, and I am very jealous of it.
 But maybe it's not so surprisingly that their designers and engineers
 are inspired when they've got views like this:
 
-[![alt-text]({photo}wp_20131218_002.jpg)]({filename}images/wp_20131218_002.jpg)
+[![alt-text]({photo}wp_20131218_002.jpg)]({static}/images/wp_20131218_002.jpg)
 
 ######Approaching the lake
 
-[![WP\_20131218\_020]({photo}wp_20131218_020.jpg)]({filename}images/wp_20131218_020.jpg)
+[![WP\_20131218\_020]({photo}wp_20131218_020.jpg)]({static}/images/wp_20131218_020.jpg)
 
 ######  Climbing a hill overlooking the lake
 
-[![WP\_20131218\_021]({photo}wp_20131218_021.jpg)]({filename}images/wp_20131218_021.jpg)
+[![WP\_20131218\_021]({photo}wp_20131218_021.jpg)]({static}/images/wp_20131218_021.jpg)
 
 ######  From the top of the hill.
 
-[![WP\_20131218\_11\_44\_41\_Panorama]({photo}wp_20131218_11_44_41_panorama.jpg)]({filename}images/wp_20131218_11_44_41_panorama.jpg)
+[![WP\_20131218\_11\_44\_41\_Panorama]({photo}wp_20131218_11_44_41_panorama.jpg)]({static}/images/wp_20131218_11_44_41_panorama.jpg)
 
 ######  Panorama of the shore.

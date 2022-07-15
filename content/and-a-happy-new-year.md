@@ -5,7 +5,7 @@ Category: Christmas Trip
 Tags: Finland, Foreign, Images, International, Photos, Snow, Travel
 Slug: and-a-happy-new-year
 
-[![Photo of the Jyväskylä harbor]({photo}100_0567.jpg)]({filename}images/100_0567.jpg)
+[![Photo of the Jyväskylä harbor]({photo}100_0567.jpg)]({static}/images/100_0567.jpg)
 
 ######"New Year's in  Jyväskylä"
 

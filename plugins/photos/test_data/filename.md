@@ -1,7 +1,7 @@
 title: Test filename
-gallery: {filename}agallery
-image: {filename}agallery/best.jpg
+gallery: {static}/agallery
+image: {static}/agallery/best.jpg
 
 Here is my best photo, again.
 
-![]({filename}agallery/best.jpg).
+![]({static}/agallery/best.jpg).

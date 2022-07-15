@@ -437,7 +437,7 @@ def detect_content(content):
 
 
 def galleries_string_decompose(gallery_string):
-    splitter_regex = re.compile(r'[\s,]*?({photo}|{filename})')
+    splitter_regex = re.compile(r'[\s,]*?({photo}|{static}/)')
     title_regex = re.compile(r'{(.+)}')
     galleries = map(unicode.strip if sys.version_info.major == 2 else str.strip, filter(None, splitter_regex.split(gallery_string)))
     galleries = [gallery[1:] if gallery.startswith('/') else gallery for gallery in galleries]
@@ -471,7 +471,7 @@ def process_gallery(generator, content, location):
         if gallery['type'] == '{photo}':
             dir_gallery = os.path.join(os.path.expanduser(generator.settings['PHOTO_LIBRARY']), gallery['location'])
             rel_gallery = gallery['location']
-        elif gallery['type'] == '{filename}':
+        elif gallery['type'] == '{static}/':
             base_path = os.path.join(generator.path, content.relative_dir)
             dir_gallery = os.path.join(base_path, gallery['location'])
             rel_gallery = os.path.join(content.relative_dir, gallery['location'])
@@ -522,7 +522,7 @@ def process_gallery(generator, content, location):
 def detect_gallery(generator, content):
     if 'gallery' in content.metadata:
         gallery = content.metadata.get('gallery')
-        if gallery.startswith('{photo}') or gallery.startswith('{filename}'):
+        if gallery.startswith('{photo}') or gallery.startswith('{static}/'):
             process_gallery(generator, content, gallery)
         elif gallery:
             logger.error('photos: Gallery tag not recognized: {}'.format(gallery))
@@ -541,7 +541,7 @@ def process_image(generator, content, image):
     if image.startswith('{photo}'):
         path = os.path.join(os.path.expanduser(generator.settings['PHOTO_LIBRARY']), image_clipper(image))
         image = image_clipper(image)
-    elif image.startswith('{filename}'):
+    elif image.startswith('{static}/'):
         path = os.path.join(content.relative_dir, file_clipper(image))
         image = file_clipper(image)
 
@@ -568,7 +568,7 @@ def process_image(generator, content, image):
 def detect_image(generator, content):
     image = content.metadata.get('image', None)
     if image:
-        if image.startswith('{photo}') or image.startswith('{filename}'):
+        if image.startswith('{photo}') or image.startswith('{static}/'):
             process_image(generator, content, image)
         else:
             logger.error('photos: Image tag not recognized: {}'.format(image))

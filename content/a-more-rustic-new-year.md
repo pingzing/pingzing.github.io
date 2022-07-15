@@ -50,7 +50,7 @@ hat flew off, but true to my agreement with Reima, I kept running. I'd
 made it maybe 15 meters before the fireworks began exploding. I judged
 that I was far enough and turned to watch.
 
-[![fireworks2]({photo}fireworks2.jpg)]({filename}images/fireworks2.jpg)
+[![fireworks2]({photo}fireworks2.jpg)]({static}/images/fireworks2.jpg)
 
 ######  And I found this!
 
@@ -68,13 +68,13 @@ Despite speaking scarcely a word of Finnish, I made fast friends of
 Raimo's 7-year-old grandson after I allowed him to teach me how to light
 the fireworks.
 
-[![fireworks1]({photo}fireworks1.jpg)]({filename}images/fireworks1.jpg)
+[![fireworks1]({photo}fireworks1.jpg)]({static}/images/fireworks1.jpg)
 
 ######  I greatly enjoyed my lessons in pyromania.
 
 And I wasn't the only one setting off dangerous explosives.
 
-[![fireworks4]({photo}fireworks4.jpg)]({filename}images/fireworks4.jpg)
+[![fireworks4]({photo}fireworks4.jpg)]({static}/images/fireworks4.jpg)
 
 ######  Kaisa got involved too!
 
@@ -88,7 +88,7 @@ store earlier in the day, but Raimo's grandson was there to save us. He
 had a little bag of tin horseshoes, and we wasted no time melting those
 over the *kota*'s fire.
 
-[![kota1]({photo}kota1.jpg)]({filename}images/kota1.jpg)
+[![kota1]({photo}kota1.jpg)]({static}/images/kota1.jpg)
 
 ######  Raimo's grandson pulling his flash-solidified tin from the bucket of  water.
 
@@ -98,7 +98,7 @@ out...
 
 [![My tin.
 DE
-CLAWWWW]({photo}kota3.jpg)]({filename}images/kota3.jpg)
+CLAWWWW]({photo}kota3.jpg)]({static}/images/kota3.jpg)
 
 ######  My tin. DE CLAWWWW
 
@@ -106,7 +106,7 @@ CLAWWWW]({photo}kota3.jpg)]({filename}images/kota3.jpg)
 entirely clear on.
 
 [![Conclusion: Adorableness is in my
-future.]({photo}kota4.jpg)]({filename}images/kota4.jpg)
+future.]({photo}kota4.jpg)]({static}/images/kota4.jpg)
 
 ######  Conclusion: Adorableness is in my future!
 

@@ -200,6 +200,6 @@ All the code snippets from this post are available [over on GitHub](https://gith
 
 As always, feel free to leave comments or feedback on Twitter ([@pingzingy](https://twitter.com/pingzingy)) and Github ([pingzing](https://github.com/pingzing/))!
 
-[![Creative Commons BY badge]({filename}images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
+[![Creative Commons BY badge]({static}/images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
 _The text of this blog post is licensed under a Creative Commons Attribution 4.0 International License._  
 _The code in this blog post is licensed under the [MIT License](https://github.com/pingzing/UwpWndProc/blob/8f419a40192abf697044e409d4403014ce34dfc5/LICENSE)._

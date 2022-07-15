@@ -10,8 +10,8 @@ image: {photo}header-image.png
 ---
 
 * Part 1 - You are here
-* [Part 2]({filename}/saner-command-line-part-2.md) - In which we supercharge Git, fix console selection and copy/paste, and introduce ConEmu and friends.
-* [Part 3]({filename}/saner-command-line-part-3.md) - In which we move to native SSH, update to `pwsh` and learn about the magic that is WSL.
+* [Part 2]({static}//saner-command-line-part-2.md) - In which we supercharge Git, fix console selection and copy/paste, and introduce ConEmu and friends.
+* [Part 3]({static}//saner-command-line-part-3.md) - In which we move to native SSH, update to `pwsh` and learn about the magic that is WSL.
 
 ---
 
@@ -29,7 +29,7 @@ Let's be honest. What many people think of as "the default Windows command line"
 Banish `cmd.exe` from your shortcuts, and upgrade to its successor, PowerShell. It includes a _vast_ array of built in commands (known as [Cmdlets](https://msdn.microsoft.com/en-us/library/ms714395%28v=vs.85%29.aspx)) and scripts that support piping between each other, allowing you to compose actions from simple building blocks. If there's ever anything you're missing from the old cmd, you can always invoke `cmd.exe` from PowerShell. There's also tons of community support, so if there's something missing out of the box, odds are that somebody has filled that gap already. 
 And, purely subjectively, I think the .ps1 syntax is a _lot_ more readable than the old .bat syntax.
 
-[![Syntax comparison of .bat vs .ps1]({photo}bat-vs-ps1.png)]({filename}images/bat-vs-ps1.png "And better syntax highlighting, too!")
+[![Syntax comparison of .bat vs .ps1]({photo}bat-vs-ps1.png)]({static}/images/bat-vs-ps1.png "And better syntax highlighting, too!")
  Verbose, but at least you don't need a decoder ring.
 
 
@@ -54,7 +54,7 @@ then, in the **Layout** tab:
 
 * Wrap text output on resize
 
-[![Annotated instructions for doing that thing above]({photo}how-to-console.png)]({filename}images/how-to-console.png "It'd be nice if these were defaults.")
+[![Annotated instructions for doing that thing above]({photo}how-to-console.png)]({static}/images/how-to-console.png "It'd be nice if these were defaults.")
  
 Like so.
 
@@ -154,7 +154,7 @@ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
 
 In Paint.NET's case, chocolatey just fires up the .exe installer in silent mode, which then takes over.
 
-[![Chocolatey installing Paint.NET]({photo}install-pdn.png)]({filename}images/install-pdn.png "Sort of like magic-ish.")
+[![Chocolatey installing Paint.NET]({photo}install-pdn.png)]({static}/images/install-pdn.png "Sort of like magic-ish.")
 
 Look Ma, no Googling!
 
@@ -191,9 +191,9 @@ That's all for now! At the very least, now you've got some better syntax highlig
 Next time, we'll be talking about better Git integration, and improvements to the actual console experience. Look forward to tabs, splitting your console, and better resize support for non-Windows 10 machines!
 
 
-Part 2 is now available [here]({filename}/saner-command-line-part-2.md)!
+Part 2 is now available [here]({static}//saner-command-line-part-2.md)!
 
-[![Creative Commons BY badge]({filename}images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
+[![Creative Commons BY badge]({static}/images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
 
 _This work is licensed under a Creative Commons Attribution 4.0 International License._
 _Originally posted on the Futurice blog at https://www.futurice.com/blog/a-saner-windows-command-line-part-1/

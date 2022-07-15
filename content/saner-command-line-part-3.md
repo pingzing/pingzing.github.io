@@ -10,9 +10,9 @@ image: {photo}header-image.png
 ## Recap
 It's been a while, hasn't it? The last post in this series was back in March of 2016. Let's start off with a little refresher, shall we?
 
- * [Part 1]({filename}/saner-command-line-part-1.md) - In which we introduce PowerShell
+ * [Part 1]({static}//saner-command-line-part-1.md) - In which we introduce PowerShell
 , encourage Windows 10 upgrades, and adopt Chocolatey.
- * [Part 2]({filename}/saner-command-line-part-2.md) - In which we supercharge Git, fix console selection and copy/paste, and introduce ConEmu and friends.
+ * [Part 2]({static}//saner-command-line-part-2.md) - In which we supercharge Git, fix console selection and copy/paste, and introduce ConEmu and friends.
  * Part 3 - You are here
 
 ## Part Three: Native SSH, `pwsh` and WSL
@@ -25,14 +25,14 @@ As of the April 2018, Windows 10 (Build 17134) includes native OpenSSH executabl
 
 In order to install the server, you can just go to Settings -> Apps -> Manage optional features -> Add a feature -> OpenSSH Server.
 
-[![Click 'apps']({photo}sshguide01.png)]({filename}images/sshguide01.png "Step 1")
+[![Click 'apps']({photo}sshguide01.png)]({static}/images/sshguide01.png "Step 1")
 
-[![Then 'manage optional features']({photo}sshguide02.png)]({filename}images/sshguide02.png "Step 2")
+[![Then 'manage optional features']({photo}sshguide02.png)]({static}/images/sshguide02.png "Step 2")
 
-[![Then click 'add a feature']({photo}sshguide03.png)]({filename}images/sshguide03.png "Step 3")
+[![Then click 'add a feature']({photo}sshguide03.png)]({static}/images/sshguide03.png "Step 3")
 (if you'd like to make sure your OpenSSH Client is installed, scroll down on this page. It should be listed!)
 
-[![Then finally, 'OpenSSH Slient']({photo}sshguide04.png)]({filename}images/sshguide04.png "Step 4!")
+[![Then finally, 'OpenSSH Slient']({photo}sshguide04.png)]({static}/images/sshguide04.png "Step 4!")
 
 Note that these are also available in the [October 2017 update (Build 16299) in Beta form](https://blogs.msdn.microsoft.com/powershell/2017/12/15/using-the-openssh-beta-in-windows-10-fall-creators-update-and-windows-server-1709/).
 
@@ -123,7 +123,7 @@ In that case, you'll want to find your private key, right-click it, go to Proper
 
 Then, click on "Disable Inheritance". In the dialog that pops up, you want to _Remove all inherited permissions_.
 
-[![Lots of complicated UI-step-diagrams]({photo}sshguide05.png)]({filename}images/sshguide05.png "Are they really MSPaint skills if you used Paint.NET?")
+[![Lots of complicated UI-step-diagrams]({photo}sshguide05.png)]({static}/images/sshguide05.png "Are they really MSPaint skills if you used Paint.NET?")
 
 Next, click "Add", and in the window that appears, click "Select a principal". Enter your username in the text box at the bottom of the window, then click "Check Names" to validate your entry. It should autofill any missing details (usually the computer domain name). Click OK. Click the "Full Control" checkbox. Click OK. Continue clicking OK until you've escaped from nested dialog hell.
 
@@ -179,7 +179,7 @@ The _Windows Subsystem for Linux_, or WSL, or sometimes just Bash on Windows, is
 
 Note that this only works on Windows 10, version 1607 (aka the Anniversary Update) or later.
 
-[![Proof of Linux-in-windows]({photo}wsl01.png)]({filename}images/wsl01.png "Top's behavior is a little...odd, though.")
+[![Proof of Linux-in-windows]({photo}wsl01.png)]({static}/images/wsl01.png "Top's behavior is a little...odd, though.")
 
 ### Enabling WSL
 
@@ -207,7 +207,7 @@ Between all of the improvements listed in this, and the previous parts of the se
 
 As always, feel free to leave comments or feedback on Twitter ([@pingzingy](https://twitter.com/pingzingy)) and Github ([pingzing](https://github.com/pingzing/))!
 
-[![Creative Commons BY badge]({filename}images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
+[![Creative Commons BY badge]({static}/images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
 
 _This work is licensed under a Creative Commons Attribution 4.0 International License._
 

@@ -28,7 +28,7 @@ average Albertsons or Ralphs or what-have-you.
 One of the first things I noticed was the way they handle their produce
 shopping. Instead
 
-[![]({photo}100_0616_804x1072.jpg)]({filename}images/100_0616_804x1072.jpg)
+[![]({photo}100_0616_804x1072.jpg)]({static}/images/100_0616_804x1072.jpg)
 
 ######"Pictured: Ridiculous  convenience."
 
@@ -45,7 +45,7 @@ fewer weird spinoffs of said brands. But the thing that weirded me out
 the most about the soda was...well, take a look for yourself. I'm sure
 you'll spot it right way if you've ever drunk Fanta.
 
-[![]({photo}100_0607_1072x804.jpg)]({filename}images/100_0607_1072x804.jpg)
+[![]({photo}100_0607_1072x804.jpg)]({static}/images/100_0607_1072x804.jpg)
 
 ######"Got me every time. Tasted fine  though!"
 
@@ -54,7 +54,7 @@ brands/flavors. There was Fanta, Sprite (though Sprite Zero seemed to be
 more popular for some reason.), 7-up, Coke, Pepsi, Jaffa (caffeinated
 fruit sodas. Blood orange, grapefruit, etc flavored), Dr
 
-[![]({photo}100_0608_1072x804.jpg)]({filename}images/100_0608_1072x804.jpg)
+[![]({photo}100_0608_1072x804.jpg)]({static}/images/100_0608_1072x804.jpg)
 
 ######"Mmm."
 
@@ -76,7 +76,7 @@ Finns love sausage. Really, Finns love meat in most forms, but sausage
 seems to hold a special place in their hearts. Allow me to show you how
 much.
 
-[![]({photo}pano.jpg)]({filename}images/pano.jpg)
+[![]({photo}pano.jpg)]({static}/images/pano.jpg)
 
 ######"Saaaaaaauuuuuuuusaaaaaaaaage."
 
@@ -90,7 +90,7 @@ bread. Bread of every variety. You know how over here, our bread is
 usually confined to a corner, or maybe one side of an aisle, and it's
 mostly just slightly different varieties of sliced white-bread?
 
-[![]({photo}100_0615_1072x804.jpg)]({filename}images/100_0615_1072x804.jpg)
+[![]({photo}100_0615_1072x804.jpg)]({static}/images/100_0615_1072x804.jpg)
 
 ######"It's like a bakery just wandered into this grocery  shop."
 
@@ -104,7 +104,7 @@ breakfast is meat on bread with some sort of spread (or butter), so you
 can see why both sausage and bread are so popular. The cereal aisle? Not
 that impressive.
 
-[![]({photo}100_0609_1072x8041.jpg)]({filename}images/100_0609_1072x8041.jpg)
+[![]({photo}100_0609_1072x8041.jpg)]({static}/images/100_0609_1072x8041.jpg)
 
 ######"Chips. Lots of 'em. that  impressive."
 
@@ -123,7 +123,7 @@ inclined, you could turn your cart sideways and push it. I enjoyed this
 or a handbasket mounted on a suitcase-style pair of wheels with a handle
 reaching up to your hand. Once you've got all your food piled into
 
-[![]({photo}100_0617_1072x8041.jpg)]({filename}images/100_0617_1072x8041.jpg)
+[![]({photo}100_0617_1072x8041.jpg)]({static}/images/100_0617_1072x8041.jpg)
 
 ######"It  gets sort of awkward if a fourth person comes along and the other three  are still  bagging."
 
@@ -148,7 +148,7 @@ So why the difference? It's greener for one thing, and for another
 thing, for half of the year, you often find yourself heading home in
 weather like this...
 
-[![]({photo}100_0619_1072x804.jpg)]({filename}images/100_0619_1072x804.jpg)
+[![]({photo}100_0619_1072x804.jpg)]({static}/images/100_0619_1072x804.jpg)
 
 ######""Yeah, we've had a little snow recently. You can barely even  tell.""
 
@@ -168,6 +168,6 @@ And a final thanks to my girlfriend Kaisa for hosting me, translating
 for me, and answering my endless questions about culture, words, and
 pronunciation. Love you!
 
-[![]({photo}100_0622_1072x804.jpg)]({filename}images/100_0622_1072x804.jpg)
+[![]({photo}100_0622_1072x804.jpg)]({static}/images/100_0622_1072x804.jpg)
 
 ######"Pictured:  d'awwwww."

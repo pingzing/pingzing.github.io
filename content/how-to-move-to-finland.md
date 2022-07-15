@@ -45,7 +45,7 @@ Seriously, beds and various bits of miscellany are expensive. At least the bed i
 #####Step 7: Start sweet new job
 Seriously, look at what they gave me as a work machine: 
 
-[![Giant laptop]({photo}test.jpg)]({filename}images/test.jpg)
+[![Giant laptop]({photo}test.jpg)]({static}/images/test.jpg)
 ######It's enormous!
 
 Add to that the fact the work culture is enormously transparent and trusting, and the result is that I feel way more empowered than I have in previous jobs, _and_ like I can actually get things done. I'm beginning to see the attraction in being a corporate shill =)
@@ -55,9 +55,9 @@ Just in general. It's a weird city, and it's in the midst of this huge growth bo
 
 <html>
 <div style="white-space:nowrap;">
-[![Nightmare dystopian toilet]({photo}WP_20150410_13_28_13_Pro.jpg)]({filename}images/WP_20150410_13_28_13_Pro.jpg) 
-[![Bitcoin ATM]({photo}WP_20150415_08_53_09_Pro.jpg)]({filename}images/WP_20150415_08_53_09_Pro.jpg)
-[![Peeing statue]({photo}WP_20150424_18_23_32_Pro.jpg)]({filename}images/WP_20150424_18_23_32_Pro.jpg)
+[![Nightmare dystopian toilet]({photo}WP_20150410_13_28_13_Pro.jpg)]({static}/images/WP_20150410_13_28_13_Pro.jpg) 
+[![Bitcoin ATM]({photo}WP_20150415_08_53_09_Pro.jpg)]({static}/images/WP_20150415_08_53_09_Pro.jpg)
+[![Peeing statue]({photo}WP_20150424_18_23_32_Pro.jpg)]({static}/images/WP_20150424_18_23_32_Pro.jpg)
 </div>
 </html>
 ######From left to right: A nightmare dystopian toilet found in the Helsinki metro stations. There's even a little hole in wall where you can throw away needles. Then, a Bitcoin ATM. Finally, a LARGE statue on prominent display in front of the city's largest electronics store.
@@ -69,7 +69,7 @@ It's just that embarrassing and frustrating stories like this are all too common
 
 <html>
 <div style="display:block;margin-left:auto;margin-right:auto;">
-[![Lookin' sharp]({photo}WP_20150513_21_57_33_Pro.jpg)]({filename}images/WP_20150513_21_57_33_Pro.jpg)
+[![Lookin' sharp]({photo}WP_20150513_21_57_33_Pro.jpg)]({static}/images/WP_20150513_21_57_33_Pro.jpg)
 </div>
 </html>
 ###### Gotta be careful I don't cut myself!

@@ -55,5 +55,5 @@ Feel free to leave a comment below, or find me on Twitter as [@pingzingy](https:
 
 <small>*Actually, there is a _tiny_ backend that powers comments. More on that in another post.</small>
 
-[![Creative Commons BY badge]({filename}images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
+[![Creative Commons BY badge]({static}/images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
 _The text of this blog post is licensed under a Creative Commons Attribution 4.0 International License._  

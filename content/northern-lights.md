@@ -36,7 +36,7 @@ Having said that, though, I should be clear--Finland isn't a neon
 paradise the way that, say, Vegas is. It's all very understated; Finns
 don't appear to be big fans of direct lighting.
 
-[![]({photo}100_0573_1072x804.jpg)]({filename}images/100_0573_1072x804.jpg)
+[![]({photo}100_0573_1072x804.jpg)]({static}/images/100_0573_1072x804.jpg)
 
 ######"Indirect  streetlighting."
 
@@ -53,7 +53,7 @@ Christmasosity, but a *lot* of understated prettiness.
 So what have I been up to these past few days? I'm glad you (may have)
 asked! I've spent
 
-[![]({photo}100_0587_1072x804.jpg)]({filename}images/100_0587_1072x804.jpg)
+[![]({photo}100_0587_1072x804.jpg)]({static}/images/100_0587_1072x804.jpg)
 
 ######"Helsinki in the evening, tram and  all"
 
@@ -66,7 +66,7 @@ all public transport anywhere in Helsinki. It's a little card with some
 kind of tiny chip buried inside. Hold it up to a reader and it'll beep
 and on you go. Very cool.
 
-[![]({photo}100_0589_804x1072.jpg)]({filename}images/100_0589_804x1072.jpg)
+[![]({photo}100_0589_804x1072.jpg)]({static}/images/100_0589_804x1072.jpg)
 
 ######"Me  wearing the Princess of Winter's tiara. She offered. I  accepted."
 
