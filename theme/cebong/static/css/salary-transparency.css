@@ -1,3 +1,7 @@
+.salary-table {
+    overflow-x: auto;
+}
+
 .salary-table table {
     margin: 0;
     width: 100%;

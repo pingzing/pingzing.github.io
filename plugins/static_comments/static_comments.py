@@ -20,18 +20,21 @@ def prepare_comments(pelican):
         return
     
     logger.info("Getting all comments from " + base_url)
-    response: Response = requests.get(f"{base_url}/all")
 
     try:
+        response: Response = requests.get(f"{base_url}/all")
         global comments_dict
         comments_dict = response.json()
     except Exception as v:
-        logger.error(f"Failed to get comments.", exc_info=v)
+        logger.error(f"Failed to get comments. Skipping...")
 
 
 def add_comments(generator, content):
-    article_slug: str = content.metadata.get('slug')
     global comments_dict
+    if comments_dict == None:
+        logger.warn("Comments dict is empty, skipping generating static comments.")
+        return
+    article_slug: str = content.metadata.get('slug')
     if article_slug in comments_dict:
         comments = comments_dict[article_slug]
 

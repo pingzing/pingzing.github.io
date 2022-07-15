@@ -19,11 +19,18 @@ TIMEZONE = 'Europe/Helsinki'
 
 DEFAULT_LANG = 'en'
 DEFAULT_DATE = 'fs'
-#STATIC_PATHS = ['images', 'thumbnails']
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = True
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = [photos, "pelican-cover-image", "static_comments", "article_teaser"]
+PLUGINS = ['photos', "pelican-cover-image", "static_comments", "article_teaser"]
+
+# Copy the files in these directories without processing to output
+STATIC_PATHS = ['static-html']
+ARTICLE_EXCLUDES = ['static-html'] # Don't try to turn anything in these folders into articles
+# Remap locations so that they appear where I want them
+EXTRA_PATH_METADATA = {
+    'static-html/mlp-timeline.htm': { 'path': 'mlp-timeline.htm' }
+}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

@@ -37,6 +37,8 @@ Senior Server Software Engineer | 2020-01-27 | 2020-07-31 | 186 | <details><summ
 Senior Software Developer | 2021-05-17 | 2022-04-30 | 364 | €5500 EUR / month | Raise (no title change)
 ----- | 2022-05-01 | Current | N/A | €5850 EUR / month | N/A
 
+</section>
+
 Here's the above data, graphed:
 
 ![Graph of my annual salaries, compared to days worked at each salary level.]({static}/images/salary-chart-2021.png)
@@ -44,8 +46,6 @@ Here's the above data, graphed:
 The salaries have been normalized to total annual values, but have not been converted between currencies. As such, the first two values are in USD, while the rest are in EUR.
 
 "Days worked" is, as above, not the amount of days I performed my job, but the amount of days I stayed at a particular salary level.
-
-</section>
 
 ## In closing
 I'll try to keep this page updated whenever this information changes. 

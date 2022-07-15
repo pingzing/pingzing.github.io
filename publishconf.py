@@ -20,9 +20,3 @@ DELETE_OUTPUT_DIRECTORY = False
 
 # Static Comments
 COMMENTS_BASE_URL = "https://travelneil-backend.azurewebsites.net/api"
-
-
-
-# Following items are often useful when publishing
-
-#GOOGLE_ANALYTICS = ""
