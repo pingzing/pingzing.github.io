@@ -24,7 +24,7 @@ For some of the positions, there are extra details to how I was compensated beyo
 
 Title | Start Date | End Date | Days Worked | Salary | How I Left
 ------|------------|----------|-------------|--------|-----------
-Software Engineer | 2013-06-01 | 2014-0601 | 365 | $25 USD / hr | Raise, no title change
+Software Engineer | 2013-06-01 | 2014-06-01 | 365 | $25 USD / hr | Raise, no title change
 ----- | 2014-06-02 | 2015-03-26 | 297 | $30 USD / hr | Quit
 Software Developer | 2015-04-13 | 2016-08-31 | 506 | <details><summary>€2521 EUR / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
 ----- | 2016-09-01 | 2016-12-31 | 123 | <details><summary>€2723 EUR / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
