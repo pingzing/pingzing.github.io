@@ -31,6 +31,23 @@
                 width: auto;
                 height: auto;
              }
+
+             .vows {
+                 display: flex;
+                 flex-wrap: wrap;
+                 flex-direction: row;
+                 justify-content: center;                 
+             }
+
+             .vows div {
+                 max-width: 500px;
+                 padding-left: 1rem;
+                 padding-right: 1rem;
+             }
+
+             .vows p {
+                text-align: left;
+             }
         </style>
     </head>
     <body>
@@ -39,7 +56,7 @@
         
         <p>Some of the images will appear downscaled to fit within the browser. For full-size, right-click/long-press and open in a new tab.</p>
 
-        <h2>The Couple</h2>
+        <h2 id="the-couple">The Couple</h2>
 
         <figure>
             <img src=./wedding_photos/wedding_001_small.jpg loading='lazy' height='2000' width='3000' alt='After the exchange of rings, the final officiating of the marriage.'>
@@ -191,7 +208,7 @@
             <figcaption>The nwelyweds, and the parents of the bride!</figcaption>
         </figure>
 
-        <h2>The Rings</h2>
+        <h2 id="the-rings">The Rings</h2>
 
         <figure>
             <img src=./wedding_photos/ring_001_small.jpg loading='lazy' width='2832' height='1777' alt="The rings, set in the engagement box.">
@@ -217,6 +234,59 @@
             <img src=./wedding_photos/ring_005_small.jpg loading='lazy' width='3000' height='2000' alt="Neil's ring (plus a bonus Kaisahand).">
             <figcaption>Neil's ring (plus a bonus Kaisahand).</figcaption>
         </figure>
+
+        <h2 id="the-vows">The Vows</h2>
+
+        <h3>Neil's</h3>
+
+        <section class="vows">
+            <div id="neil-english-vows">
+                <h4>English</h4>
+
+                <p>My dear, my love, my ivory fairy<br>To you, this I vow:</p>
+                <p>To cherish you,<br>To love you,<br>To laugh with you (and at you!)<br>For all our remaining days<br>Come what storms may</p>
+                <p>You summoned me across the world,<br>and I came willingly<br>For you saw me<br>And awakened my spirit for adventure</p>
+                <p>But you also give me peace, simple happiness:<br>Back-pets in a cozy office,<br>Cuddles in a warm bed,<br>Cocoa in cafes together in distant cities.</p>
+                <p>And finally, this I swear:<br>If ever you tire, you may have a nap<br>But first, you must fire ze nuptials.</p>
+
+            </div>
+            <div id="neil-finnish-vows">
+                <h4>Suomi</h4>
+
+                <p>Rakkaani, kultani, kimalteleva haltijattareni,<br>Sinulle, tämän minä vannon:</p>
+                <p>Että vaalin sinua,<br>Rakastan sinua,<br>Nauran kanssasi (ja nauran sinulle!)<br>Kaikkina tulevina päivinämme,<br>Mitä elämä tuokaan tullessaan.</p>
+                <p>Sinä kutsuit minua maailman toiselta puolelta,<br>ja tulin mielelläni,<br>Sillä sinä näit minut, sisimpääni myöten,<br>Ja herätit sieluni seikkailuun.</p>
+                <p>Lisäksi sinä annat minulle rauhan, yksinkertaisen onnellisuuden:<br>helliä selkääntaputuksia kodikkaassa toimistossa,<br>haleja lämpöisessä sängyssä,<br>kaakaota kahviloissa kaukaisissa kaupungeissa.</p>
+                <p>Ja viimein, tämän minä lupaan:<br>Jos koskaan väsyt, voit ottaa nokoset,<br>mutta ensiksi sinun täytyy ampua hääraketti taivaalle.</p>
+
+            </div>
+        </section>
+
+        <h3>Kaisa's</h3>
+
+        <section class="vows">
+            <div id="kaisa-english-vows">
+                <h4>English</h4>
+
+                <p>Neil, I tell you every day that I love you and that you’re the bestest ever. In fact, I talk so much half the time you don’t remember me talking. I don’t think, however, that I have said anything more important than this.</p>
+                <p>In our home, silliness, laughter, and dumb jokes are always welcome. You laugh at my dumbest attempts, and look at me like I’m the wittiest person in the room.</p>
+                <p>You let me cry against your shoulder when the world is ending, and you almost never say “I told you so” when the world didn’t end after all.</p>
+                <p>You may not know what is “känkkäränkkä” (crankypants) or “laiskamato” (a lazy person), but your heart knows my heart’s language just fine. You know when my “no” means “I’m scared”, you know when my “yes” means “if I must”, and you know what to say to make me want to do difficult but fun things I wouldn’t otherwise do.</p>
+                <p>I’m lucky you’re here to make me better and share our best lives together. I’ll keep petting your legs and you can keep boiling my tea water.</p>
+
+            </div>
+
+            <div id="kaisa-finnish-vows">
+                <h4>Suomi</h4>
+                
+                <p>Neil, minä kerron sinulle joka päivä, että olet paras ikinä ja että rakastan sinua. Itse asiassa puhun niin paljon, että puolet ajasta sinä en muista, mitä minä sanoin. En varmaan ole sanonut mitään niin tärkeää kuin tämä. </p>
+                <p>Meillä nauru ja hauskanpito ja tyhmät vitsit ovat aina tervetulleita. Naurat minun huonoimmille vitseille, ja katsot minua kuin olisin huoneen fiksuin ihminen.</p>
+                <p>Annat minun itkeä sinun olkaasi vasten, kun maailma on loppumassa, ehkä melkein ikinä sano ”minähän sanoin”, kun ei se sitten loppunutkaan.</p>
+                <p>Sinä et ehkä tiedä, mitä tarkoittaa ”känkkäränkkä” tai ”laiskamato”, mutta sinun sydän puhuu minun sydämen kieltä just hyvin. Tiedät, milloin minun ”ei” tarkoittaa ”pelottaa” ja milloin ”joo” tarkoittaa ”jos on pakko”. Tiedät, mitä sanoa, kun minä en halua tehdä jotain, mikä on vaikeaa mutta palkitsevaa.</p>
+                <p>Olen onnekas, kun olet täällä tekemässä minusta parempaa, ja jakamassa tämän ihanan elämän minun kanssa. Minä silitän sinun jalkoja jatkossakin, ja sinä voit keittää minulle teevettä.</p>
+
+            </div>
+        </section>
 
     </body>
 </html>
