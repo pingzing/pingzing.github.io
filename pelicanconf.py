@@ -25,7 +25,7 @@ PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['photos', "pelican-cover-image", "static_comments", "article_teaser"]
 
 # Copy the files in these directories without processing to output
-STATIC_PATHS = ['static-html', 'wedding_photos']
+STATIC_PATHS = ['static-html', 'wedding_photos', 'images']
 ARTICLE_EXCLUDES = ['static-html'] # Don't try to turn anything in these folders into articles
 # Remap locations so that they appear where I want them
 EXTRA_PATH_METADATA = {

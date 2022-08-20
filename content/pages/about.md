@@ -21,15 +21,15 @@ You can also find me on GitHub as [PingZing](https://github.com/pingzing) or Twi
 <details markdown="1">
   <summary>Click or tap here to check out my resumé!</summary>
   <div class="flex-between">
-    <div style="align-self:center;">
-    <h2>Neil McAlister</h2>
-    <h5>Senior Server Software Engineer</h5>
-    </div>
-    <div class="top-margin">
-    <p><a href="https://www.github.com/pingzing"><img src="../images/github.png"/>PingZing</a></p>
-    <p><a href="https://www.linkedin.com/in/mcalistern/"><img src="../images/linkedin.png"/>linkedin.com/in/mcalistern</a></p>
-    <p><a href="mailto:mcalistern@gmail.com" target="_blank"><span class="no-link">✉</span>mcalistern@gmail.com</a></p>
-    </div>
+  <div style="align-self:center;">
+  <h2>Neil McAlister</h2>
+  <h5>Senior Server Software Engineer</h5>
+  </div>
+  <div class="top-margin">
+  <p><a href="https://www.github.com/pingzing"><img src="../images/github.png"/>PingZing</a></p>
+  <p><a href="https://www.linkedin.com/in/mcalistern/"><img src="../images/linkedin.png"/>linkedin.com/in/mcalistern</a></p>
+  <p><a href="mailto:neil@travelneil.com" target="_blank"><span class="no-link">✉</span>neil@travelneil.com</a></p>
+  </div>
   </div>
   <div class="resume-header">
     <h3>About Me</h3>
@@ -49,24 +49,41 @@ Outside work, I enjoy hacking on personal projects, reading, weird indie video g
   </div>
   <div class="exp-grid" markdown="1">
   <div class="exp-header" markdown="1">
+  <h4>F-Secure / WithSecure Oyj</h4>
+_Helsinki, Finland_  
+**Senior Software Developer**  
+May 2021 - Present
+  </div>
+  <div class="exp-detail" markdown="1">
+At F-Secure (now renamed to WithSecure), I was a Senior Software Developer. In this role I was part of a team responsible for the development of a cloud-native product that performed real-time scanning and protection of services such as Microsoft Exchange and OneDrive.
+
+In this position I:
+
+  - Worked extensively with C#, .NET Core/.NET 5+, TypeScript, NodeJS, AWS and MySQL
+  - Took ownership of new features or business goals and drove them from concept to delivery
+  - Performed a major overhaul of an internal subscription system, requiring significant code changes in all of the team's subprojects
+  - Made significant contributions to tooling and code philosophy, such as adopting automated documentation in TypeScript projects, and moving the project as a whole to a mono-repo
+  - Regularly on-boarded and mentored new team members
+  - Assisted our manager with recruitment by reviewing technical 'homework', and participating in technical interviews
+  </div>
+  </div>
+  <div class="exp-grid" markdown="1">
+  <div class="exp-header" markdown="1">
   <h4>Next Games Oyj</h4>
 _Helsinki, Finland_  
 **Senior Server Software Engineer**  
-Jan 2020 - Present
+Jan 2020 - April 2021
   </div>
   <div class="exp-detail" markdown="1">
-In my current role as a Senior Server Software Engineer at Next Games, I work as a part of a team responsible for the development and maintenance of the platform that power the games' online functionality. The platform serves multiple games, and thousands of concurrent players.
+In my role as a Senior Server Software Engineer at Next Games, I worked as a part of a team responsible for the development and maintenance of the platform that powered the games' online functionality. The platform served multiple games, and thousands of concurrent players.
 
-In this position, I have:
+In this position, I:
 
  - Worked extensively with C#, .NET Core, Service Fabric and Azure
- - Helped migrate the system from a multiple separate repositories and .NET Core 2, to a monorepo and .NET Core 3
+ - Helped migrate the system from a multi-repo .NET Core 2 setup, to a monorepo and .NET Core 3
  - Extensively reworked the platform's CI system as part of the migration
- - Rewritten the system's bootstrapping process, streamlining and simplifying it
- - Enhanced the platform to automatically provision and deploy notification services
  - Collaborated with various game teams to address their needs
- - Been part of the regular on-call rota for platform support
- - Been scrum master
+ - Was part of the regular on-call rota for platform support
   </div>
   </div>
   <div class="exp-grid" markdown="1">
@@ -123,11 +140,11 @@ Responsibilities included:
  - Managing the issues backlog
   </div>
   </div>
-  <div class="resume-header">
-    <h3>Education & Certifications</h3>
-    <hr>
+  <div class="resume-header" markdown="1">
+  <h3>Education & Certifications</h3>
+  <hr>
   </div>
-  <div class="flex-around">
+  <div class="flex-around" markdown="1">
   <div markdown="1">
   <h4>B.Sc. Computer Science</h4>
 _California State University Channel Islands_  
@@ -136,7 +153,7 @@ _California State University Channel Islands_
   <div markdown="1">
   <h4>Microsoft Certified Azure Developer Associate</h4>
 _Obtained June 30, 2020_  
-_Valid through June 30, 2022_
+_Valid through June 30, 2023_
   </div>
   </div>
   <div class="resume-header">
@@ -145,8 +162,8 @@ _Valid through June 30, 2022_
   </div>
   <div markdown="1">
   <a class="project-header" href="https://github.com/pingzing/trippit/"><h5>Trippit</h5></a>
-  <h6 class="project-subheader">Creator</h6>
-  <h6 class="project-subheader">https://github.com/pingzing/trippit/</h6>
+  <div class="project-subheader">Creator</div>
+  <div class="project-subheader">https://github.com/pingzing/trippit/</div>
 <p></p>
 
 Trippit is a journey planner for the greater Helsinki metro area. It hooks into city-provided APIs, and is written as a UWP app. I attempted to follow best practices in MVVM architecture and overall design.
@@ -155,21 +172,27 @@ It was originally meant to be a phone-first app with desktop capabilities, but t
   </div>
   <div markdown="1">
   <a class="project-header" href="https://github.com/pingzing/solenecyoa"><h5>Solene</h5></a>
-  <h6 class="project-subheader">Creator</h6>
-  <h6 class="project-subheader">https://github.com/pingzing/solenecyoa</h6>
+  <div class="project-subheader">Creator</div>
+  <div class="project-subheader">https://github.com/pingzing/solenecyoa</div>
 
-Solene is a text-based choose-your-own-adventure game. This was a more recent project undertaken as a creative exercise, and an attempt to see if I could make a monorepo project using .NET from top to bottom. I'm happy to say that I was!
+Solene is a text-based choose-your-own-adventure game. This was a project undertaken as a creative exercise, and an attempt to see if I could make a monorepo project using .NET from top to bottom. I'm happy to say that I was!
 
 It's a full-stack .NET application. It uses Xamarin.Forms for the Android and UWP applications, Azure Functions as a serverless backend, and has a pure-UWP admin client. One big advantage of the shared stack was the ability to share data models, and even some business logic between all the components.
   </div>
   <div markdown="1">
   <a class="project-header" href="https://github.com/pingzing/scannit-core"><h5>Scannit</h5></a>
-  <h6 class="project-subheader">Creator</h6>
-  <h6 class="project-subheader">https://github.com/pingzing/scannit-core</h6>
+  <div class="project-subheader">Creator</div>
+  <div class="project-subheader">https://github.com/pingzing/scannit-core</div>
 
 Scannit is a Rust-based library for reading NFC-based travel cards used by Helsinki Regional Transport in the greater Helsinki area. 
 
 It has a C-based FFI that any other language that can "speak C" is capable of interfacing with. It also has C# bindings in the form of [ScannitSharp](https://github.com/pingzing/ScannitSharp) (`https://github.com/pingzing/ScannitSharp`), and an unfinished Android app implemented in Xamarin Forms in the form of [Scannit](https://github.com/pingzing/Scannit) (`https://github.com/pingzing/Scannit`).
+  </div>
+  <div markdown="1">
+  <a class="project-header" href="https://github.com/pingzing/peep"><h5>Peep</h5></a>
+  <div class="project-subheader">Creator</div>
+  <div class="project-subheader">https://github.com/pingzing/peep</div>
+A tiny WPF and Win32 application that registers a global hotkey which, when pressed, pops up a small chromeless window, which plays a cute animation of a bat pony squeaking at the user. Created entirely for fun, and because it was cute.
   </div>
 
 </details>
