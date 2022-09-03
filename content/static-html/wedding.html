@@ -15,6 +15,7 @@
         <style>
             body {
                 text-align: center;
+                font-size: 1.3rem;
             }
 
             figure {
@@ -49,10 +50,20 @@
                 text-align: left;
              }
 
+             h2, h3, h4 {
+                 margin-top: 5px;
+                 margin-bottom: 5px;
+             }
+
+             h6 {
+                 margin: 5px;
+             }
+
              /* Dumb shenanigans to center the table of contents */
              ul {
-                 display: inline-block;
+                 display: table;
                  margin: auto;
+                 padding-left: 20px; /* Override browser-default indentation/padding */
                  text-align: center;
              }
 
@@ -64,18 +75,31 @@
     </head>
     <body>
 
-        <h1>Neil and Kaisa's Wedding, August 2nd, 2022</h1>
+        <h1 id="top">Neil and Kaisa's Wedding, August 2nd, 2022</h1>
 
         <ul>
-            <li><a href="#the-prep">The Prep</a></li>
-            <li><a href="#the-day">The Day</a></li>
+            <li><a href="#the-prep">The Prep</a></li>            
+            <li><a href="#the-day">The Day</a>
+                <ul>                    
+                    <li><a href="#the-ceremony">The Ceremony</a></li>
+                    <li><a href="#to-lunch">Headed to Lunch</a></li>
+                    <li><a href="#lunch-at-lloyds">Lunch at Lloyd's</a></li>
+                    <li><a href="#leaving-lloyds">Leaving Lloyd's</a></li>
+                    <li><a href="#dinner-prep">Getting Ready for Dinner</a></li>
+                    <li><a href="#dinner">Dinner</a></li>
+                    <li><a href="#through-the-park">A Walk Through the Park</a></li>
+                    <li><a href="#evenings-last-toast">The Evening's Last Toast</a></li>
+                </ul>
+            </li>
             <li><a href="#the-rings">The Rings</a></li> 
             <li><a href="#the-vows">The Vows</a></li>
         </ul>
         
         <p>Some of the images will appear downscaled to fit within the browser. For full-size, right-click/long-press and open in a new tab.</p>
 
-        <h2 id="the-prep">The Prep</h2>
+        <h2 id="the-prep">The Prep</h2> 
+        <h6><a href="#top">Back to top</a></h6>
+
         <p>Photos of the prep work done to prepare both the couple, and the invitations.</p>
 
         <figure>
@@ -155,32 +179,658 @@
 
 
         <h2 id="the-day">The Day</h2>
+        <h6><a href="#top">Back to top</a></h6>
         <p>Photos of the main event, and the evening of the wedding.</p>
 
+        <!-- New-content -->
+
+        <h3 id="the-ceremony">The Ceremony</h3>
+        <h6><a href="#top">Back to top</a></h6>
+
         <figure>
-            <img src=./wedding_photos/wedding_001_small.jpg loading='lazy' height='2000' width='3000' alt='After the exchange of rings, the final officiating of the marriage.'>
-            <figcaption>After the exchange of rings, the final officiating of the marriage.</figcaption>
+            <img src=./wedding_photos/IMG_9284_small.jpg loading='lazy' width='1000' height='1500' alt="Preparing to walk down the aisle, such as it is.">
+            <figcaption>Preparing to walk down the aisle, such as it is.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9288_small.jpg loading='lazy' width='1000' height='1500' alt="Briefing Reima on his dadly duties.">
+            <figcaption>Briefing Reima on his dadly duties.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9291_small.jpg loading='lazy' width='1500' height='1000' alt="'Yes, we still have the rings, see?'">
+            <figcaption>'Yes, we still have the rings, see?'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9294_small.jpg loading='lazy' width='1500' height='1000' alt="Waiting for their cue.">
+            <figcaption>Waiting for their cue.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9300_small.jpg loading='lazy' width='1000' height='1500' alt="The bride at the altar-like table.">
+            <figcaption>The bride at the altar-like table.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9301_small.jpg loading='lazy' width='1000' height='1500' alt="'Ha, she's his problem now.'">
+            <figcaption>'Ha, she's his problem now.'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9303_small.jpg loading='lazy' width='1000' height='1500' alt="Let's see how the couple is doing.">
+            <figcaption>Let's see how the couple is doing.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/wedding_001_small.jpg loading='lazy' height='2000' width='3000' alt='The official made a nice speech, that neither Neil nor Kaisa can remember at all anymore.'>
+            <figcaption>The official made a nice speech, that neither Neil nor Kaisa can remember at all anymore.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9308_small.jpg loading='lazy' width='1000' height='1500' alt="Kaisa reads her vows, definitely doesn't cry.">
+            <figcaption>Kaisa reads her vows, definitely doesn't cry.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9309_small.jpg loading='lazy' width='1500' height='1000' alt="There was a reason she went first.">
+            <figcaption>There was a reason she went first.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9312_small.jpg loading='lazy' width='1000' height='1500' alt="The audience, impressed at her not crying.">
+            <figcaption>The audience, impressed at her not crying.</figcaption>
+        </figure>        
+
+        <figure>
+            <img src=./wedding_photos/IMG_9314_small.jpg loading='lazy' width='1000' height='1500' alt="Neil reading his vows.">
+            <figcaption>Neil reading his vows.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9317_small.jpg loading='lazy' width='901' height='1387' alt="Tuomas reading the Finnish version of them.">
+            <figcaption>Tuomas reading the Finnish version of them.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9318_small.jpg loading='lazy' width='1000' height='1500' alt="Father-in-law approval rating increasing.">
+            <figcaption>Father-in-law approval rating increasing.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9319_small.jpg loading='lazy' width='1000' height='1500' alt="Still reading.">
+            <figcaption>Still reading.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9320_small.jpg loading='lazy' width='1000' height='1500' alt="DEFINITELY">
+            <figcaption>DEFINITELY</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9321_small.jpg loading='lazy' width='1000' height='1500' alt="NOT">
+            <figcaption>NOT</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9322_small.jpg loading='lazy' width='1500' height='1000' alt="CRYING">
+            <figcaption>CRYING</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9327_small.jpg loading='lazy' width='1000' height='1500' alt="Neil's vows ended on a dumb joke. Looks like it landed. Whew.">
+            <figcaption>Neil's vows ended on a dumb joke. Looks like it landed. <em>Whew.</em></figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9333_small.jpg loading='lazy' width='1500' height='1000' alt="Neil's ring. Remarkably good aim from Kaisa, despite the all the tears. She even had the presence of mind to hide the ring's tag with her thumb!">
+            <figcaption>Neil's ring. Remarkably good aim from Kaisa, despite the all the tears. She even had the presence of mind to hide the ring's tag with her thumb!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9336_small.jpg loading='lazy' width='1500' height='1000' alt="'You may now kiss the bride.' ...or whatever she said. It's kind of a blur, now.">
+            <figcaption>'You may now kiss the bride.' ...or whatever she said. It's kind of a blur, now.</figcaption>
         </figure>
 
         <figure>
             <img src=./wedding_photos/wedding_002_small.jpg loading='lazy' width='2000' height='3000' alt='Just before the kiss!'>
             <figcaption>Just before the kiss!</figcaption>
-        </figure>                
+        </figure> 
 
         <figure>
-            <img src=./wedding_photos/wedding_003_small.jpg loading='lazy' width='2000' height='3000' alt="Cutting the cake after the ceremony at Lloyd's Bakery.">
-            <figcaption>Cutting the cake after the ceremony at Lloyd's Bakery.</figcaption>
+            <img src=./wedding_photos/IMG_9338_small.jpg loading='lazy' width='1000' height='1500' alt="The kiss!">
+            <figcaption>The kiss!</figcaption>
         </figure>
 
         <figure>
-            <img src=./wedding_photos/wedding_004_small.jpg loading='lazy' width='2000' height='3000' alt='In which Neil fails to be the first to stomp after the cake slicer hits bottom. Kaisa is delighted at her victory.'>
-            <figcaption>In which Neil fails to be the first to stomp after the cake slicer hits bottom. Kaisa is delighted at her victory.</figcaption>
+            <img src=./wedding_photos/IMG_9339_small.jpg loading='lazy' width='1000' height='1500' alt="...are we... are we still kissing?">
+            <figcaption>...are we... are we still kissing?</figcaption>
         </figure>
 
         <figure>
-            <img src=./wedding_photos/wedding_018_small.jpg loading='lazy' width='3000' height='2000' alt="Posing in front of Lloyd's after lunch.">
-            <figcaption>Posing in front of Lloyd's after lunch.</figcaption>
+            <img src=./wedding_photos/IMG_9340_small.jpg loading='lazy' width='1000' height='1500' alt="No! We're done! This audience is making Kaisa nervous!">
+            <figcaption>No! We're done! This audience is making Kaisa nervous!</figcaption>
         </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9341_small.jpg loading='lazy' width='1000' height='1500' alt="*enthusiastic applause* Nothing went wrong!">
+            <figcaption>*enthusiastic applause* Nothing went wrong!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9344_small.jpg loading='lazy' width='1000' height='1500' alt="Gathering everything up. We still have the room for a few minutes, but not many.">
+            <figcaption>Gathering everything up. We still have the room for a few minutes, but not many.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9347_small.jpg loading='lazy' width='1000' height='1500' alt="Neil checking in on the remote crowd. He doesn't realize it yet, but while he remember to start streaming, he forgot to record. Whoops.">
+            <figcaption>Neil checking in on the remote crowd. He doesn't realize it yet, but while he remember to start streaming, he forgot to record. Whoops.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9351_small.jpg loading='lazy' width='1500' height='1000' alt="The live crowd amused at the remote antics.">
+            <figcaption>The live crowd amused at the remote antics.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9353_small.jpg loading='lazy' width='1500' height='1000' alt="'Haha, she said yes, can you believe it?'">
+            <figcaption>'Haha, she said yes, can you believe it?'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9356_small.jpg loading='lazy' width='1453' height='970' alt="'I did!'">
+            <figcaption>'I did!'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9362_small.jpg loading='lazy' width='1500' height='1000' alt="Showing off the bouquet.">
+            <figcaption>Showing off the bouquet.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9366_small.jpg loading='lazy' width='1000' height='1500' alt="Proud papa.">
+            <figcaption>Proud papa.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9368_small.jpg loading='lazy' width='1000' height='1500' alt="Happy everyone was able to join.">
+            <figcaption>Happy everyone was able to join.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9372_small.jpg loading='lazy' width='1500' height='1000' alt="Clearly making fun of Neil here. Probably deservedly.">
+            <figcaption>Clearly making fun of Neil here. Probably deservedly.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9378_small.jpg loading='lazy' width='1500' height='1000' alt="Showing off the dress!">
+            <figcaption>Showing off the dress!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9387_small.jpg loading='lazy' width='1000' height='1500' alt="So excited!">
+            <figcaption>So excited!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9391_small.jpg loading='lazy' width='1000' height='1500' alt="So excited WITH FLOWERS! (Kaisa thinks she had the world's prettiest bouquet.)">
+            <figcaption>So excited WITH FLOWERS! (Kaisa thinks she had the world's prettiest bouquet.)</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9393_small.jpg loading='lazy' width='1500' height='1000' alt="Mother-of-the-bride Airi congratulates her daughter.">
+            <figcaption>Mother-of-the-bride Airi congratulates her daughter.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9395_small.jpg loading='lazy' width='1500' height='1000' alt="Reminds her that Neil is small enough to be sat on if he ever causes trouble.">
+            <figcaption>Reminds her that Neil is small enough to be sat on if he ever causes trouble.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9398_small.jpg loading='lazy' width='1500' height='1000' alt="Classy lady.">
+            <figcaption>Classy lady.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9402_small.jpg loading='lazy' width='1500' height='1000' alt="Showing off the new ring. It was kept strictly under wraps until then.">
+            <figcaption>Showing off the new ring. It was kept strictly under wraps until then.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9404_small.jpg loading='lazy' width='1500' height='1000' alt="Brother Rauno.">
+            <figcaption>Brother Rauno.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9405_small.jpg loading='lazy' width='1500' height='1000' alt="Tiina must have just delivered a CSI: Miami-worthy pun.">
+            <figcaption>Sister Tiina must have just delivered a CSI: Miami-worthy pun.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9407_small.jpg loading='lazy' width='1000' height='1500' alt="'Looks like we pawned her off. Finally.'  'Told you we could.'">
+            <figcaption>'Looks like we pawned her off. Finally.'  'Told you we could.'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9413_small.jpg loading='lazy' width='1000' height='1500' alt="Off to their new life together.">
+            <figcaption>Off to their new life together.</figcaption>
+        </figure>
+
+        <!-- Outside the wedding venue -->
+
+        <h3 id="to-lunch">Headed to Lunch</h3>
+        <h6><a href="#top">Back to top</a></h6>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9415_small.jpg loading='lazy' width='1500' height='1000' alt="Tuomas squints into the light.">
+            <figcaption>Tuomas squints into the light.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9422_small.jpg loading='lazy' width='1500' height='1000' alt="Kaisa's smile is too radiant!">
+            <figcaption>Kaisa's smile is too radiant!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9432_small.jpg loading='lazy' width='1500' height='1000' alt="More bouquet.">
+            <figcaption>More bouquet.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9435_small.jpg loading='lazy' width='1500' height='852' alt="Neil's boutonnière and engagement pendant.">
+            <figcaption>Neil's boutonnière and engagement pendant.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9437_small.jpg loading='lazy' width='1500' height='1000' alt="Airi gets a chance to read Kaisa's vows in Finnish.">
+            <figcaption>Airi gets a chance to read Kaisa's vows in Finnish.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9441_small.jpg loading='lazy' width='1500' height='1000' alt="Faces full of love...">
+            <figcaption>Faces full of love...</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9444_small.jpg loading='lazy' width='1500' height='1000' alt="...and laughter.">
+            <figcaption>...and laughter.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9449_small.jpg loading='lazy' width='1276' height='871' alt="Seems contagious.">
+            <figcaption>Seems contagious.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9467_small.jpg loading='lazy' width='1500' height='1000' alt="'And if sitting on him doesn't work, what you do is...'">
+            <figcaption>'And if sitting on him doesn't work, what you do is...'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9468_small.jpg loading='lazy' width='1500' height='1000' alt="'...then pow, no problems!'">
+            <figcaption>'...then pow, no problems!'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9474_small.jpg loading='lazy' width='1500' height='1000' alt="Piling into the taxi that'll take us to lunch.">
+            <figcaption>Piling into the taxi that'll take us to lunch.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9476_small.jpg loading='lazy' width='1500' height='1000' alt="It was one full taxi.">
+            <figcaption>It was one full taxi.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9482_small.jpg loading='lazy' width='1500' height='1000' alt="Excited for lunch.">
+            <figcaption>Excited for lunch.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9486_small.jpg loading='lazy' width='1000' height='1500' alt="This is Tuomas, and he approves this plan.">
+            <figcaption>This is Tuomas, and he approves this plan.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9489_small.jpg loading='lazy' width='1500' height='1000' alt="Matching boutonnière.">
+            <figcaption>Matching boutonnière.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9493_small.jpg loading='lazy' width='1500' height='1000' alt="These two walked. By the time we arrived, they were wondering what had taken us so long.">
+            <figcaption>These two walked. By the time we arrived, they were wondering what had taken us so long.</figcaption>
+        </figure>
+
+        <!-- At Lloyd's -->        
+
+        <h3 id="lunch-at-lloyds">Lunch at Lloyd's</h3>
+        <h6><a href="#top">Back to top</a></h6>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9505_small.jpg loading='lazy' width='1500' height='1000' alt="The view upon entering Lloyd's, with Lloyd himself behind the counter.">
+            <figcaption>The view upon entering Lloyd's, with Lloyd himself behind the counter.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9512_small.jpg loading='lazy' width='1500' height='1000' alt="'Heck of a place!'">
+            <figcaption>'Heck of a place!'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9514_small.jpg loading='lazy' width='1500' height='1000' alt="Airi channelling her inner empress.">
+            <figcaption>Airi channelling her inner empress.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9519_small.jpg loading='lazy' width='1500' height='1000' alt="Quite charming.">
+            <figcaption>Quite charming.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9530_small.jpg loading='lazy' width='1500' height='1000' alt="Enjoying the newlywed life.">
+            <figcaption>Enjoying the newlywed life.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9532_small.jpg loading='lazy' width='1000' height='1500' alt="Tuomas receives and opens his wedding invitation.">
+            <figcaption>Tuomas receives and opens his wedding invitation.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9535_small.jpg loading='lazy' width='1000' height='1500' alt="...after the wedding, of course.">
+            <figcaption>...after the wedding, of course.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9537_small.jpg loading='lazy' width='1500' height='1000' alt="View of the invitation's interior. The first half of the program already done!">
+            <figcaption>View of the invitation's interior. The first half of the program already done!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9545_small.jpg loading='lazy' width='1500' height='1000' alt="Tiina saying *something* funny, or at least Kaisa thinks so.">
+            <figcaption>Tiina saying <em>something</em> funny, or at least Kaisa thinks so.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9548_small.jpg loading='lazy' width='1000' height='1500' alt="Lloyd delivering our bagel lunch.">
+            <figcaption>Lloyd delivering our bagel lunch.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9549_small.jpg loading='lazy' width='770' height='1000' alt="Freshly-baked bagels with their various fillings.">
+            <figcaption>Freshly-baked bagels with their various fillings.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9552_small.jpg loading='lazy' width='1000' height='1500' alt="The table tucks in.">
+            <figcaption>The table tucks in.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9560_small.jpg loading='lazy' width='1500' height='1000' alt="Reima telling jokes.">
+            <figcaption>Reima telling jokes.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9564_small.jpg loading='lazy' width='1000' height='1500' alt="Tuomas enjoying a glass of Lloyd's secret-recipe ginger beer, complete with straws made of pasta. (Technically edible!)">
+            <figcaption>Tuomas enjoying a glass of Lloyd's secret-recipe ginger beer, complete with straws made of pasta. (Technically edible!)</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9579_small.jpg loading='lazy' width='1000' height='1500' alt="Kaisa with some tea, to no one's surprise.">
+            <figcaption>Kaisa with some tea, to no one's surprise.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9585_small.jpg loading='lazy' width='1000' height='1500' alt="The cake arrives! Live flowers (inedible) atop, with candy ladybugs (edible).">
+            <figcaption>The cake arrives! Live flowers (inedible) atop, with candy ladybugs (edible).</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9586_small.jpg loading='lazy' width='1500' height='1000' alt="The cake is contemplated.">
+            <figcaption>The cake is contemplated.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/wedding_003_small.jpg loading='lazy' width='2000' height='3000' alt="In Finland, it's traditional for the newlywed couple to compete to try to be the first to stop the ground when the slicer hits the plate. Whoever wins is said to wield the power in the household.">
+            <figcaption>In Finland, it's traditional for the newlywed couple to compete to try to be the first to stop the ground when the slicer hits the plate. Whoever wins is said to wield the power in the household.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/wedding_004_small.jpg loading='lazy' width='2000' height='3000' alt='Kaisa tried to cheat by suddenly pressing very hard. It worked so well, that she forgot what to do for a moment afterward. She finally remembered to stomp (while Neil did not), and is delighted at her victory.'>
+            <figcaption>Kaisa tried to cheat by suddenly pressing very hard. It worked so well, that she forgot what to do for a moment afterward. She finally remembered to stomp (while Neil did not), and is delighted at her victory.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9605_small.jpg loading='lazy' width='1500' height='1000' alt="Post-cake kiss.">
+            <figcaption>Post-cake kiss.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9608_small.jpg loading='lazy' width='1000' height='1500' alt="As consolation for losing, Neil is served the first slice.">
+            <figcaption>As consolation for losing, Neil is served the first slice.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9611_small.jpg loading='lazy' width='1000' height='1500' alt="Kaisa's slice (pure happiness).">
+            <figcaption>Kaisa's slice (pure happiness).</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9613_small.jpg loading='lazy' width='1000' height='1500' alt="Cake!">
+            <figcaption>Cake!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9615_small.jpg loading='lazy' width='1500' height='1000' alt="The traditional feeding of the man.">
+            <figcaption>The traditional feeding of the man.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9620_small.jpg loading='lazy' width='1500' height='1000' alt="Everyone awaiting their slice.">
+            <figcaption>Everyone awaiting their slice.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9624_small.jpg loading='lazy' width='1500' height='1000' alt="Reima and Tiina happy to get second dibs.">
+            <figcaption>Reima and Tiina happy to get second dibs.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9634_small.jpg loading='lazy' width='1500' height='1000' alt="It was a white chocolate cheesecake, with a raspberry compote. Mmm.">
+            <figcaption>It was a white chocolate cheesecake, with a raspberry compote. Mmm.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9640_small.jpg loading='lazy' width='687' height='1000' alt="Airi enjoying the atmosphere.">
+            <figcaption>Airi enjoying the atmosphere.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9642_small.jpg loading='lazy' width='1500' height='1000' alt="Neil, on the other hand, realizes he now has a mother-in-law.">
+            <figcaption>Neil, on the other hand, realizes he now has a mother-in-law.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9645_small.jpg loading='lazy' width='1500' height='1000' alt="Rauno pondering the mysteries of life.">
+            <figcaption>Rauno pondering the mysteries of life.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9646_small.jpg loading='lazy' width='742' height='1000' alt="'No, see, what you do is'">
+            <figcaption>'No, see, what you do is'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9647_small.jpg loading='lazy' width='1000' height='1500' alt="'you take a big barrel of soda, right'">
+            <figcaption>'you take a big barrel of soda, right'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9648_small.jpg loading='lazy' width='795' height='1178' alt="'you put it on your neighbor's porch'">
+            <figcaption>'you put it on your neighbor's porch'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9649_small.jpg loading='lazy' width='1000' height='1500' alt="'shake it back and forth a bunch'">
+            <figcaption>'shake it back and forth a bunch'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9650_small.jpg loading='lazy' width='1000' height='1500' alt="'or maybe it was up and down'">
+            <figcaption>'or maybe it was up and down'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9651_small.jpg loading='lazy' width='1000' height='1500' alt="'then POW! Soda everywhere!'">
+            <figcaption>'then POW! Soda everywhere!'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9654_small.jpg loading='lazy' width='1500' height='1000' alt="'Okay, but why?'">
+            <figcaption>'Okay, but why?'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9671_small.jpg loading='lazy' width='1500' height='1000' alt="'Pretty sure I know. Don't you Rauno?'">
+            <figcaption>'Pretty sure I know. Don't you Rauno?'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9673_small.jpg loading='lazy' width='1500' height='1000' alt="' 'cause if it weren't soda-shaking, it'd be soda-pressing! And that'd be so depressing.'">
+            <figcaption>' 'cause if it weren't soda-shaking, it'd be soda-pressing! And that'd be so depressing.'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9683_small.jpg loading='lazy' width='792' height='978' alt="The forecast said it'd be cold and drizzly, but the day was perfect and warm. Thanks, for the weather magic Julian!">
+            <figcaption>The forecast said it'd be cold and drizzly, but the day was perfect and warm. Thanks, for the weather magic Julian!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9684_small.jpg loading='lazy' width='1500' height='1000' alt="Get over here, you!">
+            <figcaption>Get over here, you!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9687_small.jpg loading='lazy' width='1409' height='972' alt="Uh-oh, she's gonna kiss me!">
+            <figcaption>Uh-oh, she's gonna kiss me!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9689_small.jpg loading='lazy' width='1000' height='1500' alt="Oh, no, nevermind.">
+            <figcaption>Oh, no, nevermind.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/wedding_018_small.jpg loading='lazy' width='3000' height='2000' alt="Oh well, this is good too!">
+            <figcaption>Oh well, this is good too!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9693_small.jpg loading='lazy' width='1500' height='1000' alt="Arranged in order from tallest to shortest.">
+            <figcaption>Arranged in order from tallest to shortest.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9694_small.jpg loading='lazy' width='974' height='1470' alt="Same story, different zoom level.">
+            <figcaption>Same story, different zoom level.</figcaption>
+        </figure>
+
+        <!-- Leaving Lloyd's -->
+
+        <h3 id="leaving-lloyds">Leaving Lloyd's</h3>
+        <h6><a href="#top">Back to top</a></h6>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9702_small.jpg loading='lazy' width='1000' height='1500' alt="Now with our bellies just full enough, it's time to head back to hotel for a breather.">
+            <figcaption>Now with our bellies just full enough, it's time to head back to hotel for a breather.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9704_small.jpg loading='lazy' width='1000' height='1500' alt="Even the sun's happy for the newlyweds.">
+            <figcaption>Even the sun's happy for the newlyweds.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9708_small.jpg loading='lazy' width='1000' height='1500' alt="Tuomas looking classy in his shades.">
+            <figcaption>Tuomas looking classy in his shades.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9716_small.jpg loading='lazy' width='1500' height='1000' alt="For me, you say?">
+            <figcaption>For me, you say?</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9718_small.jpg loading='lazy' width='1500' height='1000' alt="Don't mind if I do! *nomf*">
+            <figcaption>Don't mind if I do! *nomf*</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9722_small.jpg loading='lazy' width='1500' height='1000' alt="'What do you mean they're not for eating?'">
+            <figcaption>'What do you mean they're not for eating?'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9726_small.jpg loading='lazy' width='1000' height='1500' alt="Looking mysterious with her bouquet...">
+            <figcaption>Looking mysterious with her bouquet...</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9727_small.jpg loading='lazy' width='1000' height='1500' alt="It's Kaisa!">
+            <figcaption>It's Kaisa!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9737_small.jpg loading='lazy' width='1000' height='1500' alt="We claim this tram stop in the name of our party.">
+            <figcaption>We claim this tram stop in the name of our party.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9741_small.jpg loading='lazy' width='1000' height='1500' alt="Neil takes 1% damage.">
+            <figcaption>Neil takes 1% damage.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9742_small.jpg loading='lazy' width='1000' height='1500' alt="'Do I have a flower hat now?'">
+            <figcaption>'Do I have a flower hat now?'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9743_small.jpg loading='lazy' width='1000' height='1500' alt="'Oh, I see how it is!'">
+            <figcaption>'Oh, I see how it is!'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9748_small.jpg loading='lazy' width='1500' height='1000' alt="Flowers and pendants.">
+            <figcaption>Flowers and pendants.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9750_small.jpg loading='lazy' width='1000' height='1500' alt="Neil briefly roleplays as the bridge before losing his flower priveleges.">
+            <figcaption>Neil briefly roleplays as the bridge before losing his flower priveleges.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9754_small.jpg loading='lazy' width='1000' height='1500' alt="Kaisa has successfully recovered the bouquet.">
+            <figcaption>Kaisa has successfully recovered the bouquet.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9761_small.jpg loading='lazy' width='1500' height='1000' alt="Aira and Tiina celebrating their victory of this 'wedding day'.">
+            <figcaption>Aira and Tiina celebrating their victory of this 'wedding day'.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9763_small.jpg loading='lazy' width='1500' height='1000' alt="Tiina clearly proud of herself.">
+            <figcaption>Tiina clearly proud of herself.</figcaption>
+        </figure>
+
+        <!-- At the hotel after Lloyd's -->
+
+        <h3 id="dinner-prep">Getting Ready for Dinner</h3>
+        <h6><a href="#top">Back to top</a></h6>
 
         <figure>
             <img src=./wedding_photos/prep_014.jpg loading='lazy' width='960' height='1280' alt="Kaisa, as we return to the hotel to drop off our things before dinner.">
@@ -190,6 +840,11 @@
         <figure>
             <img src=./wedding_photos/wedding_005_small.jpg loading='lazy' width='2000' height='3000' alt="Preparing to ride off into the sunset with Hotel F6's Vespa after lunch.">
             <figcaption>Preparing to ride off into the sunset with Hotel F6's Vespa after lunch.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9785_small.jpg loading='lazy' width='1500' height='1000' alt="Kaisa's hair not obeying her commands.">
+            <figcaption>Kaisa's hair not obeying her commands.</figcaption>
         </figure>
 
         <figure>
@@ -213,13 +868,18 @@
         </figure>
 
         <figure>
+            <img src=./wedding_photos/IMG_9787_small.jpg loading='lazy' width='1000' height='1500' alt="You want us to go where?">
+            <figcaption>You want us to go where?</figcaption>
+        </figure>
+
+        <figure>
             <img src=./wedding_photos/wedding_010_small.jpg loading='lazy' width='1885' height='2904' alt='Kaisa reclining in her throne.'>
             <figcaption>Kaisa reclining in her throne.</figcaption>
         </figure>
 
         <figure>
-            <img src=./wedding_photos/wedding_011_small.jpg loading='lazy' width='1905' height='2900' alt='Gazing soulfully at each other.'>
-            <figcaption>Gazing soulfully at each other.</figcaption>
+            <img src=./wedding_photos/wedding_011_small.jpg loading='lazy' width='1905' height='2900' alt="Guess what?'  'What?'  'I love you!'">
+            <figcaption>'Guess what?'  'What?'  'I love you!'</figcaption>
         </figure>
 
         <figure>
@@ -238,8 +898,38 @@
         </figure>
 
         <figure>
-            <img src=./wedding_photos/wedding_015_small.jpg loading='lazy' width='2000' height='3000' alt='Kneeling beside the throne.'>
+            <img src=./wedding_photos/IMG_9796_small.jpg loading='lazy' width='1000' height='1500' alt="Kneeling beside the throne.">
             <figcaption>Kneeling beside the throne.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/wedding_015_small.jpg loading='lazy' width='2000' height='3000' alt='Totally failing to maintain composure before the throne.'>
+            <figcaption>Totally failing to maintain composure before the throne.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9803_small.jpg loading='lazy' width='1500' height='1000' alt="'Do you like your new throne?'  'I do!'">
+            <figcaption>'Do you like your new throne?'  'I do!'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9807_small.jpg loading='lazy' width='1000' height='1500' alt="Nose boop.">
+            <figcaption>Nose boop.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9815_small.jpg loading='lazy' width='1000' height='1500' alt="Happy cuddles.">
+            <figcaption>Happy cuddles.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9825_small.jpg loading='lazy' width='1000' height='1500' alt="Pinky promise.">
+            <figcaption>Pinky promise.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9835_small.jpg loading='lazy' width='1000' height='1500' alt="*THE OATH HAS BEEN SWORN.*">
+            <figcaption><strong>THE OATH HAS BEEN SWORN.</strong></figcaption>
         </figure>
 
         <figure>
@@ -250,8 +940,13 @@
         <figure>
             <img src=./wedding_photos/wedding_017_small.jpg loading='lazy' width='2879' height='1950' alt="I know, I'll get her back by stealing the bouquet...">
             <figcaption>I know, I'll get her back by stealing the bouquet...</figcaption>
-        </figure>       
-        
+        </figure> 
+
+        <figure>
+            <img src=./wedding_photos/IMG_9845_small.jpg loading='lazy' width='1000' height='1500' alt="OMG I GOT IT">
+            <figcaption>OMG I GOT IT</figcaption>
+        </figure>
+
         <figure>
             <img src=./wedding_photos/wedding_019_small.jpg loading='lazy' width='1797' height='2672' alt="The newlywed couple, off to dinner.">
             <figcaption>The newlywed couple, off to dinner.</figcaption>
@@ -273,8 +968,318 @@
         </figure>
 
         <figure>
+            <img src=./wedding_photos/IMG_9871_small.jpg loading='lazy' width='1500' height='1000' alt="Tiina is having none of this nonsense.">
+            <figcaption>Tiina is having none of this nonsense.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9873_small.jpg loading='lazy' width='1500' height='1000' alt="'What do you mean I looked goofy? =&lt;'">
+            <figcaption>'What do you mean I looked goofy? 😠'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9874_small.jpg loading='lazy' width='1500' height='1000' alt="Neil isn't quite sure what he's just walked into.">
+            <figcaption>Neil isn't quite sure what he's just walked into.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9875_small.jpg loading='lazy' width='1500' height='1000' alt="FAEC">
+            <figcaption>FAEC</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9876_small.jpg loading='lazy' width='1500' height='1000' alt="Kaisa cannot _faec_ as well as Tiina.">
+            <figcaption>Kaisa cannot <em>faec</em> as well as Tiina.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9877_small.jpg loading='lazy' width='1500' height='1000' alt="Kaisa informing Neil that these two are now his problem too.">
+            <figcaption>Kaisa informing Neil that these two are now his problem too.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9880_small.jpg loading='lazy' width='1000' height='1500' alt="Offended, they turn away and pose dramatically and threaten to leave.">
+            <figcaption>Offended, they turn away and pose dramatically and threaten to leave.</figcaption>
+        </figure>        
+
+        <figure>
+            <img src=./wedding_photos/IMG_9886_small.jpg loading='lazy' width='1500' height='1000' alt="...and quickly live up to the warnings.">
+            <figcaption>...and quickly live up to the warnings.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9887_small.jpg loading='lazy' width='1138' height='779' alt="She told him so. She did!">
+            <figcaption>She told him so. She did!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9890_small.jpg loading='lazy' width='1000' height='1500' alt="The elusive camerawoman steps into the frame. Hi Sini! Many thanks once more for all the lovely photos.">
+            <figcaption>The elusive camerawoman steps into the frame. Hi Sini! Many thanks once more for all the lovely photos.</figcaption>
+        </figure>
+
+        <!-- At dinner -->
+
+        <h3 id="dinner">Dinner</h3>
+        <h6><a href="#top">Back to top</a></h6>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9907_small.jpg loading='lazy' width='1000' height='1500' alt="Now at dinner, Neil peruses the menu.">
+            <figcaption>Now at dinner, Neil peruses the menu.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9912_small.jpg loading='lazy' width='1000' height='1500' alt="Tuomas' boutonnière looking good.">
+            <figcaption>Tuomas' boutonnière looking good.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9917_small.jpg loading='lazy' width='1500' height='1000' alt="Drinks are delivered and sampled.">
+            <figcaption>Drinks are delivered and sampled.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9921_small.jpg loading='lazy' width='1500' height='1000' alt="Reima delivered a heartfelt speech about sticking with each other, in the good times, and the bad. An unexpected, but welcome surprise.">
+            <figcaption>Reima delivered a heartfelt speech about sticking with each other, in the good times, and the bad. An unexpected, but welcome surprise.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9925_small.jpg loading='lazy' width='1000' height='1500' alt="Wisdom from a man of few words.">
+            <figcaption>Wisdom from a man of few words.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9928_small.jpg loading='lazy' width='1500' height='1000' alt="Kaisa began interpreting, but quickly had to hand the job to Tiina because she began crying.">
+            <figcaption>Kaisa began interpreting, but quickly had to hand the job to Tiina <s>because she began crying.</s></figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9940_small.jpg loading='lazy' width='1000' height='1500' alt="Neil listens attentively.">
+            <figcaption>Neil listens attentively.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9943_small.jpg loading='lazy' width='1500' height='1000' alt="'And of course remember, that you cannot give her back anymore.'">
+            <figcaption>'And of course remember, that you cannot give her back anymore.'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9945_small.jpg loading='lazy' width='1500' height='1000' alt="A toast to the new couple, and their happiness!">
+            <figcaption>A toast to the new couple, and their happiness!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9947_small.jpg loading='lazy' width='1500' height='1000' alt="Kippis!">
+            <figcaption>Kippis!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9949_small.jpg loading='lazy' width='1500' height='1000' alt="Cheers!">
+            <figcaption>Cheers!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9960_small.jpg loading='lazy' width='1500' height='1000' alt="Airi is not so sure about her drink.">
+            <figcaption>Airi is not so sure about her drink.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9965_small.jpg loading='lazy' width='1500' height='1000' alt="Moments later Airi is VERY sure about her drink. Sure that she regrets it.">
+            <figcaption>Moments later Airi is VERY sure about her drink. Sure that she regrets it.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9966_small.jpg loading='lazy' width='1000' height='1500' alt="The group settles down and begins to ponder what to order.">
+            <figcaption>The group settles down and begins to ponder what to order.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9973_small.jpg loading='lazy' width='1500' height='1000' alt="The waitress gamely endures the newlyweds' antics.">
+            <figcaption>The waitress gamely endures the newlyweds' antics.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9974_small.jpg loading='lazy' width='1000' height='1500' alt="Kaisa offers sage advice on appetizers.">
+            <figcaption>Kaisa offers sage advice on appetizers.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9980_small.jpg loading='lazy' width='1500' height='1000' alt="Airi, however, is too cool to need help.">
+            <figcaption>Airi, however, is too cool to need help.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9993_small.jpg loading='lazy' width='1000' height='1500' alt="Reima believes this.">
+            <figcaption>Reima believes this.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_9994_small.jpg loading='lazy' width='1500' height='1000' alt="As do Tiina and Rauno.">
+            <figcaption>As do Tiina and Rauno.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0010_small.jpg loading='lazy' width='1000' height='1500' alt="A brief Tuomas intermission!">
+            <figcaption>A brief Tuomas intermission!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0012_small.jpg loading='lazy' width='1500' height='1000' alt="Now back to our regularly-scheduled Reima jokes.">
+            <figcaption>Now back to our regularly-scheduled Reima jokes.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0014_small.jpg loading='lazy' width='1500' height='1000' alt="The onion-free appetizers: The Iceberg Wedge. A quarter of head of iceberg lettuce, with bacon bits. When it came out, Tiina couldn't stop laughing.">
+            <figcaption>The onion-free appetizers: The Iceberg Wedge. A quarter of head of iceberg lettuce, with bacon bits. When it came out, Tiina couldn't stop laughing.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0019_small.jpg loading='lazy' width='1000' height='1500' alt="Rauno digs right in. Tiina favors the cautious approach...">
+            <figcaption>Rauno digs right in. Tiina favors the cautious approach...</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0030_small.jpg loading='lazy' width='1500' height='1000' alt="Happy om nom nomming noises.">
+            <figcaption>Happy om nom nomming noises.</figcaption>
+        </figure>       
+
+        <figure>
+            <img src=./wedding_photos/IMG_0048_small.jpg loading='lazy' width='1500' height='1000' alt="'Hey, hold up your dessert!'">
+            <figcaption>'Hey, hold up your dessert!'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0049_small.jpg loading='lazy' width='1500' height='1000' alt="*clink* 'Kaisa, why did we do that?'  'BECAUSE! =D'">
+            <figcaption>*clink* 'Kaisa, why did we do that?'  'BECAUSE! =D'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0070_small.jpg loading='lazy' width='1500' height='1000' alt='A newlyweds game. A "who is/who does" question is asked, and each person must point at the correct person.'>
+            <figcaption>A newlyweds game. A "who is/who does" question is asked, and each person must point at the correct person.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0071_small.jpg loading='lazy' width='1500' height='1000' alt="Tiina and Rauno being amused at this tomfoolery.">
+            <figcaption>Tiina and Rauno being amused at this tomfoolery.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0072_small.jpg loading='lazy' width='1500' height='1000' alt="'Him! Definitely him!'">
+            <figcaption>'Him! Definitely him!'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0073_small.jpg loading='lazy' width='1500' height='1000' alt="'Yep. Definitely me.'">
+            <figcaption>'Yep. <em>Definitely</em> me.'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0075_small.jpg loading='lazy' width='1000' height='1500' alt="Kaisa acknowledging that this question is absolutely about her.">
+            <figcaption>Kaisa acknowledging that this question is absolutely about her.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0081_small.jpg loading='lazy' width='1500' height='1000' alt="Neil... isn't so sure about this one. Kaisa is sure it's her.">
+            <figcaption>Neil... isn't so sure about this one. Kaisa is sure it's her.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0086_small.jpg loading='lazy' width='1500' height='1000' alt="M... maybe Kaisa?">
+            <figcaption>M... maybe Kaisa?</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0089_small.jpg loading='lazy' width='1500' height='1000' alt="Neil's not even mad about this one. It's definitely him.">
+            <figcaption>Neil's not even mad about this one. It's definitely him.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0091_small.jpg loading='lazy' width='1500' height='1000' alt="The couple is finally stumped.">
+            <figcaption>The couple is finally stumped.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0096_small.jpg loading='lazy' width='1500' height='1000' alt="Kaisa ponders, Neil fidgets, considering.">
+            <figcaption>Kaisa ponders, Neil fidgets, considering.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0097_small.jpg loading='lazy' width='1500' height='1000' alt="Kaisa votes for Neil. Neil casts a neutral vote to the side.">
+            <figcaption>Kaisa votes for Neil. Neil casts a neutral vote to the side.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0100_small.jpg loading='lazy' width='1500' height='1000' alt="DOUBLE NEIL DOUBLE NEIL">
+            <figcaption>DOUBLE NEIL DOUBLE NEIL</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0103_small.jpg loading='lazy' width='1500' height='1000' alt="Tiina struggling to survive, post-dessert.">
+            <figcaption>Tiina struggling to survive, post-dessert.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0112_small.jpg loading='lazy' width='1500' height='1000' alt="Rauno wishing everyone a fond farewell. He and Tiina have a long drive home.">
+            <figcaption>Rauno wishing everyone a fond farewell. He and Tiina have a long drive home.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0117_small.jpg loading='lazy' width='1500' height='1000' alt="A farewell hug to the new sister-in-law.">
+            <figcaption>A farewell hug to the new sister-in-law.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0123_small.jpg loading='lazy' width='945' height='1428' alt="And before we leave, a flower-hat for the mother-in-law.">
+            <figcaption>And before we leave, a flower-hat for the mother-in-law.</figcaption>
+        </figure>
+
+        <!-- Heading back from dinner -->
+
+        <h3 id="through-the-park">A Walk Through the Park</h3>
+        <h6><a href="#top">Back to top</a></h6>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0131_small.jpg loading='lazy' width='1500' height='1000' alt="Kaisa kisses her new husband's hand.">
+            <figcaption>Kaisa kisses her new husband's hand.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0136_small.jpg loading='lazy' width='1000' height='1500' alt="The new couple, ready to take on the city.">
+            <figcaption>The new couple, ready to take on the city.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0140_small.jpg loading='lazy' width='1000' height='1500' alt="...or at least do some sightseeing.">
+            <figcaption>...or at least do some sightseeing.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0147_small.jpg loading='lazy' width='1500' height='1000' alt="This looks like that meme with the little girl and the house on fire, right? It's not just me?">
+            <figcaption>This looks like that meme with the little girl and the house on fire, right? It's not just me?</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0153_small.jpg loading='lazy' width='1500' height='1000' alt="Enjoying each other's presence.">
+            <figcaption>Enjoying each other's presence.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0156_small.jpg loading='lazy' width='1500' height='1000' alt="'Look at this man I scored!'">
+            <figcaption>'Look at this man I scored!'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0161_small.jpg loading='lazy' width='1000' height='1500' alt="Neil gives Kaisa some second thoughts.">
+            <figcaption>Neil gives Kaisa some second thoughts.</figcaption>
+        </figure>
+
+        <figure>
             <img src=./wedding_photos/wedding_023_small.jpg loading='lazy' width='3000' height='2000' alt="Comparing bling.">
             <figcaption>Comparing bling.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0171_small.jpg loading='lazy' width='1500' height='1000' alt="Totally failing to keep our composure while comparing bling.">
+            <figcaption>Totally failing to keep our composure while comparing bling.</figcaption>
         </figure>
 
         <figure>
@@ -308,11 +1313,137 @@
         </figure>
 
         <figure>
+            <img src=./wedding_photos/IMG_0175_small.jpg loading='lazy' width='1500' height='1000' alt="Kaisa still happy, Neil thinking distant thoughts.">
+            <figcaption>Kaisa still happy, Neil thinking distant thoughts.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0203_small.jpg loading='lazy' width='1500' height='1000' alt="'Hey, you guys heard the one about the old man from Nantucket?'  'NEIL NO'">
+            <figcaption>'Hey, you guys heard the one about the old man from Nantucket?'  'NEIL NO'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0217_small.jpg loading='lazy' width='1000' height='1500' alt="Hmm...">
+            <figcaption>Hmm...</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0223_small.jpg loading='lazy' width='1000' height='1500' alt="Perfect.">
+            <figcaption>Perfect.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0226_small.jpg loading='lazy' width='1000' height='1500' alt="Keeping the bouquet away from the thief-man.">
+            <figcaption>Keeping the bouquet away from the thief-man.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0229_small.jpg loading='lazy' width='1000' height='1500' alt="Tuomas becomes the bag-man.">
+            <figcaption>Tuomas becomes the bag-man.</figcaption>
+        </figure>
+
+        <figure>
             <img src=./wedding_photos/wedding_030_small.jpg loading='lazy' width='1802' height='2479' alt="The newlyweds, and the parents of the bride!">
             <figcaption>The newlyweds, and the parents of the bride!</figcaption>
         </figure>
 
+        <figure>
+            <img src=./wedding_photos/IMG_0231_small.jpg loading='lazy' width='1500' height='1000' alt="Looking good for their close-up.">
+            <figcaption>Looking good for their close-up.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0239_small.jpg loading='lazy' width='1000' height='1500' alt="And their dramatic statue shot.">
+            <figcaption>And their dramatic statue shot.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0244_small.jpg loading='lazy' width='1500' height='1000' alt="'See? She's not that tall, you can take her.' (In reality, Reima was messing with Kaisa's hair.)">
+            <figcaption>'See? She's not that tall, you can take her.' (In reality, Reima was messing with Kaisa's hair.)</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0247_small.jpg loading='lazy' width='1500' height='1000' alt="'You sure about that?!'">
+            <figcaption>'You sure about that?!'</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0262_small.jpg loading='lazy' width='1000' height='1500' alt="Striding back to the hotel, bouquet in hand, queen of the world.">
+            <figcaption>Striding back to the hotel, bouquet in hand, queen of the world.</figcaption>
+        </figure>
+
+        <!-- In the room after dinner -->
+
+        <h3 id="evenings-last-toast">The Evening's Last Toast</h3>
+        <h6><a href="#top">Back to top</a></h6>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0292_small.jpg loading='lazy' width='1500' height='1000' alt="The hotel left us a super nice note! We only mentioned we were getting married in passing, and they paid enough attention to leave us this!">
+            <figcaption>The hotel left us a super nice note! We only mentioned we were getting married in passing, and they paid enough attention to leave us this!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0294_small.jpg loading='lazy' width='1500' height='1000' alt="A super nice thing to come back to.">
+            <figcaption>A super nice thing to come back to.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0297_small.jpg loading='lazy' width='1500' height='1000' alt="*FLOP*">
+            <figcaption>*FLOP*</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0330_small.jpg loading='lazy' width='1000' height='1500' alt="The bouquet survived admirably. (Still the prettiest.)">
+            <figcaption>The bouquet survived admirably. (Still the prettiest.)</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0332_small.jpg loading='lazy' width='1000' height='1500' alt="Neil pouring some celebratory sparkling wine after a long, fruitful day.">
+            <figcaption>Neil pouring some celebratory sparkling wine after a long, fruitful day.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0349_small.jpg loading='lazy' width='1000' height='1500' alt="It was PINK!">
+            <figcaption>It was PINK!</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0352_small.jpg loading='lazy' width='1500' height='1000' alt="A happy toast between the new family members (and also Tuomas and Sini, but they're not in the frame).">
+            <figcaption>A happy toast between the new family members (and also Tuomas and Sini, but they're not in the frame).</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0355_small.jpg loading='lazy' width='1000' height='1500' alt="The sparkling wine had little bits of silver in it that looked SUPER COOL.">
+            <figcaption>The sparkling wine had little bits of silver in it that looked SUPER COOL.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0360_small.jpg loading='lazy' width='1500' height='1000' alt="Relaxing our poor feetsies after a long day.">
+            <figcaption>Relaxing our poor feetsies after a long day.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0371_small.jpg loading='lazy' width='1000' height='1500' alt="Tired, but happy.">
+            <figcaption>Tired, but happy.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0376_small.jpg loading='lazy' width='1500' height='1000' alt="Neil becoming more and more horizontal as time passes... Kaisa already keeping her wedding vows about footrunbs.">
+            <figcaption>Neil becoming more and more horizontal as time passes... Kaisa already keeping her wedding vows about footrunbs.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0391_small.jpg loading='lazy' width='1500' height='1000' alt="...and he's out.">
+            <figcaption>...and he's out.</figcaption>
+        </figure>
+
+        <figure>
+            <img src=./wedding_photos/IMG_0398_small.jpg loading='lazy' width='1500' height='1000' alt="The parents-in-law, happy with their day.">
+            <figcaption>The parents-in-law, happy with their day.</figcaption>
+        </figure>        
+
         <h2 id="the-rings">The Rings</h2>
+        <h6><a href="#top">Back to top</a></h6>
 
         <figure>
             <img src=./wedding_photos/ring_001_small.jpg loading='lazy' width='2832' height='1777' alt="The rings, set in the engagement box.">
@@ -340,6 +1471,7 @@
         </figure>
 
         <h2 id="the-vows">The Vows</h2>
+        <h6><a href="#top">Back to top</a></h6>
 
         <h3>Neil's</h3>
 

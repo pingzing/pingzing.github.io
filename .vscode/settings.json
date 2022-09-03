@@ -6,7 +6,7 @@
         "**/CVS": true,
         "**/.DS_Store": true
     },
-    "python.pythonPath": "C:\\Python39\\python.exe",
+    "python.pythonPath": "C:\\Python38\\python.exe",
     "html.format.enable": false,
     "azureFunctions.deploySubpath": "backend/bin/Release/netcoreapp3.1/publish",
     "azureFunctions.projectLanguage": "C#",
