@@ -4,7 +4,7 @@ Category: programming
 Tags: programming, art, ai, ml, machine learning, stable diffusion, windows, amd, the robots are coming for us
 Slug: stable-diffusion-windows-amd
 Authors: Neil McAlister
-Summary: How to get Stable Diffusion running on Windows with an AMP GPU
+Summary: How to get Stable Diffusion running on Windows with an AMD GPU
 image: {photo}kirin-sumi-e-big.webp
 
 [Stable Diffusion](https://github.com/CompVis/stable-diffusion) has recently taken the techier (and art-techier) parts of the internet by storm. It's an open-source machine learning model capable of taking in a text prompt, and (with enough effort) generating some genuinely incredible output.
