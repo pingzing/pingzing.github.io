@@ -46,12 +46,12 @@ This will use the `venv` package to create a virtual environment named `virutale
 
 ```powershell
 # For PowerShell
-./virtualenv/Activate/Activate.ps1
+./virtualenv/Scripts/Activate.ps1
 ```
 
 ```bat
 rem For cmd.exe
-venv\Scripts\activate.bat
+virtualenv\Scripts\activate.bat
 ```
 
 Now, anything you install via `pip` or run via `python` will only be installed or run in the context of this environment we've named `virtualenv`. If you want to leave it, you can just run `deactivate` at any time.
