@@ -42,7 +42,7 @@ When there, run the following:
 python -m venv ./virtualenv
 ```
 
-This will use the `venv` package to create a virtual environment named `virutalenv`. Now, you need to activate it. Run the following:
+This will use the `venv` package to create a virtual environment named `virtualenv`. Now, you need to activate it. Run the following:
 
 ```powershell
 # For PowerShell
