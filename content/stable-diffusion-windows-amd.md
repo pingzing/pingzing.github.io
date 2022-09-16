@@ -25,6 +25,7 @@ Before you get started, you'll need the following:
 * A working Python installation. You'll need at least version 3.7. v3.7, v3.8, v.39, and v3.10 should all work.  
 * The fortitude to download around 6 gigabytes of machine learning model data.  
 * A [Hugging Face](https://huggingface.co/) account. Go on, go sign up for one, it's free.  
+* A working installation of Git, because the Hugging Face login process stories its credentials there, for some reason.
 
 ## The Process
 
@@ -81,14 +82,14 @@ Either way, download the package that corresponds to your installed Python versi
 Once it's downloaded, use pip to install it.
 
 ```powershell
-pip install pathToYourDownloadedFile/ort_nightly_whatever_version_you_got.whl ---force-reinstall
+pip install pathToYourDownloadedFile/ort_nightly_whatever_version_you_got.whl --force-reinstall
 ```
 
 Take note of that `--force-reinstall` flag! The package will override some previously-installed dependencies, but if you don't allow it to do so, things won't work further down the line. Ask me how I know >.>
 
 ### Getting and Converting the Stable Diffusion Model
 
-First thing, we're going to download a little utility script that will automatically download the Stable Diffusion model, convert it to Onnx format, and put it somewhere useful. Go ahead and download [https://raw.githubusercontent.com/huggingface/diffusers/main/scripts/convert_stable_diffusion_checkpoint_to_onnx.py](https://raw.githubusercontent.com/huggingface/diffusers/main/scripts/convert_stable_diffusion_checkpoint_to_onnx.py) and place it next to your `virtualenv` folder.
+First thing, we're going to download a little utility script that will automatically download the Stable Diffusion model, convert it to Onnx format, and put it somewhere useful. Go ahead and download [https://raw.githubusercontent.com/huggingface/diffusers/main/scripts/convert_stable_diffusion_checkpoint_to_onnx.py](https://raw.githubusercontent.com/huggingface/diffusers/main/scripts/convert_stable_diffusion_checkpoint_to_onnx.py) (i.e. copy the contents, place them into a text file, and save it as `convert_stable_diffusion_checkpoint_to_onnx.py`) and place it next to your `virtualenv` folder.
 
 Now is when that [Hugging Face](https://huggingface.co/) account comes into play. The Stable Diffusion model is hosted here, and you need an API key to download it. Once 
 you sign up, you can find your API key by going to the website, clicking on your profile picture at the top right -> Settings -> Access Tokens.
@@ -99,7 +100,17 @@ Once you have your token, authenticate your shell with it by running the followi
 huggingface-cli.exe login
 ```
 
-And paste in your token when prompted.
+And paste in your token when prompted. 
+
+Note: If you can get an error with a stack trace that looks something like this at the bottom:
+
+```python
+  File "C:\Python310\lib\subprocess.py", line 1438, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+```
+
+...then that _probably_ means that you don't have Git installed. The huggingface-cli tool uses Git to store login credentials.
 
 Once that's done, we can run the utility script.
 
