@@ -10,12 +10,24 @@ interface BlogComment {
     isOwnerComment: boolean;
 }
 
+// TODO: Refactor the dumb top-bottom thing into HTML component
+
+// Top comment form
 let _commentsForm: HTMLFormElement | null = null;
 let _ownerCheckbox: HTMLInputElement | null = null;
 let _posterNameInput: HTMLInputElement | null = null;
 let _bodyTextarea: HTMLTextAreaElement | null = null;
 let _ownerCheckboxLabel: HTMLElement | null = null;
 let _ownerPasswordInput: HTMLInputElement | null = null;
+
+// Bottom comment form
+let _commentsFormBottom: HTMLFormElement | null = null;
+let _ownerCheckboxBottom: HTMLInputElement | null = null;
+let _posterNameInputBottom: HTMLInputElement | null = null;
+let _bodyTextareaBottom: HTMLTextAreaElement | null = null;
+let _ownerCheckboxLabelBottom: HTMLElement | null = null;
+let _ownerPasswordInputBottom: HTMLInputElement | null = null;
+
 let _commentsList: HTMLOListElement | null = null;
 
 async function updateComments(): Promise<void> {
@@ -82,24 +94,49 @@ async function updateComments(): Promise<void> {
     tryScrollFragmentIntoView();
 }
 
-async function submitComment(event: Event): Promise<void> {
+async function submitCommentTop(event: Event): Promise<void> {
     event.preventDefault();
 
-    const articleSlug = window.location.pathname.replace('/', "").split('.')[0] ?? "invalid";    
-        
+    const posterName = _posterNameInput?.value ?? "";
+    const postBody = _bodyTextarea?.value ?? "";
+    const isOwnerComment = _ownerCheckbox?.checked ?? false;
+    const ownerPassword = _ownerPasswordInput?.value;
+
+    await submitComment(posterName, postBody, isOwnerComment, ownerPassword);
+}
+
+async function submitCommentBottom(event: Event): Promise<void> {
+    event.preventDefault();
+
+    const posterName = _posterNameInputBottom?.value ?? "";
+    const postBody = _bodyTextareaBottom?.value ?? "";
+    const isOwnerComment = _ownerCheckboxBottom?.checked ?? false;
+    const ownerPassword = _ownerPasswordInputBottom?.value;
+
+    await submitComment(posterName, postBody, isOwnerComment, ownerPassword);
+}
+
+async function submitComment(
+    posterName: string,
+    postBody: string,
+    isOwnerComment: boolean,
+    ownerPassword?: string,
+): Promise<void> {
+    const articleSlug = window.location.pathname.replace('/', "").split('.')[0] ?? "invalid";
+
     const comment: BlogComment = {
         commentId: undefined,
-        poster: _posterNameInput?.value ?? "",
+        poster: posterName,
         date: new Date(Date.now()),
         articleSlug: articleSlug,
         parentComment: undefined,
-        body: _bodyTextarea?.value ?? "",
-        isOwnerComment: _ownerCheckbox?.checked ?? false
+        body: postBody,
+        isOwnerComment: isOwnerComment
     };
 
     let url: string;
-    if (_ownerCheckbox?.checked) {
-        url = `${BASE_URL}/owner/${articleSlug}?code=${_ownerPasswordInput?.value}`;
+    if (isOwnerComment) {
+        url = `${BASE_URL}/owner/${articleSlug}?code=${ownerPassword}`;
     } else {
         url = `${BASE_URL}/${articleSlug}`;
     }
@@ -118,14 +155,13 @@ async function submitComment(event: Event): Promise<void> {
         return;
     }
 
-    const addedCommentId = response.headers.get('Location');    
-
+    const addedCommentId = response.headers.get('Location');
     window.location.hash = `#${addedCommentId}`;
     window.location.reload();
     // The browser will try to scroll the fragment into view after async comments get loaded in
 }
 
-function tryScrollFragmentIntoView(): void {    
+function tryScrollFragmentIntoView(): void {
     if (window.location.hash === "") {
         return;
     }
@@ -137,36 +173,65 @@ function tryScrollFragmentIntoView(): void {
     }
 }
 
-function onOwnerCheckboxChanged(_: Event): void {            
+function onOwnerCheckboxChangedTop(_: Event): void {
     if (_ownerCheckbox?.checked) {
         _ownerCheckboxLabel?.classList.remove("hidden");
-        _ownerPasswordInput?.classList.remove("hidden");        
+        _ownerPasswordInput?.classList.remove("hidden");
         _ownerPasswordInput!.disabled = false;
         _posterNameInput!.disabled = true;
     } else {
         _ownerCheckboxLabel?.classList.add("hidden");
-        _ownerPasswordInput?.classList.add("hidden"); 
+        _ownerPasswordInput?.classList.add("hidden");
         _ownerPasswordInput!.value = "";
-        _ownerPasswordInput!.disabled = true;   
-        _posterNameInput!.disabled = false;     
+        _ownerPasswordInput!.disabled = true;
+        _posterNameInput!.disabled = false;
     }
+}
 
+function onOwnerCheckboxChangedBottom(_: Event): void {
+    if (_ownerCheckboxBottom?.checked) {
+        _ownerCheckboxLabelBottom?.classList.remove("hidden");
+        _ownerPasswordInputBottom?.classList.remove("hidden");
+        _ownerPasswordInputBottom!.disabled = false;
+        _posterNameInputBottom!.disabled = true;
+    } else {
+        _ownerCheckboxLabelBottom?.classList.add("hidden");
+        _ownerPasswordInputBottom?.classList.add("hidden");
+        _ownerPasswordInputBottom!.value = "";
+        _ownerPasswordInputBottom!.disabled = true;
+        _posterNameInputBottom!.disabled = false;
+    }
 }
 
 async function onLoaded(): Promise<void> {
+    // Top form
     _commentsForm = document.getElementById("comments-form") as HTMLFormElement;
-    _commentsForm?.addEventListener("submit", submitComment);
+    _commentsForm?.addEventListener("submit", submitCommentTop);
 
     _ownerCheckbox = document.getElementById("owner-checkbox") as HTMLInputElement;
-    _ownerCheckbox?.addEventListener("change", onOwnerCheckboxChanged);
+    _ownerCheckbox?.addEventListener("change", onOwnerCheckboxChangedTop);
 
     _posterNameInput = document.getElementById("comment-name") as HTMLInputElement;
     _bodyTextarea = document.getElementById("add-comment") as HTMLTextAreaElement;
     _ownerCheckboxLabel = document.getElementById("comment-owner-password-label");
     _ownerPasswordInput = document.getElementById("comment-owner-password-input") as HTMLInputElement;
+
+    // Bottom form
+    _commentsFormBottom = document.getElementById("comments-form-bottom") as HTMLFormElement;
+    _commentsFormBottom?.addEventListener("submit", submitCommentBottom);
+
+    _ownerCheckboxBottom = document.getElementById("owner-checkbox-bottom") as HTMLInputElement;
+    _ownerCheckboxBottom?.addEventListener("change", onOwnerCheckboxChangedBottom);
+
+    _posterNameInputBottom = document.getElementById("comment-name-bottom") as HTMLInputElement;
+    _bodyTextareaBottom = document.getElementById("add-comment-bottom") as HTMLTextAreaElement;
+    _ownerCheckboxLabelBottom = document.getElementById("comment-owner-password-label-bottom");
+    _ownerPasswordInputBottom = document.getElementById("comment-owner-password-input-bottom") as HTMLInputElement;
+
+    // Shared
     _commentsList = document.getElementById("comments-list") as HTMLOListElement;
 
-    await updateComments();    
+    await updateComments();
 }
 
 window.addEventListener("DOMContentLoaded", onLoaded);

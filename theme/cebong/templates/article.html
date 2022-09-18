@@ -55,8 +55,8 @@
   </article>
 </section>
 
+<!-- Add comment form -->
 <div id="comments" class="body">
-  <!-- Add comment form -->
   <form id="comments-form">  
     <h2 class="comments-header">Comments</h2>
     <div class="comments-subheader">
@@ -67,15 +67,15 @@
       </div>
     </div>
 
-    <div class="add-comment-container">
+    <div id="add-comment-container" class="add-comment-container">
       <label for="comment-name" class="add-comment-top-label">Name (*)</label>
-      <input type="text" id="comment-name" required>
+      <input type="text" id="comment-name" autocomplete="off" required>
 
-      <label id="comment-owner-password-label" for="owner-comment-password" class="hidden add-comment-top-label">Password (*)</label>
+      <label id="comment-owner-password-label" for="comment-owner-password-input" class="hidden add-comment-top-label">Password (*)</label>
       <input id="comment-owner-password-input" type="text" class="hidden" required disabled>
 
       <label for="add-comment">Comment (*)</label>
-      <textarea id="add-comment" class="comments-entry" required></textarea>
+      <textarea id="add-comment" class="comments-entry" autocomplete="off" required></textarea>
 
       <button class="comment-submit">Submit</button>
     </div>
@@ -96,7 +96,37 @@
     </li>
     {% endfor %}    
     {% endif %}
-  </ol>  
+  </ol>
+
+  <!-- Bottom add-comment form -->
+  {% if article.comments %}
+
+  <br/>
+  <div id="comments-bottom" class="body">
+    <form id="comments-form-bottom">
+      <div class="comments-subheader">
+        <label for="add-comment-container-bottom">Add a comment</label>
+        <div class="flex-right">
+          <input id="owner-checkbox-bottom" type="checkbox" autocomplete="off">
+          <label for="owner-checkbox-bottom">Post as owner</label>
+        </div>
+      </div>
+  
+      <div id="add-comment-container-bottom" class="add-comment-container">
+        <label for="comment-name-bottom" class="add-comment-top-label">Name (*)</label>
+        <input type="text" id="comment-name-bottom" autocomplete="off" required>
+  
+        <label id="comment-owner-password-label-bottom" for="comment-owner-password-input-bottom" class="hidden add-comment-top-label">Password (*)</label>
+        <input id="comment-owner-password-input-bottom" type="text" class="hidden" required disabled>
+  
+        <label for="add-comment-bottom">Comment (*)</label>
+        <textarea id="add-comment-bottom" class="comments-entry" autocomplete="off" required></textarea>
+  
+        <button class="comment-submit">Submit</button>
+      </div>
+    </form>
+
+  {% endif %}
   
 
 </div>

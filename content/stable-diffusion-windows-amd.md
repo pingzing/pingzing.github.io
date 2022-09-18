@@ -1,7 +1,7 @@
 Title: Running Stable Diffusion on Windows with an AMD GPU
 Date: 2022-09-14 16:30
 Category: programming
-Tags: programming, art, ai, ml, machine learning, stable diffusion, windows, amd, the robots are coming for us
+Tags: programming, art, ai, ml, machine learning, stable diffusion, windows, amd, python, the robots are coming for us
 Slug: stable-diffusion-windows-amd
 Authors: Neil McAlister
 Summary: How to get Stable Diffusion running on Windows with an AMD GPU
