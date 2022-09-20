@@ -4,6 +4,7 @@ article_teaser.py
 
 import logging
 import re
+import pprint
 from typing import Tuple, List, Dict
 from pelican import signals
 
@@ -29,6 +30,9 @@ def get_header_indices(body: str) -> Dict[str, Tuple[int, int]]:
         logger.error("Failed to get header indices when generating article teaser.", exc_info=1)
 
 def add_article_teaser(generator, content):
+    if (hasattr(content, "teaser")):
+        logger.info(f"Teaser already exists for '{content.title}', skipping teaser generation...")
+        return
     try:
         article_body: str = content._content        
 

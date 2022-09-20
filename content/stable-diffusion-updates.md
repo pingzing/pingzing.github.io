@@ -6,6 +6,7 @@ Slug: stable-diffusion-updates
 Authors: Neil McAlister
 Summary: Improvements & updates on running Stable Diffusion on Windows with AMD GPUs
 image: {photo}flutter-sumi.webp
+teaser: <p>This is a follow-up to my previous post, which explains how to get Stable Diffusion up and running on Windows for folks with an AMD GPU.</p><p>Now that I've been playing around with it myself for a few days, and had some opportunities to chat with others likewise, I'd like to share a handful of updates and discoveries.</p>
 
 ***
 
