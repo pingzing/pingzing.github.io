@@ -7,6 +7,14 @@ Authors: Neil McAlister
 Summary: How to get Stable Diffusion running on Windows with an AMD GPU
 image: {photo}kirin-sumi-e-big.webp
 
+***
+
+#### This is a series!
+
+Part one: You're here!  
+Part two: [Stable Diffusion Updates]({filename}/stable-diffusion-updates.md)  
+
+***
 
 (Want just the bare tl;dr bones? Go read [this Gist by harishanand95](https://gist.github.com/harishanand95/75f4515e6187a6aa3261af6ac6f61269#file-stable_diffusion-md). It says everything this does, but for a more experienced audience.)
 
@@ -25,7 +33,7 @@ Before you get started, you'll need the following:
 * A working Python installation. You'll need at least version 3.7. v3.7, v3.8, v.39, and v3.10 should all work.  
 * The fortitude to download around 6 gigabytes of machine learning model data.  
 * A [Hugging Face](https://huggingface.co/) account. Go on, go sign up for one, it's free.  
-* A working installation of Git, because the Hugging Face login process stories its credentials there, for some reason.
+* A working installation of Git, because the Hugging Face login process stores its credentials there, for some reason.
 
 ## The Process
 
