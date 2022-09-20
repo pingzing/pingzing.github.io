@@ -7,6 +7,7 @@ Authors: Neil McAlister
 Summary: Short version for index and feeds
 image: {photo}image_folder_relative_path.png
 extra_style: filename_relative_to_static_themes.css
+teaser: <p> Raw HTML text that will get used for a teaser, instead of trying to auto-generate one. Only used when this is the topmost article in a list. </p>
 
 Content goes here.
 
