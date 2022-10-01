@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Azure;
 using Azure.Data.Tables;
+using Azure.Data.Tables.Models;
 using Ganss.XSS;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
@@ -114,13 +115,13 @@ namespace TravelNeil.Backend
             {
                 Dictionary<string, List<Comment>> allComments = new Dictionary<string, List<Comment>>();
 
-                await foreach (var table in _client.GetTablesAsync())
+                await foreach (var table in _client.QueryAsync())
                 {
-                    if (!table.TableName.StartsWith(TablePrefix)) 
+                    if (!table.Name.StartsWith(TablePrefix)) 
                     {
                         continue;
                     }
-                    var tableClient = _client.GetTableClient(table.TableName);
+                    var tableClient = _client.GetTableClient(table.Name);
                     List<Comment> comments = new List<Comment>();
 
                     await foreach (var entity in tableClient.QueryAsync<CommentEntity>())
@@ -217,11 +218,12 @@ namespace TravelNeil.Backend
 
         private bool TableExists(string tableName)
         {
-            var tables = _client.GetTables($"TableName eq '{tableName}'");
-            if (tables.Count() != 1)
+            Pageable<TableItem> queryTableResults = _client.Query(filter: $"TableName eq '{tableName}'");
+            var tableList = queryTableResults.ToList();
+            if (tableList.Count() != 1)
             {
                 // There are either zero tables by that name, or more than one. Both are bad!
-                _logger.LogError($"When looking for comments for {tableName}, found invalid number of tables: {tables.Count()}.");
+                _logger.LogError($"When looking for comments for {tableName}, found invalid number of tables: {tableList.Count()}.");
                 return false;
             }
 

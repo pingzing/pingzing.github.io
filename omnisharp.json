@@ -1,0 +1,6 @@
+// Force Omnisharp to use its bundled version, because otherwise it uses a version of MSBuild that is using the wrong System.Memory version.
+{
+    "msbuild": {
+        "useBundledOnly": true
+    }
+}
