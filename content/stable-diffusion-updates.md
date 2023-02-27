@@ -1,6 +1,6 @@
 Title: Stable Diffusion Updates
 Date: 2022-09-18 14:30
-Category: programming
+Category: Programming
 Tags: programming, art, ai, ml, machine learning, stable diffusion, windows, amd, python, the robots are coming for us
 Slug: stable-diffusion-updates
 Authors: Neil McAlister

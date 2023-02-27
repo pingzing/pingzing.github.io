@@ -354,6 +354,11 @@ img.cover {
 	max-height: 500px;
 }
 
+img.cover + figcaption {
+	text-align: center;
+	font: italic smaller sans-serif;
+}
+
 #content {
 	background: transparent;
 	margin-bottom: 2em;

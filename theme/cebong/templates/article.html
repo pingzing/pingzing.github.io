@@ -36,8 +36,13 @@
 <section id="content" class="body">
   <article>
 
-    {% if article.photo_image and article.photo_image |length %}
-    <img class="cover" src="{{ SITEURL }}/{{ article.photo_image[1] }}" alt="Cover image">    
+    {% if article.photo_image and article.photo_image|length %}
+    <figure>
+    <img class="cover" src="{{ SITEURL }}/{{ article.photo_image[1] }}" alt="Cover image article">   
+    {% if article.image_caption and article.image_caption|length %} 
+      <figcaption>{{ article.image_caption }}</figcaption>
+    {% endif %}
+    </figure>
     {% endif %}
 
     <header>
