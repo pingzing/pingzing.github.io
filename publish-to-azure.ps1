@@ -17,7 +17,7 @@ pelican content -o output -s publishconf.py;
 Write-Host "Content generation complete. Publishing to Azure..."
 
 # Use 'azcopy login' to get access if this fails.
-& "C:\Users\mcali\azcopy\azcopy.exe" sync ./output "https://travelneil.blob.core.windows.net/`$web" --recursive --delete-destination true;
+& "C:\Users\mcali\azcopy\azcopy.exe" sync ./output "https://travelneil.blob.core.windows.net/`$web" --recursive=true --put-md5=true --delete-destination=true;
 
 $context = New-AzureStorageContext -StorageAccountName "travelneil" -StorageAccountKey $env:TravelNeilAzureKey;
 
