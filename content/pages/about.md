@@ -23,7 +23,7 @@ You can also find me on GitHub as [PingZing](https://github.com/pingzing) or Twi
   <div class="flex-between">
   <div style="align-self:center;">
   <h2>Neil McAlister</h2>
-  <h5>Senior Server Software Engineer</h5>
+  <h5>Senior Developer</h5>
   </div>
   <div class="top-margin">
   <p><a href="https://www.github.com/pingzing"><img src="../images/github.png"/>PingZing</a></p>
@@ -37,7 +37,7 @@ You can also find me on GitHub as [PingZing](https://github.com/pingzing) or Twi
     <hr>
   </div>
   <div markdown="1" style="text-align:justify;">
-I'm a skilled software developer with over 7 years of experience in both consulting and product development contexts. I strive to deliver quality work, and care about the craft of software development. I excel at Microsoft technologies and Windows development, and thrive in both the full stack and the cloud. I'm experienced with agile methodologies, and DevOps workflows.
+I'm a skilled software developer with over 10 years of experience in both consulting and product development contexts. I strive to deliver quality work, and care about the craft of software development. I excel at Microsoft technologies and Windows development, and thrive in both the full stack and the cloud. I'm experienced with agile methodologies, and DevOps workflows.
 
 I'm proficient in a number of programming languages. I'm most comfortable in **C#**, **Rust**, and **TypeScript**. I have a great deal of experience with Microsoft's modern XAML-based UI frameworks, including **WPF**, **UWP** and **Xamarin**. Other notable technologies I have experience with include **Azure**, **AWS**, **Entity Framework Core**, **MongoDB**, **Azure Service Fabric**, **ASP.NET Core**, **NestJS**, **NodeJS**, and **Angular** (with the usual smattering of **HTML** and **CSS**).
 
@@ -52,7 +52,7 @@ Outside work, I enjoy hacking on personal projects, reading, weird indie video g
   <h4>F-Secure / WithSecure Oyj</h4>
 _Helsinki, Finland_  
 **Senior Software Developer**  
-May 2021 - Present
+May 2021 - July 2023
   </div>
   <div class="exp-detail" markdown="1">
 At F-Secure (now renamed to WithSecure), I was a Senior Software Developer. In this role I was part of a team responsible for the development of a cloud-native product that performed real-time scanning and protection of services such as Microsoft Exchange and OneDrive.
@@ -60,9 +60,8 @@ At F-Secure (now renamed to WithSecure), I was a Senior Software Developer. In t
 In this position I:
 
   - Worked extensively with C#, .NET Core/.NET 5+, TypeScript, NodeJS, AWS and MySQL
-  - Took ownership of new features or business goals and drove them from concept to delivery
+  - Drove from concept to completion a project where customers were moved from a single-tenant architecture to a multi-tenant architecture, saving approximately 50% in annual hosting costs
   - Performed a major overhaul of an internal subscription system, requiring significant code changes in all of the team's subprojects
-  - Made significant contributions to tooling and code philosophy, such as adopting automated documentation in TypeScript projects, and moving the project as a whole to a mono-repo
   - Regularly on-boarded and mentored new team members
   - Assisted our manager with recruitment by reviewing technical 'homework', and participating in technical interviews
   </div>
