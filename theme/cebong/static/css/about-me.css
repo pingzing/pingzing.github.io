@@ -38,6 +38,14 @@ h4 {
     line-height: normal;
 }
 
+.tech-grid {
+    display: grid;
+    gap: 1em;
+    max-width: 70rem;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: center;
+}
+
 .exp-grid {
     display: grid;
     gap: 2em;
@@ -89,6 +97,6 @@ h4 {
     justify-content: space-around;
 }
 
-.flex-around * {
+.center-child-text * {
     text-align: center;
 }

@@ -37,12 +37,72 @@ You can also find me on GitHub as [PingZing](https://github.com/pingzing) or Twi
     <hr>
   </div>
   <div markdown="1" style="text-align:justify;">
-I'm a skilled software developer with over 10 years of experience in both consulting and product development contexts. I strive to deliver quality work, and care about the craft of software development. I excel at Microsoft technologies and Windows development, and thrive in both the full stack and the cloud. I'm experienced with agile methodologies, and DevOps workflows.
+I'm a skilled software developer with over 10 years of experience in both consulting and product development contexts. I strive to deliver quality work, and care about the craft of software development. 
 
-I'm proficient in a number of programming languages. I'm most comfortable in **C#**, **Rust**, and **TypeScript**. I have a great deal of experience with Microsoft's modern XAML-based UI frameworks, including **WPF**, **UWP** and **Xamarin**. Other notable technologies I have experience with include **Azure**, **AWS**, **Entity Framework Core**, **MongoDB**, **Azure Service Fabric**, **ASP.NET Core**, **NestJS**, **NodeJS**, and **Angular** (with the usual smattering of **HTML** and **CSS**).
+I excel with a variety of backend technologies, and have lots of experience with concurrent, highly scalable and available services. I'm experienced with agile methodologies, and DevOps workflows. I also have a great deal of experience with Windows GUI development, particularly with WPF and UWP/WinUI.
 
 Outside work, I enjoy hacking on personal projects, reading, weird indie video games, and writing fiction. I'm comfortable with public speaking, and love travelling (at least when there's not a pandemic about).
   </div>
+
+  <div class="resume-header">
+    <h3>Technologies I'm Familiar With</h3>
+    <hr>
+  </div>
+  <div class="tech-grid" markdown="1">
+  <div markdown="1">
+#### Languages
+  C#  
+  TypeScript  
+  Rust  
+  Python  
+  Java  
+  Lua  
+  </div>
+
+  <div markdown="1">
+#### GUI / Frontend
+  UWP/WinUI  
+  WPF  
+  Xamarin / .NET MAUI  
+  Angular  
+  </div>
+
+  <div markdown="1"> 
+#### Runtimes
+  .NET Framework/.NET Core  
+  ASP.NET Core  
+  NodeJS  
+  ExpressJS  
+  NestJS  
+  </div>
+
+  <div markdown="1">
+#### Cloud & Containers
+  Azure  
+  AWS  
+  Docker  
+  </div>
+
+  <div markdown="1">
+#### Database
+  MS SQL Server  
+  Azure CosmosDB  
+  MySQL  
+  MongoDB  
+  Entity Framework Core  
+  AWS DynamoDB  
+  </div>
+
+  <div markdown="1">
+#### DevOps / CI & CD
+  Azure DevOps  
+  Jenkins  
+  GitHub Actions  
+  Azure ARM templates  
+  AWS CloudFormation  
+  </div>
+  </div> 
+
   <div class="resume-header">
     <h3>Work Experience</h3>
     <hr>
@@ -143,7 +203,7 @@ Responsibilities included:
   <h3>Education & Certifications</h3>
   <hr>
   </div>
-  <div class="flex-around" markdown="1">
+  <div class="flex-around center-child-text" markdown="1">
   <div markdown="1">
   <h4>B.Sc. Computer Science</h4>
 _California State University Channel Islands_  
@@ -152,7 +212,7 @@ _California State University Channel Islands_
   <div markdown="1">
   <h4>Microsoft Certified Azure Developer Associate</h4>
 _Obtained June 30, 2020_  
-_Valid through June 30, 2023_
+_Valid through June 30, 2024_
   </div>
   </div>
   <div class="resume-header">
