@@ -10,6 +10,8 @@ The source files behind my Travel Neil blog.
  * The Azure Functions Core Tools installed. Probably the .NET SDK?
 
 ### How-to:
+ * `python -m venv ./venv`
+ * `./.venv/Scripts/Activate.ps1` (or the platform-appropriate equivalent)
  * `pip install -r requirements.txt`
  * Start the local version of the Azure Functions backend by navigating to `/backend` and running `func start`.
  * Run `pelserve.ps1` to run a small HTTP server that serves up the `./output` directory.
@@ -22,6 +24,7 @@ The source files behind my Travel Neil blog.
 Requirements for Azure upload: 
  * AzCopy: https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy
  * An environment variable named `TravelNeilAzureKey` that contains one of the Azure access keys for the storage account that hosts the website.
+ * If login has expired, use `azcopy login`
 
  ### Writing posts
  `{static}` must have a leading slash, i.e. `{sttaic}/path-relative-to-content`.

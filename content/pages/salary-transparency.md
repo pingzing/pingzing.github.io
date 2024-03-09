@@ -11,7 +11,7 @@ This page lists the salary for every job I've ever had in tech. That includes ra
 
 This is strongly inspired by a combination of two things. 
 
-First, a past employers philosophy around internal salary information. The default was to ask every employee, upon joining, if they'd like their salary to be shared within the company, on a page in the internal wiki, viewable by anyone. Employees were encouraged to do this, and a culture of speaking honestly about salaries was the norm. I no longer work there, and do not know if that's still true, but I hope it is.
+First, a past employer's philosophy around internal salary information. The default was to ask every employee, upon joining, if they'd like their salary to be shared within the company, on a page in the internal wiki, viewable by anyone. Employees were encouraged to do this, and a culture of speaking honestly about salaries was the norm. I no longer work there, and do not know if that's still true, but I hope it is.
 
 Second, [Xe Iaso's sharing of xer own salaries](https://xeiaso.net/salary-transparency). As Xe says on xer page, one of the ways of fighting pay discrimination is making hiding it impossible. I'm hoping that adding a little bit of knowledge to the pool can help everyone be better informed about how much they're worth.
 
@@ -22,21 +22,22 @@ For some of the positions, there are extra details to how I was compensated beyo
 
 <section class="salary-table" markdown="1">
 
-Title | Start Date | End Date | Days Worked | Salary | How I Left
+Title | Start Date | End Date | Total Days | Salary | How I Left
 ------|------------|----------|-------------|--------|-----------
-Software Engineer | 2013-06-01 | 2014-06-01 | 365 | $25 USD / hr | Raise
------ | 2014-06-02 | 2015-03-26 | 297 | $30 USD / hr | Quit
-Software Developer | 2015-04-13 | 2016-08-31 | 506 | <details><summary>€2521 EUR / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
------ | 2016-09-01 | 2016-12-31 | 123 | <details><summary>€2723 EUR / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
------ | 2017-01-01 | 2017-06-30 | 180 | <details><summary>€3220 EUR / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
------ | 2017-07-01 | 2018-01-31 | 214 | <details><summary>€3557 EUR / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
------ | 2018-02-01 | 2019-03-31 | 423 | <details><summary>€3943 EUR / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
------ | 2019-04-01 | 2020-01-17 | 291 | <details><summary>€4286 + €200 EUR / month</summary>"Up to 200" was paid out (or not) based on company performance + an extra percentage bonus if company-wide profits exceeded a threshold</details> | Quit
-Senior Server Software Engineer | 2020-01-27 | 2020-07-31 | 186 | <details><summary>€5000 EUR / month</summary> + Options with 4 yr vesting</details> | Raise
------ | 2020-08-01 | 2021-04-30 | 272 | <details><summary>€5500 EUR / month</summary> + Options with 4 yr vesting</details> | Quit
-Senior Software Developer | 2021-05-17 | 2022-04-30 | 364 | €5500 EUR / month | Raise
------ | 2022-05-01 | 2023-07-30 | 455 | €5850 EUR / month | Quit
-Senior Developer | 2023-08-01 | 2023-08-31 | 30 | <details><summary>€7500 EUR / month</summary>This was a freelance position, so the higher rate hides some extra social insurance taxes and fees.</details> | Contract terminated
+Software Engineer | 2013-06-01 | 2014-06-01 | 365 | $25 / hr | Raise
+----- | 2014-06-02 | 2015-03-26 | 297 | $30 / hr | Quit
+Software Developer | 2015-04-13 | 2016-08-31 | 506 | <details><summary>€2521 / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
+----- | 2016-09-01 | 2016-12-31 | 123 | <details><summary>€2723 / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
+----- | 2017-01-01 | 2017-06-30 | 180 | <details><summary>€3220 / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
+----- | 2017-07-01 | 2018-01-31 | 214 | <details><summary>€3557 / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
+----- | 2018-02-01 | 2019-03-31 | 423 | <details><summary>€3943 / month</summary>+ an extra percentage bonus if company-wide profits exceeded a threshold</details> | Promoted (no title change)
+----- | 2019-04-01 | 2020-01-17 | 291 | <details><summary>€4286 + €200 / month</summary>"Up to 200" was paid out (or not) based on company performance + an extra percentage bonus if company-wide profits exceeded a threshold</details> | Quit
+Senior Server Software Engineer | 2020-01-27 | 2020-07-31 | 186 | <details><summary>€5000 / month</summary> + Options with 4 yr vesting</details> | Raise
+----- | 2020-08-01 | 2021-04-30 | 272 | <details><summary>€5500 / month</summary> + Options with 4 yr vesting</details> | Quit
+Senior Software Developer | 2021-05-17 | 2022-04-30 | 364 | €5500 / month | Raise
+----- | 2022-05-01 | 2023-07-30 | 455 | €5850 / month | Quit
+Senior Developer | 2023-08-01 | 2023-08-31 | 30 | <details><summary>€7500 / month</summary>This was a freelance position, so the higher rate hides some extra social insurance taxes and fees.</details> | Contract terminated
+Lead Software Engineer | 2023-11-06 | N/A | N/A | <details><summary>€6350 / month</summary>+ up to 10% annual bonus</details> | N/A
 
 </section>
 
@@ -46,7 +47,7 @@ Here's the above data, graphed:
 
 The salaries have been normalized to total annual values, but have not been converted between currencies. As such, the first two values are in USD, while the rest are in EUR.
 
-"Days worked" is, as above, not the amount of days I performed my job, but the amount of days I stayed at a particular salary level.
+"Total Days" is, as above, not the amount of days I performed my job, but the amount of days I stayed at a particular salary level.
 
 ## In closing
 I'll try to keep this page updated whenever this information changes. 
