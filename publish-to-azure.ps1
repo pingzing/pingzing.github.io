@@ -18,6 +18,10 @@ Write-Host "Content generation complete. Publishing to Azure..."
 
 # Use 'azcopy login' to get access if this fails.
 & "C:\Users\mcali\azcopy\azcopy.exe" sync ./output "https://travelneil.blob.core.windows.net/`$web" --recursive=true --put-md5=true --delete-destination=true --compare-hash=MD5;
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Failed to copy blog contents to Azure storage. Terminating...";
+    return;
+}
 
 $context = New-AzureStorageContext -StorageAccountName "travelneil" -StorageAccountKey $env:TravelNeilAzureKey;
 
