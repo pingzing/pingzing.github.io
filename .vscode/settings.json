@@ -8,7 +8,7 @@
     },
     "python.pythonPath": "C:\\Python38\\python.exe",
     "html.format.enable": false,
-    "azureFunctions.deploySubpath": "backend/bin/Release/net6.0/publish",
+    "azureFunctions.deploySubpath": "backend/bin/Release/net8.0/publish",
     "azureFunctions.projectLanguage": "C#",
     "azureFunctions.projectRuntime": "~3",
     "debug.internalConsoleOptions": "neverOpen",

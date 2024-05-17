@@ -2,8 +2,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.Azure.Functions.Worker;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
@@ -11,39 +10,43 @@ using System.Collections.Generic;
 
 namespace TravelNeil.Backend
 {
-    public static class CommentsController
+    public class CommentsController
     {
         private static JsonSerializerOptions _camelCaseOptions = new JsonSerializerOptions{
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
+
+        private readonly ILogger<CommentsController> _logger;
+
+        public CommentsController(ILogger<CommentsController> logger)
+        {
+            _logger = logger;
+        }
             
 
-        [FunctionName("GetCommentsForArticle")]
-        public static async Task<IActionResult> GetCommentsForArticle(
+        [Function("GetCommentsForArticle")]
+        public async Task<IActionResult> GetCommentsForArticle(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "{articleSlug}")] HttpRequest request,
-            string articleSlug,
-            ILogger logger)
+            string articleSlug)
         {
-            var tableApi = new Table(logger);
+            var tableApi = new Table(_logger);
             List<Comment> comments = await tableApi.GetCommentsForArticle(articleSlug);            
             return new OkObjectResult(new CommentsResponse { Comments = comments.ToArray() });
         }
 
-        [FunctionName("GetAllComments")]
-        public static async Task<IActionResult> GetAllComments(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "all")] HttpRequest request,
-            ILogger logger)
+        [Function("GetAllComments")]
+        public async Task<IActionResult> GetAllComments(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "all")] HttpRequest request)
         {
-            var tableApi = new Table(logger);
+            var tableApi = new Table(_logger);
             var allComments = await tableApi.GetAllComments();
             return new OkObjectResult(allComments);
         }        
 
-        [FunctionName("PostComment")]
-        public static async Task<IActionResult> PostComment(
+        [Function("PostComment")]
+        public async Task<IActionResult> PostComment(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "{articleSlug}")] HttpRequest req,
-            string articleSlug,
-            ILogger logger)
+            string articleSlug)
         {            
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             var comment = JsonSerializer.Deserialize<Comment>(requestBody, _camelCaseOptions);
@@ -69,7 +72,7 @@ namespace TravelNeil.Backend
             }
             comment.IsOwnerComment = false; // none of that shenanigannery here
 
-            var tableApi = new Table(logger);
+            var tableApi = new Table(_logger);
             Guid? addedCommentId = await tableApi.AddComment(comment);
             if (addedCommentId == null)
             {
@@ -79,11 +82,10 @@ namespace TravelNeil.Backend
             return new CreatedResult(addedCommentId.Value.ToString(), null);
         }
 
-        [FunctionName("PostOwnerComment")]
-        public static async Task<IActionResult> PostOwnerComment(
+        [Function("PostOwnerComment")]
+        public async Task<IActionResult> PostOwnerComment(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = "owner/{articleSlug}")] HttpRequest request,
-            string articleSlug,
-            ILogger logger)
+            string articleSlug)
         {
             string requestBody = await new StreamReader(request.Body).ReadToEndAsync();
             var comment = JsonSerializer.Deserialize<Comment>(requestBody, _camelCaseOptions);
@@ -99,7 +101,7 @@ namespace TravelNeil.Backend
             comment.Poster = "Neil"; // Because, you know.
             comment.IsOwnerComment = true;
 
-            var tableApi = new Table(logger);
+            var tableApi = new Table(_logger);
             Guid? addedCommentId = await tableApi.AddComment(comment);
             if (addedCommentId == null)
             {
@@ -109,19 +111,18 @@ namespace TravelNeil.Backend
             return new CreatedResult(addedCommentId.Value.ToString(), null);
         }
 
-        [FunctionName("DeleteComment")]
-        public static async Task<IActionResult> DeleteComment(
+        [Function("DeleteComment")]
+        public async Task<IActionResult> DeleteComment(
             [HttpTrigger(AuthorizationLevel.Admin, "delete", Route = "{articleSlug}/{commentId}")]HttpRequest req,
             string articleSlug,
-            string commentId,
-            ILogger logger)
+            string commentId)
         {
             if (!Guid.TryParse(commentId, out Guid commentIdGuid)) 
             {
                 return new BadRequestResult();
             }
 
-            var tableApi = new Table(logger);
+            var tableApi = new Table(_logger);
             bool success = await tableApi.DeleteComment(articleSlug, commentIdGuid);
             if (!success)
             {
