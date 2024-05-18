@@ -8,7 +8,8 @@ function Rewrite-Url([string] $url) {
 }
 
 Write-Host "Compiling TypeScript scripts...";
-npx tsc -p './site-scripts';
+# TODO: When we change over to a local TypeScript install, this needs to become 'npx tsc' instead of just 'tsc'
+tsc -p './site-scripts';
 Write-Host "...done. Rewriting BASE_URL to production URL...";
 Rewrite-Url "https://travelneil-backend.azurewebsites.net";
 Write-Host "...done. Engaging pelican.";

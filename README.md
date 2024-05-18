@@ -4,13 +4,15 @@ The source files behind my Travel Neil blog.
 
 ## Local development
 
+TODO: Update the repo to include an .nvmrc and a package.json with the TS compiler installed.
+
 ### Requirements:
- * Python 3.x, for Pelican
+ * Python 3.11, (AND NO HIGHER, OR YOU GOTTA UPGRADE PILLOW) for Pelican
  * Some version of the TypeScript compiler installed, to run `tsc`.
  * The Azure Functions Core Tools installed. Probably the .NET SDK?
 
 ### How-to:
- * `python -m venv ./venv`
+ * `python -m venv ./.venv`
  * `./.venv/Scripts/Activate.ps1` (or the platform-appropriate equivalent)
  * `pip install -r requirements.txt`
  * Start the local version of the Azure Functions backend by navigating to `/backend` and running `func start`.
