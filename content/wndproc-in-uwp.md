@@ -54,18 +54,16 @@ Okay! We have an HWND. Now we can start doing some Win32 stuff. How do we add cu
     [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr")]
     public static extern IntPtr SetWindowLongPtr(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
 
-...except, not quite. The documentation claims the following: 
+<hr>
+**(2024 EDIT)**
 
-"To write code that is compatible with both 32-bit and 64-bit versions of Windows, use SetWindowLongPtr. When compiling for 32-bit Windows, SetWindowLongPtr is defined as a call to the SetWindowLong function." 
+I have since learned that a superior tool to this is [`SetWindowSubclass`](https://learn.microsoft.com/en-us/windows/win32/api/commctrl/nf-commctrl-setwindowsubclass), as it handles window subclassing for you, and is
+slightly more of a precision tool when you just want to react to some messages your window receives.
 
-_Unfortunately_, that's only true if you're actually importing the headers and writing C/C++ code. In the case of C#, we have to be a little more explicit, and import both the 32-bit and 64-bit versions, then discriminate between them ourselves.
+I haven't used it myself, and the rest of this post won't cover its usage, but just be aware that `SetWindowSubclass` is probably the _more correct_ tool here.
 
-    :::csharp
-    [DllImport("user32.dll", EntryPoint = "SetWindowLong")] //32-bit
-    public static extern IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
-
-    [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr")] // 64-bit
-    public static extern IntPtr SetWindowLongPtr(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+**(END 2024 EDIT)**
+<hr>
 
 Great! How do we use it? We already have an HWND, now we need an `nIndex` and a `dwNewLong`. The documentation reveals that, in order to set a new WndProc, we need to pass in the `GWLP_WNDPROC` constant (also know as `-4`) as our `nIndex`, followed by the address of our new WndProc function for `dwNewLong`. But this is C#–how do we get a function pointer?
 
@@ -106,18 +104,11 @@ Now we've got most of the foundation laid. Let's pull the camera back a little, 
         var hwnd = interop.WindowHandle;
 
         IntPtr functionPointer = Marshal.GetFunctionPointerForDelegate(newProc);
-
-        if (IntPtr.Size == 8)
-        {
-            return Interop.SetWindowLongPtr(hwnd, GWLP_WNDPROC, functionPointer);
-        } 
-        else
-        {
-            return Interop.SetWindowLong(hwnd, GWLP_WNDPROC, functionPointer);
-        }
+        return Interop.SetWindowLongPtr(hwnd, GWLP_WNDPROC, functionPointer);
+        
     }
 
-You can see that it's using our code snippet from earlier to pull in the HWND, and handles both 32-bit and 64-bit version of `SetWindowLong()`. You should also note that it's returning whatever it is that `SetWindowLong()` returns. According to the documentation, that's a pointer to the _old_ WndProc function. It's considered best practice to hold onto that, and make your new WndProc call it once it's done. The Win32 API even provides a function explicitly for that purpose, [`CallWindowProc`](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-callwindowproca). Let's add it to our P/Invoke declarations...
+Note that it's returning whatever it is that `SetWindowLongPtr()` returns. According to the documentation, that's a pointer to the _old_ WndProc function. It's considered best practice to hold onto that, and make your new WndProc call it once it's done. The Win32 API even provides a function explicitly for that purpose, [`CallWindowProc`](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-callwindowproca). Let's add it to our P/Invoke declarations...
 
     :::csharp
     [DllImport("user32.dll", CharSet = CharSet.Auto)]
