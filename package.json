@@ -1,0 +1,7 @@
+{
+  "name": "pingzing.github.io",
+  "version": "1.0.0",
+  "dependencies": {
+    "typescript": "^5.7.2"
+  }
+}
