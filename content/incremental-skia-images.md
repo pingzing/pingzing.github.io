@@ -5,6 +5,7 @@ Tags: programming, c#, windows, skia, skiasharp, images, incrementalDecode(), st
 Slug: incremental-image-loading-skiasharp
 Authors: Neil McAlister
 Summary: Loading images incrementally with SkiaSharp
+Status: draft
 image: {photo}incremental_image_cover.png
 teaser: <p> One of my pet peeves when using non-browser applications that download images (image gallery and social media apps come to mind) is the way that many of them show absolutely no progress indicator when downloading images. If you're <em>lucky</em> you'll get a little, unsatisfying progress bar. This is especially annoying when on flaky mobile internet connections. </p>
 
