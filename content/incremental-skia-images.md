@@ -4,7 +4,7 @@ Category: programming
 Tags: programming, c#, windows, skia, skiasharp, images, incrementalDecode(), startIncrementalDecode()
 Slug: incremental-image-loading-skiasharp
 Authors: Neil McAlister
-Summary: Loading images incrementally with SkiaSharp
+Summary: Load images a little bit at a time, for slow connections. Using SkiaSharp.
 image: {photo}incremental_image_cover.png
 teaser: <p>This blog post is about how to, in C#, using SkiaSharp, download an image and  display it incrementally, as it downloads. Browsers do it, but most native app toolkits' Image widgets don't, and don't offer the option to do so. If you're on a slow or spotty connection, that sucks.</p>
 
