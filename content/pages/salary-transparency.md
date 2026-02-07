@@ -37,7 +37,10 @@ Senior Server Software Engineer | 2020-01-27 | 2020-07-31 | 186 | <details><summ
 Senior Software Developer | 2021-05-17 | 2022-04-30 | 364 | €5500 / month | Raise
 ----- | 2022-05-01 | 2023-07-30 | 455 | €5850 / month | Quit
 Senior Developer | 2023-08-01 | 2023-08-31 | 30 | <details><summary>€7500 / month</summary>This was a freelance position, so the higher rate hides some extra social insurance taxes and fees.</details> | Contract terminated
-Lead Software Engineer | 2023-11-06 | N/A | N/A | <details><summary>€6350 / month</summary>+ up to 10% annual bonus</details> | N/A
+Lead Software Engineer | 2023-11-06 | 2024-04-30 | 176 | <details><summary>€6350 / month</summary>+ up to 10% annual bonus</details> | Quit
+Senior Developer*<sup>1</sup> | 2024-05-01 | N/A | N/A | <details><summary>€3000 / month or 50% billed</summary>Floor of €3k/mo., or ~50% of my monthly billing, whichever is higher<br>Average billing is between €105-€120/hr</details> | N/A
+
+*<sup>1</sup> <span style="font-size: 16px">No specified title in this role--I can call myself whatever I want</span>
 
 </section>
 
@@ -48,6 +51,8 @@ Here's the above data, graphed:
 The salaries have been normalized to total annual values, but have not been converted between currencies. As such, the first two values are in USD, while the rest are in EUR.
 
 "Total Days" is, as above, not the amount of days I performed my job, but the amount of days I stayed at a particular salary level.
+
+(Note that for the current job, the one with the "50% billed", the "Normalized annual salary" value in the graph is an optimistic estimate that assumes a billed rate of 112€/hr--reasonable for the area--and 100% client work, i.e., no gaps where there was no work for me.)
 
 ## In closing
 I'll try to keep this page updated whenever this information changes. 
