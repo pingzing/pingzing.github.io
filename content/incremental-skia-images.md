@@ -1,86 +1,54 @@
 Title: Incremental Image Loading with SkiaSharp
-Date: 2024-12-30 17:00
+Date: 2026-02-07 16:42
 Category: programming
 Tags: programming, c#, windows, skia, skiasharp, images, incrementalDecode(), startIncrementalDecode()
 Slug: incremental-image-loading-skiasharp
 Authors: Neil McAlister
 Summary: Loading images incrementally with SkiaSharp
-Status: draft
 image: {photo}incremental_image_cover.png
-teaser: <p> One of my pet peeves when using non-browser applications that download images (image gallery and social media apps come to mind) is the way that many of them show absolutely no progress indicator when downloading images. If you're <em>lucky</em> you'll get a little, unsatisfying progress bar. This is especially annoying when on flaky mobile internet connections. </p>
+teaser: <p>This blog post is about how to, in C#, using SkiaSharp, download an image and  display it incrementally, as it downloads. Browsers do it, but most native app toolkits' Image widgets don't, and don't offer the option to do so. If you're on a slow or spotty connection, that sucks.</p>
 
-## The Problem
+This is about how to, in C#, using SkiaSharp, download an image and  display it incrementally, as it downloads. Browsers do it, but most native app toolkits' Image widgets don't, and don't offer the option to do so. If you're on a slow or spotty connection, that sucks.
 
-One of my pet peeves when using non-browser applications that download images (image gallery and social media apps come to mind) is the way that
-many of them show absolutely no progress indicator when downloading images. If you're _lucky_ you'll get a little, unsatisfying progress bar.
-This is especially annoying when on flaky mobile internet connections.
-
-It so happened that I was making a little Windows application using WinUI (the Latest and Greatest UI framework that <s>definitely doesn't have enough budget allocated to its development</s>)
-and wanted to be able to show an image's progress without waiting for the entire thing to be downloaded, but with something a little more satisfying 
-than a loading bar or a little "100 kB / 500 kB" text display. 
-
-_Web browsers have solved this for_ literal decades, I think to myself, _Surely it cannot be that hard?_
-
-The solution that web browsers have hit upon, of course, is to show images as they download, row by row (or whatever the image format in question 
-reasonably allows). The term for this is, surprise surprise, "incremental loading" (or "incremental decoding", depending on how pedantic
-you'd like to be).
-
-And while it is That Hard, Actually, we live in a world where other people have poured lots of time into making nice, reusable libraries
-that do all the hard parts for us.
-
-In this instance, [Skia, Google's cross-platform graphics library](https://skia.org/docs/) does literally 
-everything we need, including a tantalizingly-named function called 
-[`incrementalDecode()`](https://github.com/google/skia/blob/main/include/codec/SkCodec.h#L508). 
-And there's even a nice [C# wrapper around Skia called SkiaSharp](https://github.com/mono/SkiaSharp) 
-(as Skia itself is all C++), so it's easy to use for our purposes.
-
-Unfortunately, there appear to be _zero instances on the internet_ of people **actually using the `incremnetalDecode()` feature**. 
-Google Search becoming worse and worse by the week in recent years certainly didn't help, but even GitHub's 
-search turned up (almost! more on that in a bit) nothing in either SkiaSharp's C# or Skia's original C++.
-
-So, this blog post will document my efforts--and eventual success!--at using this API to do the thing I described above.
-
-## In Short
-
-Here's what we want to do: make an HTTP request for an image. Listen to the bytestream as it comes in, and draw the 
-partially-downloaded image as it arrives. This is tricky for a few reasons! We don't know what format the image is in, we don't 
-know its dimensions, we might not even know how many bytes are in it.
-
-Image formats have headers that describe all of this information, but all their formats differ, as well as the details
-of how they actually store image information.
-
-Fortunately, Skia handles all this heavy lifting for us. All we need to do is figure out how to pass it the information in a format 
-that it likes.
+This blog post mostly exists for my own benefit, but also because I was angry that I couldn't find any
+reference material on the internet about this specific problem, and had to figure it out myself. Hopefully
+it helps someone else who runs into the same issue.
 
 ## Setting Up
 
-Okay. Let's just get right to it. For context, the application I'm creating:
+Okay. Let's just get right to it. For context, the demo application I'm creating:
 
  - Is written in C#
  - Is a WinUI 3 application (packaged, but it doesn't really matter here)
  - Is explicitly a toy, because I just wanted to see how to do this
 
-So with that in mind, let's move forward. If you're following along at home, I'm going to assume you know how 
-to [create a WinUI 3 application](https://learn.microsoft.com/en-us/windows/apps/winui/winui3/create-your-first-winui3-app), 
-because getting an environment up an running is complex enough that I don't want to repeat it here.
+If you don't care about all this, and just want to see the code, cool beans. [Check it out on GitHub](https://github.com/pingzing/incrementalimageloading).
 
-That said, none of the steps in this blog post are really WinUI-specific. Any C# GUI framework  is going to 
-follow more or less the same process. (Avalonia is an exception. See the note below.)
+This thing uses two Skia-flavored packages to get WinUI talking to Skia:
 
-So, you've got a new, blank app created. Great! Next up, you'll need two NuGet packages: 
  - [SkiaSharp](https://www.nuget.org/packages/SkiaSharp/) (I'm using 3.116.1)
  - [SkiaSharp.Views.WinUI](https://www.nuget.org/packages/SkiaSharp.Views.WinUI/). This gives you a control that you can draw Skia Stuff(tm) onto easily. If you're using a different GUI framework, choose the `SkiaSharp.Views.WhateverPackageIsAppropriate` for your platform.
 
  (Note that if you're using Avalonia, the process for doing Skia Stuff is a little different because Avalonia uses Skia internally. [This GitHub discussion](https://github.com/AvaloniaUI/Avalonia/discussions/13527) has some details, but I haven't done it myself.)
 
- Once that's done, you have all the stuff you need to start doing Skia Stuff(tm). Let's see some code, huh?
+ 
+#### Intentionally Throttling Your Connection
+
+ Also, this is really hard to test if you're on a good, fast desktop connection. On Windows, you can intentionally
+ throttle connection speeds at the individual app level using QoS settings. There's a PowerShell cmdlet
+ to do it:
+
+```pwsh
+Set-NetQosPolicy -Name "<Policy Name Here>" -AppPathNameMatchCondition "IncrementalImageLoading.exe" -ThrottleRateActionBitsPerSecond 32KB; 
+```
+
+ The `AppPathNameMatchCondition` needs to match the executable name. The `ThrottleRateActionBitsPerSecond` arg can either take a human-readable string like `16KB`, or just an actual number of bits-per-second.
+
+ (I have no idea what you'd do on Linux or macOS. Presumably there are tools.)
 
 ## The Code
 
-Like I said, this is a toy app, so let's not do anything complex. We'll slap some basic UI on the MainWindow,
-and just make a hard-coded HTTP request to see some incremental loading in action.
-
-So, here's what we'll start with:
+This is a toy app, so it doesn't do anything _too_ fancy. There's one window, with some ultra-basic UI:
 
 **MainWindow.xaml**
 ```xml
@@ -112,7 +80,8 @@ So, here's what we'll start with:
 ```
 
 Two buttons, and a Skia canvas inside a ScrollView in case the image is larger than the window. Easy-peasy.
-Let's take a look at the code:
+
+Here's our starting point:
 
 **MainWindow.xaml.cs**
 ```csharp
@@ -133,184 +102,73 @@ public sealed partial class MainWindow : Window
         _ = Task.Run(async () =>
         {
             HttpResponseMessage? response = await _httpClient.GetAsync(
-            "https://derpicdn.net/img/view/2019/9/22/2150503.png",
-            HttpCompletionOption.ResponseHeadersRead
-        );
+                // It's a happy Fluttershy in a box, if you're wondering. Nice big 1.3MB PNG file.
+                "https://derpicdn.net/img/view/2019/9/22/2150503.png",
+                HttpCompletionOption.ResponseHeadersRead
+            );
 
-        if (response == null || !response.IsSuccessStatusCode)
-        {
-            Debug.WriteLine("Response failure. Boo.");
-            return;
-        }
-
-        // We have an HTTP Stream, now we gotta do *something* with it.
-        });
-    }
-
-    private void SKiaCanvas_OnPaint(object sender, SKPaintSurfaceEventArgs e)
-    {
-        if (e != null)
-        {
-            e.Surface.Canvas.Clear();
-            if (_shouldOnlyClear)
+            if (response == null || !response.IsSuccessStatusCode)
             {
-                _shouldOnlyClear = false;
+                Debug.WriteLine("Response failure. Boo.");
                 return;
             }
+            
+            Stream imageStream = await response.Content.ReadAsStreamAsync();
 
-            if (_skImage != null)
-            {
-                SkiaCanvas.Height = _skImage.Height;
-                SkiaCanvas.Width = _skImage.Width;
-                e.Surface.Canvas.DrawBitmap(_skImage, 0, 0);
-            }
-        }
-    }
+            int initialReadSize = 1024;
+            int readChunkSize = 16384;
 
-    private bool _shouldOnlyClear = false;
-    private void ClearButton_Click(object sender, RoutedEventArgs e)
-    {
-        _shouldOnlyClear = true;
-        SkiaCanvas.Invalidate();
+            byte[] copyBuffer = new byte[readChunkSize];
+            int totalBytesRead = await imageStream.ReadAtLeastAsync(
+                copyBuffer,
+                initialReadSize,
+                throwOnEndOfStream: false
+            );
+
+            var bufferStream = new MemoryStream();
+            bufferStream.Write(copyBuffer, 0, totalBytesRead);
+            // Rewind the stream so that the decoder starts at the beginning
+            bufferStream.Position -= totalBytesRead;
+        });
+
+        // More code to follow...
     }
 }
 ```
 
-This is a _starting point_. Notice that we're not doing anything with the HTTP stream yet. There are some basics
-here I want to take a moment to explain before we start fleshing out the actual incremental stuff.
+This is all in a `Task.Run()` call so we're not doing it on the main UI thread. Otherwise, that'd defeat the
+point of doing incremental loading, as the whole UI would lock up until download and rendering was complete.
 
-Also, take note: when we call `_httpClient.GetAsync()`, we're passing in `HttpCompletionOption.ResponseHeadersRead` as the second argument. This ensures that the method returns as soon as it finishes reading the response's headers, instead of waiting for the entire response. This is important! 
+We make the HTTP call with `HttpCompletionOption.ResponseHeadersRead`, so that the .NET HttpClient returns the 
+data stream as soon as possible, instead of just giving us one big blob once it's done.
 
-### Why's Everything in `Task.Run()`?
+We read the first 1024 bytes to give Skia a fighting chance at figuring out what kind of image this is. I tried
+smaller amounts, but that gave me occasional failures that I didn't have the patience to debug. If you have an 
+image that's smaller than 1KB, well, this will just blow up. ¯\\\_(ツ)_/¯
 
-Spotted that, huh? It's because button handlers run on the UI thread by default, and we're about to do buffer shenanigans in tight loops. Because C# `Task`s are Complicated(tm), starting a new `Task` doesn't
-_guarantee_ that you'll get a separate thread, but in in the Windows GUI frameworks, it's a safe assumption to make.
+We copy from the HTTP stream into a MemoryStream, because .NET HttpClient HTTP streams can't be rewound, and we need to rewind it once we've read those initial 1024 bytes. Otherwise, once we hand Skia the MemoryStream, the Stream pointer would be at the _end_ of the stream, and Skia would read 0 bytes (and blow up).
 
-Doing our work in `Task.Run()` gets us off the UI thread, and should help keep the window responsive.
-
-### What's the Deal With That `SkiaCanvas_OnPaint()` Thing?
-
-Ah. The fun. Skia has its own way of doing things, and it's largely disconnected from the host GUI framework's
-way of doing things. In this case, we have a Skia canvas, and whenever anything in that canvas gets invalidated
-in anyway way (via explicit invalidation, resizes, or a variety of other ways), the `PaintSurface` event handler
-is called.
-
-We've created a handler named `SKiaCanvas_OnPaint()` to handle that event. Peeking into the `SKPaintSurfaceEventArgs` `Surface.Canvas` property is the only way to get access to the actual Skia canvas upon
-which we want to draw things. It is, therefore, also the only place we _can_ draw things.
-
-It's a very imperative style! Generally, whenever we hear a `Paint` event, we want to erase and redraw the entire canvas with the (presumably updated) current state of the universe.
-
-In our case, our canvas will be dedicated to one task: showing a single image. So if we hear an invalidation, we
-know for _sure_ that we want to redraw that image. So, we clear the canvas, make sure that the `_skImage` has
-some content, and then draw that image.
-
-### Is That Why `ClearButton_Click()` Doesn't Actually Do Anything?
-
-Yep! It sets a little boolean flag that we can check inside `OnPaint`, and then calls `Invalidate()` on the 
-canvas, which results in `OnPaint` being called, which then does a check for our boolean flag.
-
-### HTTP Stream Time
+#### Streamin'
 
 Okay. Let's flesh out our click handler a little further. Let's go do something with that HTTP stream of ours.
 
 In order to do an incremental decode, we need the following:
 
-- A stream containing our data _that can be rewound_
+- A stream containing our data _that can be rewound_, because Skia likes to rewind the Stream as it goes
 - An `SKCodec`
 - An `SKBitmap` with enough bytes allocated to hold the decoded image
 - The memory address of that `SKBitmap`
 - A PNG or (static) GIF image (!)
 
-Let's go through those in order.
-
-#### A Rewindable Stream?
-
-Skia likes to rewind the stream that it's reading during incremental decoding. Problem! The `Stream` that
-C#'s `HttpClient` gives us when we call `ReadAsStreamAsync()` isn't rewindable! It's one-and-done, probably
-to save on memory.
-
-The easiest way to do that in C#: our good pal `MemoryStream`! We'll read from the HTTP stream in chunks, and read those directly into a `MemoryStream`.
-
-#### An `SKCodec`?
-
-An `SKCodec` is a little data structure that contains a bunch of metadata that tells Skia how to encode or 
-decode a given image. i.e. "This is a PNG, using this color mode, and has this many bytes".
-
-You create it with 
-```csharp
-var skCodec = SKCodec.Create(someStream);
-```
-
-You can also get an `out` parameter out of it that will tell you if it succeeded, or if it failed, like so:
-```csharp
-var skCodec = SKCodec.Create(someStream, out SKCodecResult result);
-if (result != SKCodecResult.Success) 
-{
-    Debug.WriteLine($"Sadness. {result}");
-}
-```
-
-This _can_ be helpful when debugging, but the information it gives you is minimal. It's better than `SKCodec`'s
-usual failure mode though: it just returns `null` with no further information.
-
-#### `SKBitmap` With Enough Bytes?
-
-"This is C#!" I hear you say. "What do you mean I need to allocate things manually?"
-
-Fear not, it's less painful than you might think. All you need for this is the image's height and width, and
-`SKCodec` figures those out for you. Them you just...
+Let's add some more code where left off:
 
 ```csharp
-var info = new SKImageInfo(skCodec.Info.Width, skCodec.Info.Height);
-_skImage = new SKBitmap(info);
-```
+// Previous block of code is above ^
 
-...and now our `_skImage` has the appropriate amount of memory allocated to it. No sweat.
+// Also, this is a class member variable, pretend it's in class-scope here:
+private SKBitmap? _skImage = null;
+// ---
 
-#### The `SKBitmap`'s Memory Address?!
-
-Okay, yeah, now we're getting a little crunchy. Still not bad though, I promise! `SKBitmap`'s `GetPixels()`
-returns a pointer to its location in memory (and also has an `out` parameter for how large the `SKBitmap` is, 
-but we don't actually need that.)
-
-```csharp
-IntPtr bitmapAddress = _skImage.GetPixels(out _);
-```
-
-(Newer versions of C# will probably want to use `nint` instead of `IntPtr`. That's fine.)
-
-#### Gluing It All Together
-
-Let's see some code. Continuing where we left off, we've just gotten `response` and verified that it has some
-content for us:
-
-```csharp
- int initialReadSize = 1024;
- byte[] copyBuffer = new byte[16384];
-
- using var responseStream = await response.Content.ReadAsStreamAsync();
-
- var bufferStream = new MemoryStream();
-```
-
-Cool. Now, in order for `SKCodec` to work, it needs enough bytes read into the stream to determine what the
-iamge is. In practice, I found that 1 kilobyte was enough for this (and is probably overkill, honestly).
-
-```csharp
-int bytesRead = responseStream.Read(copyBuffer, 0, initialReadSize);
-bufferStream.Write(copyBuffer, 0, bytesRead);
-
-// Rewind the stream so that the decoder starts at the beginning
-bufferStream.Position -= bytesRead;
-```
-
-See that little rewind at the end there? Very important! `SKCodec` just starts reading from the `Stream` that
-you hand to it, _at whatever position it's currently at_. We'll need to repeat this trick again later, too.
-Now you see why we needed a rewindable stream.
-
-Let's create our `SKCodec` and `SKBitmap` and so on.
-
-```csharp
 using var skCodec = SKCodec.Create(bufferStream, out SKCodecResult codecResult);
 if (codecResult != SKCodecResult.Success)
 {
@@ -319,32 +177,31 @@ if (codecResult != SKCodecResult.Success)
 }
 
 var info = new SKImageInfo(skCodec.Info.Width, skCodec.Info.Height);
-_skImage?.Dispose(); // This is a class member, so let's make sure there isn't an old image here
+
+_skImage?.Dispose();
 _skImage = new SKBitmap(info);
 
 IntPtr bitmapAddress = _skImage.GetPixels(out _);
 ```
 
-Okay. We've got everything lined up. But you may have noticed I never addressed the final bullet point from my list above:
+So, we've got all our bullet points here:  
 
-> - A PNG or (static) GIF image (!)
+* We already set up the MemoryStream in the previous block. That's our `bufferStream`.
+* Setting up the `skCodec` is the first thing we do in this block. We hand it those first 1024 bytes, and it
+figures out what kind of image it's dealing with, and its width and height.
+* We create a new `SKBitmap` named `_skImage` using the information that from our `SKCodec`.
+* We get the memory address of our newly-allocated `SKBitmap` by calling `.GetPixels()` on it.
+* ...and I know ahead of time that this is a PNG. If you wanted this to be more than a toy, you'd probably 
+inspect the `SKCodec` to see what kind of image you were dealing with, and do different things appropriately. 
+The reason we need a PNG or a static GIF is that Skia's `IncrementalDecode()` only supports those two image 
+types. There are `StartScanlineDecode()` and `GetScanlines()` methods on `SKCodec` which are supposed to work  for JPEGs or BMPs, but I didn't test those.
 
-It's also a little late if you've already got a JPEG stream. Oops.
+Also, note that I'm getting an `out SKCodecResult codecResult` when I call `SKCodec.Create()`? That's basically your only tool to detect failures--otherwise, you just get a null `SKCodec`, and no further information.
 
-But the reason for this is that `IncrementalDecode()` only supports PNGs and non-animated GIFs.
 
-There _are_ the `StartScanlineDecode()` and `GetScanlines()` methods on `SKCodec` which, I understand,
-are supposed to be the JPEG equivalent, but I haven't played with those yet, and can't talk about them with confidence.
-
-And you get no WebP support at all. Sorry.
-
-(I'm not sure which of these methods you'd use for BMP. If you have to support BMP, I'm sorry, for multiple
-reasons.)
-
-Okay. Let's keep moving we're almost there. The fun is about to begin.
+We're almost to the actual incremental part. Here we go.
 
 ```csharp
-//  This MUST be called first.
 SKCodecResult decodeResult = skCodec.StartIncrementalDecode(
     info,
     bitmapAddress,
@@ -356,94 +213,122 @@ if (decodeResult != SKCodecResult.Success)
     Debug.WriteLine("Instead of start decoding success, got: " + decodeResult);
     return;
 }
-```
 
-Before we do anything else, we have to start the incremental decode operation. I've never seen this
-return anything other than `SKCodecResult.Success`, but it can probably fail somehow.
-
-Now, let's get to the actual "incremental", decoding, the whole point of this increasingly-lengthy blog post.
-
-```csharp
-int readChunkSize = 16384; // This is a bit of a magic number. I'll explain later.
-
-// Now we begin the incremental decoding loop.
-SKCodecResult incrementalResult = SKCodecResult.IncompleteInput;
-while (incrementalResult == SKCodecResult.IncompleteInput)
+int bytesRead;
+decodeResult = SKCodecResult.IncompleteInput;
+while (decodeResult == SKCodecResult.IncompleteInput)
 {
-    // We expect incrementalResult here to be either 'Success' or 'IncompleteInput'.
-    // 'IncompleteInput' means that we need to take another trip around the loop, and feed it more data.
-    incrementalResult = skCodec.IncrementalDecode(out int rowsDecoded);
+    decodeResult = skCodec.IncrementalDecode(out int rowDecoded);
+
     if (decodeResult == SKCodecResult.Success)
     {
+        Debug.WriteLine("DecodeResult success, breaking.");
         break;
     }
 
-    SkiaCanvas.Invalidate();
-
-    // Buffer a bit more of the HTTP stream into the MemoryStream after each incremental decode
-    bytesRead = responseStream.Read(copyBuffer, 0, readChunkSize);
+    // Buffer a bit more of the HTTP stream
+    bytesRead = imageStream.Read(copyBuffer, 0, readChunkSize);
     if (bytesRead == 0)
     {
         Debug.WriteLine("BytesRead was 0, breaking.");
         break;
     }
     bufferStream.Write(copyBuffer, 0, bytesRead);
-
-    // And of course, don't forget to rewind the MemoryStream--writing to it advances it, but
-    // the new bytes haven't gone through the decoder yet!
     bufferStream.Position -= bytesRead;
+    SkiaCanvas.Invalidate();
 }
-```
 
-I mention it kind of implicitly with the comment about rewinding the `MemoryStream`, but there's one gotcha
-that might surprise you here: `skCodec.IncrementalDecode()` _will advance your `MemoryStream's position`_. 
-If you weren't expecting this, it can play some real havoc with your stream manipulation. Beware.
-
-Note that we call `Invalidate()` on the `SkiaCanvas` each trip around the loop. That ensures that the image gets repainted each time more data gets loaded into it. This can (and does) causes issues with rendering 
-because of how frequently it repaints, but we'll address that a bit later.
-
-## Success!
-
-Just out side of the `while` loop, add in one last 
-
-```csharp
 SkiaCanvas.Invalidate();
 ```
 
-...and boom! You should now have an image that downloads, and renders incrementally as it's downloading in your application.
+Before we do anything else, we have to start the incremental decode operation. I've never seen this
+return anything other than `SKCodecResult.Success`, but it can probably fail somehow.
 
-Piece of cake.
+Next, remember that we have the `skCodec` pointing at our `bufferStream`. So first, we perform an incremental decode on whatever's currently available in `bufferStream`. If it reports `Success`, the image is complete, and
+we're done.
 
-todo: show entire Download method in one uninterrupted block
+Otherwise, we read a bit more from the HTTP response stream, and read that into `copyBuffer`. I read in 16KB chunks for  We then copy 
+from `copyBuffer` into `bufferStream`, which our `skCodec` is pointed at. We then rewind the `bufferStream` 
+the same number of bytes we just wrote to it, otherwise the next trip around the loop, `IncrementalDecode()` 
+won't see them.
 
-## Edge Cases
+Note but there's one gotcha that surprised me a bit here: `skCodec.IncrementalDecode()` _will advance the `MemoryStream's` position_. 
+If you weren't expecting this, it can play some real havoc with your stream manipulation. Beware.
 
-- Edge case handling
-    - Other formats
-    - Initial read size
-    - HTTP buffer size 16384
-    - Rendering speed
+Finally, we call `Invalidate()` on the `SkiaCanvas` each trip around the loop. That ensures that the image gets repainted each time more data gets loaded into it. This can (and does) causes issues with rendering 
+because of how frequently it repaints. If you want to avoid potential performance problems, you'll want to 
+hook into your windowing surface's repaint loop, and only call invalidate when it's actually about to paint.
+(In the full code sample on GitHub, I actually do that, but I've omitted it for simplicity here).
 
-<!--
-An image looks like this: 
-[![Alt-text]({photo}imagename.jpg){loading='lazy'}]({static}/images/imagename.jpg "Mouseover text here")
+We also do one final `Invalidate()` once we're out of the loop, to make sure we do one last repaint now that 
+all the data is available.
 
-An internal link looks like this:
-[other post]({filename}/this-websites-architecture-personal-soapbox.md)
+## What else?
 
-Code looks like this:
+There's a bit more plumbing you need to do to hook this all together. The full GitHub sample shows it, but I'll also briefly go over it here:
 
-    :::shortlangname
-    using Code;    
-    
-    namespace code
-    {    
-        public static class Program
-        {                    
-            static void Main()
-            {
-                code code code
-            }
+**MainWindow.xaml.cs**
+```csharp
+private void SKiaCanvas_OnPaint(object sender, SKPaintSurfaceEventArgs e)
+{
+    Debug.WriteLine("Calling OnPaint");
+    if (e != null)
+    {
+        e.Surface.Canvas.Clear();
+        if (_shouldOnlyClear)
+        {
+            _shouldOnlyClear = false;
+            return;
+        }
+
+        if (_skImage != null)
+        {
+            SkiaCanvas.Height = _skImage.Height;
+            SkiaCanvas.Width = _skImage.Width;
+            e.Surface.Canvas.DrawBitmap(_skImage, 0, 0);
         }
     }
--->
+}
+```
+
+Way up in the beginning, in the XAML code, the `SKXamlCanvas` has a `PaintSurface="SkiaCanvas_OnPaint"`. This 
+is the event handler that actually takes care of painting the `_skImage` we're stuffing bytes into. This gets
+called every time we call `.Invalidate()`, and probably some other times too. The important parts are just these two lines:
+
+```csharp
+e.Surface.Canvas.Clear();
+e.Surface.Canvas.DrawBitmap(_skImage, 0, 0);
+```
+
+Arguably, setting the SkiaCanvas's Height and Width are important too. If you wanted to scale the image 
+canvas down for display purposes, this is one place you could you do it. I'm just setting the canvas size to 
+whatever the image's underlying size is.
+
+Everything else in there is either just error handling, or handling the "Clear" button.
+
+## Other Stuff
+
+What about animated GIFs, JPEG, BMPs or WebPs?
+
+Well...
+
+Like I mentioned above, if you wanted to handle JPEGs or BMPs (I'm sorry), you'd have to use 
+`StartScanlineDecode()` and `GetScanlines()`. I haven't played with those at all, but I think the process 
+would be similar. The only difference is that you'd need to ensure you had an entire row before attempting 
+to paint it, instead of being able to just throw arbitrary bytes at the canvas.
+
+For _animated_ GIFs, I think you'd have to get the `FrameCount` out of the `SKCodec`, and then read the stream 
+and use `GetFrameInfo(index)`.
+
+As far as I can tell, while the WebP _format_ supports incremental decoding, _Skia's WebP codec_ doesn't implement it. Sorry. ¯\\\_(ツ)_/¯
+
+## That's All, Folks
+If you ever find yourself wanting to incrementally-decode stuff, hopefully this helps!
+
+If anyone knows of a way to do this in a more general way (that also supports more image formats), lemme know! I spent a lot of time searching and hunting, couldn't find anything better!
+
+The full code: [https://github.com/pingzing/incrementalimageloading](https://github.com/pingzing/incrementalimageloading)
+
+[![Creative Commons BY badge]({static}/images/cc-by.png)](https://creativecommons.org/licenses/by/4.0/ "This work is licensed under a Creative Commons Attribution 4.0 International License.")
+
+_This work is licensed under a Creative Commons Attribution 4.0 International License._
