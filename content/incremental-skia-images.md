@@ -247,8 +247,9 @@ return anything other than `SKCodecResult.Success`, but it can probably fail som
 Next, remember that we have the `skCodec` pointing at our `bufferStream`. So first, we perform an incremental decode on whatever's currently available in `bufferStream`. If it reports `Success`, the image is complete, and
 we're done.
 
-Otherwise, we read a bit more from the HTTP response stream, and read that into `copyBuffer`. I read in 16KB chunks for  We then copy 
-from `copyBuffer` into `bufferStream`, which our `skCodec` is pointed at. We then rewind the `bufferStream` 
+Otherwise, we read a bit more from the HTTP response stream, and read that into `copyBuffer`. I read in 16KB chunks mostly arbitrarily, as it seemed to be a decent tradeoff between visually-frequent updates to the image on a slow connection, and tangible progress per-update. 
+
+We then copy  from `copyBuffer` into `bufferStream`, which our `skCodec` is pointed at. We then rewind the `bufferStream` 
 the same number of bytes we just wrote to it, otherwise the next trip around the loop, `IncrementalDecode()` 
 won't see them.
 
