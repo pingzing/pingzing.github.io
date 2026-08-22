@@ -5,7 +5,6 @@
 
 /* Imports */
 @import url("reset.css");
-@import url("pygment.css");
 
 /* Crimson text, regular, latin */
 @font-face {
@@ -94,7 +93,8 @@ button:active:focus {
   outline: none;
 }
 
-code {
+/* Inline code blocks. Fenced code blocks are handled by microlighter. */
+code:not(pre > code) {
   border: 1px solid #eaeaea;
   background-color: #f8f8f8;
   font-size: 14px;
@@ -171,6 +171,10 @@ h6 + p {
 
 hr {
   border: 1px dotted #8a887b;
+}
+
+input {
+  color-scheme: light;
 }
 
 /* Anchors */
@@ -274,6 +278,7 @@ dd {
 /* Used for code blocks */
 pre {
   background-color: #333;
+  border-radius: 0.5em;
   color: #fff;
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-size: 16px;
@@ -285,11 +290,6 @@ pre {
 blockquote {
   margin: 20px;
   font-style: italic;
-}
-cite {
-}
-
-q {
 }
 
 /* Date line */

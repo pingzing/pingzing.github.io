@@ -25,7 +25,7 @@ To my surprise, yes. Not only that, hooking into it is quite simple.
 
 So, the first thing that we need to do is crowbar an HWND out of our UWP application's window. This is a bit of a challenge, because they've gone to great pains to obscure it from us. But it's nothing a bit of determination and underhandedness can't resolve. It just so happens that there's a COM interface that allows exactly what we need: [`ICoreWindowInterop`](https://docs.microsoft.com/en-us/windows/win32/api/corewindow/nn-corewindow-icorewindowinterop). By default, this is only accessible to C++ code, but there's no reason to let that stop us. C# is perfectly capable of working with COM interfaces through the use of the `[ComImport]` attribute. Let's define it ourselves.
 
-    :::csharp
+```csharp
     [ComImport, Guid("45D64A29-A63E-4CB6-B498-5781D298CB4F")]
     [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     internal interface ICoreWindowInterop
@@ -33,26 +33,29 @@ So, the first thing that we need to do is crowbar an HWND out of our UWP applica
         IntPtr WindowHandle { get; }
         bool MessageHandled { get; }
     }
+```
 
 The only secret sauce here is the magic GUID. That's _not_ guaranteed to remain the same between Windows versions (though it has, thus far). You can find the interface definition in `C:\Program Files (x86)\Windows Kits\10\Include\<version>\winrt\CoreWindow.idl`, which will have the GUID you need for whichever version of Windows your application targets.
 
 Now we just have to get our hands on our application's `CoreWindow`, and cast it to an `ICoreWindowInterop`, and voila–access to the HWND awaits. This, too, requires some trickery, however; the compiler rightly claims that a `CoreWindow` cannot be cast to an `ICoreWindowInterop` because as far as the C# compiler can tell, they share no common ancestor. We know better however, so we can just tell the compiler where to shove it by getting a `dynamic` reference to the CoreWindow, and casting it anyway:
 
-    :::csharp
+```csharp
     private static IntPtr GetCoreWindowHwnd()
     {
         dynamic coreWindow = Windows.UI.Core.CoreWindow.GetForCurrentThread();
         var interop = (ICoreWindowInterop)coreWindow;
         return interop.WindowHandle;
     }
+```
 
 Note that this snippet assumes your application only has a single CoreWindow, and that you're calling it on the UI thread. Adjust as necessary if that's not true.
 
 Okay! We have an HWND. Now we can start doing some Win32 stuff. How do we add custom logic to a WndProc? The tool for that is [`SetWindowLongPtr`](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setwindowlongptra).
 
-    :::csharp
+```csharp
     [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr")]
     public static extern IntPtr SetWindowLongPtr(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+```
 
 <hr>
 **(2024 EDIT)**
@@ -81,17 +84,19 @@ A C++ WndProc signature is defined as so:
 
 Or, in C# terms:
 
-    :::csharp
+```csharp
     IntPtr WindowProc(IntPtr hwnd, uint uMsg, IntPtr wParam, IntPtr lParam);
+````
 
 So let's turn that into a delegate definition so we can allow `GetFunctionPointerForDelegate()` to do its grim work.
 
-    :::csharp
+```csharp
     public delegate IntPtr WndProcDelegate(IntPtr hwnd, uint message, IntPtr wParam, IntPtr lParam);
+```
 
 Now we've got most of the foundation laid. Let's pull the camera back a little, and start putting things together. First, let's define a function that accepts a `WndProcDelegate`, and registers it for us.
 
-    :::csharp
+```csharp
     using System.Runtime.InteropServices;
 
     private const int GWLP_WNDPROC = -4;
@@ -105,20 +110,21 @@ Now we've got most of the foundation laid. Let's pull the camera back a little, 
 
         IntPtr functionPointer = Marshal.GetFunctionPointerForDelegate(newProc);
         return Interop.SetWindowLongPtr(hwnd, GWLP_WNDPROC, functionPointer);
-        
     }
+```
 
 Note that it's returning whatever it is that `SetWindowLongPtr()` returns. According to the documentation, that's a pointer to the _old_ WndProc function. It's considered best practice to hold onto that, and make your new WndProc call it once it's done. The Win32 API even provides a function explicitly for that purpose, [`CallWindowProc`](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-callwindowproca). Let's add it to our P/Invoke declarations...
 
-    :::csharp
+```csharp
     [DllImport("user32.dll", CharSet = CharSet.Auto)]
     public static extern IntPtr CallWindowProc(IntPtr lpPrevWndFunc, IntPtr hwnd, uint msg, IntPtr wParam, IntPtr lParam);
+```
 
 We're pretty close now. We just need to define our custom WndProc, and register it. We have to be careful to wait until the application's CoreWindow is initialized before we start trying to do any of this–we need it to be alive to get its HWND, after all. By a little bit of trial and error, I've found that the `OnLaunched()` callback is a good place for that.
 
 So, over in `App.xaml.cs`...
 
-    :::csharp
+```csharp
     private IntPtr _oldWndProc;
 
     protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs e)
@@ -152,14 +158,17 @@ So, over in `App.xaml.cs`...
         // Call the "base" WndProc
         return Interop.CallWindowProc(_oldWndProc, hwnd, message, wParam, lParam);
     }
+```
 
 Looks good to me. Let's try to run it.
 
-...huh, that's funny. Why does our app keep crashing with an `ExecutionEngineException` in native code? Simple! Garbage collection.
+...huh, that's funny. Why does our app keep crashing with an `ExecutionEngineException` in native code? 
+
+Simple! Garbage collection.
 
 Our call to `SetWndProc()` creates a new `WndProcDelegate`, which we then get a function pointer from, and pass along to `SetWindowLong()/SetWindowLongPtr()`. Then, after an indeterminate amount of time, the C# garbage collector comes along, sees that there are no active references to that delegate, and helpfully cleans it up. The next time Windows attempts to call our WndProc, it finds that that pointer no longer points to a valid function. Oops. There are any number of ways to keep the garbage collector from cleaning something up, and the easiest is to just hold onto a reference to it. Let's modify the `SetWndProc()` function to do just that...
 
-    :::csharp
+```csharp
     private const int GWLP_WNDPROC = -4;
     private static WndProcDelegate _currDelegate = null;
 
@@ -184,6 +193,7 @@ Our call to `SetWndProc()` creates a new `WndProcDelegate`, which we then get a 
             return Interop.SetWindowLong(hwnd, GWLP_WNDPROC, newWndProcPtr);
         }
     }
+```
 
 That's it! Through a combination of skullduggery and determination, we've heaved our UWP app's WndProc into the light, where we are now free to do whatever terrible things we desire to it.
 

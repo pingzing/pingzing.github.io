@@ -22,24 +22,26 @@ According to the docs on MSDN, both of those functions live in user32.dll. The w
 
 Our Rust program can finally begin to take shape. In our `Cargo.toml`, we'll need:
 
-    :::rust
+```toml
     [package]
     name = "rust-vlc-finder"
     version = "0.1.0"    
     
     [dependencies]
     winapi = "0.2"
-    user32-sys = "0.2.0" 
+    user32-sys = "0.2.0"
+```
 
 And at the top of `main.rs`, we'll import our crates:
 
-    :::rust
+```rust
     extern crate winapi;
     extern crate user32;
     
     fn main() {
         // tbd...
     }
+```
 
 Now, we know ahead of time that we need both `ShowWindow` and `SetForegroundWindow`. If we look at their function signatures, we can see that both of them take an `HWND`--that is to say, a handle to a window (HWND, Handle Window, get it?).
 
@@ -51,7 +53,7 @@ So, we know how to get our window handle (we use `FindWindowA`), and we know how
 
 Well, can't we just do something like this?
 
-    :::rust
+```rust
     extern crate winapi;
     extern crate user32;
 
@@ -65,6 +67,7 @@ Well, can't we just do something like this?
         // And show it with the SW_RESTORE flag, which, according to the docs, maps to '9'.
         user32::ShowWindow(window_handle, 9);       
     }
+```
 
 A big fat **nope**. The compiler fails out with an `expected i8, found str` on our "VLC Media Player" string. Also, `null` isn't a keyword in Rust.
 
@@ -76,19 +79,20 @@ Also-also, if we want to pass a null pointer, `std::ptr` has us covered with `nu
 
 So `main` looks like this now:
 
-    :::rust
+```rust
     fn main() {   
         let window_name = CString::new("VLC Media Player").unwrap();     
         let window_handle = user32::FindWindowA(std::ptr::null_mut(), window_name.as_ptr());        
         user32::SetForegroundWindow(window_handle);
         user32::ShowWindow(window_handle, 9);       
     }
+```
 
 How about now? **Still nope!** The compiler complains, becasue `FindWindowA`, `SetForegroundWindow` and `ShowWindow` are all "unsafe" functions in Rust parlance--they don't obey the normal borrowing rules of Rust land. That unsafe marker is big red declaration that HERE BE DRAGONS.
 
 So, you need to explicitly mark any code that touches unsafe code as `unsafe`:
 
-    :::rust 
+```rust
     fn main() {   
         let window_name = CString::new("VLC Media Player").unwrap();  
         unsafe{   
@@ -97,6 +101,7 @@ So, you need to explicitly mark any code that touches unsafe code as `unsafe`:
             user32::ShowWindow(window_handle, 9);       
         }
     }
+```
 
 Ta-da! It compiles, it builds, it shows VLC (if it's open)!
 

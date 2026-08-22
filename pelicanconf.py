@@ -52,7 +52,6 @@ THEME = "theme/cebong"
 # Customize the Python-Markdown module
 MARKDOWN = {
     'extension_configs': {
-        'markdown.extensions.codehilite': {'css_class': 'highlight'},
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
         'markdown.extensions.toc': {'permalink': '🔗'},

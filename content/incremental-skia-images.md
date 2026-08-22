@@ -38,7 +38,7 @@ This thing uses two Skia-flavored packages to get WinUI talking to Skia:
  throttle connection speeds at the individual app level using QoS settings. There's a PowerShell cmdlet
  to do it:
 
-```pwsh
+```powershell
 Set-NetQosPolicy -Name "<Policy Name Here>" -AppPathNameMatchCondition "IncrementalImageLoading.exe" -ThrottleRateActionBitsPerSecond 32KB; 
 ```
 
@@ -51,7 +51,7 @@ Set-NetQosPolicy -Name "<Policy Name Here>" -AppPathNameMatchCondition "Incremen
 This is a toy app, so it doesn't do anything _too_ fancy. There's one window, with some ultra-basic UI:
 
 **MainWindow.xaml**
-```xml
+```html
 <Window
     <!-- Blah blah namespace import boilerplate goes here.  Note that you'll want to include a namespace 
     import for the SkiaSharp.Views, so you can use its SKXamlCanvas. In my case, I did 

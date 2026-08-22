@@ -19,7 +19,7 @@ An internal link looks like this:
 
 Code looks like this:
 
-    :::shortlangname
+```shortlangname (see https://github.com/davatron5000/microlighter for lang names)
     using Code;    
     
     namespace code
@@ -32,3 +32,4 @@ Code looks like this:
             }
         }
     }
+```

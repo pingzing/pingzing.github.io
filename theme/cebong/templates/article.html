@@ -10,27 +10,27 @@
 {% block title %}{{ article.title|striptags }}{% endblock %}
 {% block meta_tags_in_head %}
 {% if article.tags and article.category %}
-  <meta name="keywords" content="{{ [article.tags|join(', '), article.category]|join(', ') }}" />
+        <meta name="keywords" content="{{ [article.tags|join(', '), article.category]|join(', ') }}" />
 {% endif %}
 {% if article.category %}
-  <meta name="category" content="{{ article.category|striptags }}" />
+        <meta name="category" content="{{ article.category|striptags }}" />
 {% endif %}
 {% if article.description %}
-  <meta name="description" content="{{ article.description|striptags }}" />  
+        <meta name="description" content="{{ article.description|striptags }}" />  
 {% elif article.summary %}
-  <meta name="description" content="{{ article.summary|striptags  }}" />  
+        <meta name="description" content="{{ article.summary|striptags  }}" />  
 {% endif %}
 {% if article.author %}
-  <meta name="author" content="{{ article.author }}" />
-  <meta name="copyright" content="{{ article.author }}" />
+        <meta name="author" content="{{ article.author }}" />
+        <meta name="copyright" content="{{ article.author }}" />
 {% endif %}
 {% if article.date %}
-  <meta name="date" content="{{ article.date }}">
+        <meta name="date" content="{{ article.date }}">
 {% endif %}
 
 {% endblock meta_tags_in_head %}  
 {% block scripts %}
-  <script type="module" src="./site-scripts/comments.js" defer></script>
+        <script type="module" src="./site-scripts/comments.js" defer></script>
 {% endblock scripts %}
 {% block content %}
 <section id="content" class="body">

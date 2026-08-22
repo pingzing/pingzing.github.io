@@ -33,7 +33,7 @@
         <meta property="og:title" content="{{ SITENAME }} - {{ page.title }}" />
         {% if page.summary %}
         <meta property="og:description" content="{{ page.summary|striptags }}">
-        {% endif %}        
+        {% endif %}
         {% else %}
         <!-- Opengraph info from base.html for for non-article, non-page -->
         <meta property="og:type" content="website">
@@ -61,12 +61,18 @@
         >
         {% endif %}        
         {% block scripts %}
-        {% endblock scripts %}      
+        {% endblock scripts %}
+        {% if article %}
+        <!-- Add the microlighter ( https://github.com/davatron5000/microlighter ) script for code highlighting -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/microlighter@2/dist/themes/vscode-plus.css">
+        <script type="module" src="https://cdn.jsdelivr.net/npm/microlighter@2/dist/microlighter.min.js"></script>
+        {% endif %}
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css">    
         {% block extra_styles %}
         {% endblock extra_styles %}
     </head>
-    <body id="index" class="home">
+    <!-- Include the data-syntax-theme for the microlighter script -->
+    <body id="index" class="home" data-syntax-theme="vscode-plus">
         {% include 'github.html' %}
         <header id="banner" class="body">
             <h1>

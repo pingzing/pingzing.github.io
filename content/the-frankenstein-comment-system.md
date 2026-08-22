@@ -28,7 +28,7 @@ We'll also need to figure out some kind of schema for comments. Table Storage ma
 
 A comment should have a unique ID, an author, a post date, and a body. It should also be associated with the article it belongs to. I also want to give myself the ability to post mark a comment as coming from me, and to reply to comments.
 
-    :::csharp
+```csharp
     public class Comment 
     {
         public Guid? CommentId { get; set; } = null!;
@@ -39,6 +39,7 @@ A comment should have a unique ID, an author, a post date, and a body. It should
         public string Body { get; set; } = null!;
         public bool IsOwnerComment { get; set; } = false;
     }
+```
 
 `CommentId` is nullable for reasons I'll explain further below.
 
@@ -53,7 +54,7 @@ Well, I know that table creation and deletion in Table Storage is _super_ fast a
 
 I need something reasonably unique, and relatively simple to massage into the required format. An ID would be ideal, but Pelican doesn't have a concept of article IDs out of the box. It _does_ have article slugs though! Those are user-definable, and are usually just URL-friendly versions of article titles. As long as I never name two articles the same thing, that should work just fine. Let's write some code to turn an article slug into a table name.
 
-    :::csharp
+```csharp
     private static Regex _validTableName = new Regex("[^A-Za-z0-9]");
     private string ToTableName(string articleSlug)
     {
@@ -76,6 +77,7 @@ I need something reasonably unique, and relatively simple to massage into the re
 
         return sanitizedTableName;
     }
+```
 
 Bit of an explanation for the Regex: that `^` means _negation_. That Regex will match any character that is NOT `[A-Za-z0-9]`. Or, in plain English, not A through Z (uppercase or lowercase) or 0 through 9. Then `_validTableName.Replace(articleSlug, "")` will replace any of those invalid characters with an empty string, effectively erasing them from the article slug.
 

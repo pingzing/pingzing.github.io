@@ -101,7 +101,7 @@ The `monogame-test.DesktopGL` is a platform-specific project. Its job is mainly 
 
 The only code in the DesktopGL project is in `Program.cs`. It looks like this:
 
-    :::c#
+```csharp
     using monogame_test.Core;
     using System;
     
@@ -117,6 +117,7 @@ The only code in the DesktopGL project is in `Program.cs`. It looks like this:
             }
         }
     }
+```
 
 Your platform-specific projects will also host content, including your `.mgcb` file. There might be way to move this into your PCL as well, but I haven't figured it out yet.
 
@@ -138,7 +139,7 @@ Some of the squirrely bits of getting this up and running include:
  
  One of the simplest, dumbest solutions would be to just have a class in the PCL that looks something like this:
 
-    :::c#
+```csharp
     public static class ServiceLocator
     {
         private static Dictionary<Type, IService> _serviceRegistry = new Dictionary<Type, IService>();
@@ -153,6 +154,7 @@ Some of the squirrely bits of getting this up and running include:
             return _serviceRegistry[typeof(TService)];
         }
     }
+```
 
 ...and then your platform-specific projects register all their implementations before calling `Game.Run()`. Then, when your PCL needs a service, it can just do `ServiceLocator.Get<YourService>().ServiceThings()`. Of course, even with that solution, you'd want to do things like null-checking, existence-checking, etc.
 
