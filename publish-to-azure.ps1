@@ -35,10 +35,6 @@ $mainCssBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "t
 $mainCssBlob.ICloudBlob.Properties.CacheControl = "max-age=300";
 $mainCssBlobUpdateTask = $mainCssBlob.ICloudBlob.SetPropertiesAsync();
 
-$pygmentCssBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "theme/css/pygment.css";
-$pygmentCssBlob.ICloudBlob.Properties.CacheControl = "max-age=300";
-$pygmentCssBlobUpdateTask = $pygmentCssBlob.ICloudBlob.SetPropertiesAsync();
-
 $commentsJsBlob = Get-AzureStorageBlob -Context $context -Container '$web' -Blob "site-scripts/comments.js";
 $commentsJsBlob.ICloudBlob.Properties.CacheControl = "max-age=300";
 $commentsJsBlob.ICloudBlob.Properties.ContentType = "text/javascript; charset=utf-8"
