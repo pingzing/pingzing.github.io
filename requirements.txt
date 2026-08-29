@@ -5,7 +5,7 @@ docopt==0.6.2
 docutils==0.16
 feedgenerator==1.9.1
 idna==2.10
-Jinja2==2.11.2
+Jinja2==3.1.6
 Markdown==3.4.1
 MarkupSafe==1.1.1
 pelican==4.5.4
