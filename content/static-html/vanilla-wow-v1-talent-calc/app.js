@@ -231,16 +231,13 @@
     const template = meta.cell.querySelector("template.tt");
     const clone = template.content.cloneNode(true);
 
-    const metaLine = document.createElement("div");
-    metaLine.className = "tt-meta";
-    metaLine.textContent = `Rank ${rank}/${meta.maxRanks}`;
-    clone.querySelector(".tt-name").after(metaLine);
-
     for (const r of clone.querySelectorAll(".tt-rank")) {
       const n = parseInt(r.dataset.rank, 10);
       if (rank > 0 && n === rank) {
         r.hidden = false;
         r.classList.add("current");
+        r.querySelector(".tt-rank-label").textContent =
+          `Rank ${rank}/${meta.maxRanks}`;
       } else if (rank < meta.maxRanks && n === rank + 1) {
         r.hidden = false;
         r.classList.add("next");

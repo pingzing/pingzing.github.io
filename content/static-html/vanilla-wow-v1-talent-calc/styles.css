@@ -347,12 +347,6 @@ body[data-class] #pickPrompt {
   margin-bottom: 4px;
 }
 
-.tooltip .tt-meta {
-  color: var(--fg-dim);
-  font-size: 11px;
-  margin-bottom: 6px;
-}
-
 .tooltip .tt-cast {
   color: var(--fg);
   margin-bottom: 6px;
