@@ -1,0 +1,1587 @@
+﻿{
+    "class":  "Rogue",
+    "trees":  [
+                  "Assassination",
+                  "Combat",
+                  "Subtlety"
+              ],
+    "talents":  [
+                    {
+                        "name":  "Improved Eviscerate",
+                        "tree":  "Assassination",
+                        "tier":  1,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Eviscerate ability by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Eviscerate ability by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Eviscerate ability by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Ability_Rogue_Eviscerate.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Remorseless Attacks",
+                        "tree":  "Assassination",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "After killing an opponent that yields experience, gives you a 8% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike."
+                                      },
+                                      {
+                                          "description":  "After killing an opponent that yields experience, gives you a 16% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike."
+                                      },
+                                      {
+                                          "description":  "After killing an opponent that yields experience, gives you a 24% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike."
+                                      },
+                                      {
+                                          "description":  "After killing an opponent that yields experience, gives you a 32% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike."
+                                      },
+                                      {
+                                          "description":  "After killing an opponent that yields experience, gives you a 40% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Ability_FiegnDead.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Malice",
+                        "tree":  "Assassination",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your critical strike chance by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases your critical strike chance by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your critical strike chance by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your critical strike chance by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your critical strike chance by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Ability_Racial_BloodRage.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Ruthlessness",
+                        "tree":  "Assassination",
+                        "tier":  2,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives your finishing moves a 20% chance to add a combo point to your target."
+                                      },
+                                      {
+                                          "description":  "Gives your finishing moves a 40% chance to add a combo point to your target."
+                                      },
+                                      {
+                                          "description":  "Gives your finishing moves a 60% chance to add a combo point to your target."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Ability_Druid_Disembowel.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Murder",
+                        "tree":  "Assassination",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your chance to hit while using your Sap, Ambush, Garrote, or Cheap Shot abilities by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to hit while using your Sap, Ambush, Garrote, or Cheap Shot abilities by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Shadow_DeathScream.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Slice and Dice",
+                        "tree":  "Assassination",
+                        "tier":  2,
+                        "column":  3,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the duration of your Slice and Dice ability by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Slice and Dice ability by 30%."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Slice and Dice ability by 45%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Ability_Rogue_SliceDice.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Relentless Strikes",
+                        "tree":  "Assassination",
+                        "tier":  3,
+                        "column":  0,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Your finishing moves have a 20% chance per combo point to restore 25 energy."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Ruthlessness",
+                                            "points":  3
+                                        }
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Ability_Warrior_DecisiveStrike.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Expose Armor",
+                        "tree":  "Assassination",
+                        "tier":  3,
+                        "column":  1,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the armor reduced by your Expose Armor ability by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the armor reduced by your Expose Armor ability by 30%."
+                                      },
+                                      {
+                                          "description":  "Increases the armor reduced by your Expose Armor ability by 45%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Ability_Warrior_Riposte.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Lethality",
+                        "tree":  "Assassination",
+                        "tier":  3,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ambush, Ghostly Strike, or Hemorrhage ability by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ambush, Ghostly Strike, or Hemorrhage ability by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ambush, Ghostly Strike, or Hemorrhage ability by 18%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ambush, Ghostly Strike, or Hemorrhage ability by 24%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ambush, Ghostly Strike, or Hemorrhage ability by 30%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Malice",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Ability_CriticalStrike.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Vile Poisons",
+                        "tree":  "Assassination",
+                        "tier":  4,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage dealt by your poisons by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt by your poisons by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt by your poisons by 9%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt by your poisons by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt by your poisons by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Ability_Rogue_FeignDeath.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Instant Poison",
+                        "tree":  "Assassination",
+                        "tier":  4,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the chance to apply Instant Poison to your target by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance to apply Instant Poison to your target by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance to apply Instant Poison to your target by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance to apply Instant Poison to your target by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance to apply Instant Poison to your target by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Ability_Poisons.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Cold Blood",
+                        "tree":  "Assassination",
+                        "tier":  5,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, or Eviscerate by 100%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Ice_Lament.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "Instant cast",
+                                                   "3 minute cooldown"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Kidney Shot",
+                        "tree":  "Assassination",
+                        "tier":  5,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the cooldown of your Kidney Shot ability by 2 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Kidney Shot ability by 4 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Kidney Shot ability by 5 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Ability_Rogue_KidneyShot.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Deadly Poison",
+                        "tree":  "Assassination",
+                        "tier":  5,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the chance to apply Deadly Poison to your target by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance to apply Deadly Poison to your target by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance to apply Deadly Poison to your target by 9%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance to apply Deadly Poison to your target by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance to apply Deadly Poison to your target by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Ability_Rogue_DualWeild.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Seal Fate",
+                        "tree":  "Assassination",
+                        "tier":  6,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Your critical strikes from abilities that add combo points have a 20% chance to add an additional combo point."
+                                      },
+                                      {
+                                          "description":  "Your critical strikes from abilities that add combo points have a 40% chance to add an additional combo point."
+                                      },
+                                      {
+                                          "description":  "Your critical strikes from abilities that add combo points have a 60% chance to add an additional combo point."
+                                      },
+                                      {
+                                          "description":  "Your critical strikes from abilities that add combo points have a 80% chance to add an additional combo point."
+                                      },
+                                      {
+                                          "description":  "Your critical strikes from abilities that add combo points have a 100% chance to add an additional combo point."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Cold Blood",
+                                            "points":  1
+                                        }
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Shadow_ChillTouch.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Vigor",
+                        "tree":  "Assassination",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your maximum Energy by 10."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Nature_EarthBindTotem.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Gouge",
+                        "tree":  "Combat",
+                        "tier":  1,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effect duration of your Gouge ability by 0.5 seconds."
+                                      },
+                                      {
+                                          "description":  "Increases the effect duration of your Gouge ability by 1 second."
+                                      },
+                                      {
+                                          "description":  "Increases the effect duration of your Gouge ability by 1.5 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Ability_Gouge.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Sinister Strike",
+                        "tree":  "Combat",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Energy cost of your Sinister Strike ability by 3 Energy."
+                                      },
+                                      {
+                                          "description":  "Reduces the Energy cost of your Sinister Strike ability by 5 Energy."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Shadow_RitualOfSacrifice.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Lightning Reflexes",
+                        "tree":  "Combat",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your Dodge chance by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases your Dodge chance by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your Dodge chance by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your Dodge chance by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your Dodge chance by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Nature_Invisibilty.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Backstab",
+                        "tree":  "Combat",
+                        "tier":  2,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the critical strike chance of your Backstab ability by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Backstab ability by 20%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Backstab ability by 30%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Ability_BackStab.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Deflection",
+                        "tree":  "Combat",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your Parry chance by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases your Parry chance by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your Parry chance by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your Parry chance by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your Parry chance by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Ability_Parry.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Precision",
+                        "tree":  "Combat",
+                        "tier":  2,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your chance to hit with melee weapons by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to hit with melee weapons by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to hit with melee weapons by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to hit with melee weapons by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to hit with melee weapons by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Ability_Marksmanship.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Evasion",
+                        "tree":  "Combat",
+                        "tier":  3,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effect duration of your Evasion ability by 2 seconds."
+                                      },
+                                      {
+                                          "description":  "Increases the effect duration of your Evasion ability by 4 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Shadow_ShadowWard.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Riposte",
+                        "tree":  "Combat",
+                        "tier":  3,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "A strike that becomes active after parrying an opponent\u0027s attack. This attack deals 150% weapon damage and disarms the target for 6 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Deflection",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Ability_Warrior_Challange.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "10 Energy",
+                                                   "Instant cast",
+                                                   "6 second cooldown",
+                                                   "5 yard range"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Sprint",
+                        "tree":  "Combat",
+                        "tier":  3,
+                        "column":  3,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the cooldown of your Sprint ability by 30 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Sprint ability by 60 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Sprint ability by 90 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Ability_Rogue_Sprint.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Kick",
+                        "tree":  "Combat",
+                        "tier":  4,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives your Kick ability a 50% chance to silence the target for 2 seconds."
+                                      },
+                                      {
+                                          "description":  "Gives your Kick ability a 100% chance to silence the target for 2 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Ability_Kick.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Dagger Specialization",
+                        "tree":  "Combat",
+                        "tier":  4,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with Daggers by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with Daggers by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with Daggers by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with Daggers by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with Daggers by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/INV_Weapon_ShortBlade_05.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Dual Wield Specialization",
+                        "tree":  "Combat",
+                        "tier":  4,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your offhand weapon by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your offhand weapon by 20%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your offhand weapon by 30%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your offhand weapon by 40%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your offhand weapon by 50%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Precision",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Ability_DualWield.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Mace Specialization",
+                        "tree":  "Combat",
+                        "tier":  5,
+                        "column":  0,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you a 1% chance to stun your target for 3 seconds with a mace."
+                                      },
+                                      {
+                                          "description":  "Gives you a 2% chance to stun your target for 3 seconds with a mace."
+                                      },
+                                      {
+                                          "description":  "Gives you a 3% chance to stun your target for 3 seconds with a mace."
+                                      },
+                                      {
+                                          "description":  "Gives you a 4% chance to stun your target for 3 seconds with a mace."
+                                      },
+                                      {
+                                          "description":  "Gives you a 6% chance to stun your target for 3 seconds with a mace."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/INV_Mace_01.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Blade Flurry",
+                        "tree":  "Combat",
+                        "tier":  5,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your attack speed by 20%. In addition, attacks strike an additional nearby opponent. Lasts 15 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Ability_Warrior_PunishingBlow.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "25 Energy",
+                                                   "Instant cast",
+                                                   "2 minute cooldown",
+                                                   "Requires Melee Weapon"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Sword Specialization",
+                        "tree":  "Combat",
+                        "tier":  5,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you a 1% chance to get an extra attack after dealing damage with your Sword."
+                                      },
+                                      {
+                                          "description":  "Gives you a 2% chance to get an extra attack after dealing damage with your Sword."
+                                      },
+                                      {
+                                          "description":  "Gives you a 3% chance to get an extra attack after dealing damage with your Sword."
+                                      },
+                                      {
+                                          "description":  "Gives you a 4% chance to get an extra attack after dealing damage with your Sword."
+                                      },
+                                      {
+                                          "description":  "Gives you a 6% chance to get an extra attack after dealing damage with your Sword."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/INV_Sword_27.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Fist Weapon Specialization",
+                        "tree":  "Combat",
+                        "tier":  5,
+                        "column":  3,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with Fist Weapons by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with Fist Weapons by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with Fist Weapons by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with Fist Weapons by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with Fist Weapons by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/INV_Gauntlets_04.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Aggression",
+                        "tree":  "Combat",
+                        "tier":  6,
+                        "column":  2,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage of your Sinister Strike and Eviscerate abilities by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage of your Sinister Strike and Eviscerate abilities by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage of your Sinister Strike and Eviscerate abilities by 6%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Ability_Racial_Avatar.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Throwing Weapon Specialization",
+                        "tree":  "Combat",
+                        "tier":  6,
+                        "column":  1,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the range of your throwing weapons by 3 yards."
+                                      },
+                                      {
+                                          "description":  "Increases the range of your throwing weapons by 6 yards."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/INV_ThrowingKnife_01.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Adrenaline Rush",
+                        "tree":  "Combat",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your Energy regeneration rate by 100% for 15 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Shadow_ShadowWordDominate.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "Instant cast",
+                                                   "6 minute cooldown"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Rapid Concealment",
+                        "tree":  "Subtlety",
+                        "tier":  1,
+                        "column":  0,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the cooldown of your Stealth ability by 1 second."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Stealth ability by 2 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Stealth ability by 3 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Stealth ability by 4 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Stealth ability by 5 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Ability_Ambush.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Master of Deception",
+                        "tree":  "Subtlety",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the chance enemies have to detect you while in Stealth mode."
+                                      },
+                                      {
+                                          "description":  "More effective than Master of Deception (Rank 1)"
+                                      },
+                                      {
+                                          "description":  "More effective than Master of Deception (Rank 2)"
+                                      },
+                                      {
+                                          "description":  "More effective than Master of Deception (Rank 3)"
+                                      },
+                                      {
+                                          "description":  "More effective than Master of Deception (Rank 4)"
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Shadow_Charm.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Camouflage",
+                        "tree":  "Subtlety",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your speed while stealthed by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your speed while stealthed by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases your speed while stealthed by 9%."
+                                      },
+                                      {
+                                          "description":  "Increases your speed while stealthed by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases your speed while stealthed by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Ability_Stealth.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Elusiveness",
+                        "tree":  "Subtlety",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the cooldown of your Evasion, Vanish, and Blind abilities by 15 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Evasion, Vanish, and Blind abilities by 30 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Evasion, Vanish, and Blind abilities by 45 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Evasion, Vanish, and Blind abilities by 1 minute."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Evasion, Vanish, and Blind abilities by 1.3 minutes."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Magic_LesserInvisibilty.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Opportunity",
+                        "tree":  "Subtlety",
+                        "tier":  2,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by 16%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt when striking from behind with your Backstab, Garrote, or Ambush abilities by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Ability_Warrior_WarCry.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Initiative",
+                        "tree":  "Subtlety",
+                        "tier":  3,
+                        "column":  0,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you a 15% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability."
+                                      },
+                                      {
+                                          "description":  "Gives you a 30% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability."
+                                      },
+                                      {
+                                          "description":  "Gives you a 45% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability."
+                                      },
+                                      {
+                                          "description":  "Gives you a 60% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability."
+                                      },
+                                      {
+                                          "description":  "Gives you a 75% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Shadow_Fumble.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Ghostly Strike",
+                        "tree":  "Subtlety",
+                        "tier":  3,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "A strike that deals 125% weapon damage and increases your chance to dodge by 15% for 7 seconds. Awards 1 combo point."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Shadow_Curse.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "50 Energy",
+                                                   "Instant cast",
+                                                   "20 second cooldown",
+                                                   "5 yard range"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Ambush",
+                        "tree":  "Subtlety",
+                        "tier":  3,
+                        "column":  3,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the critical strike chance of your Ambush ability by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Ambush ability by 30%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Ambush ability by 40%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Opportunity",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Ability_Rogue_Ambush.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Garrote",
+                        "tree":  "Subtlety",
+                        "tier":  3,
+                        "column":  2,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the duration of your Garrote ability by 3 seconds, but reduces the damage by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Garrote ability by 6 seconds, but reduces the damage by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Opportunity",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Ability_Rogue_Garrote.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Sap",
+                        "tree":  "Subtlety",
+                        "tier":  4,
+                        "column":  3,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Adds a 30% chance to return to stealth mode after using your Sap ability."
+                                      },
+                                      {
+                                          "description":  "Adds a 60% chance to return to stealth mode after using your Sap ability."
+                                      },
+                                      {
+                                          "description":  "Adds a 90% chance to return to stealth mode after using your Sap ability."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Ability_Sap.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Rupture",
+                        "tree":  "Subtlety",
+                        "tier":  4,
+                        "column":  2,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage of dealt by your Rupture ability by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage of dealt by your Rupture ability by 20%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage of dealt by your Rupture ability by 30%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Ability_Rogue_Rupture.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Vanish",
+                        "tree":  "Subtlety",
+                        "tier":  4,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your movement speed while vanished by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases your movement speed while vanished by 20%."
+                                      },
+                                      {
+                                          "description":  "Increases your movement speed while vanished by 30%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Ability_Vanish.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Preparation",
+                        "tree":  "Subtlety",
+                        "tier":  5,
+                        "column":  0,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "When activated, this ability immediately finishes the cooldown on your other Rogue abilities."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Shadow_AntiShadow.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "Instant cast",
+                                                   "10 minute cooldown"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Cheap Shot",
+                        "tree":  "Subtlety",
+                        "tier":  5,
+                        "column":  2,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Energy cost of your Cheap Shot ability by 10."
+                                      },
+                                      {
+                                          "description":  "Reduces the Energy cost of your Cheap Shot ability by 20"
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Ability_CheapShot.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Distract",
+                        "tree":  "Subtlety",
+                        "tier":  5,
+                        "column":  3,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the radius of your Distract ability by 3 yards."
+                                      },
+                                      {
+                                          "description":  "Increases the radius of your Distract ability by 5 yards."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Ability_Rogue_Distract.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Setup",
+                        "tree":  "Subtlety",
+                        "tier":  6,
+                        "column":  1,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you a 15% chance to add a combo point to your target after dodging their attack."
+                                      },
+                                      {
+                                          "description":  "Gives you a 30% chance to add a combo point to your target after dodging their attack."
+                                      },
+                                      {
+                                          "description":  "Gives you a 45% chance to add a combo point to your target after dodging their attack."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Ghostly Strike",
+                                            "points":  1
+                                        }
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Nature_MirrorImage.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Hemorrhage",
+                        "tree":  "Subtlety",
+                        "tier":  6,
+                        "column":  2,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "An instant strike that damages the opponent and causes the target to hermorrhage, increasing any Physical damage dealt to the target by up to 3. Lasts 30 charges or 15 seconds. Awards 1 combo point."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Shadow_LifeDrain.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "35 Energy",
+                                                   "Instant cast",
+                                                   "5 yard range",
+                                                   "Requires Melee Weapon"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Premeditation",
+                        "tree":  "Subtlety",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "When used, adds 2 combo points to your target. The target must become engaged in combat within 5 seconds or the combo points are lost."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Shadow_Possession.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "10 Energy",
+                                                   "1 second cast",
+                                                   "2 minute cooldown",
+                                                   "5 yard range",
+                                                   "Requires Stealth"
+                                               ]
+                                 }
+                    }
+                ]
+}

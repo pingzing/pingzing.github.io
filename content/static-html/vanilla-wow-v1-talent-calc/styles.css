@@ -1,0 +1,422 @@
+:root {
+  --bg: #14110c;
+  --bg-elev: #1e1a13;
+  --bg-panel: #221d15;
+  --fg: #e8dcc3;
+  --fg-dim: #a08f74;
+  --gold: #d4b25a;
+  --gold-dim: #8a7038;
+  --green: #4caf50;
+  --green-dim: #357a38;
+  --red: #c04a4a;
+  --blue: #5590c5;
+  --border: #3c342a;
+  --cell: 56px;
+  --gap: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+  user-select: none;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 20px;
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-size: 18px;
+  margin: 0;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.class-picker {
+  display: flex;
+  gap: 6px;
+}
+
+.class-picker button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    border-color 0.15s,
+    transform 0.1s;
+}
+
+.class-picker button img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: saturate(0.6);
+  transition: filter 0.15s;
+}
+
+.class-picker button:hover img {
+  filter: saturate(1);
+}
+
+.class-picker button.active {
+  border-color: var(--gold);
+}
+
+.class-picker button.active img {
+  filter: saturate(1);
+}
+
+.build-summary {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.points-total {
+  font-size: 16px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.btn {
+  background: var(--bg-panel);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.btn:hover:not(:disabled) {
+  background: #2a2419;
+  border-color: var(--gold-dim);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.trees {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Only the tree-set matching body[data-class] renders. */
+.tree-set {
+  display: none;
+}
+body[data-class="druid"] .tree-set[data-class="druid"],
+body[data-class="hunter"] .tree-set[data-class="hunter"],
+body[data-class="mage"] .tree-set[data-class="mage"],
+body[data-class="paladin"] .tree-set[data-class="paladin"],
+body[data-class="priest"] .tree-set[data-class="priest"],
+body[data-class="rogue"] .tree-set[data-class="rogue"],
+body[data-class="shaman"] .tree-set[data-class="shaman"],
+body[data-class="warlock"] .tree-set[data-class="warlock"],
+body[data-class="warrior"] .tree-set[data-class="warrior"] {
+  display: contents;
+}
+
+body[data-class] #pickPrompt {
+  display: none;
+}
+
+.build-header {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 20px 0;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.tree {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 12px;
+  min-width: 0;
+}
+
+.tree-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tree-header h2 {
+  margin: 0;
+  font-size: 15px;
+  color: var(--gold);
+  flex: 1;
+}
+
+.tree-header .tree-points {
+  font-size: 14px;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.tree-header .reset-tree {
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.tree-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, var(--cell));
+  grid-template-rows: repeat(7, var(--cell));
+  gap: var(--gap);
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.tree-grid .arrows {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.arrow {
+  stroke: var(--gold-dim);
+  fill: var(--gold-dim);
+  stroke-width: 2;
+}
+
+.arrow .arrow-line {
+  stroke-linejoin: miter;
+}
+
+.arrow:not(.satisfied) .arrow-line {
+  stroke-dasharray: 4 3;
+}
+
+.arrow.satisfied {
+  stroke: var(--gold);
+  fill: var(--gold);
+}
+
+.talent {
+  position: relative;
+  width: var(--cell);
+  height: var(--cell);
+  cursor: pointer;
+  z-index: 2;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: transform 0.05s;
+}
+
+.talent img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 3px;
+  filter: grayscale(1) brightness(0.5);
+  transition: filter 0.15s;
+}
+
+.talent.available img {
+  filter: none;
+}
+
+.talent.active {
+  border-color: var(--green);
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.4);
+}
+
+.talent.active img {
+  filter: none;
+}
+
+.talent.maxed {
+  border-color: var(--gold);
+  box-shadow: 0 0 10px rgba(212, 178, 90, 0.6);
+}
+
+.talent.maxed img {
+  filter: brightness(1.1);
+}
+
+.talent.locked {
+  cursor: not-allowed;
+}
+
+.rank-badge {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  background: #000;
+  border: 1px solid var(--border);
+  color: var(--fg);
+  font-size: 11px;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: 700;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.talent.point .rank-badge {
+  color: var(--green);
+}
+
+.talent.maxed .rank-badge {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+}
+
+.talent.available .rank-badge {
+  color: var(--green);
+}
+
+.talent.active .rank-badge {
+  color: var(--green);
+  border-color: var(--green-dim);
+}
+
+.unverified-badge {
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  background: var(--red);
+  color: #fff;
+  font-size: 10px;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: 700;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.tooltip {
+  position: fixed;
+  background: #000;
+  border: 1px solid var(--gold-dim);
+  padding: 10px 12px;
+  max-width: 320px;
+  z-index: 100;
+  pointer-events: none;
+  font-size: 13px;
+  line-height: 1.4;
+  border-radius: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.tooltip .tt-name {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.tooltip .tt-meta {
+  color: var(--fg-dim);
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.tooltip .tt-cast {
+  color: var(--fg);
+  margin-bottom: 6px;
+}
+
+.tooltip .tt-cast .tt-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tooltip .tt-cast .tt-line .r {
+  text-align: right;
+}
+
+.tooltip .tt-rank {
+  margin-top: 6px;
+}
+
+.tooltip .tt-rank-label {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.tooltip .tt-rank.next .tt-rank-label {
+  color: var(--green);
+}
+
+.tooltip .tt-desc {
+  color: var(--fg);
+  margin-top: 2px;
+  white-space: pre-line;
+}
+
+.tooltip .tt-reqs {
+  color: var(--fg-dim);
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.tooltip .tt-req.ok {
+  color: var(--green);
+}
+
+.tooltip .tt-req.bad {
+  color: var(--red);
+}
+
+.tooltip .tt-block {
+  color: var(--red);
+  font-size: 11px;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.placeholder {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--fg-dim);
+  font-size: 15px;
+}
+
+@media (max-width: 900px) {
+  .trees {
+    grid-template-columns: 1fr;
+  }
+}

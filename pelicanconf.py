@@ -30,7 +30,7 @@ ARTICLE_EXCLUDES = ['static-html'] # Don't try to turn anything in these folders
 # Remap locations so that they appear where I want them
 EXTRA_PATH_METADATA = {
     'static-html/mlp-timeline.htm': { 'path': 'mlp-timeline.htm' },
-    'static-html/wedding.html': { 'path': 'wedding.html' }
+    'static-html/wedding.html': {'path': 'wedding.html'},
 }
 
 # Feed generation is usually not desired when developing

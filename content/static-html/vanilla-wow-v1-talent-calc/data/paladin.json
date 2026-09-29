@@ -1,0 +1,1316 @@
+﻿{
+    "class":  "Paladin",
+    "trees":  [
+                  "Holy",
+                  "Protection",
+                  "Retribution"
+              ],
+    "talents":  [
+                    {
+                        "name":  "Improved Holy Light",
+                        "tree":  "Holy",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the amount healed by your Holy Light spell by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount healed by your Holy Light spell by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount healed by your Holy Light spell by 12%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Holy_HolyBolt.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Spiritual Focus",
+                        "tree":  "Holy",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives your Flash of Light and Holy Light spells a 14% chance to not lose casting time when you take damage."
+                                      },
+                                      {
+                                          "description":  "Gives your Flash of Light and Holy Light spells a 28% chance to not lose casting time when you take damage."
+                                      },
+                                      {
+                                          "description":  "Gives your Flash of Light and Holy Light spells a 42% chance to not lose casting time when you take damage."
+                                      },
+                                      {
+                                          "description":  "Gives your Flash of Light and Holy Light spells a 56% chance to not lose casting time when you take damage."
+                                      },
+                                      {
+                                          "description":  "Gives your Flash of Light and Holy Light spells a 70% chance to not lose casting time when you take damage."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Arcane_Blink.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Lay on Hands",
+                        "tree":  "Holy",
+                        "tier":  1,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives the target of your Lay on Hands spell a 15% bonus to their armor value from items for 1 minute."
+                                      },
+                                      {
+                                          "description":  "Gives the target of your Lay on Hands spell a 30% bonus to their armor value from items for 1 minute."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Holy_LayOnHands.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Illumination",
+                        "tree":  "Holy",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "After getting a critical effect from your Flash of Light or Holy Light spell, gives you a 20% chance to gain Mana equal to the base cost of the spell."
+                                      },
+                                      {
+                                          "description":  "After getting a critical effect from your Flash of Light or Holy Light spell, gives you a 40% chance to gain Mana equal to the base cost of the spell."
+                                      },
+                                      {
+                                          "description":  "After getting a critical effect from your Flash of Light or Holy Light spell, gives you a 60% chance to gain Mana equal to the base cost of the spell."
+                                      },
+                                      {
+                                          "description":  "After getting a critical effect from your Flash of Light or Holy Light spell, gives you a 80% chance to gain Mana equal to the base cost of the spell."
+                                      },
+                                      {
+                                          "description":  "After getting a critical effect from your Flash of Light or Holy Light spell, gives you a 100% chance to gain Mana equal to the base cost of the spell."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Holy_GreaterHeal.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Blessing of Wisdom",
+                        "tree":  "Holy",
+                        "tier":  2,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effect of your Blessing of Wisdom by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Blessing of Wisdom by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Blessing of Wisdom by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Blessing of Wisdom by 16%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Blessing of Wisdom by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Holy_SealOfWisdom.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Revelation",
+                        "tree":  "Holy",
+                        "tier":  2,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the cooldown of your Lay on Hands and Divine Intervention spells by 10 minutes."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Lay on Hands and Divine Intervention spells by 20 minutes."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/INV_Misc_Book_07.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Divine Favor",
+                        "tree":  "Holy",
+                        "tier":  3,
+                        "column":  0,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "When activated, gives your next Flash of Light or Holy Light spell a 100% critical effect chance."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Holy_Heal.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "23 Mana",
+                                                   "Instant cast",
+                                                   "2 minute cooldown"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Seal of Righteousness",
+                        "tree":  "Holy",
+                        "tier":  3,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Seal of Righteousness by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Seal of Righteousness by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Seal of Righteousness by 9%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Seal of Righteousness by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Seal of Righteousness by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Ability_ThunderBolt.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Flash of Light",
+                        "tree":  "Holy",
+                        "tier":  3,
+                        "column":  3,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Mana cost of your Flash of Light spell by 4%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Flash of Light spell by 8%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Flash of Light spell by 12%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Holy_FlashHeal.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Divine Wisdom",
+                        "tree":  "Holy",
+                        "tier":  4,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your total Mana by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your total Mana by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your total Mana by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases your total Mana by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases your total Mana by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Improved Blessing of Wisdom",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Nature_Sleep.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Concentration Aura",
+                        "tree":  "Holy",
+                        "tier":  4,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effect of your Concentration Aura by an additional 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Concentration Aura by an additional 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Concentration Aura by an additional 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Holy_MindSooth.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Seal of Light",
+                        "tree":  "Holy",
+                        "tier":  5,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the amount healed by your Seal of Light by 3% and the duration of your Judgement of Light by  6 seconds."
+                                      },
+                                      {
+                                          "description":  "Increases the amount healed by your Seal of Light by 6% and the duration of your Judgement of Light by  6 seconds."
+                                      },
+                                      {
+                                          "description":  "Increases the amount healed by your Seal of Light by 9% and the duration of your Judgement of Light by  6 seconds."
+                                      },
+                                      {
+                                          "description":  "Increases the amount healed by your Seal of Light by 12% and the duration of your Judgement of Light by  6 seconds."
+                                      },
+                                      {
+                                          "description":  "Increases the amount healed by your Seal of Light by 15% and the duration of your Judgement of Light by  6 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Holy_HealingAura.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Sanctity Aura",
+                        "tree":  "Holy",
+                        "tier":  5,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases Holy damage done by party members within 30 yards by 10%. Players may only have one Aura on them per Paladin at any one time."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Improved Seal of Righteousness",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Holy_MindVision.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "Instant cast"
+                                               ]
+                                 }
+                    },
+                    {
+                      "name": "Divine Strength",
+                      "tree": "Holy",
+                      "tier": 6,
+                      "column": 2,
+                      "maxRanks": 5,
+                      "ranks": [
+                        {
+                          "description": "Increases your Strength by 2%."
+                        },
+                        {
+                          "description": "Increases your Strength by 4%."
+                        },
+                        {
+                          "description": "Increases your Strength by 6%."
+                        },
+                        {
+                          "description": "Increases your Strength by 8%."
+                        },
+                        {
+                          "description": "Increases your Strength by 10%."
+                        }
+                      ],
+                      "prereqs": [],
+                      "treePointsRequired": 25,
+                      "icon": "icons/Ability_GolemThunderClap.png",
+                      "cast": {
+                        "notes": []
+                      }
+                    },
+                    {
+                        "name":  "Holy Shock",
+                        "tree":  "Holy",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Blasts the target with Holy energy, causing 205 to 219 Holy damage."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Sanctity Aura",
+                                            "points":  1
+                                        }
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Holy_SearingLight.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "320 Mana",
+                                                   "Instant cast",
+                                                   "30 second cooldown",
+                                                   "20 yard range"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Devotion Aura",
+                        "tree":  "Protection",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the armor bonus of your Devotion Aura by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the armor bonus of your Devotion Aura by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the armor bonus of your Devotion Aura by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the armor bonus of your Devotion Aura by 20%."
+                                      },
+                                      {
+                                          "description":  "Increases the armor bonus of your Devotion Aura by 25%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Holy_DevotionAura.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Redoubt",
+                        "tree":  "Protection",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your chance to block attacks with your shield by 6% after being the victim of a critical strike.  Lasts 10 seconds or 5 blocks."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to block attacks with your shield by 12% after being the victim of a critical strike.  Lasts 10 seconds or 5 blocks."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to block attacks with your shield by 18% after being the victim of a critical strike.  Lasts 10 seconds or 5 blocks."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to block attacks with your shield by 24% after being the victim of a critical strike.  Lasts 10 seconds or 5 blocks."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to block attacks with your shield by 30% after being the victim of a critical strike.  Lasts 10 seconds or 5 blocks."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Ability_Defend.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Blessing of Protection",
+                        "tree":  "Protection",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the cooldown of your Blessing of Protection by 60 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Blessing of Protection by 120 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Holy_SealOfProtection.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Toughness",
+                        "tree":  "Protection",
+                        "tier":  2,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your armor value from items by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your armor value from items by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your armor value from items by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases your armor value from items by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases your armor value from items by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Holy_Devotion.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Blessing of Sanctuary",
+                        "tree":  "Protection",
+                        "tier":  3,
+                        "column":  0,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Places a Blessing on the friendly target, reducing damage dealt from all sources by 7 for 5 minutes. Players may only have one Blessing on them per Paladin at any one time."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Nature_LightningShield.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "45 Mana",
+                                                   "Instant cast",
+                                                   "30 yard range"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Seal of Fury",
+                        "tree":  "Protection",
+                        "tier":  3,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the amount of threat generated by your Seal of Fury and Judgement of Fury by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of threat generated by your Seal of Fury and Judgement of Fury by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of threat generated by your Seal of Fury and Judgement of Fury by 9%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of threat generated by your Seal of Fury and Judgement of Fury by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of threat generated by your Seal of Fury and Judgement of Fury by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Holy_SealOfFury.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Shield Specialization",
+                        "tree":  "Protection",
+                        "tier":  3,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the amount of damage absorbed by your shield by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of damage absorbed by your shield by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of damage absorbed by your shield by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of damage absorbed by your shield by 20%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of damage absorbed by your shield by 25%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/INV_Shield_06.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Blessing of Freedom",
+                        "tree":  "Protection",
+                        "tier":  3,
+                        "column":  3,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the duration of your Blessing of Freedom by 1 second."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Blessing of Freedom by 2 seconds."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Blessing of Freedom by 3 seconds."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Blessing of Freedom by 4 seconds."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Blessing of Freedom by 5 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Holy_SealOfValor.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Seal of Justice",
+                        "tree":  "Protection",
+                        "tier":  4,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the chance that your Seal of Justice will stun the opponent by 13%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance that your Seal of Justice will stun the opponent by 27%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance that your Seal of Justice will stun the opponent by 40%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance that your Seal of Justice will stun the opponent by 53%."
+                                      },
+                                      {
+                                          "description":  "Increases the chance that your Seal of Justice will stun the opponent by 67%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Holy_SealOfWrath.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Reckoning",
+                        "tree":  "Protection",
+                        "tier":  5,
+                        "column":  0,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you a 20% chance to gain an extra attack after being the victim of a critical strike."
+                                      },
+                                      {
+                                          "description":  "Gives you a 40% chance to gain an extra attack after being the victim of a critical strike."
+                                      },
+                                      {
+                                          "description":  "Gives you a 60% chance to gain an extra attack after being the victim of a critical strike."
+                                      },
+                                      {
+                                          "description":  "Gives you a 80% chance to gain an extra attack after being the victim of a critical strike."
+                                      },
+                                      {
+                                          "description":  "Gives you a 100% chance to gain an extra attack after being the victim of a critical strike."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Holy_BlessingOfStrength.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Holy Shield",
+                        "tree":  "Protection",
+                        "tier":  5,
+                        "column":  2,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases chance to block by 30% for 10 seconds and deals 50 Holy damage for each attack blocked while active. Each block expends a charge. 4 charges."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Shield Specialization",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Holy_BlessingOfProtection.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "140 Mana",
+                                                   "Instant cast",
+                                                   "10 second cooldown",
+                                                   "Requires Shields"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Blessing of Salvation",
+                        "tree":  "Protection",
+                        "tier":  5,
+                        "column":  3,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the duration of your Blessing of Salvation by 5 minutes."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Blessing of Salvation by 10 minutes."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Holy_SealOfSalvation.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "One-Handed Weapon Specialization",
+                        "tree":  "Protection",
+                        "tier":  6,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage you deal with one-handed melee weapons by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage you deal with one-handed melee weapons by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage you deal with one-handed melee weapons by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage you deal with one-handed melee weapons by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage you deal with one-handed melee weapons by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/INV_Sword_20.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Repentance",
+                        "tree":  "Protection",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Puts the enemy target in a state of meditation for up to 6 seconds. Any damage caused will awaken the target. Only works against Humanoids."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Improved Seal of Justice",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Holy_PrayerOfHealing.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "60 Mana",
+                                                   "Instant cast",
+                                                   "1 minute cooldown",
+                                                   "20 yard range"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Blessing of Might",
+                        "tree":  "Retribution",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Blessing of Might by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Blessing of Might by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Blessing of Might by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Blessing of Might by 16%."
+                                      },
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Blessing of Might by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Holy_FistOfJustice.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Benediction",
+                        "tree":  "Retribution",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Mana cost of your Retribution spells by 3%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Retribution spells by 6%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Retribution spells by 9%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Retribution spells by 12%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Retribution spells by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Frost_WindWalkOn.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Two-Handed Weapon Specialization",
+                        "tree":  "Retribution",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage you deal with two-handed melee weapons by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage you deal with two-handed melee weapons by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage you deal with two-handed melee weapons by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage you deal with two-handed melee weapons by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage you deal with two-handed melee weapons by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/INV_Hammer_04.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Seal of the Crusader",
+                        "tree":  "Retribution",
+                        "tier":  2,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Seal of the Crusader and the Holy damage increase of your Judgement of the Crusader by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Seal of the Crusader and the Holy damage increase of your Judgement of the Crusader by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Seal of the Crusader and the Holy damage increase of your Judgement of the Crusader by 9%."
+                                      },
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Seal of the Crusader and the Holy damage increase of your Judgement of the Crusader by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Seal of the Crusader and the Holy damage increase of your Judgement of the Crusader by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Holy_HolySmite.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Vengeance",
+                        "tree":  "Retribution",
+                        "tier":  3,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you a 3% bonus to Physical and Holy damage you deal for 8 seconds after dealing a critical strike."
+                                      },
+                                      {
+                                          "description":  "Gives you a 6% bonus to Physical and Holy damage you deal for 8 seconds after dealing a critical strike."
+                                      },
+                                      {
+                                          "description":  "Gives you a 9% bonus to Physical and Holy damage you deal for 8 seconds after dealing a critical strike."
+                                      },
+                                      {
+                                          "description":  "Gives you a 12% bonus to Physical and Holy damage you deal for 8 seconds after dealing a critical strike."
+                                      },
+                                      {
+                                          "description":  "Gives you a 15% bonus to Physical and Holy damage you deal for 8 seconds after dealing a critical strike."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Ability_Racial_Avatar.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Deflection",
+                        "tree":  "Retribution",
+                        "tier":  3,
+                        "column":  0,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your Parry chance by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases your Parry chance by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your Parry chance by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your Parry chance by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your Parry chance by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Ability_Parry.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Seal of Command",
+                        "tree":  "Retribution",
+                        "tier":  3,
+                        "column":  2,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Fills the Paladin with the spirit of command for 30 seconds, giving the Paladin a chance to deal additional Holy damage equal to the damage of the Paladin\u0027s weapon. Only one Seal can be active on the Paladin at any one time."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Ability_Warrior_InnerRage.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "55 Mana",
+                                                   "Instant cast"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Anticipation",
+                        "tree":  "Retribution",
+                        "tier":  3,
+                        "column":  3,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your Defense skill by 2."
+                                      },
+                                      {
+                                          "description":  "Increases your Defense skill by 4"
+                                      },
+                                      {
+                                          "description":  "Increases your Defense skill by 6"
+                                      },
+                                      {
+                                          "description":  "Increases your Defense skill by 8"
+                                      },
+                                      {
+                                          "description":  "Increases your Defense skill by 10"
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Nature_Invisibilty.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Retribution Aura",
+                        "tree":  "Retribution",
+                        "tier":  4,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Retribution Aura by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Retribution Aura by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Retribution Aura by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Retribution Aura by 20%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Retribution Aura by 25%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Seal of Command",
+                                            "points":  1
+                                        }
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Holy_AuraOfLight.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Consecration",
+                        "tree":  "Retribution",
+                        "tier":  5,
+                        "column":  2,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Consecrates the land beneath the Paladin, doing 120 Holy damage over 8 seconds to enemies who enter the area."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Holy_InnerFire.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "235 Mana",
+                                                   "Instant cast",
+                                                   "8 second cooldown"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Precision",
+                        "tree":  "Retribution",
+                        "tier":  5,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your chance to hit with melee weapons by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to hit with melee weapons by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to hit with melee weapons by 3%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Deflection",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Ability_Rogue_Ambush.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Conviction",
+                        "tree":  "Retribution",
+                        "tier":  6,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with melee weapons by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with melee weapons by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with melee weapons by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with melee weapons by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to get a critical strike with melee weapons by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Vengeance",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Holy_RighteousnessAura.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Blessing of Kings",
+                        "tree":  "Retribution",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Places a Blessing on the friendly target, increasing total stats by 10% for 5 minutes. Players may only have one Blessing on them per Paladin at any one time."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Magic_MageArmor.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "75 Mana",
+                                                   "Instant cast",
+                                                   "30 yard range"
+                                               ]
+                                 }
+                    }
+                ]
+}

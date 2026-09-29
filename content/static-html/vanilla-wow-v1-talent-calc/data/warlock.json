@@ -1,0 +1,1469 @@
+﻿{
+    "class":  "Warlock",
+    "trees":  [
+                  "Affliction",
+                  "Demonology",
+                  "Destruction"
+              ],
+    "talents":  [
+                    {
+                        "name":  "Suppression",
+                        "tree":  "Affliction",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the chance for enemies to resist your Affliction spells by 2%."
+                                      },
+                                      {
+                                          "description":  "Reduces the chance for enemies to resist your Affliction spells by 4%."
+                                      },
+                                      {
+                                          "description":  "Reduces the chance for enemies to resist your Affliction spells by 6%."
+                                      },
+                                      {
+                                          "description":  "Reduces the chance for enemies to resist your Affliction spells by 8%."
+                                      },
+                                      {
+                                          "description":  "Reduces the chance for enemies to resist your Affliction spells by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Shadow_UnsummonBuilding.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Corruption",
+                        "tree":  "Affliction",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the casting time of your Corruption spell by 0.4 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Corruption spell by 0.8 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Corruption spell by 1.2 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Corruption spell by 1.6 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Corruption spell by 2 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Shadow_AbominationExplosion.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Curse of Weakness",
+                        "tree":  "Affliction",
+                        "tier":  2,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effect of your Curse of Weakness by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Curse of Weakness by 13%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Curse of Weakness by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Shadow_CurseOfMannoroth.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Drain Soul",
+                        "tree":  "Affliction",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you a 50% chance to get a 100% increase to your Mana regeneration for 10 seconds if the target dies while while you drain its soul. In addition, your Mana may continue to regenerate while casting at 50% of normal."
+                                      },
+                                      {
+                                          "description":  "Gives you a 100% chance to get a 100% increase to your Mana regeneration for 10 seconds if the target dies while while you drain its soul. In addition, your Mana may continue to regenerate while casting at 50% of normal."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Shadow_Haunting.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Life Tap",
+                        "tree":  "Affliction",
+                        "tier":  2,
+                        "column":  2,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the amount of Mana awarded by your Life Tap spell by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of Mana awarded by your Life Tap spell by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Shadow_BurningSpirit.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Drain Life",
+                        "tree":  "Affliction",
+                        "tier":  2,
+                        "column":  3,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the Health drained by your Drain Life spell by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the Health drained by your Drain Life spell by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the Health drained by your Drain Life spell by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the Health drained by your Drain Life spell by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the Health drained by your Drain Life spell by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Shadow_LifeDrain02.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Curse of Agony",
+                        "tree":  "Affliction",
+                        "tier":  3,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Curse of Agony by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Curse of Agony by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Curse of Agony by 6%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Shadow_CurseOfSargeras.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Fel Concentration",
+                        "tree":  "Affliction",
+                        "tier":  3,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you a 14% chance to avoid interruption caused by damage while channelling the Drain Life, Drain Mana, or Drain Soul spell."
+                                      },
+                                      {
+                                          "description":  "Gives you a 28% chance to avoid interruption caused by damage while channelling the Drain Life, Drain Mana, or Drain Soul spell."
+                                      },
+                                      {
+                                          "description":  "Gives you a 42% chance to avoid interruption caused by damage while channelling the Drain Life, Drain Mana, or Drain Soul spell."
+                                      },
+                                      {
+                                          "description":  "Gives you a 56% chance to avoid interruption caused by damage while channelling the Drain Life, Drain Mana, or Drain Soul spell."
+                                      },
+                                      {
+                                          "description":  "Gives you a 70% chance to avoid interruption caused by damage while channelling the Drain Life, Drain Mana, or Drain Soul spell."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Shadow_FingerOfDeath.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Amplify Curse",
+                        "tree":  "Affliction",
+                        "tier":  3,
+                        "column":  2,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effect of your next Curse of Weakness or Curse of Agony by 50%, or your next Curse of Exhaustion by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Shadow_Contagion.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "Instant cast",
+                                                   "3 minute cooldown"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Grim Reach",
+                        "tree":  "Affliction",
+                        "tier":  4,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the range of your Affliction spells by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the range of your Affliction spells by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Shadow_CallofBone.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Nightfall",
+                        "tree":  "Affliction",
+                        "tier":  4,
+                        "column":  1,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives your Corruption and Drain Life spells a 2% chance to cause you to enter a Shadow Trance state after damaging the opponent. The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%."
+                                      },
+                                      {
+                                          "description":  "Gives your Corruption and Drain Life spells a 3% chance to cause you to enter a Shadow Trance state after damaging the opponent. The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Shadow_Twilight.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Drain Mana",
+                        "tree":  "Affliction",
+                        "tier":  4,
+                        "column":  3,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Causes 15% of the Mana drained by your Drain Mana spell to damage the opponent."
+                                      },
+                                      {
+                                          "description":  "Causes 30% of the Mana drained by your Drain Mana spell to damage the opponent."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Shadow_SiphonMana.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Siphon Life",
+                        "tree":  "Affliction",
+                        "tier":  5,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Transfers 13 health from the target to the caster every 3 seconds. Lasts 30 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Shadow_Requiem.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "150 Mana",
+                                                   "1.5 second cast",
+                                                   "30 yard range"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Curse of Exhaustion",
+                        "tree":  "Affliction",
+                        "tier":  5,
+                        "column":  2,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the target\u0027s speed to 90% of normal for 12 seconds. Only one Curse per Warlock can be active on any one target."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Amplify Curse",
+                                            "points":  1
+                                        }
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Shadow_GrimWard.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "26 Mana",
+                                                   "Instant cast",
+                                                   "30 yard range"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Curse of Exhaustion",
+                        "tree":  "Affliction",
+                        "tier":  5,
+                        "column":  3,
+                        "maxRanks":  4,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the speed reduction of your Curse of Exhaustion by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the speed reduction of your Curse of Exhaustion by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the speed reduction of your Curse of Exhaustion by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the speed reduction of your Curse of Exhaustion by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Curse of Exhaustion",
+                                            "points":  1
+                                        }
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Shadow_GrimWard.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Shadow Mastery",
+                        "tree":  "Affliction",
+                        "tier":  6,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage dealt or life drained by your Shadow spells by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt or life drained by your Shadow spells by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt or life drained by your Shadow spells by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt or life drained by your Shadow spells by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt or life drained by your Shadow spells by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Siphon Life",
+                                            "points":  1
+                                        }
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Shadow_ShadeTrueSight.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Dark Pact",
+                        "tree":  "Affliction",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Drains 150 of your pet\u0027s Mana, returning 100% to you."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Shadow_DarkRitual.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "Instant cast",
+                                                   "20 yard range"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Healthstone",
+                        "tree":  "Demonology",
+                        "tier":  1,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the amount of Health restored by your Healthstone by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of Health restored by your Healthstone by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/INV_Stone_04.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Imp",
+                        "tree":  "Demonology",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effect of your Imp\u0027s Firebolt, Fire Shield, and Blood Pact spells by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Imp\u0027s Firebolt, Fire Shield, and Blood Pact spells by 20%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Imp\u0027s Firebolt, Fire Shield, and Blood Pact spells by 30%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Shadow_SummonImp.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Demonic Embrace",
+                        "tree":  "Demonology",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your total Stamina by 3%, but reduces your total Spirit by  1%."
+                                      },
+                                      {
+                                          "description":  "Increases your total Stamina by 6%, but reduces your total Spirit by  1%."
+                                      },
+                                      {
+                                          "description":  "Increases your total Stamina by 9%, but reduces your total Spirit by  1%."
+                                      },
+                                      {
+                                          "description":  "Increases your total Stamina by 12%, but reduces your total Spirit by  1%."
+                                      },
+                                      {
+                                          "description":  "Increases your total Stamina by 15%, but reduces your total Spirit by  1%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Shadow_Metamorphosis.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Health Funnel",
+                        "tree":  "Demonology",
+                        "tier":  2,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the amount of Health transferred by your Health Funnel spell by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of Health transferred by your Health Funnel spell by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Shadow_LifeDrain.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Voidwalker",
+                        "tree":  "Demonology",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effectiveness of your Voidwalker\u0027s Torment, Consume Shadows, and Suffering spells by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the effectiveness of your Voidwalker\u0027s Torment, Consume Shadows, and Suffering spells by 16%."
+                                      },
+                                      {
+                                          "description":  "Increases the effectiveness of your Voidwalker\u0027s Torment, Consume Shadows, and Suffering spells by 25%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Shadow_SummonVoidWalker.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Fel Intellect",
+                        "tree":  "Demonology",
+                        "tier":  2,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the maximum Mana of your Imp, Voidwalker, Succubus, and Felhunter by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the maximum Mana of your Imp, Voidwalker, Succubus, and Felhunter by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the maximum Mana of your Imp, Voidwalker, Succubus, and Felhunter by 9%."
+                                      },
+                                      {
+                                          "description":  "Increases the maximum Mana of your Imp, Voidwalker, Succubus, and Felhunter by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the maximum Mana of your Imp, Voidwalker, Succubus, and Felhunter by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Holy_MagicalSentry.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Fel Domination",
+                        "tree":  "Demonology",
+                        "tier":  3,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Your next Imp, Voidwalker, Succubus, or Felhunter Summon spell has its casting time reduced by 5.5 seconds and its Mana cost reduced by  50%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Nature_RemoveCurse.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "Instant cast",
+                                                   "15 minute cooldown"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Fel Stamina",
+                        "tree":  "Demonology",
+                        "tier":  3,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the maximum Health of your Imp, Voidwalker, Succubus, and Felhunter by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the maximum Health of your Imp, Voidwalker, Succubus, and Felhunter by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the maximum Health of your Imp, Voidwalker, Succubus, and Felhunter by 9%."
+                                      },
+                                      {
+                                          "description":  "Increases the maximum Health of your Imp, Voidwalker, Succubus, and Felhunter by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the maximum Health of your Imp, Voidwalker, Succubus, and Felhunter by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Fel Intellect",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Shadow_AntiShadow.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Succubus",
+                        "tree":  "Demonology",
+                        "tier":  3,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effect of your Succubus\u0027 Last of Pain and Soothing Kiss spells by 8%, and increases the duration of your Succubus\u0027 Seduction and Lesser Invisibility spells by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Succubus\u0027 Last of Pain and Soothing Kiss spells by 16%, and increases the duration of your Succubus\u0027 Seduction and Lesser Invisibility spells by 16%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Succubus\u0027 Last of Pain and Soothing Kiss spells by 25%, and increases the duration of your Succubus\u0027 Seduction and Lesser Invisibility spells by 25%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Shadow_SummonSuccubus.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Master Summoner",
+                        "tree":  "Demonology",
+                        "tier":  4,
+                        "column":  1,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the casting time of your Imp, Voidwalker, Succubus, and Felhunter Summoning spells by 2 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Imp, Voidwalker, Succubus, and Felhunter Summoning spells by 4 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Fel Domination",
+                                            "points":  1
+                                        }
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Shadow_ImpPhaseShift.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Master Conjuror",
+                        "tree":  "Demonology",
+                        "tier":  4,
+                        "column":  3,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Mana cost and casting time of your Stone creation spells by 20%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost and casting time of your Stone creation spells by 40%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Shadow_SoulGem.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Demonic Sacrifice",
+                        "tree":  "Demonology",
+                        "tier":  5,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "When activated, sacrifices your summoned demon to grant you an effect that lasts 30 minutes. The effect is cancelled if any Demon is summoned.\n\nImp: Increases your Fire damage by 15%.\n\nVoidwalker: Increases your maximum Health by 15%.\n\nSuccubus: Increases your Shadow damage by 15%.\n\nFelhunter: Increases your maximum Mana by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Shadow_PsychicScream.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Firestone",
+                        "tree":  "Demonology",
+                        "tier":  5,
+                        "column":  3,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Firestone by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Firestone by 30%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/INV_Ammo_FireTar.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Enslave Demon",
+                        "tree":  "Demonology",
+                        "tier":  5,
+                        "column":  0,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 2%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 4%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 6%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 8%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Shadow_UnsummonBuilding.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Unholy Power",
+                        "tree":  "Demonology",
+                        "tier":  6,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Voidwalker, Succubus, and Felhunter\u0027s melee attacks by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Voidwalker, Succubus, and Felhunter\u0027s melee attacks by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Voidwalker, Succubus, and Felhunter\u0027s melee attacks by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Voidwalker, Succubus, and Felhunter\u0027s melee attacks by 16%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Voidwalker, Succubus, and Felhunter\u0027s melee attacks by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Fel Stamina",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Shadow_ShadowWordDominate.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Soul Link",
+                        "tree":  "Demonology",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "When active, 50% of all damage taken is split with your summoned demon. Lasts 30 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Demonic Sacrifice",
+                                            "points":  1
+                                        }
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Shadow_GatherShadows.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "99 Mana",
+                                                   "Instant cast",
+                                                   "40 yard range"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Spellstone",
+                        "tree":  "Demonology",
+                        "tier":  7,
+                        "column":  2,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the amount of damage absorbed by your Spellstone by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of damage absorbed by your Spellstone by 30%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/INV_Misc_Gem_Sapphire_01.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Shadow Bolt",
+                        "tree":  "Destruction",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Your Shadow Bolt critical strikes increase the next 4 sources of Shadow damage dealt to the target by 4%."
+                                      },
+                                      {
+                                          "description":  "Your Shadow Bolt critical strikes increase the next 4 sources of Shadow damage dealt to the target by 8%."
+                                      },
+                                      {
+                                          "description":  "Your Shadow Bolt critical strikes increase the next 4 sources of Shadow damage dealt to the target by 12%."
+                                      },
+                                      {
+                                          "description":  "Your Shadow Bolt critical strikes increase the next 4 sources of Shadow damage dealt to the target by 16%."
+                                      },
+                                      {
+                                          "description":  "Your Shadow Bolt critical strikes increase the next 4 sources of Shadow damage dealt to the target by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Shadow_ShadowBolt.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Cataclysm",
+                        "tree":  "Destruction",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Mana cost of your Destruction spells by 1%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Destruction spells by 2%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Destruction spells by 3%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Destruction spells by 4%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Destruction spells by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Fire_WindsofWoe.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Bane",
+                        "tree":  "Destruction",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the casting time of your Shadow Bolt and Immolate spells by 0.1 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Shadow Bolt and Immolate spells by 0.2 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Shadow Bolt and Immolate spells by 0.3 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Shadow Bolt and Immolate spells by 0.4 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Shadow Bolt and Immolate spells by 0.5 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Shadow_DeathPact.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Aftermath",
+                        "tree":  "Destruction",
+                        "tier":  2,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives your Destruction spells a 2% chance to daze the target for 5 seconds."
+                                      },
+                                      {
+                                          "description":  "Gives your Destruction spells a 4% chance to daze the target for 5 seconds."
+                                      },
+                                      {
+                                          "description":  "Gives your Destruction spells a 6% chance to daze the target for 5 seconds."
+                                      },
+                                      {
+                                          "description":  "Gives your Destruction spells a 8% chance to daze the target for 5 seconds."
+                                      },
+                                      {
+                                          "description":  "Gives your Destruction spells a 10% chance to daze the target for 5 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Fire_Fire.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Firebolt",
+                        "tree":  "Destruction",
+                        "tier":  3,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the casting time of your Imp\u0027s firebolt spell by 0.5 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Imp\u0027s firebolt spell by 1 second."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Fire_FireBolt.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Lash of Pain",
+                        "tree":  "Destruction",
+                        "tier":  3,
+                        "column":  1,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the cooldown of your Succubus\u0027 Last of Pain spell by 3 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Succubus\u0027 Last of Pain spell by 6 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Holy_RemoveCurse.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Devastation",
+                        "tree":  "Destruction",
+                        "tier":  3,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the critical strike chance of your Destruction spells by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Destruction spells by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Destruction spells by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Destruction spells by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Destruction spells by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Fire_FlameShock.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Shadowburn",
+                        "tree":  "Destruction",
+                        "tier":  3,
+                        "column":  3,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Instantly blasts the target with 87 to 99 Shadow damage. Requires 1 Soul Shard. If the target dies from Shadowburn, and yields experience, the caster gains a Soul Shard."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Shadow_ScourgeBuild.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "105 Mana",
+                                                   "Instant cast",
+                                                   "15 second cooldown",
+                                                   "20 yard range",
+                                                   "Reagents: Soul Shard"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Intensity",
+                        "tree":  "Destruction",
+                        "tier":  4,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you a 35% chance to resist interruptiong caused by damage while channeling the Rain of Fire or Hellfire spell."
+                                      },
+                                      {
+                                          "description":  "Gives you a 70% chance to resist interruptiong caused by damage while channeling the Rain of Fire or Hellfire spell."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Fire_LavaSpawn.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Destructive Reach",
+                        "tree":  "Destruction",
+                        "tier":  4,
+                        "column":  1,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the range of your Destruction spells by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the range of your Destruction spells by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Shadow_CorpseExplode.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Searing Pain",
+                        "tree":  "Destruction",
+                        "tier":  4,
+                        "column":  3,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the critical strike chance of your Searing Pain spell by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Searing Pain spell by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Searing Pain spell by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Searing Pain spell by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Searing Pain spell by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Fire_SoulBurn.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Pyroclasm",
+                        "tree":  "Destruction",
+                        "tier":  5,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives your Rain of Fire and Hellfire spells a 13% chance to stun the target for 3 seconds."
+                                      },
+                                      {
+                                          "description":  "Gives your Rain of Fire and Hellfire spells a 26% chance to stun the target for 3 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Intensity",
+                                            "points":  2
+                                        }
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Fire_Volcano.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Immolate",
+                        "tree":  "Destruction",
+                        "tier":  5,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the initial damage of your Immolate spell by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the initial damage of your Immolate spell by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the initial damage of your Immolate spell by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the initial damage of your Immolate spell by 20%."
+                                      },
+                                      {
+                                          "description":  "Increases the initial damage of your Immolate spell by 25%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Fire_Immolation.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Ruin",
+                        "tree":  "Destruction",
+                        "tier":  5,
+                        "column":  2,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the critical strike damage bonus of your Destruction spells by 100%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Devastation",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Shadow_ShadowWordPain.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Inferno",
+                        "tree":  "Destruction",
+                        "tier":  6,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Fire spells by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Fire spells by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Fire spells by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Fire spells by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Fire spells by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Fire_SelfDestruct.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Conflagrate",
+                        "tree":  "Destruction",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Ignite a target that is already afflicted by Immolate, dealing 197 to 251 damage and consuming the Immolate spell."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Improved Immolate",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Fire_Fireball.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "165 Mana",
+                                                   "1.5 second cast",
+                                                   "10 second cooldown",
+                                                   "20 yard range"
+                                               ]
+                                 }
+                    }
+                ]
+}

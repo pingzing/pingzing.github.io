@@ -1,0 +1,1459 @@
+﻿{
+    "class":  "Shaman",
+    "trees":  [
+                  "Elemental Combat",
+                  "Enhancement",
+                  "Restoration"
+              ],
+    "talents":  [
+                    {
+                        "name":  "Concussion",
+                        "tree":  "Elemental Combat",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Shock spells by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Shock spells by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Shock spells by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Shock spells by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Shock spells by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Fire_Fireball.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Lightning Bolt",
+                        "tree":  "Elemental Combat",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Mana cost of your Lightning Bolt spell by 3%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Lightning Bolt spell by 6%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Lightning Bolt spell by 9%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Lightning Bolt spell by 12%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Lightning Bolt spell by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Nature_Lightning.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Stoneclaw Totem",
+                        "tree":  "Elemental Combat",
+                        "tier":  2,
+                        "column":  0,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the Health of your Stoneclaw Totem by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the Health of your Stoneclaw Totem by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the Health of your Stoneclaw Totem by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the Health of your Stoneclaw Totem by 20%."
+                                      },
+                                      {
+                                          "description":  "Increases the Health of your Stoneclaw Totem by 25%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Nature_StoneClawTotem.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Convection",
+                        "tree":  "Elemental Combat",
+                        "tier":  2,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Mana cost of your Shock spells by 2%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Shock spells by 4%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Shock spells by 6%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Shock spells by 8%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Shock spells by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Concussion",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Nature_WispSplode.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Call of Flame",
+                        "tree":  "Elemental Combat",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Fire Totems by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Fire Totems by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Fire Totems by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Fire Totems by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Fire Totems by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Fire_Immolation.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Searing Totem",
+                        "tree":  "Elemental Combat",
+                        "tier":  2,
+                        "column":  3,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the duration of your Searing Totem by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Searing Totem by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Fire_SearingTotem.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Elemental Focus",
+                        "tree":  "Elemental Combat",
+                        "tier":  3,
+                        "column":  0,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you a 10% chance to enter a Clearcasting state after casting any Fire, Frost, or Nature damage spell. The Clearcasting state reduces the mana cost of your next damage spell by 100%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Frost_ManaBurn.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Reverberation",
+                        "tree":  "Elemental Combat",
+                        "tier":  3,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the cooldown of your Shock spells by 0.2 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Shock spells by 0.4 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Shock spells by 0.6 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Shock spells by 0.8 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Shock spells by 1 second."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Convection",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Frost_FrostWard.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Call of Thunder",
+                        "tree":  "Elemental Combat",
+                        "tier":  3,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the critical strike chance of your Lightning spells by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Lightning spells by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Lightning spells by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Lightning spells by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical strike chance of your Lightning spells by 6%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Nature_CallStorm.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Fire Nova Totem",
+                        "tree":  "Elemental Combat",
+                        "tier":  4,
+                        "column":  2,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the delay before your Fire Nova Totem activates by 1 second."
+                                      },
+                                      {
+                                          "description":  "Reduces the delay before your Fire Nova Totem activates by 2 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Fire_SealOfFire.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Elemental Fury",
+                        "tree":  "Elemental Combat",
+                        "tier":  5,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the critical strike damage done by your Fire, Frost, and Nature spells by 100%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Call of Thunder",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Fire_Volcano.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Magma Totem",
+                        "tree":  "Elemental Combat",
+                        "tier":  5,
+                        "column":  2,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Mana cost of your Magma Totem by 10%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your Magma Totem by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Fire_SelfDestruct.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Lightning Mastery",
+                        "tree":  "Elemental Combat",
+                        "tier":  6,
+                        "column":  0,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.2 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.4 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.6 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 0.8 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the cast time of your Lightning Bolt and Chain Lightning spells by 1 second."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Lightning_LightningBolt01.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Chain Lightning",
+                        "tree":  "Elemental Combat",
+                        "tier":  6,
+                        "column":  2,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage dealt by your Chain Lightning spell by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage dealt by your Chain Lightning spell by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Nature_ChainLightning.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Elemental Mastery",
+                        "tree":  "Elemental Combat",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "When activated, this spell gives your next Fire, Frost, or Nature damage spell a 100% critical strike chance."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Elemental Fury",
+                                            "points":  1
+                                        }
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Nature_WispHeal.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "Instant cast",
+                                                   "5 minute cooldown"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Ancestral Knowledge",
+                        "tree":  "Enhancement",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your maximum Mana by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases your maximum Mana by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your maximum Mana by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your maximum Mana by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your maximum Mana by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Shadow_GrimWard.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Shield Specialization",
+                        "tree":  "Enhancement",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your chance to block attacks with a shield by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to block attacks with a shield by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to block attacks with a shield by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to block attacks with a shield by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your chance to block attacks with a shield by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/INV_Shield_06.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Stoneskin Totem",
+                        "tree":  "Enhancement",
+                        "tier":  2,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the amount of damage absorbed by your Stoneskin Totem by 7%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of damage absorbed by your Stoneskin Totem by 14%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of damage absorbed by your Stoneskin Totem by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Nature_StoneSkinTotem.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Thundering Strikes",
+                        "tree":  "Enhancement",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Improves your chance to get a critical strike with your weapon attacks by 1%."
+                                      },
+                                      {
+                                          "description":  "Improves your chance to get a critical strike with your weapon attacks by 2%."
+                                      },
+                                      {
+                                          "description":  "Improves your chance to get a critical strike with your weapon attacks by 3%."
+                                      },
+                                      {
+                                          "description":  "Improves your chance to get a critical strike with your weapon attacks by 4%."
+                                      },
+                                      {
+                                          "description":  "Improves your chance to get a critical strike with your weapon attacks by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Ability_ThunderBolt.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Ghost Wolf",
+                        "tree":  "Enhancement",
+                        "tier":  2,
+                        "column":  2,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the cast time of your Ghost Wolf spell by 1 second."
+                                      },
+                                      {
+                                          "description":  "Reduces the cast time of your Ghost Wolf spell by 2 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Nature_SpiritWolf.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Lightning Shield",
+                        "tree":  "Enhancement",
+                        "tier":  2,
+                        "column":  3,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Lightning Shield orbs by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Lightning Shield orbs by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Lightning Shield orbs by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Nature_LightningShield.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Strength of Earth Totem",
+                        "tree":  "Enhancement",
+                        "tier":  3,
+                        "column":  0,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the amount of Strength raised by your Strength of Earth Totem by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of Strength raised by your Strength of Earth Totem by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of Strength raised by your Strength of Earth Totem by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Nature_EarthBindTotem.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Two-Handed Axes and Maces",
+                        "tree":  "Enhancement",
+                        "tier":  3,
+                        "column":  2,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Allows you to use Two-Handed Axes and Two-Handed Maces."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/INV_Axe_10.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Anticipation",
+                        "tree":  "Enhancement",
+                        "tier":  3,
+                        "column":  3,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your defense skill by 2."
+                                      },
+                                      {
+                                          "description":  "Increases your defense skill by 4"
+                                      },
+                                      {
+                                          "description":  "Increases your defense skill by 6"
+                                      },
+                                      {
+                                          "description":  "Increases your defense skill by 8"
+                                      },
+                                      {
+                                          "description":  "Increases your defense skill by 10"
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Nature_MirrorImage.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Flurry",
+                        "tree":  "Enhancement",
+                        "tier":  4,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your attack speed by 10% for your next 3 swings after dealing a critical strike."
+                                      },
+                                      {
+                                          "description":  "Increases your attack speed by 15% for your next 3 swings after dealing a critical strike."
+                                      },
+                                      {
+                                          "description":  "Increases your attack speed by 20% for your next 3 swings after dealing a critical strike."
+                                      },
+                                      {
+                                          "description":  "Increases your attack speed by 25% for your next 3 swings after dealing a critical strike."
+                                      },
+                                      {
+                                          "description":  "Increases your attack speed by 30% for your next 3 swings after dealing a critical strike."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Thundering Strikes",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Ability_GhoulFrenzy.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Rockbiter Weapon",
+                        "tree":  "Enhancement",
+                        "tier":  4,
+                        "column":  2,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Rockbiter Weapon by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Rockbiter Weapon by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Nature_RockBiter.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Flametongue Weapon",
+                        "tree":  "Enhancement",
+                        "tier":  5,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Flametongue Weapon effect by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Flametongue Weapon effect by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Fire_FlameTounge.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Parry",
+                        "tree":  "Enhancement",
+                        "tier":  5,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives a chance to parry melee attacks."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Ability_Parry.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Frostbrand Weapon",
+                        "tree":  "Enhancement",
+                        "tier":  5,
+                        "column":  2,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the damage done by your Frostbrand Weapon effect by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the damage done by your Frostbrand Weapon effect by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Frost_FrostBrand.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Windfury Weapon",
+                        "tree":  "Enhancement",
+                        "tier":  5,
+                        "column":  3,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Windfury Weapon effect by 11%."
+                                      },
+                                      {
+                                          "description":  "Increases the Attack Power bonus of your Windfury Weapon effect by 22%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Nature_Cyclone.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Toughness",
+                        "tree":  "Enhancement",
+                        "tier":  6,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your armor value from items by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases your armor value from items by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases your armor value from items by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases your armor value from items by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases your armor value from items by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Parry",
+                                            "points":  1
+                                        }
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Holy_Devotion.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Grounding Totem",
+                        "tree":  "Enhancement",
+                        "tier":  6,
+                        "column":  2,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the frequency that your Grounding Totem will absorb a spell by 2 seconds."
+                                      },
+                                      {
+                                          "description":  "Increases the frequency that your Grounding Totem will absorb a spell by 4 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Nature_NullWard.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Stormstrike",
+                        "tree":  "Enhancement",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you an extra attack. In addition, the next 2 sources of Nature damage dealt to the target are increased by 20%. Lasts 12 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Holy_SealOfMight.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "230 Mana",
+                                                   "Instant cast",
+                                                   "25 second cast",
+                                                   "5 yard range"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Grace of Air Totem",
+                        "tree":  "Enhancement",
+                        "tier":  7,
+                        "column":  2,
+                        "maxRanks":  3,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the amount of Agility raised by your Grace of Air Totem by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of Agility raised by your Grace of Air Totem by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the amount of Agility raised by your Grace of Air Totem by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Nature_Windfury.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Healing Wave",
+                        "tree":  "Restoration",
+                        "tier":  1,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the casting time of your Healing Wave spell by 0.1 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Healing Wave spell by 0.2 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Healing Wave spell by 0.3 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Healing Wave spell by 0.4 seconds."
+                                      },
+                                      {
+                                          "description":  "Reduces the casting time of your Healing Wave spell by 0.5 seconds."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Nature_ResistMagic.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Tidal Focus",
+                        "tree":  "Restoration",
+                        "tier":  1,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Mana cost of your healing spells by 1%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your healing spells by 2%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your healing spells by 3%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your healing spells by 4%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your healing spells by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  0,
+                        "icon":  "icons/Spell_Frost_ManaRecharge.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Self-Reincarnation",
+                        "tree":  "Restoration",
+                        "tier":  2,
+                        "column":  0,
+                        "maxRanks":  2,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the cooldown of your Self-Reincarnation spell by 10 minutes."
+                                      },
+                                      {
+                                          "description":  "Reduces the cooldown of your Self-Reincarnation spell by 20 minutes."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Nature_Reincarnation.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Ancestral Healing",
+                        "tree":  "Restoration",
+                        "tier":  2,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases your target\u0027s armor value from items by 5% for 15 seconds after getting a critical effect from one of your healing spells."
+                                      },
+                                      {
+                                          "description":  "Increases your target\u0027s armor value from items by 10% for 15 seconds after getting a critical effect from one of your healing spells."
+                                      },
+                                      {
+                                          "description":  "Increases your target\u0027s armor value from items by 15% for 15 seconds after getting a critical effect from one of your healing spells."
+                                      },
+                                      {
+                                          "description":  "Increases your target\u0027s armor value from items by 20% for 15 seconds after getting a critical effect from one of your healing spells."
+                                      },
+                                      {
+                                          "description":  "Increases your target\u0027s armor value from items by 25% for 15 seconds after getting a critical effect from one of your healing spells."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Nature_UndyingStrength.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Totemic Focus",
+                        "tree":  "Restoration",
+                        "tier":  2,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Reduces the Mana cost of your totems by 2%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your totems by 4%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your totems by 6%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your totems by 8%."
+                                      },
+                                      {
+                                          "description":  "Reduces the Mana cost of your totems by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  5,
+                        "icon":  "icons/Spell_Nature_MoonGlow.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Eventide",
+                        "tree":  "Restoration",
+                        "tier":  3,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the duration of your Healing Stream and Mana Spring totems by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Healing Stream and Mana Spring totems by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Healing Stream and Mana Spring totems by 9%."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Healing Stream and Mana Spring totems by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the duration of your Healing Stream and Mana Spring totems by 15%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Frost_Stun.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Lesser Healing Wave",
+                        "tree":  "Restoration",
+                        "tier":  3,
+                        "column":  3,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Gives you a 15% chance to avoid interruption caused by damage while casting Lesser Healing Wave."
+                                      },
+                                      {
+                                          "description":  "Gives you a 30% chance to avoid interruption caused by damage while casting Lesser Healing Wave."
+                                      },
+                                      {
+                                          "description":  "Gives you a 45% chance to avoid interruption caused by damage while casting Lesser Healing Wave."
+                                      },
+                                      {
+                                          "description":  "Gives you a 60% chance to avoid interruption caused by damage while casting Lesser Healing Wave."
+                                      },
+                                      {
+                                          "description":  "Gives you a 75% chance to avoid interruption caused by damage while casting Lesser Healing Wave."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Nature_HealingWaveLesser.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Combat Endurance",
+                        "tree":  "Restoration",
+                        "tier":  3,
+                        "column":  2,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Allows 10% of your Health regeneration to work while in combat."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  10,
+                        "icon":  "icons/Spell_Nature_AncestralGuardian.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Tidal Mastery",
+                        "tree":  "Restoration",
+                        "tier":  4,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the critical effect chance of your healing and Nature damage spells by 1%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical effect chance of your healing and Nature damage spells by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical effect chance of your healing and Nature damage spells by 3%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical effect chance of your healing and Nature damage spells by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the critical effect chance of your healing and Nature damage spells by 5%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/Spell_Nature_Tranquility.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Healing Stream Totem",
+                        "tree":  "Restoration",
+                        "tier":  4,
+                        "column":  0,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effect of your Healing Stream Totem by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Healing Stream Totem by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Healing Stream Totem by 12%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Healing Stream Totem by 16%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Healing Stream Totem by 20%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Eventide",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  15,
+                        "icon":  "icons/INV_Spear_04.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Improved Mana Spring Totem",
+                        "tree":  "Restoration",
+                        "tier":  5,
+                        "column":  1,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effect of your Mana Spring Totem by 5%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Mana Spring Totem by 10%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Mana Spring Totem by 15%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Mana Spring Totem by 20%."
+                                      },
+                                      {
+                                          "description":  "Increases the effect of your Mana Spring Totem by 25%."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Eventide",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Nature_ManaRegenTotem.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Nature\u0027s Swiftness",
+                        "tree":  "Restoration",
+                        "tier":  5,
+                        "column":  2,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "When activated, your next Nature spell with a casting time less than 10 seconds becomes an instant cast spell."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Tidal Mastery",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  20,
+                        "icon":  "icons/Spell_Nature_RavenForm.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "Instant cast",
+                                                   "3 minute cooldown"
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Purification",
+                        "tree":  "Restoration",
+                        "tier":  6,
+                        "column":  2,
+                        "maxRanks":  5,
+                        "ranks":  [
+                                      {
+                                          "description":  "Increases the effectiveness of your healing spells by 2%."
+                                      },
+                                      {
+                                          "description":  "Increases the effectiveness of your healing spells by 4%."
+                                      },
+                                      {
+                                          "description":  "Increases the effectiveness of your healing spells by 6%."
+                                      },
+                                      {
+                                          "description":  "Increases the effectiveness of your healing spells by 8%."
+                                      },
+                                      {
+                                          "description":  "Increases the effectiveness of your healing spells by 10%."
+                                      }
+                                  ],
+                        "prereqs":  [
+
+                                    ],
+                        "treePointsRequired":  25,
+                        "icon":  "icons/Spell_Frost_WizardMark.png",
+                        "cast":  {
+                                     "notes":  [
+
+                                               ]
+                                 }
+                    },
+                    {
+                        "name":  "Mana Tide Totem",
+                        "tree":  "Restoration",
+                        "tier":  7,
+                        "column":  1,
+                        "maxRanks":  1,
+                        "ranks":  [
+                                      {
+                                          "description":  "Summons a Mana Tide Totem with 5 health at the feet of the caster for 12 seconds that restores 140 mana every 3 seconds to group members within 20 yards."
+                                      }
+                                  ],
+                        "prereqs":  [
+                                        {
+                                            "type":  "talent",
+                                            "name":  "Improved Mana Spring Totem",
+                                            "points":  5
+                                        }
+                                    ],
+                        "treePointsRequired":  30,
+                        "icon":  "icons/Spell_Frost_SummonWaterElemental.png",
+                        "cast":  {
+                                     "notes":  [
+                                                   "20 Mana",
+                                                   "Instant cast",
+                                                   "5 minute cooldown",
+                                                   "Tools: Water Totem"
+                                               ]
+                                 }
+                    }
+                ]
+}
