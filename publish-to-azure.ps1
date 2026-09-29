@@ -40,6 +40,6 @@ $commentsJsBlob.ICloudBlob.Properties.CacheControl = "max-age=300";
 $commentsJsBlob.ICloudBlob.Properties.ContentType = "text/javascript; charset=utf-8"
 $commentsJsBlobUpdateTask = $commentsJsBlob.ICloudBlob.SetPropertiesAsync();
 
-[System.Threading.Tasks.Task]::WaitAll($updateIndexMaxAgeTask, $mainCssBlobUpdateTask, $pygmentCssBlobUpdateTask, $commentsJsBlobUpdateTask);
+[System.Threading.Tasks.Task]::WaitAll($updateIndexMaxAgeTask, $mainCssBlobUpdateTask, $commentsJsBlobUpdateTask);
 
 Write-Host "Finished setting max ages.`n All done!";
