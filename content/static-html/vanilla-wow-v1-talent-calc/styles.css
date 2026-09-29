@@ -409,6 +409,25 @@ body[data-class] #pickPrompt {
   font-size: 15px;
 }
 
+.site-footer {
+  position: fixed;
+  right: 12px;
+  bottom: 8px;
+  color: var(--fg-dim);
+  font-size: 16px;
+  z-index: 50;
+}
+
+.site-footer a {
+  color: var(--gold-dim);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .trees {
     grid-template-columns: 1fr;
